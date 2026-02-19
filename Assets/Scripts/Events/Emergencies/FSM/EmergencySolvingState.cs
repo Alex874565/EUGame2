@@ -24,7 +24,7 @@ public class EmergencySolvingState : EmergencyState
     
     public override EmergencyState GetNextState()
     {
-        if (!Emergency.HasAllRequiredResources())
+        if (!Emergency.HasAllRequiredUnits())
         {
             return StateMachine.ExpiringState;
         }

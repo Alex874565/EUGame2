@@ -2,36 +2,38 @@
 using UnityEngine.Playables;
 
 [RequireComponent(typeof(PlayableDirector))]
-public class TimelineManager : MonoBehaviour
+public class WavesManager : MonoBehaviour
 {
     public WavesDatabase WavesDatabase { get; private set; }
-
-    private int _currentWaveIndex;
+    public int CurrentWaveIndex { get; private set; }
+    
     private PlayableDirector _playableDirector;
     
     private void Start()
     {
         WavesDatabase = ServiceLocator.Instance.WavesDatabase;
-        _currentWaveIndex = 0;
+        CurrentWaveIndex = 0;
         _playableDirector = GetComponent<PlayableDirector>();
         StartWave();
     }
     
     public void StartWave()
     {
-        if (_currentWaveIndex >= WavesDatabase.Waves.Count)
+        if (CurrentWaveIndex >= WavesDatabase.Waves.Count)
         {
             return;
         }
         
-        WaveData currentWave = WavesDatabase.Waves[_currentWaveIndex];
+        WaveData currentWave = WavesDatabase.Waves[CurrentWaveIndex];
 
+        ServiceLocator.Instance.UnitsManager.InitializeUnits(CurrentWaveIndex);
+        
         _playableDirector.playableAsset = currentWave.TimelineAsset;
         _playableDirector.Play();
     }
     
     public void IncrementWaveIndex()
     {
-        _currentWaveIndex++;
+        CurrentWaveIndex++;
     }
 }

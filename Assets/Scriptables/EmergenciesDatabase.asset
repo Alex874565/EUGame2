@@ -23,7 +23,7 @@ MonoBehaviour:
         <Amount>k__BackingField: 2
       - <Type>k__BackingField: 1
         <Amount>k__BackingField: 1
-      - <Type>k__BackingField: 2
+      - <Type>k__BackingField: 6
         <Amount>k__BackingField: 3
       <Severity>k__BackingField: 5
       <TimeUntilExpiry>k__BackingField: 30

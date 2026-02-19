@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class ResourceData
+public class UnitData
 {
-    [field: SerializeField] public ResourceType Type { get; set; }
-    [field: SerializeField] public ResourceMobility Mobility { get; set; }
+    [field: SerializeField] public UnitType Type { get; set; }
+    [field: SerializeField] public UnitMobility Mobility { get; set; }
     [field: SerializeField] public int Speed { get; set; }
     [field: SerializeField] public int MovementCost { get; set; }
 }

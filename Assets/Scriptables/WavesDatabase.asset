@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: WavesDatabase
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 465ec7c71e261aa4da2c309722c4167a, type: 2}
+  - <WaveNumber>k__BackingField: 1
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 465ec7c71e261aa4da2c309722c4167a, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 6
+      <Count>k__BackingField: 1
     <StartingMoney>k__BackingField: 200

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 
-public class EmergencyBehaviour : MonoBehaviour
+public class EmergencyBehaviour : MonoBehaviour, IInteractable
 {
     [SerializeField] private EmergencyType emergencyType;
     [field: Header("UI")]
     [field: SerializeField] public Image FillImage { get; private set; }
     [field: SerializeField] public TMP_Text TimerText { get; private set; }
+    [SerializeField] private float hoverScaleMultiplier = 1.2f;
+    
+    private Vector3 _originalScale;
     
     public EmergencyData EmergencyData { get; private set; }
-    public Dictionary<ResourceType, int> ActiveResources { get; private set; }
+    public Dictionary<UnitType, int> ActiveResources { get; private set; }
     
     public float ExpirationTimeLeft { get; set; }
     public float SolvingTimeLeft { get; set; }
@@ -20,10 +23,11 @@ public class EmergencyBehaviour : MonoBehaviour
     
     private void Start()
     {
-        ActiveResources = new  Dictionary<ResourceType, int>();
+        _originalScale = gameObject.transform.localScale;
+        ActiveResources = new  Dictionary<UnitType, int>();
         EmergencyData = ServiceLocator.Instance.EmergenciesManager.EmergenciesStats[emergencyType];
         ServiceLocator.Instance.EmergenciesManager.ActiveEmergencies.Add(gameObject);
-        foreach (RequiredResourceData resourceData in EmergencyData.RequiredResources)
+        foreach (RequiredUnitData resourceData in EmergencyData.RequiredResources)
         {
             ActiveResources.Add(resourceData.Type, 0);
         }
@@ -39,11 +43,11 @@ public class EmergencyBehaviour : MonoBehaviour
         _emergencyStateMachine.Update();
     }
     
-    public bool HasAllRequiredResources()
+    public bool HasAllRequiredUnits()
     {
-        foreach (RequiredResourceData requiredResourceData in EmergencyData.RequiredResources)
+        foreach (RequiredUnitData requiredUnitData in EmergencyData.RequiredResources)
         {
-            if (ActiveResources[requiredResourceData.Type] < requiredResourceData.Amount)
+            if (ActiveResources[requiredUnitData.Type] < requiredUnitData.Amount)
             {
                 return false;
             }
@@ -52,15 +56,33 @@ public class EmergencyBehaviour : MonoBehaviour
         return true;
     }
     
-    public bool HasAllResourcesOfType(ResourceType resourceType)
+    public bool HasAllUnitsOfType(UnitType unitType)
     {
-        RequiredResourceData requiredResourceData = EmergencyData.RequiredResources.Find(resource => resource.Type == resourceType);
+        RequiredUnitData requiredUnitData = EmergencyData.RequiredResources.Find(resource => resource.Type == unitType);
         
-        if (requiredResourceData == null)
+        if (requiredUnitData == null)
         {
             return true;
         }
         
-        return ActiveResources[resourceType] >= requiredResourceData.Amount;
+        return ActiveResources[unitType] >= requiredUnitData.Amount;
+    }
+    
+    public void OnHoverEnter()
+    {
+        GameObject unitInPlacing = ServiceLocator.Instance.PlacementManager.UnitInPlacing;
+        if (unitInPlacing != null)
+        {
+            UnitType unitType = unitInPlacing.GetComponent<UnitBehaviour>().Type;
+            if (!HasAllUnitsOfType(unitType) && (Vector2)transform.position != unitInPlacing.GetComponent<PlacementController>().StartPosition)
+            {
+                gameObject.transform.localScale *= hoverScaleMultiplier;
+            }
+        }
+    }
+    
+    public void OnHoverExit()
+    {
+        gameObject.transform.localScale = _originalScale;
     }
 }

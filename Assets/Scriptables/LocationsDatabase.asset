@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abca5ea55d84fb281c2818e58d6f4da, type: 3}
   m_Name: LocationsDatabase
   m_EditorClassIdentifier: 
-  locations:
+  <Locations>k__BackingField:
   - <Name>k__BackingField: 0
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: 4.39, y: 0, z: 0}
+    <Coordinates>k__BackingField: {x: -11.1, y: -27.1, z: 0}
+  - <Name>k__BackingField: 1
+    <Type>k__BackingField: 0
+    <Coordinates>k__BackingField: {x: 4.39, y: 19.2, z: 0}

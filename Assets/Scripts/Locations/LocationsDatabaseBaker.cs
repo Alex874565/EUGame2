@@ -15,7 +15,7 @@ public class LocationsDatabaseBaker : MonoBehaviour
             return;
         }
         
-        LocationsDatabase.locations.Clear();
+        LocationsDatabase.Locations.Clear();
         
         MapLocation[] mapLocations = FindObjectsByType<MapLocation>(FindObjectsSortMode.None);
         
@@ -26,11 +26,11 @@ public class LocationsDatabaseBaker : MonoBehaviour
             LocationData locationData = new LocationData
             {
                 Name = (LocationName)System.Enum.Parse(typeof(LocationName), mapLocation.name.Replace(" ", "_")),
-                Type = mapLocation.LocationType,
-                Coordinates = mapLocation.transform.position
+                Type = mapLocation.Type,
+                Coordinates = (Vector2)mapLocation.gameObject.transform.position
             };
             
-            LocationsDatabase.locations.Add(locationData);
+            LocationsDatabase.Locations.Add(locationData);
         }
     }
     

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5817598322696622715}
   - component: {fileID: 4019817369124888717}
   - component: {fileID: 4436796399043782731}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4752966324175200699}
   - component: {fileID: 1276266512386755301}
   - component: {fileID: 7168866982231842276}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 8096224970254165756}
   - component: {fileID: 9114359590138712169}
   - component: {fileID: 8151089069923542731}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7606365028712409988}
   - component: {fileID: -1056386395039528311}
-  m_Layer: 0
+  - component: {fileID: 8552840791738188444}
+  m_Layer: 3
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,6 +303,43 @@ MonoBehaviour:
   emergencyType: 0
   <FillImage>k__BackingField: {fileID: 4436796399043782731}
   <TimerText>k__BackingField: {fileID: 8513100818759887297}
+  hoverScaleMultiplier: 1.2
+--- !u!58 &8552840791738188444
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141184093873084707}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 4
 --- !u!1 &7835112385173401980
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +351,7 @@ GameObject:
   - component: {fileID: 3453350794046877817}
   - component: {fileID: 1318894826218369183}
   - component: {fileID: 8513100818759887297}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

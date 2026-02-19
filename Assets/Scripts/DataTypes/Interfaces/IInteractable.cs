@@ -1,11 +1,16 @@
-﻿public class IInteractable
+﻿public interface IInteractable
 {
-    public virtual void OnClick()
+    public void OnClick()
     {
         return;
     }
 
-    public virtual void OnHover()
+    public void OnHoverEnter()
+    {
+        return;
+    }
+    
+    public void OnHoverExit()
     {
         return;
     }

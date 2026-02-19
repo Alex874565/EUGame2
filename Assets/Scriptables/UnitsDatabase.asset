@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d21948588a41e6885fc74f4735a822, type: 3}
+  m_Name: UnitsDatabase
+  m_EditorClassIdentifier: 
+  <Units>k__BackingField:
+  - <Prefab>k__BackingField: {fileID: 1357384480707357678, guid: 2b836dcd136a8cd48bfa90753e1f0aa7, type: 3}
+    <Data>k__BackingField:
+      <Type>k__BackingField: 0
+      <Mobility>k__BackingField: 0
+      <Speed>k__BackingField: 10
+      <MovementCost>k__BackingField: 100
+  - <Prefab>k__BackingField: {fileID: 6339370060773945487, guid: d746c9b513465634cafc5d131d8d8bab, type: 3}
+    <Data>k__BackingField:
+      <Type>k__BackingField: 1
+      <Mobility>k__BackingField: 0
+      <Speed>k__BackingField: 8
+      <MovementCost>k__BackingField: 70
+  - <Prefab>k__BackingField: {fileID: 7138284993401550992, guid: d3dcb07993f914c49ba0af7f9e81f33d, type: 3}
+    <Data>k__BackingField:
+      <Type>k__BackingField: 4
+      <Mobility>k__BackingField: 1
+      <Speed>k__BackingField: 6
+      <MovementCost>k__BackingField: 20
+  - <Prefab>k__BackingField: {fileID: 7667124529393538329, guid: 53ca798319a010440bbf7215fe2cb220, type: 3}
+    <Data>k__BackingField:
+      <Type>k__BackingField: 3
+      <Mobility>k__BackingField: 1
+      <Speed>k__BackingField: 4
+      <MovementCost>k__BackingField: 40
+  - <Prefab>k__BackingField: {fileID: 6592323874854132948, guid: a38491a2e686da147af6a163ca113256, type: 3}
+    <Data>k__BackingField:
+      <Type>k__BackingField: 2
+      <Mobility>k__BackingField: 1
+      <Speed>k__BackingField: 3
+      <MovementCost>k__BackingField: 30
+  - <Prefab>k__BackingField: {fileID: 2408780085650880377, guid: fb0b442c3d8c84d44bdc901a4312ac5e, type: 3}
+    <Data>k__BackingField:
+      <Type>k__BackingField: 6
+      <Mobility>k__BackingField: 1
+      <Speed>k__BackingField: 2
+      <MovementCost>k__BackingField: 50
+  - <Prefab>k__BackingField: {fileID: 5082308086422176809, guid: a25080ace2ad76448a325b86958ad570, type: 3}
+    <Data>k__BackingField:
+      <Type>k__BackingField: 5
+      <Mobility>k__BackingField: 1
+      <Speed>k__BackingField: 1
+      <MovementCost>k__BackingField: 60

@@ -105,8 +105,10 @@ MonoBehaviour:
   m_Name: EmergencyClip
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyPrefab>k__BackingField: {fileID: 0}
+  - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 0
+  - <EmergencyType>k__BackingField: 0
+    <LocationName>k__BackingField: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,8 +10,8 @@ public class EmergencyPlayable : PlayableBehaviour
     {
         foreach (var spawnData in SpawnData)
         {
-            Vector2 spawnLocation = ServiceLocator.Instance.LocationsDatabase.GetLocationByName(spawnData.LocationName).Coordinates; 
-            ServiceLocator.Instance.EmergenciesManager.SpawnEmergency(spawnData.EmergencyType, spawnLocation);
+            Vector2 spawnLocation = ServiceLocator.Instance.LocationsDatabase.GetLocationByName(spawnData.LocationName).Coordinates;
+            ServiceLocator.Instance.EmergenciesManager.EmergencyFactory.SpawnEmergency(spawnData.EmergencyType, spawnLocation);
         }   
     }
 }

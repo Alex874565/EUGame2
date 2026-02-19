@@ -4,10 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LocationsDatabase", menuName = "ScriptableObjects/Databases/LocationsDatabase", order = 1)]
 public class LocationsDatabase : ScriptableObject
 {
-    public List<LocationData> locations;
+    [field: SerializeField] public List<LocationData> Locations { get; set; }
     
     public LocationData GetLocationByName(LocationName name)
     {
-        return locations.Find(location => location.Name == name);
+        return Locations.Find(location => location.Name == name);
     }
 }

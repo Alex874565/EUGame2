@@ -5,9 +5,13 @@ public class CursorManager : MonoBehaviour
 {
     [SerializeField] private LayerMask _interactableMask;
     
+    public GameObject HoveredObject { get; private set; }
+    
+    IInteractable _interactable;
+    
     void Update()
     {
-        if (ServiceLocator.Instance.InputManager.RightClickHeld)
+        if (ServiceLocator.Instance.InputManager.LeftClickHeld)
         {
             return;
         }
@@ -18,7 +22,7 @@ public class CursorManager : MonoBehaviour
         
         if (hit != null)
         {
-            IInteractable interactable = hit.GetComponent<IInteractable>();
+            IInteractable interactable = hit.gameObject.GetComponentInChildren<IInteractable>();
             
             if(interactable != null)
             {
@@ -28,9 +32,30 @@ public class CursorManager : MonoBehaviour
                 }
                 else
                 {
-                    interactable.OnHover();
+                    if(interactable != _interactable)
+                    {
+                        if(_interactable != null)
+                            _interactable.OnHoverExit();
+                        
+                        interactable.OnHoverEnter();
+                        _interactable = interactable;
+                        HoveredObject = hit.gameObject;
+                    }
                 }
             }
         }
-    }    
+        else
+        {
+            if(_interactable != null)
+                _interactable.OnHoverExit();
+            
+            _interactable = null;
+            HoveredObject = null;
+        }
+    }
+
+    public bool IsHoveringUI()
+    {
+        return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+    }
 }

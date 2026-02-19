@@ -1,4 +1,4 @@
-﻿public enum ResourceType
+﻿public enum UnitType
 {
     Airplane,
     Helicopter,

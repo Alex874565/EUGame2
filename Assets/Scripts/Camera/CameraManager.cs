@@ -57,7 +57,6 @@ public class CameraManager : MonoBehaviour
         if (_panning && !ServiceLocator.Instance.InputManager.RightClickHeld)
             _panning = false;
 
-        // Zoom
         _targetZoom -= ServiceLocator.Instance.InputManager.ScrollValue * zoomValue;
         _targetZoom = Mathf.Clamp(_targetZoom, minZoom, maxZoom);
     }
@@ -70,8 +69,6 @@ public class CameraManager : MonoBehaviour
         // Apply target
         cameraTarget.position = _targetPosition;
         
-        
-        // Apply zoom first
         vcam.Lens.OrthographicSize =
             Mathf.Lerp(vcam.Lens.OrthographicSize, _targetZoom, Time.deltaTime * zoomSpeed);
     }
