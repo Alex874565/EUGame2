@@ -10,4 +10,6 @@ public class UIManager : MonoBehaviour
     [field: Header("Unit Layers")]
     [field: SerializeField] public GameObject PlacementLayer { get; private set; }
     [field: SerializeField] public GameObject MovementLayer { get; private set; }
+    [field: SerializeField] public GameObject DragLayer {get; private set;}
+    [field: SerializeField] public SettingsUI SettingsUI {get; private set;}
 }
