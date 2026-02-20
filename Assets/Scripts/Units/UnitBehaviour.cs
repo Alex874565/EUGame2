@@ -9,8 +9,12 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
     [field: SerializeField] public UnitType Type { get; private set; }
     [field: Header("UI Elements")]
     [SerializeField] private TMP_Text counter;
+    [SerializeField] private GameObject counterBg;
     [SerializeField] private Image image;
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
+    
+    public EmergencyBehaviour OwningEmergency { get; set; } = null;
+    public bool IsIncoming { get; set; } =  false;
     
     private Vector3 _originalScale;
     
@@ -27,10 +31,29 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
     public void UpdateCount(int count)
     {
         Count = count;
-        counter.text = Count.ToString();
-        
-        image.color = Count > 0 ? Color.white : Color.black;
-        counter.gameObject.SetActive(Count > 1);
+        if (OwningEmergency == null)
+        {
+            counter.text = Count.ToString();
+
+            image.color = Count > 0 ? Color.white : Color.black;
+            counter.gameObject.SetActive(Count > 1);
+            counterBg.SetActive(Count > 1);
+        }
+        else
+        {
+            if (IsIncoming)
+            {
+                counter.text = $"{Count}";
+                counter.color = new Color(0.6f, .6f, 0.2f);
+            }
+            else
+            {
+                int requiredUnits = OwningEmergency.EmergencyData.RequiredResources
+                    .Find(resource => resource.Type == Type).Amount;
+                counter.text = $"{Count}/{requiredUnits}";
+                counter.color = Count >= requiredUnits ? new Color(0.2f, .6f, 0.2f) : new Color(.6f, 0.2f, 0.2f);
+            }
+        }
     }
 
     public void OnHoverEnter()
@@ -50,12 +73,12 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
     
     public void OnClick()
     {
-        if (Count > 0)
+        if (Count > 0 && IsIncoming == false)
         {
             GameObject unitInPlacing = ServiceLocator.Instance.PlacementManager.UnitInPlacing;
             if (unitInPlacing == null)
             {
-                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type);
+                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type, ServiceLocator.Instance.PlacementManager.DefaultStartLocation);
             }
             else if (unitInPlacing.GetComponent<UnitBehaviour>().Type == Type)
             {
@@ -64,7 +87,7 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
             else
             {
                 ServiceLocator.Instance.PlacementManager.ClearPlacement();
-                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type);
+                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type, OwningEmergency.LocationData.Name);
             }
 
             UpdateCount(Count - 1);

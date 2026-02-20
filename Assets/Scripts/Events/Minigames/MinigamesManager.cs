@@ -23,7 +23,7 @@ public class MinigamesManager : MonoBehaviour
         Instantiate(minigame, position, Quaternion.identity);
     }
 
-    public void SetEmergencyStats(MinigameType minigameType, MinigameData minigameData)
+    public void SetMinigameStats(MinigameType minigameType, MinigameData minigameData)
     {
         if (!MinigamesStats.ContainsKey(minigameType))
         {
@@ -39,7 +39,7 @@ public class MinigamesManager : MonoBehaviour
     {
         foreach (MinigameData minigameData in minigames)
         {
-            SetEmergencyStats(minigameData.MinigameType, minigameData);
+            SetMinigameStats(minigameData.MinigameType, minigameData);
         }
     }
 }

@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2400c991bb1b467a86c677c7e643b813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <DefaultStartLocation>k__BackingField: 1
   <MainLineRenderer>k__BackingField: {fileID: 173290153}
   <MainLineArrowHead>k__BackingField: {fileID: 0}
   <GhostLineRenderer>k__BackingField: {fileID: 472748632}
@@ -517,6 +518,8 @@ MonoBehaviour:
   HUD: {fileID: 1756813319}
   <PlacementLayer>k__BackingField: {fileID: 413467511}
   <MovementLayer>k__BackingField: {fileID: 1718404412}
+  <DragLayer>k__BackingField: {fileID: 0}
+  <SettingsUI>k__BackingField: {fileID: 0}
 --- !u!1 &284428204
 GameObject:
   m_ObjectHideFlags: 0
