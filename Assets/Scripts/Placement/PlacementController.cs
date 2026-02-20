@@ -1,6 +1,9 @@
 ﻿using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Collections;
+using Unity.VisualScripting;
 
 public class PlacementController : MonoBehaviour
 {
@@ -8,6 +11,16 @@ public class PlacementController : MonoBehaviour
     public Vector2 StartPosition { get; set; }
     
     private UnitBehaviour _unitBehaviour;
+    private Image _unitImage;
+    private float _moveSpeed;
+    
+    private LineRenderer _ghostLine;
+    private LineRenderer _mainLine;
+    
+    private List<Vector3> _bezierPoints; // world units per second
+    private int _moveIndex;
+    private float _moveSegmentT;
+    private float _currentSegmentLength;
     
     private void Start()
     {
@@ -19,136 +32,148 @@ public class PlacementController : MonoBehaviour
     
     private void Update()
     {
-        Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        transform.position = Input.mousePosition;
-
-        if (!ServiceLocator.Instance.CursorManager.IsHoveringUI())
+        HandlePlacement();
+    }
+    
+    
+    private void HandlePlacement()
+    {
+        Vector2 mousePos = Input.mousePosition;
+        
+        if (CanPlace() && !ServiceLocator.Instance.CursorManager.IsHoveringMenu())
         {
-            DrawBezier(StartPosition, mouseWorldPos);
-            if (ServiceLocator.Instance.InputManager.LeftClickReleased)
+            GameObject targetObject = ServiceLocator.Instance.CursorManager.HoveredObject;
+            LockOnEmergency(targetObject);
+            if (ServiceLocator.Instance.InputManager.LeftClickPressed)
             {
-                if (CanPlace())
-                {
-                
-                }
+                int requiredUnits = targetObject.GetComponentInChildren<EmergencyBehaviour>().RequiredUnitsOfType(_unitData.Type);
+                int unitsToSend = Mathf.Min(requiredUnits, _unitBehaviour.Count);
+                StartCoroutine(SendUnits(targetObject, unitsToSend));
             }
         }
         else
         {
-            if (ServiceLocator.Instance.CursorManager.HoveredObject != null)
+            if (!ServiceLocator.Instance.CursorManager.IsHoveringMenu())
             {
-                EmergencyBehaviour emergency = ServiceLocator.Instance.CursorManager.HoveredObject.GetComponent<EmergencyBehaviour>();
-                if (emergency != null && !emergency.HasAllUnitsOfType(_unitData.Type) && StartPosition != (Vector2)emergency.transform.position)
-                {
-                    DrawBezier(StartPosition, emergency.transform.position);
-                }
-                else
-                {
-                    ServiceLocator.Instance.PlacementManager.CurveLineRenderer.positionCount = 0;
-                }
+                PlaceGhost(mousePos);
             }
             else
             {
-                ServiceLocator.Instance.PlacementManager.CurveLineRenderer.positionCount = 0;
+                DeleteLines();
+                transform.position = mousePos;
             }
         }
         
         if (ServiceLocator.Instance.InputManager.RightClickPressed)
         {
-            GameObject inventoryUnit = ServiceLocator.Instance.UnitsManager.InventoryUnits.First(unit => unit.GetComponent<UnitBehaviour>().Type == _unitData.Type);
-            inventoryUnit.GetComponent<UnitBehaviour>().UpdateCount(inventoryUnit.GetComponent<UnitBehaviour>().Count + 1);
-            if (_unitBehaviour.Count > 1)
-            {
-                _unitBehaviour.UpdateCount(_unitBehaviour.Count - 1);
-            }
-            else
-            {
-                ServiceLocator.Instance.PlacementManager.UnitInPlacing = null;
-                ServiceLocator.Instance.PlacementManager.CurveLineRenderer.positionCount = 0;
-                Destroy(gameObject);
-            }
+            GiveUpUnit();
         }
     }
 
     private void InitializeGhostUnit()
     {
+        _ghostLine = Instantiate(ServiceLocator.Instance.PlacementManager.GhostLineRenderer);
+        _mainLine = Instantiate(ServiceLocator.Instance.PlacementManager.MainLineRenderer);
         
+        // Behaviour
         _unitBehaviour = GetComponent<UnitBehaviour>();
         _unitData = _unitBehaviour.Data;
         _unitBehaviour.UpdateCount(1);
-        transform.SetParent(ServiceLocator.Instance.UIManager.DragLayer.transform);
-        GetComponent<Collider2D>().enabled = false; // Disable collider to prevent interaction during placement
-        // Make the object semi-transparent to indicate it's being placed
-        Image image = gameObject.GetComponentInChildren<Image>();
-        if (image != null)
+        
+        // Canvas
+        transform.SetParent(ServiceLocator.Instance.UIManager.PlacementLayer.transform);
+        
+        // Image
+        _unitImage = GetComponentInChildren<Image>();
+        _unitImage.raycastTarget = false;
+        SetTransparency(.75f);
+        _moveSpeed = _unitData.Speed;
+    }
+
+    private GameObject SpawnMovingUnit(int unitsToSend)
+    {
+        GameObject unitInMovement = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnMovingUnit(_unitData.Type);
+        unitInMovement.GetComponent<UnitBehaviour>().UpdateCount(unitsToSend);
+        return unitInMovement;
+    }
+    
+    private void GiveUpUnit()
+    {
+        GameObject inventoryUnit = ServiceLocator.Instance.UnitsManager.InventoryUnits.First(unit => unit.GetComponent<UnitBehaviour>().Type == _unitData.Type);
+        inventoryUnit.GetComponent<UnitBehaviour>().UpdateCount(inventoryUnit.GetComponent<UnitBehaviour>().Count + 1);
+        if (_unitBehaviour.Count > 1)
         {
-            image.raycastTarget = false;
-            Color color = image.color;
-            color.a = 0.75f; // Set alpha to 50%
-            image.color = color;
+            _unitBehaviour.UpdateCount(_unitBehaviour.Count - 1);
+        }
+        else
+        {
+            DeleteLines();
+            ServiceLocator.Instance.PlacementManager.ClearPlacement();
         }
     }
 
-    public bool CanPlace()
+    private IEnumerator SendUnits(GameObject target, int unitsToSend)
     {
-        GameObject hoveredInteractable = ServiceLocator.Instance.CursorManager.HoveredObject;
-        if (hoveredInteractable != null)
+        target.GetComponent<EmergencyBehaviour>().AddIncomingUnits(_unitData.Type, unitsToSend);
+        target.GetComponent<EmergencyBehaviour>().ReactToUnitHover(gameObject);
+        GameObject unit = SpawnMovingUnit(unitsToSend);
+        yield return new WaitForNextFrameUnit();
+        unit.GetComponent<MovementController>().StartMovement(StartPosition, target);
+        if (_unitBehaviour.Count > unitsToSend)
         {
-            EmergencyBehaviour emergency = hoveredInteractable.gameObject.GetComponentInChildren<EmergencyBehaviour>();
-            if (emergency != null)
-            {
-                return true;
-            }
+            _unitBehaviour.UpdateCount(_unitBehaviour.Count - unitsToSend);
         }
-        
-        return false;
+        else
+        {
+            DeleteLines();
+            ServiceLocator.Instance.PlacementManager.ClearPlacement();
+        }
     }
 
-    private void StartMoving()
+    private void PlaceGhost(Vector2 mouseWorldPos)
     {
+        transform.position = mouseWorldPos;
         
+        SetTransparency(.75f);
+        DeleteLines();
+            
+        DrawBezier(_ghostLine, StartPosition, Camera.main.ScreenToWorldPoint(mouseWorldPos));
+    }
+    
+    private void LockOnEmergency(GameObject emergency)
+    {
+        Vector3 target = emergency.transform.position;
+        DeleteLines();
+        DrawBezier(_mainLine, StartPosition, target);
+        transform.position = Camera.main.WorldToScreenPoint(target);
+        SetTransparency(1f);
     }
     
     #region Bezier Curve
     
-    private void DrawBezier(Vector3 start, Vector3 end)
+    private void DrawBezier(LineRenderer line, Vector3 start, Vector3 end)
     {
-        PlacementManager placementManager = ServiceLocator.Instance.PlacementManager;
-        LineRenderer line = placementManager.CurveLineRenderer;
-        Transform arrowHead = placementManager.CurveArrowHead;
-        float curveHeight = placementManager.CurveHeightRatio * Camera.main.orthographicSize; // Scale height with camera size for consistent appearance
-        int resolution = placementManager.CurveResolution;
-        float zDepth = placementManager.CurveZDepth;
-        
-        line.startWidth = placementManager.CurveWidth;
-        line.endWidth = placementManager.CurveWidth;
-        
-        start.z = zDepth;
-        end.z = zDepth;
+        PlacementManager pm = ServiceLocator.Instance.PlacementManager;
 
-        // Control point: midpoint pushed upward in world Y
-        Vector3 mid = (start + end) * 0.5f;
-        Vector3 control = mid + Vector3.up * curveHeight;
-        control.z = zDepth;
+        line.startWidth = pm.LineWidth;
+        line.endWidth = pm.LineWidth;
 
-        line.positionCount = resolution;
+        var pts = BuildBezierPoints(start, end);
 
-        for (int i = 0; i < resolution; i++)
-        {
-            float t = i / (float)(resolution - 1);
-            Vector3 p = BezierQuadratic(start, control, end, t);
-            line.SetPosition(i, p);
-        }
+        line.positionCount = pts.Count;
+        for (int i = 0; i < pts.Count; i++)
+            line.SetPosition(i, pts[i]);
 
-        // Optional arrow head facing tangent direction
+        // Arrow head (if you want it to match the line end)
+        Transform arrowHead = pm.MainLineArrowHead;
         if (arrowHead)
         {
-            arrowHead.position = end;
+            arrowHead.position = pts[^1];
 
-            Vector3 tangent = BezierQuadraticTangent(start, control, end, 1f);
-            if (tangent.sqrMagnitude > 0.0001f)
-                arrowHead.rotation = Quaternion.LookRotation(Vector3.forward, tangent); // 2D: Z-forward
+            // Use last segment as direction
+            Vector3 dir = pts[^1] - pts[^2];
+            if (dir.sqrMagnitude > 0.0001f)
+                arrowHead.rotation = Quaternion.LookRotation(Vector3.forward, dir);
         }
     }
 
@@ -162,6 +187,67 @@ public class PlacementController : MonoBehaviour
     {
         // derivative of quadratic bezier
         return 2f * (1f - t) * (p1 - p0) + 2f * t * (p2 - p1);
+    }
+    
+    private List<Vector3> BuildBezierPoints(Vector3 start, Vector3 end)
+    {
+        PlacementManager pm = ServiceLocator.Instance.PlacementManager;
+
+        float curveHeight = pm.LineHeightRatio * Camera.main.orthographicSize;
+        int resolution = pm.LineResolution;
+        float zDepth = pm.LineZDepth;
+
+        start.z = zDepth;
+        end.z = zDepth;
+
+        Vector3 mid = (start + end) * 0.5f;
+        Vector3 control = mid + Vector3.up * curveHeight;
+        control.z = zDepth;
+
+        var pts = new List<Vector3>(resolution);
+        for (int i = 0; i < resolution; i++)
+        {
+            float t = i / (float)(resolution - 1);
+            pts.Add(BezierQuadratic(start, control, end, t));
+        }
+
+        return pts;
+    }
+    
+    
+    public void DeleteLines()
+    {
+        _ghostLine.positionCount = 0;
+        _mainLine.positionCount = 0;
+    }
+    
+    #endregion
+    
+    #region Helpers
+    
+    private void SetTransparency(float alpha)
+    {
+        if (_unitImage != null)
+        {
+            Color color = _unitImage.color;
+            color.a = alpha; // Set alpha to 50%
+            _unitImage.color = color;
+        }
+    }
+    
+    public bool CanPlace()
+    {
+        GameObject hoveredInteractable = ServiceLocator.Instance.CursorManager.HoveredObject;
+        if (hoveredInteractable != null)
+        {
+            EmergencyBehaviour emergency = hoveredInteractable.gameObject.GetComponentInChildren<EmergencyBehaviour>();
+            if (emergency != null && emergency.AcceptsUnitsOfType(_unitData.Type) && StartPosition != (Vector2)emergency.transform.position)
+            {
+                return true;
+            }
+        }
+        
+        return false;
     }
     
     #endregion

@@ -2,23 +2,25 @@
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-[RequireComponent(typeof(LineRenderer))]
 public class PlacementManager : MonoBehaviour
 {
-    [field: Header("Curve Settings")]
-    [field: SerializeField] public Transform CurveArrowHead { get; private set; }
-    [field: SerializeField] public int CurveResolution { get; private set; } = 24;
-    [field: SerializeField] public float CurveHeightRatio { get; private set; } = 2.5f;
-    [field: SerializeField] public float CurveZDepth { get; private set; } = -10f;  
-    [field: SerializeField] public float CurveWidth { get; private set; } = 0.5f;
+    [field: Header("Normal Line Settings")]
+    [field: SerializeField] public LineRenderer MainLineRenderer { get; private set; }
+    [field: SerializeField] public Transform MainLineArrowHead { get; private set; }
+    [field: SerializeField] public LineRenderer GhostLineRenderer { get; private set; }
+    [field: SerializeField] public Transform GhostLineArrowHead { get; private set; }
     
-    public LineRenderer CurveLineRenderer { get; private set; }
+    [field: Header("Line Settings")]
+    [field: SerializeField] public int LineResolution { get; private set; } = 24;
+    [field: SerializeField] public float LineHeightRatio { get; private set; } = 2.5f;
+    [field: SerializeField] public float LineZDepth { get; private set; } = -10f;  
+    [field: SerializeField] public float LineWidth { get; private set; } = 0.5f;
     
     public GameObject UnitInPlacing { get; set; }
 
     private void Start()
     {
-        CurveLineRenderer = GetComponent<LineRenderer>();
+        UnitInPlacing = null;
     }
 
     public void ClearPlacement()
@@ -32,9 +34,7 @@ public class PlacementManager : MonoBehaviour
     
     public void StartPlacingUnit(UnitType unitType)
     {
-        GameObject prefab = ServiceLocator.Instance.UnitsDatabase.Units.Find(u => u.Data.Type == unitType).Prefab;
-        GameObject ghostUnit = Instantiate(prefab);
+        GameObject ghostUnit = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnPlacementUnit(unitType);
         UnitInPlacing = ghostUnit;
-        ghostUnit.AddComponent<PlacementController>();
     }
 }

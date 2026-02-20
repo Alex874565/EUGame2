@@ -1,61 +1,30 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class CursorManager : MonoBehaviour
 {
-    [SerializeField] private LayerMask _interactableMask;
+    public GameObject HoveredObject { get; set; }
     
-    public GameObject HoveredObject { get; private set; }
-    
-    IInteractable _interactable;
-    
-    void Update()
+    public bool IsHoveringMenu()
     {
-        if (ServiceLocator.Instance.InputManager.LeftClickHeld)
+        string menuTag = ServiceLocator.Instance.UIManager.MenusTag;
+        
+        PointerEventData data = new PointerEventData(EventSystem.current);
+        data.position = Input.mousePosition;
+
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(data, results);
+
+        foreach (var r in results)
         {
-            return;
-        }
-        
-        Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
-        Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos,_interactableMask);
-        
-        if (hit != null)
-        {
-            IInteractable interactable = hit.gameObject.GetComponentInChildren<IInteractable>();
-            
-            if(interactable != null)
+            if (r.gameObject.CompareTag(menuTag) ||
+                r.gameObject.GetComponentInParent<Canvas>()?.CompareTag(menuTag) == true)
             {
-                if(ServiceLocator.Instance.InputManager.LeftClickPressed)
-                {
-                    interactable.OnClick();
-                }
-                else
-                {
-                    if(interactable != _interactable)
-                    {
-                        if(_interactable != null)
-                            _interactable.OnHoverExit();
-                        
-                        interactable.OnHoverEnter();
-                        _interactable = interactable;
-                        HoveredObject = hit.gameObject;
-                    }
-                }
+                return true;
             }
         }
-        else
-        {
-            if(_interactable != null)
-                _interactable.OnHoverExit();
-            
-            _interactable = null;
-            HoveredObject = null;
-        }
-    }
 
-    public bool IsHoveringUI()
-    {
-        return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+        return false;
     }
 }

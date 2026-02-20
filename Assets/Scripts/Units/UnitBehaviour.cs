@@ -35,7 +35,8 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
 
     public void OnHoverEnter()
     {
-        if (Count > 0)
+        ServiceLocator.Instance.CursorManager.HoveredObject = gameObject;
+        if (Count > 0 && GetComponent<PlacementController>() == null)
         {
             gameObject.transform.localScale *= hoverScaleMultiplier;
         }
@@ -43,7 +44,31 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
 
     public void OnHoverExit()
     {
+        ServiceLocator.Instance.CursorManager.HoveredObject = null;
         gameObject.transform.localScale = _originalScale;
+    }
+    
+    public void OnClick()
+    {
+        if (Count > 0)
+        {
+            GameObject unitInPlacing = ServiceLocator.Instance.PlacementManager.UnitInPlacing;
+            if (unitInPlacing == null)
+            {
+                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type);
+            }
+            else if (unitInPlacing.GetComponent<UnitBehaviour>().Type == Type)
+            {
+                unitInPlacing.GetComponent<UnitBehaviour>().UpdateCount(unitInPlacing.GetComponent<UnitBehaviour>().Count + 1); 
+            }
+            else
+            {
+                ServiceLocator.Instance.PlacementManager.ClearPlacement();
+                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type);
+            }
+
+            UpdateCount(Count - 1);
+        }
     }
     
     public void OnPointerEnter(PointerEventData eventData)
@@ -58,20 +83,9 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Count > 0)
+        if(eventData.button == PointerEventData.InputButton.Left)
         {
-            GameObject unitInPlacing = ServiceLocator.Instance.PlacementManager.UnitInPlacing;
-            if (unitInPlacing == null)
-            {
-                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type);
-            }
-            else
-            {
-               unitInPlacing.GetComponent<UnitBehaviour>().UpdateCount(unitInPlacing.GetComponent<UnitBehaviour>().Count + 1); 
-            }
-
-            UpdateCount(Count - 1);
+            OnClick();
         }
-        return;
     }
 }

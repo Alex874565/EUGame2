@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184540371964645935}
   - component: {fileID: 4596410925536462216}
-  - component: {fileID: 9131598264925486581}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,8 +33,8 @@ RectTransform:
   - {fileID: 2087309901937037046}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -55,42 +54,6 @@ MonoBehaviour:
   counter: {fileID: 3249077347608321092}
   image: {fileID: 3284170284089973543}
   hoverScaleMultiplier: 1.2
---- !u!58 &9131598264925486581
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5082197186816124465}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
 --- !u!1 &5136687578802361173
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +65,7 @@ GameObject:
   - component: {fileID: 3091176529069814133}
   - component: {fileID: 7425629052019061320}
   - component: {fileID: 3284170284089973543}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +140,7 @@ GameObject:
   - component: {fileID: 2087309901937037046}
   - component: {fileID: 465559880196732279}
   - component: {fileID: 3249077347608321092}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}

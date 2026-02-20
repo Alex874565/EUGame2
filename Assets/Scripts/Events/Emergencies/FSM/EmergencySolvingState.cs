@@ -6,12 +6,18 @@ public class EmergencySolvingState : EmergencyState
     
     public override void Enter()
     {
+        Emergency.SolvingTimeLeft = Emergency.EmergencyData.TimeToSolve;
         base.Enter();
     }
     
     public override void Update()
     {
         base.Update();
+        if(Emergency.SolvingTimeLeft <= 0)
+        {
+            Emergency.Solve();
+            return;
+        }
         Emergency.SolvingTimeLeft -= Time.deltaTime;
         Emergency.ExpirationTimeLeft += Mathf.Min(Time.deltaTime, Emergency.EmergencyData.TimeUntilExpiry - Emergency.ExpirationTimeLeft);
         UpdateUI();
