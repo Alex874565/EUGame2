@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb4d853c0c24e808c52c63f1365d8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LocationType>k__BackingField: 0
+  <Type>k__BackingField: 0
 --- !u!1 &853557903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb4d853c0c24e808c52c63f1365d8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LocationType>k__BackingField: 1
+  <Type>k__BackingField: 0
 --- !u!1 &913217282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1824,7 @@ MonoBehaviour:
   <InputManager>k__BackingField: {fileID: 128352685}
   <EmergenciesManager>k__BackingField: {fileID: 1324986780}
   <MinigamesManager>k__BackingField: {fileID: 1324986781}
-  <TimelineManager>k__BackingField: {fileID: 1493973504}
+  <WavesManager>k__BackingField: {fileID: 0}
   <UnitsManager>k__BackingField: {fileID: 1564136124}
   <CursorManager>k__BackingField: {fileID: 853557905}
   <PlacementManager>k__BackingField: {fileID: 42619153}

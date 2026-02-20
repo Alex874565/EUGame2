@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EmergenciesDatabase
   m_EditorClassIdentifier: 
   <Emergencies>k__BackingField:
-  - <EmergencyPrefab>k__BackingField: {fileID: 7141184093873084707, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
     <EmergencyData>k__BackingField:
       <EmergencyType>k__BackingField: 0
       <Name>k__BackingField: Fire
