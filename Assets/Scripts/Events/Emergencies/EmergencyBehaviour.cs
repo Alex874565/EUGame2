@@ -10,13 +10,22 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     [field: Header("UI")]
     [field: SerializeField] public Image FillImage { get; private set; }
     [field: SerializeField] public TMP_Text TimerText { get; private set; }
+    [field: Header("Interaction")]
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
+    [field: Header("Units UI")]
+    [SerializeField] private Transform activeUnitsParent;
+    [SerializeField] private Transform incomingUnitsParent;
     
-    private Vector3 _originalScale;
+    public LocationData LocationData { get; set; }
     
     public EmergencyData EmergencyData { get; private set; }
-    public Dictionary<UnitType, int> ActiveUnits { get; private set; }
-    public Dictionary<UnitType, int> IncomingUnits { get; private set; }
+
+    private Dictionary<UnitType, int> _activeUnits;
+    private Dictionary<UnitType, int> _incomingUnits;
+    
+    private Dictionary<UnitType, UnitBehaviour> _activeUIUnits;
+    private Dictionary<UnitType, UnitBehaviour> _incomingUIUnits;
+    
     public bool IsSolving { get; set; }
     
     public float ExpirationTimeLeft { get; set; }
@@ -24,22 +33,26 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     
     private EmergencyStateMachine _emergencyStateMachine;
     
+    private Vector3 _originalScale;
+    
     private void Start()
     {
         _originalScale = gameObject.transform.localScale;
-        ActiveUnits = new  Dictionary<UnitType, int>();
-        IncomingUnits = new Dictionary<UnitType, int>();
+        _activeUnits = new  Dictionary<UnitType, int>();
+        _incomingUnits = new Dictionary<UnitType, int>();
         EmergencyData = ServiceLocator.Instance.EmergenciesManager.EmergenciesStats[emergencyType];
         ServiceLocator.Instance.EmergenciesManager.ActiveEmergencies.Add(gameObject);
         foreach (RequiredUnitData resourceData in EmergencyData.RequiredResources)
         {
-            ActiveUnits.Add(resourceData.Type, 0);
+            _activeUnits.Add(resourceData.Type, 0);
         }
 
         ExpirationTimeLeft = EmergencyData.TimeUntilExpiry;
         SolvingTimeLeft = EmergencyData.TimeToSolve;
 
         _emergencyStateMachine = new EmergencyStateMachine(this);
+        
+        InitializeUIUnits();
     }
 
     private void Update()
@@ -51,6 +64,30 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     {
         Destroy(gameObject);
     }
+    
+    private void InitializeUIUnits()
+    {
+        _activeUIUnits = new Dictionary<UnitType, UnitBehaviour>();
+        _incomingUIUnits = new Dictionary<UnitType, UnitBehaviour>();
+        
+        foreach (RequiredUnitData requiredUnitData in EmergencyData.RequiredResources)
+        {
+            GameObject activeUnitGO = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnUnit(requiredUnitData.Type);
+            activeUnitGO.transform.SetParent(activeUnitsParent);
+            UnitBehaviour activeUnit = activeUnitGO.GetComponent<UnitBehaviour>();
+            activeUnit.OwningEmergency = this;
+            activeUnit.UpdateCount(0);
+            _activeUIUnits.Add(requiredUnitData.Type, activeUnit);
+            
+            GameObject incomingUnitGO = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnUnit(requiredUnitData.Type);
+            incomingUnitGO.transform.SetParent(incomingUnitsParent);
+            UnitBehaviour incomingUnit = incomingUnitGO.GetComponent<UnitBehaviour>();
+            incomingUnit.IsIncoming = true;
+            incomingUnit.OwningEmergency = this;
+            incomingUnit.UpdateCount(0);
+            _incomingUIUnits.Add(requiredUnitData.Type, incomingUnit);
+        }
+    }
 
     #region Unit Checks
     
@@ -58,7 +95,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     {
         foreach (RequiredUnitData requiredUnitData in EmergencyData.RequiredResources)
         {
-            if (ActiveUnits[requiredUnitData.Type] < requiredUnitData.Amount)
+            if (_activeUnits[requiredUnitData.Type] < requiredUnitData.Amount)
             {
                 return false;
             }
@@ -76,8 +113,8 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     {
         RequiredUnitData requiredUnitData = EmergencyData.RequiredResources.Find(resource => resource.Type == unitType);
         
-        int incomingAmount = IncomingUnits.ContainsKey(unitType) ? IncomingUnits[unitType] : 0;
-        int activeAmount = ActiveUnits.ContainsKey(unitType) ? ActiveUnits[unitType] : 0;
+        int incomingAmount = _incomingUnits.ContainsKey(unitType) ? _incomingUnits[unitType] : 0;
+        int activeAmount = _activeUnits.ContainsKey(unitType) ? _activeUnits[unitType] : 0;
         int requiredAmount = requiredUnitData != null ? requiredUnitData.Amount : 0;
 
         return requiredAmount - activeAmount - incomingAmount;
@@ -89,46 +126,55 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     
     public void AddActiveUnits(UnitType unitType, int amount)
     {
-        if (ActiveUnits.ContainsKey(unitType))
+        if (_activeUnits.ContainsKey(unitType))
         {
-            ActiveUnits[unitType]++;
+            _activeUnits[unitType]++;
         }
         
         if (HasAllRequiredUnits())
         {
             IsSolving = true;
         }
+        
+        _activeUIUnits[unitType].UpdateCount(_activeUnits[unitType]);
     }
     
     public void RemoveActiveUnits(UnitType unitType, int amount)
     {
-        if (ActiveUnits.ContainsKey(unitType))
+        if (_activeUnits.ContainsKey(unitType))
         {
-            ActiveUnits[unitType]--;
+            _activeUnits[unitType]--;
         }
+        
+        if (!HasAllRequiredUnits())
+        {
+            IsSolving = false;
+        }
+        
+        _activeUIUnits[unitType].UpdateCount(_activeUnits[unitType]);
     }
     
     public void AddIncomingUnits(UnitType unitType, int amount)
     {
-        if (IncomingUnits.ContainsKey(unitType))
+        if (_incomingUnits.ContainsKey(unitType))
         {
-            IncomingUnits[unitType] += amount;
+            _incomingUnits[unitType] += amount;
         }
         else
         {
-            IncomingUnits.Add(unitType, amount);
+            _incomingUnits.Add(unitType, amount);
         }
+        
+        _incomingUIUnits[unitType].UpdateCount(_incomingUnits[unitType]);
     }
     
     public void RemoveIncomingUnits(UnitType unitType, int amount)
     {
-        if (IncomingUnits.ContainsKey(unitType))
+        if (_incomingUnits.ContainsKey(unitType))
         {
-            IncomingUnits[unitType] -= amount;
-            if (IncomingUnits[unitType] <= 0)
-            {
-                IncomingUnits.Remove(unitType);
-            }
+            _incomingUnits[unitType] -= amount;
+            
+            _incomingUIUnits[unitType].UpdateCount(_incomingUnits[unitType]);
         }
     }
 

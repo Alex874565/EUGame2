@@ -4,6 +4,8 @@ using Object = UnityEngine.Object;
 
 public class PlacementManager : MonoBehaviour
 {
+    [field: SerializeField] public LocationName DefaultStartLocation { get; private set; }
+    
     [field: Header("Normal Line Settings")]
     [field: SerializeField] public LineRenderer MainLineRenderer { get; private set; }
     [field: SerializeField] public Transform MainLineArrowHead { get; private set; }
@@ -32,9 +34,9 @@ public class PlacementManager : MonoBehaviour
         }
     }
     
-    public void StartPlacingUnit(UnitType unitType)
+    public void StartPlacingUnit(UnitType unitType, LocationName startLocation)
     {
-        GameObject ghostUnit = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnPlacementUnit(unitType);
+        GameObject ghostUnit = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnPlacementUnit(unitType, startLocation);
         UnitInPlacing = ghostUnit;
     }
 }

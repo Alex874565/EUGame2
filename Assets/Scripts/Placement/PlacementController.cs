@@ -24,9 +24,6 @@ public class PlacementController : MonoBehaviour
     
     private void Start()
     {
-        StartPosition = ServiceLocator.Instance.LocationsDatabase.Locations.First(l => l.Name == LocationName.Test)
-            .Coordinates;
-        
         InitializeGhostUnit();
     }
     
