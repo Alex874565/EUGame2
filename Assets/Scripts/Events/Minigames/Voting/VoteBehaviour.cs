@@ -79,7 +79,10 @@ public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterH
             Time.timeScale = 0.2f;
             yield return new WaitForSecondsRealtime(.05f);
             _image.transform.localScale = _originalScale;
-            Time.timeScale = 1f;
+            if (!ServiceLocator.Instance.GameManager.IsPaused)
+            {
+                Time.timeScale = 1f;
+            }
         }
     }
     

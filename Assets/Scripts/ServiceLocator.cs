@@ -14,6 +14,7 @@ public class ServiceLocator : MonoBehaviour
     [field: SerializeField] public PlacementManager PlacementManager { get; private set; }
     [field: SerializeField] public CameraManager CameraManager { get; private set; }
     [field: SerializeField] public UIManager UIManager { get; private set; }
+    [field: SerializeField] public GameManager GameManager { get; private set; }
     
     [field: Header("Databases")]
     [field: SerializeField] public LocationsDatabase LocationsDatabase { get; private set; }
