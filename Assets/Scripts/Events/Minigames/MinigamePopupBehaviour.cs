@@ -1,14 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
-public class MinigameBehaviour : MonoBehaviour
+public class MinigamePopupBehaviour : MonoBehaviour
 {
     [SerializeField] private MinigameType minigameType;
-
+    
     public MinigameData MinigameData { get; private set; }
 
     private float _timerOnMap;
-    private bool _isPlaying;
+    protected bool isPlaying;
     
     private void Start()
     {
@@ -18,7 +18,8 @@ public class MinigameBehaviour : MonoBehaviour
 
     public void Update()
     {
-        if (!_isPlaying)
+        return;
+        if (!isPlaying)
         {
             _timerOnMap += Time.deltaTime;
             if(_timerOnMap >= MinigameData.TimeOnMap)
@@ -32,5 +33,14 @@ public class MinigameBehaviour : MonoBehaviour
     {
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Remove(gameObject);
         Destroy(gameObject);
+    }
+
+    public virtual void StartMinigame()
+    {
+    }
+
+    private void OnEnable()
+    {
+        StartMinigame();
     }
 }
