@@ -21,3 +21,5 @@ MonoBehaviour:
     - <Type>k__BackingField: 6
       <Count>k__BackingField: 1
     <StartingMoney>k__BackingField: 200
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 50

@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -7,24 +9,51 @@ using UnityEngine.EventSystems;
 public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [SerializeField] private EmergencyType emergencyType;
-    [field: Header("UI")]
+    [Header("UI")] 
+    [SerializeField] private Image image;
     [field: SerializeField] public Image FillImage { get; private set; }
     [field: SerializeField] public TMP_Text TimerText { get; private set; }
+    [SerializeField] private GameObject _activeUnitsContainer;
+    
     [field: Header("Interaction")]
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
-    [field: Header("Units UI")]
-    [SerializeField] private Transform activeUnitsParent;
-    [SerializeField] private Transform incomingUnitsParent;
+    [SerializeField] private float selectedScaleMultiplier = 1.4f;
+    [SerializeField] private float clickScaleMultiplier = .8f;
+    
+    public bool IsSelected { get; set; }
     
     public LocationData LocationData { get; set; }
     
     public EmergencyData EmergencyData { get; private set; }
 
+    public List<RequiredUnitData> AvailableUnits
+    {
+        get
+        {
+            List<RequiredUnitData> availableUnits = new List<RequiredUnitData>();
+            foreach (var kvp in _activeUnits)
+            {
+                availableUnits.Add(new RequiredUnitData { Type = kvp.Key, Amount = kvp.Value });
+            }
+            return availableUnits;
+        }
+    }
+    
+    public List<RequiredUnitData> IncomingUnits
+    {
+        get
+        {
+            List<RequiredUnitData> incomingUnits = new List<RequiredUnitData>();
+            foreach (var kvp in _incomingUnits)
+            {
+                incomingUnits.Add(new RequiredUnitData { Type = kvp.Key, Amount = kvp.Value });
+            }
+            return incomingUnits;
+        }
+    }
+    
     private Dictionary<UnitType, int> _activeUnits;
     private Dictionary<UnitType, int> _incomingUnits;
-    
-    private Dictionary<UnitType, UnitBehaviour> _activeUIUnits;
-    private Dictionary<UnitType, UnitBehaviour> _incomingUIUnits;
     
     public bool IsSolving { get; set; }
     
@@ -37,7 +66,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     
     private void Start()
     {
-        _originalScale = gameObject.transform.localScale;
+        _originalScale = image.transform.localScale;
         _activeUnits = new  Dictionary<UnitType, int>();
         _incomingUnits = new Dictionary<UnitType, int>();
         EmergencyData = ServiceLocator.Instance.EmergenciesManager.EmergenciesStats[emergencyType];
@@ -51,8 +80,6 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         SolvingTimeLeft = EmergencyData.TimeToSolve;
 
         _emergencyStateMachine = new EmergencyStateMachine(this);
-        
-        InitializeUIUnits();
     }
 
     private void Update()
@@ -62,33 +89,25 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
 
     public void Solve()
     {
+        if (IsSelected)
+        {
+            ServiceLocator.Instance.CursorManager.SelectObject(null);
+        }
+        ReturnInventoryUnits();
+        Destroy(gameObject);
+    }
+
+    public void Expire()
+    {
+        if(IsSelected)
+        {
+            ServiceLocator.Instance.CursorManager.SelectObject(null);
+        }
+        ReturnInventoryUnits();
+        ServiceLocator.Instance.WavesManager.UpdateEmergenciesFailed(ServiceLocator.Instance.WavesManager.CurrentEmergenciesFailed + 1);
         Destroy(gameObject);
     }
     
-    private void InitializeUIUnits()
-    {
-        _activeUIUnits = new Dictionary<UnitType, UnitBehaviour>();
-        _incomingUIUnits = new Dictionary<UnitType, UnitBehaviour>();
-        
-        foreach (RequiredUnitData requiredUnitData in EmergencyData.RequiredResources)
-        {
-            GameObject activeUnitGO = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnUnit(requiredUnitData.Type);
-            activeUnitGO.transform.SetParent(activeUnitsParent);
-            UnitBehaviour activeUnit = activeUnitGO.GetComponent<UnitBehaviour>();
-            activeUnit.OwningEmergency = this;
-            activeUnit.UpdateCount(0);
-            _activeUIUnits.Add(requiredUnitData.Type, activeUnit);
-            
-            GameObject incomingUnitGO = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnUnit(requiredUnitData.Type);
-            incomingUnitGO.transform.SetParent(incomingUnitsParent);
-            UnitBehaviour incomingUnit = incomingUnitGO.GetComponent<UnitBehaviour>();
-            incomingUnit.IsIncoming = true;
-            incomingUnit.OwningEmergency = this;
-            incomingUnit.UpdateCount(0);
-            _incomingUIUnits.Add(requiredUnitData.Type, incomingUnit);
-        }
-    }
-
     #region Unit Checks
     
     public bool HasAllRequiredUnits()
@@ -123,101 +142,157 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     #endregion
     
     #region Unit Management
+
+    private void ReturnInventoryUnits()
+    {
+        foreach (var kvp in _activeUnits)
+        {
+            if (kvp.Value > 0)
+            {
+                int currentInventoryCount = ServiceLocator.Instance.UnitsManager.InventoryUnits.Find(unit => unit.GetComponent<UnitBehaviour>().Type == kvp.Key)
+                    .GetComponent<UnitBehaviour>().Count;
+                ServiceLocator.Instance.UnitsManager.SetInventoryUnitCount(kvp.Key, currentInventoryCount + kvp.Value);
+            }
+        }
+    }
     
-    public void AddActiveUnits(UnitType unitType, int amount)
+    public void SetActiveUnits(UnitType unitType, int amount)
     {
         if (_activeUnits.ContainsKey(unitType))
         {
-            _activeUnits[unitType]++;
+            _activeUnits[unitType] = amount;
+        }
+        else
+        {
+            _activeUnits.Add(unitType, amount);
         }
         
-        if (HasAllRequiredUnits())
+        if (!IsSolving && HasAllRequiredUnits())
         {
             IsSolving = true;
         }
-        
-        _activeUIUnits[unitType].UpdateCount(_activeUnits[unitType]);
-    }
-    
-    public void RemoveActiveUnits(UnitType unitType, int amount)
-    {
-        if (_activeUnits.ContainsKey(unitType))
-        {
-            _activeUnits[unitType]--;
-        }
-        
-        if (!HasAllRequiredUnits())
+        else if (IsSolving && !HasAllRequiredUnits())
         {
             IsSolving = false;
         }
-        
-        _activeUIUnits[unitType].UpdateCount(_activeUnits[unitType]);
+
+        if (IsSelected)
+        {
+            ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
+        }
+
+        foreach (var child in _activeUnitsContainer.transform)
+        {
+            Destroy(((Transform)child).gameObject);
+        }
+        foreach(var kvp in _activeUnits)
+        {
+            if (kvp.Value > 0)
+            {
+                GameObject unit = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnUnit(kvp.Key);
+                unit.transform.SetParent(_activeUnitsContainer.transform, false);
+                unit.GetComponent<UnitBehaviour>().UpdateCount(kvp.Value);
+                unit.GetComponent<UnitBehaviour>().IsInteractable = false;
+                unit.GetComponentInChildren<Image>().raycastTarget = false;
+            }
+        }
     }
     
-    public void AddIncomingUnits(UnitType unitType, int amount)
+    public void SetIncomingUnits(UnitType unitType, int amount)
     {
         if (_incomingUnits.ContainsKey(unitType))
         {
-            _incomingUnits[unitType] += amount;
+            _incomingUnits[unitType] = amount;
         }
         else
         {
             _incomingUnits.Add(unitType, amount);
         }
         
-        _incomingUIUnits[unitType].UpdateCount(_incomingUnits[unitType]);
+        if(IsSelected)
+        {
+            ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
+        }
     }
     
-    public void RemoveIncomingUnits(UnitType unitType, int amount)
+    public int GetActiveUnitsOfType(UnitType unitType)
     {
-        if (_incomingUnits.ContainsKey(unitType))
-        {
-            _incomingUnits[unitType] -= amount;
-            
-            _incomingUIUnits[unitType].UpdateCount(_incomingUnits[unitType]);
-        }
+        return _activeUnits.ContainsKey(unitType) ? _activeUnits[unitType] : 0;
+    }
+    
+    public int GetIncomingUnitsOfType(UnitType unitType)
+    {
+        return _incomingUnits.ContainsKey(unitType) ? _incomingUnits[unitType] : 0;
     }
 
     #endregion
     
     #region Interactions
 
+    public void Select()
+    {
+        IsSelected = true;
+        ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
+        StartCoroutine(SelectCoroutine());
+    }
+
+    public IEnumerator SelectCoroutine()
+    {
+        image.transform.localScale = _originalScale * clickScaleMultiplier;
+        yield return new WaitForSeconds(0.1f);
+        image.transform.localScale = _originalScale * selectedScaleMultiplier; 
+    }
+    
+    public void Deselect()
+    {
+        image.transform.localScale = _originalScale;
+        IsSelected = false;
+        ServiceLocator.Instance.UIManager.EmergencyDetailsMenu.SetActive(false);
+    }
+    
     public void ReactToUnitHover(GameObject unit)
     {
         UnitType unitType = unit.GetComponent<UnitBehaviour>().Type;
         if (AcceptsUnitsOfType(unitType) && (Vector2)transform.position != unit.GetComponent<PlacementController>().StartPosition)
         {
-            gameObject.transform.localScale *= hoverScaleMultiplier;
+            image.transform.localScale *= hoverScaleMultiplier;
         }
         else
         {
-            gameObject.transform.localScale = _originalScale;
+            image.transform.localScale = _originalScale;
         }
     }
 
     public void OnHoverEnter()
     {
         ServiceLocator.Instance.CursorManager.HoveredObject = gameObject;
+
         GameObject unitInPlacing = ServiceLocator.Instance.PlacementManager.UnitInPlacing;
         if (unitInPlacing != null)
         {
-            ReactToUnitHover(unitInPlacing);            
+            ReactToUnitHover(unitInPlacing);
         }
         else
         {
-            gameObject.transform.localScale *= hoverScaleMultiplier;
+            image.transform.localScale = _originalScale * hoverScaleMultiplier;
         }
     }
-    
+
     public void OnHoverExit()
     {
+        if (!IsSelected)
+        {
+            image.transform.localScale = _originalScale;
+        }
         ServiceLocator.Instance.CursorManager.HoveredObject = null;
-        gameObject.transform.localScale = _originalScale;
     }
 
     public void OnClick()
     {
-        return;
+        if (!ServiceLocator.Instance.PlacementManager.UnitInPlacing)
+        {
+            ServiceLocator.Instance.CursorManager.SelectObject(gameObject);
+        }
     }
     
     public void OnPointerEnter(PointerEventData eventData)
@@ -232,7 +307,10 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnClick();
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            OnClick();
+        }
     }
     
     #endregion

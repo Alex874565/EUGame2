@@ -9,4 +9,6 @@ public class WaveData
     [field: SerializeField] public PlayableAsset TimelineAsset { get; private set; }
     [field: SerializeField] public List<StartingUnitData> StartingUnits { get; private set; }
     [field: SerializeField] public int StartingMoney { get; private set; }
+    [field: SerializeField] public int EmergencyFailLimit { get; private set; }
+    [field: SerializeField] public float WaveDuration { get; private set; }
 }

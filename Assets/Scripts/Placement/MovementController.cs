@@ -50,7 +50,6 @@ public class MovementController : MonoBehaviour
 
         // Image
         _unitImage = GetComponentInChildren<Image>();
-        _unitImage.raycastTarget = false;
         
         // Canvas
         transform.SetParent(ServiceLocator.Instance.UIManager.MovementLayer.transform);
@@ -130,20 +129,18 @@ public class MovementController : MonoBehaviour
         Vector3 pos = Vector3.Lerp(a, b, Mathf.Clamp01(_moveSegmentT));
 
         // If this unit is a WORLD object:
-        transform.position = Camera.main.WorldToScreenPoint(pos);
-        float baseOrtho = 25f; // ortho size where scale = 1
-        float scale = baseOrtho / Camera.main.orthographicSize;
-
-        transform.localScale = Vector3.one * scale;
+        transform.position = pos;
+        
         // If you want rotation along path (2D):
-        Vector3 dir = (b - a);
-        if (dir.x > 0)
+        Vector2 tangent = (b - a);
+        if (tangent.sqrMagnitude > 0.000001f)
         {
-            _unitImage.transform.localScale = new Vector3(1, 1, 1); // facing right
-        }
-        else if (dir.x < 0)
-        {
-            _unitImage.transform.localScale = new Vector3(-1, 1, 1); // facing left
+            float angle = Mathf.Atan2(tangent.y, tangent.x) * Mathf.Rad2Deg;
+
+            // sprite points LEFT by default, so add 180
+            float offset = 180f;
+
+            _unitImage.rectTransform.localRotation = Quaternion.Euler(0f, 0f, angle + offset);
         }
         
         _mainLine.positionCount = Mathf.Clamp(_moveIndex + 2, 0, _bezierPoints.Count);
@@ -156,8 +153,18 @@ public class MovementController : MonoBehaviour
     private void ReachTarget()
     {
         int unitsCount = _unitBehaviour.Count;
-        _targetObject.GetComponent<EmergencyBehaviour>().AddActiveUnits(_unitData.Type, unitsCount);
-        _targetObject.GetComponent<EmergencyBehaviour>().RemoveIncomingUnits(_unitData.Type, unitsCount);
+        if (_targetObject != null)
+        {
+            EmergencyBehaviour emergency = _targetObject.GetComponent<EmergencyBehaviour>();
+            emergency.SetActiveUnits(_unitData.Type, emergency.GetActiveUnitsOfType(_unitData.Type) + unitsCount);
+            emergency.SetIncomingUnits(_unitData.Type, emergency.GetIncomingUnitsOfType(_unitData.Type) - unitsCount);
+        }
+        else
+        {
+            int currentCount = ServiceLocator.Instance.UnitsManager.InventoryUnits.Find(unit => unit.GetComponent<UnitBehaviour>().Type == _unitData.Type).GetComponent<UnitBehaviour>().Count;
+            ServiceLocator.Instance.UnitsManager.SetInventoryUnitCount(_unitData.Type, currentCount + unitsCount);
+        }
+
         DeleteLines();
         Destroy(gameObject);
     }

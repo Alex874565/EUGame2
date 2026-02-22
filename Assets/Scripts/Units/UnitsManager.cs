@@ -7,13 +7,16 @@ public class UnitsManager : MonoBehaviour
 {
     [field: SerializeField] public List<GameObject> InventoryUnits { get; private set; }
     
-    public List<StartingUnitData> ActiveUnits { get; set; }
+    private List<StartingUnitData> InventoryUnitsTracker { get; set; }
+    public List<GameObject> ActiveUnits { get; private set; }
+    
     public UnitFactory UnitFactory { get; private set; }
     
     private void Awake()
     {
-        ActiveUnits = new List<StartingUnitData>();
+        InventoryUnitsTracker = new List<StartingUnitData>();
         UnitFactory = GetComponent<UnitFactory>();
+        ActiveUnits = new List<GameObject>();
     }
     
     public void InitializeUnits(int waveNumber)
@@ -21,7 +24,7 @@ public class UnitsManager : MonoBehaviour
         List<StartingUnitData> unitsToInitialize = ServiceLocator.Instance.WavesDatabase.Waves[waveNumber].StartingUnits;
         foreach (StartingUnitData startingUnitData in unitsToInitialize)
         {
-            ActiveUnits.Add(startingUnitData);
+            InventoryUnitsTracker.Add(startingUnitData);
         }
         
         InitializeInventoryUnits();
@@ -32,7 +35,7 @@ public class UnitsManager : MonoBehaviour
         foreach (GameObject inventoryUnit in InventoryUnits)
         {
             UnitBehaviour unitBehaviour = inventoryUnit.GetComponent<UnitBehaviour>();
-            StartingUnitData startingUnitData = ActiveUnits.Find(unit => unit.Type == unitBehaviour.Type);
+            StartingUnitData startingUnitData = InventoryUnitsTracker.Find(unit => unit.Type == unitBehaviour.Type);
             if (startingUnitData != null)
             {
                 unitBehaviour.UpdateCount(startingUnitData.Count);
@@ -42,5 +45,29 @@ public class UnitsManager : MonoBehaviour
                 unitBehaviour.UpdateCount(0);
             }
         }
+    }
+    
+    public void SetInventoryUnitCount(UnitType unitType, int count)
+    {
+        StartingUnitData startingUnitData = InventoryUnitsTracker.Find(unit => unit.Type == unitType);
+        if (startingUnitData != null)
+        {
+            startingUnitData.Count = count;
+        }
+        
+        GameObject inventoryUnit = InventoryUnits.Find(unit => unit.GetComponent<UnitBehaviour>().Type == unitType);
+        if (inventoryUnit != null)
+        {
+            inventoryUnit.GetComponent<UnitBehaviour>().UpdateCount(count);
+        }
+    }
+    
+    public void DestroyUnits()
+    {
+        foreach (GameObject unit in ActiveUnits)
+        {
+            Destroy(unit);
+        }
+        ActiveUnits.Clear();
     }
 }

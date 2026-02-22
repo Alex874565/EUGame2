@@ -35,7 +35,7 @@ public class PlacementController : MonoBehaviour
     
     private void HandlePlacement()
     {
-        Vector2 mousePos = Input.mousePosition;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         if (CanPlace() && !ServiceLocator.Instance.CursorManager.IsHoveringMenu())
         {
@@ -43,6 +43,7 @@ public class PlacementController : MonoBehaviour
             LockOnEmergency(targetObject);
             if (ServiceLocator.Instance.InputManager.LeftClickPressed)
             {
+                ServiceLocator.Instance.CursorManager.SelectObject(targetObject);
                 int requiredUnits = targetObject.GetComponentInChildren<EmergencyBehaviour>().RequiredUnitsOfType(_unitData.Type);
                 int unitsToSend = Mathf.Min(requiredUnits, _unitBehaviour.Count);
                 StartCoroutine(SendUnits(targetObject, unitsToSend));
@@ -61,7 +62,7 @@ public class PlacementController : MonoBehaviour
             }
         }
         
-        if (ServiceLocator.Instance.InputManager.RightClickPressed)
+        if (ServiceLocator.Instance.InputManager.RightClickPressed && ServiceLocator.Instance.CursorManager.IsHoveringMenu())
         {
             GiveUpUnit();
         }
@@ -96,8 +97,20 @@ public class PlacementController : MonoBehaviour
     
     private void GiveUpUnit()
     {
-        GameObject inventoryUnit = ServiceLocator.Instance.UnitsManager.InventoryUnits.First(unit => unit.GetComponent<UnitBehaviour>().Type == _unitData.Type);
-        inventoryUnit.GetComponent<UnitBehaviour>().UpdateCount(inventoryUnit.GetComponent<UnitBehaviour>().Count + 1);
+        if(_unitBehaviour.OwningEmergency != null)
+        {
+            _unitBehaviour.OwningEmergency.SetActiveUnits(_unitData.Type,
+                _unitBehaviour.OwningEmergency.GetActiveUnitsOfType(_unitData.Type));
+        }
+        else
+        {
+            GameObject inventoryUnit =
+                ServiceLocator.Instance.UnitsManager.InventoryUnits.First(unit =>
+                    unit.GetComponent<UnitBehaviour>().Type == _unitData.Type);
+            inventoryUnit.GetComponent<UnitBehaviour>()
+                .UpdateCount(inventoryUnit.GetComponent<UnitBehaviour>().Count + 1);
+        }
+
         if (_unitBehaviour.Count > 1)
         {
             _unitBehaviour.UpdateCount(_unitBehaviour.Count - 1);
@@ -111,8 +124,16 @@ public class PlacementController : MonoBehaviour
 
     private IEnumerator SendUnits(GameObject target, int unitsToSend)
     {
-        target.GetComponent<EmergencyBehaviour>().AddIncomingUnits(_unitData.Type, unitsToSend);
-        target.GetComponent<EmergencyBehaviour>().ReactToUnitHover(gameObject);
+        int currentMoney = ServiceLocator.Instance.WavesManager.CurrentMoney;
+        ServiceLocator.Instance.WavesManager.UpdateMoney(currentMoney - _unitData.MovementCost * unitsToSend);
+        if (_unitBehaviour.OwningEmergency)
+        {
+            _unitBehaviour.OwningEmergency.SetActiveUnits(_unitData.Type, _unitBehaviour.OwningEmergency.GetActiveUnitsOfType(_unitData.Type) - unitsToSend);
+        }
+        
+        EmergencyBehaviour emergency = target.GetComponent<EmergencyBehaviour>();
+        emergency.SetIncomingUnits(_unitData.Type, emergency.GetIncomingUnitsOfType(_unitData.Type) + unitsToSend);
+        emergency.ReactToUnitHover(gameObject);
         GameObject unit = SpawnMovingUnit(unitsToSend);
         yield return new WaitForNextFrameUnit();
         unit.GetComponent<MovementController>().StartMovement(StartPosition, target);
@@ -134,7 +155,7 @@ public class PlacementController : MonoBehaviour
         SetTransparency(.75f);
         DeleteLines();
             
-        DrawBezier(_ghostLine, StartPosition, Camera.main.ScreenToWorldPoint(mouseWorldPos));
+        DrawBezier(_ghostLine, StartPosition, mouseWorldPos);
     }
     
     private void LockOnEmergency(GameObject emergency)
@@ -142,7 +163,7 @@ public class PlacementController : MonoBehaviour
         Vector3 target = emergency.transform.position;
         DeleteLines();
         DrawBezier(_mainLine, StartPosition, target);
-        transform.position = Camera.main.WorldToScreenPoint(target);
+        transform.position = target;
         SetTransparency(1f);
     }
     

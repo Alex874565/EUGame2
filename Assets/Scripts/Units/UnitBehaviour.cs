@@ -1,17 +1,21 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [field: SerializeField] public UnitType Type { get; private set; }
     [field: Header("UI Elements")]
     [SerializeField] private TMP_Text counter;
     [SerializeField] private GameObject counterBg;
     [SerializeField] private Image image;
+    [SerializeField] private TMP_Text cost;
+    [Header("Interaction")]
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
+    [SerializeField] private float clickScaleMultiplier = .8f;
     
     public EmergencyBehaviour OwningEmergency { get; set; } = null;
     public bool IsIncoming { get; set; } =  false;
@@ -21,17 +25,26 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
     public UnitData Data { get; private set; }
 
     public int Count { get; private set; }
+
+    public bool IsInteractable { get; set; }
     
-    private void Start()
+    private void Awake()
+    {
+        _originalScale = gameObject.transform.localScale;
+        
+        IsInteractable = true;
+    }
+
+    public void Start()
     {
         Data = ServiceLocator.Instance.UnitsDatabase.Units.Find(unit => unit.Data.Type == Type).Data;
-        _originalScale = gameObject.transform.localScale;
+        cost.text = $"{Data.MovementCost}€";
     }
     
     public void UpdateCount(int count)
     {
         Count = count;
-        if (OwningEmergency == null)
+        if (OwningEmergency == null || GetComponent<PlacementController>() != null || GetComponent<MovementController>() != null)
         {
             counter.text = Count.ToString();
 
@@ -43,8 +56,18 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
         {
             if (IsIncoming)
             {
-                counter.text = $"{Count}";
-                counter.color = new Color(0.6f, .6f, 0.2f);
+                if (Count > 0)
+                {
+                    image.gameObject.SetActive(true);
+                    counterBg.SetActive(true);
+                    counter.text = $"{Count}";
+                    counter.color = new Color(0.6f, .6f, 0.2f);
+                }
+                else
+                {
+                    counterBg.SetActive(false);
+                    image.gameObject.SetActive(false);
+                }
             }
             else
             {
@@ -56,12 +79,56 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
         }
     }
 
+    private void OnDestroy()
+    {
+        if (ServiceLocator.Instance != null)
+        {
+            if (ServiceLocator.Instance.CursorManager.HoveredObject == gameObject)
+            {
+                ServiceLocator.Instance.CursorManager.HoveredObject = null;
+            }
+            ServiceLocator.Instance.UnitsManager.ActiveUnits.Remove(gameObject);
+        }
+    }
+    
+    #region Interaction
+    
+    private IEnumerator ClickCoroutine()
+    {
+        gameObject.transform.localScale = _originalScale * clickScaleMultiplier;
+        yield return new WaitForSeconds(0.1f);
+        if (ServiceLocator.Instance.CursorManager.HoveredObject == gameObject)
+        {
+            gameObject.transform.localScale = _originalScale * hoverScaleMultiplier;
+        }
+        else
+        {
+            gameObject.transform.localScale = _originalScale;
+        }
+    }
+
     public void OnHoverEnter()
     {
         ServiceLocator.Instance.CursorManager.HoveredObject = gameObject;
-        if (Count > 0 && GetComponent<PlacementController>() == null)
+        if (Count > 0 && IsInteractable)
         {
-            gameObject.transform.localScale *= hoverScaleMultiplier;
+            GameObject unitInPlacing = ServiceLocator.Instance.PlacementManager.UnitInPlacing;
+            if (unitInPlacing == null)
+            {
+                gameObject.transform.localScale = _originalScale * hoverScaleMultiplier;
+            }
+            else
+            {
+                EmergencyBehaviour unitInPlacingEmergency = unitInPlacing.GetComponent<UnitBehaviour>().OwningEmergency;
+                if (OwningEmergency == unitInPlacingEmergency)
+                {
+                    gameObject.transform.localScale = _originalScale * hoverScaleMultiplier;
+                }
+                else
+                {
+                    gameObject.transform.localScale = _originalScale;
+                }
+            }
         }
     }
 
@@ -73,24 +140,42 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
     
     public void OnClick()
     {
-        if (Count > 0 && IsIncoming == false)
+        if (Count > 0 && IsInteractable)
         {
             GameObject unitInPlacing = ServiceLocator.Instance.PlacementManager.UnitInPlacing;
             if (unitInPlacing == null)
             {
-                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type, ServiceLocator.Instance.PlacementManager.DefaultStartLocation);
+                StartCoroutine(ClickCoroutine());
+                LocationName startLocation = OwningEmergency != null ? OwningEmergency.LocationData.Name : ServiceLocator.Instance.PlacementManager.DefaultStartLocation;
+                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type, startLocation, OwningEmergency);
+                UpdateCount(Count - 1);
             }
             else if (unitInPlacing.GetComponent<UnitBehaviour>().Type == Type)
             {
-                unitInPlacing.GetComponent<UnitBehaviour>().UpdateCount(unitInPlacing.GetComponent<UnitBehaviour>().Count + 1); 
+                EmergencyBehaviour unitInPlacingEmergency = unitInPlacing.GetComponent<UnitBehaviour>().OwningEmergency;
+                if (OwningEmergency == unitInPlacingEmergency)
+                {
+                    StartCoroutine(ClickCoroutine());
+                    unitInPlacing.GetComponent<UnitBehaviour>()
+                        .UpdateCount(unitInPlacing.GetComponent<UnitBehaviour>().Count + 1);
+                    UpdateCount(Count - 1);
+                }
             }
             else
             {
-                ServiceLocator.Instance.PlacementManager.ClearPlacement();
-                ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type, OwningEmergency.LocationData.Name);
+                EmergencyBehaviour unitInPlacingEmergency = unitInPlacing.GetComponent<UnitBehaviour>().OwningEmergency;
+                if (OwningEmergency == unitInPlacingEmergency)
+                {
+                    StartCoroutine(ClickCoroutine());
+                    ServiceLocator.Instance.PlacementManager.ClearPlacement();
+                    LocationName startLocation = OwningEmergency != null
+                        ? OwningEmergency.LocationData.Name
+                        : ServiceLocator.Instance.PlacementManager.DefaultStartLocation;
+                    ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type, startLocation, OwningEmergency);
+                    
+                    UpdateCount(Count - 1);
+                }
             }
-
-            UpdateCount(Count - 1);
         }
     }
     
@@ -111,4 +196,6 @@ public class UnitBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler,
             OnClick();
         }
     }
+    
+    #endregion
 }

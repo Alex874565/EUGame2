@@ -4,11 +4,10 @@ using UnityEngine.UI;
 using System.Collections;
 using Unity.VisualScripting;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Image))]
 public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private Rigidbody2D _rb;
-    private Image _image;
+    [field: SerializeField] public Rigidbody2D Rb { get; private set; }
+    [SerializeField] private Image image;
 
     [Header("Visual Settings")]
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
@@ -17,57 +16,34 @@ public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     [Header("Movement Settings")]
     [SerializeField] private Vector2 moveSpeedRange = new Vector2(1f, 3f);
     [SerializeField] private Vector2 fallSpeedRange = new Vector2(1f, 3f);
-    [SerializeField] private float fallDelay = 0.5f;
-
-
-
-    private bool _shouldMove = false;
-    private bool _movingRight;
+    
+    private int _direction; // -1 for left, 1 for right
     private float _moveSpeed;
-
-    private bool _isFalling = false;
+    
+    private bool _isFalling;
     private float _fallSpeed;
 
     private Vector3 _originalScale;
 
-    private void Start()
+    private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
-        
-        _image= GetComponent<Image>();
-        _originalScale = _image.transform.localScale;
-    }
-    
-    private void FixedUpdate()
-    {
-        if (_shouldMove)
-        {
-            float moveDirection = _movingRight ? 1f : -1f;
-            _rb.MovePosition(_rb.position + Vector2.right * moveDirection * _moveSpeed * Time.fixedDeltaTime);
-        }
-        else
-        {
-            if (_isFalling)
-            {
-                _rb.MovePosition(_rb.position + Vector2.down * _fallSpeed * Time.fixedDeltaTime);
-            }
-        }
-    }
-    
-    public void StartMoving(bool moveRight)
-    {
-        Debug.Log("StartMoving called");
-        _moveSpeed = Random.Range(moveSpeedRange.x, moveSpeedRange.y);
-        _movingRight = moveRight;
-        _shouldMove = true;
+        _originalScale = image.transform.localScale;
         _isFalling = false;
+        Rb.linearVelocity = Vector2.zero;
+    }
+    
+    public void StartMoving(bool spawnedLeft)
+    {
+        _moveSpeed = Random.Range(moveSpeedRange.x, moveSpeedRange.y);
+        _direction = spawnedLeft ? 1 : -1;
+        Rb.linearVelocity = _moveSpeed * _direction * Vector2.right;
     }
     
     public void StartFalling()
     {
-        _fallSpeed = Random.Range(fallSpeedRange.x, fallSpeedRange.y);
-        _shouldMove = false;
         _isFalling = true;
+        _fallSpeed = Random.Range(fallSpeedRange.x, fallSpeedRange.y);
+        Rb.linearVelocity = _fallSpeed * Vector2.down;
     }
 
     private IEnumerator ClickVote()
@@ -75,10 +51,10 @@ public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if(!_isFalling)
         {
             StartFalling();
-            _image.transform.localScale = _originalScale * clickScaleMultiplier;
+            image.transform.localScale = _originalScale * clickScaleMultiplier;
             Time.timeScale = 0.2f;
             yield return new WaitForSecondsRealtime(.05f);
-            _image.transform.localScale = _originalScale;
+            image.transform.localScale = _originalScale;
             if (!ServiceLocator.Instance.GameManager.IsPaused)
             {
                 Time.timeScale = 1f;
@@ -98,7 +74,7 @@ public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if(!_isFalling)
         {
             _originalScale = transform.localScale;
-            transform.localScale = _originalScale * hoverScaleMultiplier;
+            image.transform.localScale = _originalScale * hoverScaleMultiplier;
         }
     }
     
@@ -106,7 +82,7 @@ public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     {
         if(!_isFalling)
         {
-            transform.localScale = _originalScale;
+            image.transform.localScale = _originalScale;
         }
     }
     

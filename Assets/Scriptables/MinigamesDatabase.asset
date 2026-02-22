@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: MinigamesDatabase
   m_EditorClassIdentifier: 
   <Minigames>k__BackingField:
-  - <MinigameType>k__BackingField: 0
+  - <Type>k__BackingField: 0
     <Name>k__BackingField: Voting Minigame
     <Description>k__BackingField: Vote
     <Difficulty>k__BackingField: 3
     <TimeLimit>k__BackingField: 10
     <Reward>k__BackingField: 100
     <TimeOnMap>k__BackingField: 30
+    <Prefab>k__BackingField: {fileID: 7822152282993780064, guid: f40bf66b14844944ea4a995becfadc6a, type: 3}

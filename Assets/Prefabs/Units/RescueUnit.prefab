@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1184540371964645935, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1184540371964645935, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1184540371964645935, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -88,10 +88,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3091176529069814133, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091176529069814133, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091176529069814133, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249077347608321092, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
+      propertyPath: m_fontSize
+      value: 1.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3284170284089973543, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b41708f4d88d85e46a322efb81229b4c, type: 3}
+      objectReference: {fileID: 21300000, guid: b782f2d01999e3940abdcce50d694e06, type: 3}
+    - target: {fileID: 4596410925536462216, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
+      propertyPath: hoverScaleMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4596410925536462216, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
       propertyPath: <Type>k__BackingField
       value: 4
@@ -99,6 +119,10 @@ PrefabInstance:
     - target: {fileID: 5082197186816124465, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
       propertyPath: m_Name
       value: RescueUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855402935585822116, guid: 6ae04822e9d4e074e9d8b9f11f524f2e, type: 3}
+      propertyPath: m_AspectRatio
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

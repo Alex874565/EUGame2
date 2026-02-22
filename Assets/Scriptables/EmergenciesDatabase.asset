@@ -20,7 +20,7 @@ MonoBehaviour:
       <Description>k__BackingField: Fire in {LOCATION}
       <RequiredResources>k__BackingField:
       - <Type>k__BackingField: 0
-        <Amount>k__BackingField: 1
+        <Amount>k__BackingField: 2
       <Severity>k__BackingField: 5
       <TimeUntilExpiry>k__BackingField: 30
       <TimeToSolve>k__BackingField: 15

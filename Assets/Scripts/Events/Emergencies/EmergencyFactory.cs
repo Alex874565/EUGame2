@@ -2,9 +2,11 @@
 
 public class EmergencyFactory : MonoBehaviour
 {
-    public void SpawnEmergency(EmergencyType emergencyType, Vector3 position)
+    public void SpawnEmergency(EmergencyType emergencyType, LocationData spawnLocationData)
     {
+        GameObject emergenciesLayer = ServiceLocator.Instance.UIManager.EmergenciesLayer;
         GameObject emergencyPrefab = ServiceLocator.Instance.EmergenciesDatabase.Emergencies.Find(emergency => emergency.EmergencyData.EmergencyType == emergencyType).EmergencyPrefab;
-        Instantiate(emergencyPrefab, position, Quaternion.identity);
+        GameObject emergency = Instantiate(emergencyPrefab, spawnLocationData.Coordinates, Quaternion.identity, emergenciesLayer.transform);
+        emergency.GetComponent<EmergencyBehaviour>().LocationData = spawnLocationData;
     }
 }

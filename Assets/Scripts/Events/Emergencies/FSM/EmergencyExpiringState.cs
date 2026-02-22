@@ -11,9 +11,14 @@ public class EmergencyExpiringState : EmergencyState
     
     public override void Update()
     {
-        StateMachine.Emergency.SolvingTimeLeft = Mathf.Min(0, StateMachine.Emergency.SolvingTimeLeft - Time.deltaTime);
+        StateMachine.Emergency.SolvingTimeLeft = Mathf.Min(StateMachine.Emergency.EmergencyData.TimeToSolve, StateMachine.Emergency.SolvingTimeLeft + Time.deltaTime);
         StateMachine.Emergency.ExpirationTimeLeft = Mathf.Max(0, StateMachine.Emergency.ExpirationTimeLeft - Time.deltaTime);
         UpdateUI();
+        
+        if(StateMachine.Emergency.ExpirationTimeLeft <= 0)
+        {
+            StateMachine.Emergency.Expire();
+        }
     }
     
     public override void Exit()

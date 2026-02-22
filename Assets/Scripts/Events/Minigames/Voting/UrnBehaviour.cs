@@ -5,7 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(Collider2D), typeof(Image))]
 public class UrnBehaviour : MonoBehaviour
 {
-    public VotingMinigameManager Minigame { get; set; }
+    public VotingMinigameController Minigame { get; set; }
     
     [Header("Visual Settings")]
     [SerializeField] private float voteRegisterMultiplier = 1.2f;

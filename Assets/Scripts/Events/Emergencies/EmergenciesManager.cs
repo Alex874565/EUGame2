@@ -7,7 +7,6 @@ public class EmergenciesManager : MonoBehaviour
 {
     public Dictionary<EmergencyType, EmergencyData> EmergenciesStats { get; private set; }
     public List<GameObject> ActiveEmergencies { get; private set; }
-    
     public EmergencyFactory EmergencyFactory { get; private set; }
 
     private void Awake()
@@ -40,5 +39,14 @@ public class EmergenciesManager : MonoBehaviour
         {
             SetEmergencyStats(emergencyData.EmergencyType, emergencyData);
         }
+    }
+    
+    public void DestroyEmergencies()
+    {
+        foreach (GameObject emergency in ActiveEmergencies)
+        {
+            Destroy(emergency);
+        }
+        ActiveEmergencies.Clear();
     }
 }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1302520053213931105}
   - component: {fileID: 5449986884677969479}
   - component: {fileID: 1162226296929976201}
-  - component: {fileID: 5621938590664195967}
   - component: {fileID: 1015599758349097680}
   - component: {fileID: 6003457207828471271}
+  - component: {fileID: 3054370727240778552}
   m_Layer: 0
   m_Name: Vote
   m_TagString: Untagged
@@ -52,11 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e4443154bf409cb03170b68e2d1bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Rb>k__BackingField: {fileID: 3054370727240778552}
+  image: {fileID: 1162226296929976201}
   hoverScaleMultiplier: 1.1
   clickScaleMultiplier: 0.8
-  moveSpeedRange: {x: 200, y: 300}
-  fallSpeedRange: {x: 400, y: 500}
-  fallDelay: 0.5
+  moveSpeedRange: {x: 20, y: 30}
+  fallSpeedRange: {x: 50, y: 60}
 --- !u!114 &1162226296929976201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,33 +88,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!50 &5621938590664195967
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2260932558362363788}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!222 &1015599758349097680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -168,3 +142,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!50 &3054370727240778552
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260932558362363788}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

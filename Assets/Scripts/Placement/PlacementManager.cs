@@ -19,7 +19,7 @@ public class PlacementManager : MonoBehaviour
     [field: SerializeField] public float LineWidth { get; private set; } = 0.5f;
     
     public GameObject UnitInPlacing { get; set; }
-
+    
     private void Start()
     {
         UnitInPlacing = null;
@@ -34,9 +34,13 @@ public class PlacementManager : MonoBehaviour
         }
     }
     
-    public void StartPlacingUnit(UnitType unitType, LocationName startLocation)
+    public void StartPlacingUnit(UnitType unitType, LocationName startLocation, EmergencyBehaviour emergency = null)
     {
         GameObject ghostUnit = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnPlacementUnit(unitType, startLocation);
         UnitInPlacing = ghostUnit;
+        if (emergency != null)
+        {
+            ghostUnit.GetComponent<UnitBehaviour>().OwningEmergency = emergency;
+        }
     }
 }

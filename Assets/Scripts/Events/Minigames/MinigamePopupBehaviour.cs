@@ -1,32 +1,36 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.EventSystems;
 
-public class MinigamePopupBehaviour : MonoBehaviour
+public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    [SerializeField] private MinigameType minigameType;
+    [field: SerializeField] public MinigameType Type { get; private set; }
     
-    public MinigameData MinigameData { get; private set; }
+    [Header("UI Elements")]
+    [SerializeField] private Image image;
+    
+    [Header("Interaction")]
+    [SerializeField] private float hoverScaleMultiplier = 1.2f;
+    [SerializeField] private float selectedScaleMultiplier = 1.4f;
+    [SerializeField] private float clickScaleMultiplier = .8f;
+    
+    public bool IsSelected { get; set; }
+    
+    public MinigameData Data { get; private set; }
 
-    private float _timerOnMap;
-    protected bool isPlaying;
-    
+    private Vector3 _originalScale;
     private void Start()
     {
-        MinigameData = ServiceLocator.Instance.MinigamesManager.MinigamesStats[minigameType];
+        Data = ServiceLocator.Instance.MinigamesDatabase.Minigames.Find(mg => mg.Type == Type);
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Add(gameObject);
+        IsSelected = false;
+        _originalScale = image.transform.localScale;
     }
 
     public void Update()
     {
         return;
-        if (!isPlaying)
-        {
-            _timerOnMap += Time.deltaTime;
-            if(_timerOnMap >= MinigameData.TimeOnMap)
-            {
-                DestroySelf();
-            }
-        }
     }
 
     private void DestroySelf()
@@ -35,12 +39,75 @@ public class MinigamePopupBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public virtual void StartMinigame()
+    #region Interactions
+
+    public void Select()
     {
+        IsSelected = true;
+        ServiceLocator.Instance.UIManager.OpenMinigameDetails(this);
+        StartCoroutine(SelectCoroutine());
     }
 
-    private void OnEnable()
+    private IEnumerator SelectCoroutine()
     {
-        StartMinigame();
+        image.transform.localScale = _originalScale * clickScaleMultiplier;
+        yield return new WaitForSeconds(0.1f);
+        image.transform.localScale = _originalScale * selectedScaleMultiplier; 
     }
+    
+    public void Deselect()
+    {
+        image.transform.localScale = _originalScale;
+        IsSelected = false;
+        ServiceLocator.Instance.UIManager.MinigameDetailsMenu.SetActive(false);
+    }
+
+    public void OnHoverEnter()
+    {
+        ServiceLocator.Instance.CursorManager.HoveredObject = gameObject;
+        GameObject unitInPlacing = ServiceLocator.Instance.PlacementManager.UnitInPlacing;
+        if (unitInPlacing == null)
+        {
+            image.transform.localScale = _originalScale * hoverScaleMultiplier;
+        }
+    }
+
+    public void OnHoverExit()
+    {
+        if (!IsSelected)
+        {
+            image.transform.localScale = _originalScale;
+        }
+        ServiceLocator.Instance.CursorManager.HoveredObject = null;
+    }
+
+    public void OnClick()
+    {
+        if (!ServiceLocator.Instance.PlacementManager.UnitInPlacing)
+        {
+            ServiceLocator.Instance.CursorManager.SelectObject(gameObject);
+        }
+    }
+    
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerEnter");
+        OnHoverEnter();
+    }
+    
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        OnHoverExit();
+    }
+    
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            OnClick();
+        }
+    }
+    
+    #endregion
+    
 }
