@@ -9,4 +9,10 @@ public class MinigameController : MonoBehaviour
     public virtual void StartMinigame()
     {
     }
+
+    public void GiveReward(bool won)
+    {
+        int currentMoney = ServiceLocator.Instance.WavesManager.CurrentMoney;
+        ServiceLocator.Instance.WavesManager.UpdateMoney(won ? currentMoney + Data.Reward : currentMoney);
+    }
 }

@@ -117,6 +117,8 @@ public class VotingMinigameController : MinigameController
             loseUI.SetActive(true);
         }
         
+        GiveReward(won);
+        
         yield return new WaitForSecondsRealtime(1f);
     }
 }
