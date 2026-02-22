@@ -1,5 +1,4 @@
-﻿using TMPro;
-using Unity.Cinemachine;
+﻿using Unity.Cinemachine;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -9,6 +8,7 @@ public class UIManager : MonoBehaviour
     
     [field: Header("Pause Menus")]
     [field: SerializeField] public SettingsUI SettingsUI {get; private set;}
+    [field: SerializeField] public PauseUI PauseUI {get; private set;}
 
     [field: Header("HUD")]
     [field: SerializeField] public GameObject EmergencyDetailsMenu;

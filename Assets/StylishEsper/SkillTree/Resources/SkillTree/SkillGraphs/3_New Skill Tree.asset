@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4a2766c0c2d8943bf207ccba3cc6ba, type: 3}
+  m_Name: 3_New Skill Tree
+  m_EditorClassIdentifier: 
+  enabled: 1
+  forPlayer: 1
+  id: 3
+  displayName: New Skill Tree
+  gridDimensions: {x: 8, y: 4}
+  nodeSize: 100
+  nodeShape: 0
+  visibility: 0
+  customObject: {fileID: 0}
+  nodes:
+  - {fileID: 11400000, guid: 0fcd6dedee4b9a24ca1175fa929d0712, type: 2}
+  - {fileID: 11400000, guid: fd6f7a0ec08e7544987d29e73aa2fafb, type: 2}
+  - {fileID: 11400000, guid: d3c83511704144d4698ed2e2e2c2169a, type: 2}
+  - {fileID: 11400000, guid: 40d00de696fe3ae4aa6eaec632d791d8, type: 2}
+  - {fileID: 11400000, guid: ed5259443e7a58d4a9af4b9b49285c2b, type: 2}
+  connections:
+  - graphReferenceID: 3
+    skillNodeA: {fileID: 11400000, guid: 0fcd6dedee4b9a24ca1175fa929d0712, type: 2}
+    skillNodeB: {fileID: 11400000, guid: fd6f7a0ec08e7544987d29e73aa2fafb, type: 2}
+    twoWay: 0
+  - graphReferenceID: 3
+    skillNodeA: {fileID: 11400000, guid: d3c83511704144d4698ed2e2e2c2169a, type: 2}
+    skillNodeB: {fileID: 11400000, guid: ed5259443e7a58d4a9af4b9b49285c2b, type: 2}
+    twoWay: 0
+  - graphReferenceID: 3
+    skillNodeA: {fileID: 11400000, guid: fd6f7a0ec08e7544987d29e73aa2fafb, type: 2}
+    skillNodeB: {fileID: 11400000, guid: ed5259443e7a58d4a9af4b9b49285c2b, type: 2}
+    twoWay: 0
+  - graphReferenceID: 3
+    skillNodeA: {fileID: 11400000, guid: ed5259443e7a58d4a9af4b9b49285c2b, type: 2}
+    skillNodeB: {fileID: 11400000, guid: 40d00de696fe3ae4aa6eaec632d791d8, type: 2}
+    twoWay: 0
