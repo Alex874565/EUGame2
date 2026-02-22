@@ -1,0 +1,28 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UpgradeTreeUI : MonoBehaviour
+{
+    [SerializeField] private Button closeButton;
+    private void Awake()
+    {
+        closeButton.onClick.AddListener( () =>
+        {
+           Hide(); 
+        });
+    }
+    private void Start()
+    {
+        Hide();
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+}

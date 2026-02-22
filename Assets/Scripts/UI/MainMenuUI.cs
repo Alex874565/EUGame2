@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
@@ -12,11 +13,13 @@ public class MainMenuUI : MonoBehaviour
     {
         newGameButton.onClick.AddListener(() =>
         {
-            
+            SceneManager.LoadScene("HubScene");
+            // todo delete old save
         });
         continueButton.onClick.AddListener(() =>
         {
-            
+            SceneManager.LoadScene("HubScene");
+            // todo load save
         });
         settingsButton.onClick.AddListener(() =>
         {

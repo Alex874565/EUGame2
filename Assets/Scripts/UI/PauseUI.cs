@@ -6,6 +6,7 @@ public class PauseUI : MonoBehaviour
 {
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button mainMenuButton;
+    [SerializeField] private Button hubButton;
     [SerializeField] private Button quitButton;
 
     private void Awake()
@@ -17,6 +18,10 @@ public class PauseUI : MonoBehaviour
         mainMenuButton.onClick.AddListener( () =>
         {
             SceneManager.LoadScene("MainMenuScene");
+        });
+        hubButton.onClick.AddListener( () =>
+        {
+            SceneManager.LoadScene("HubScene");
         });
         quitButton.onClick.AddListener( () =>
         {
