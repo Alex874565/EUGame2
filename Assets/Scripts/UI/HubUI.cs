@@ -8,6 +8,7 @@ public class HubUI : MonoBehaviour
     [SerializeField] private Button shopButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button mainMenuButton;
+    [SerializeField] private Button gameButton;
 
     private void Awake()
     {
@@ -26,6 +27,10 @@ public class HubUI : MonoBehaviour
         mainMenuButton.onClick.AddListener( () =>
         {
             SceneManager.LoadScene("MainMenuScene");
+        });
+        gameButton.onClick.AddListener( () =>
+        {
+            SceneManager.LoadScene("SampleScene"); //sau scena jocului
         });
     }
 
