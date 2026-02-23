@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
         ServiceLocator.Instance.InputManager.OnEscapeAction += InputManager_OnEscapeAction;
     }
 
+    private void OnDestroy()
+    {
+        ServiceLocator.Instance.InputManager.OnEscapeAction -= InputManager_OnEscapeAction;
+    }
+
     private void InputManager_OnEscapeAction(object sender, EventArgs e)
     {
         var uiManager = ServiceLocator.Instance.UIManager;
