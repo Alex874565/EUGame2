@@ -6,7 +6,6 @@ public class UIAudioManager : MonoBehaviour
     public static UIAudioManager Instance;
 
     [Header("Clips")]
-    [SerializeField] private AudioClip hoverClip;
     [SerializeField] private AudioClip clickClip;
 
     private AudioSource audioSource;
@@ -27,13 +26,6 @@ public class UIAudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
     }
-
-    public void PlayHover()
-    {
-        if (hoverClip == null) return;
-        audioSource.PlayOneShot(hoverClip);
-    }
-
     public void PlayClick()
     {
         if (clickClip == null) return;

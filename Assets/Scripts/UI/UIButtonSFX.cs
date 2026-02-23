@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class UIButtonSFX : MonoBehaviour, IPointerEnterHandler
+public class UIButtonSFX : MonoBehaviour
 {
     private Button button;
 
@@ -11,11 +11,6 @@ public class UIButtonSFX : MonoBehaviour, IPointerEnterHandler
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(PlayClick);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        UIAudioManager.Instance?.PlayHover();
     }
 
     private void PlayClick()

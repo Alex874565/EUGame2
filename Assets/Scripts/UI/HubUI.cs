@@ -9,11 +9,13 @@ public class HubUI : MonoBehaviour
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button gameButton;
+    [SerializeField] private MenuStaggerAnimation stagger;
 
     private void Awake()
     {
         upgradesButton.onClick.AddListener( () =>
         {
+            
             ServiceLocator.Instance.UIManager.UpgradeTreeUI.Show();
         });
         shopButton.onClick.AddListener( () =>
@@ -26,12 +28,23 @@ public class HubUI : MonoBehaviour
         });
         mainMenuButton.onClick.AddListener( () =>
         {
+            stagger.CloseMenu(() =>
+            {
             SceneManager.LoadScene("MainMenuScene");
+            });
         });
         gameButton.onClick.AddListener( () =>
         {
+            stagger.CloseMenu(() =>
+            {
             SceneManager.LoadScene("SampleScene"); //sau scena jocului
+            });
         });
+    }
+
+    private void Start()
+    {
+        stagger.OpenMenu();
     }
 
 }

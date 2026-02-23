@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class UpgradeTreeUI : MonoBehaviour
 {
     [SerializeField] private Button closeButton;
+    [SerializeField] private MenuStaggerAnimation stagger;
     private void Awake()
     {
         closeButton.onClick.AddListener( () =>
@@ -13,16 +14,20 @@ public class UpgradeTreeUI : MonoBehaviour
     }
     private void Start()
     {
-        Hide();
+        gameObject.SetActive(false);
     }
 
     public void Show()
     {
         gameObject.SetActive(true);
+        stagger.OpenMenu(); 
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        stagger.CloseMenu(() =>
+        {
+            gameObject.SetActive(false);
+        });
     }
 }
