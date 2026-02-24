@@ -8,6 +8,7 @@ public class PauseUI : MonoBehaviour
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button hubButton;
     [SerializeField] private Button quitButton;
+    //[SerializeField] private MenuStaggerAnimation stagger;
 
     private void Awake()
     {
@@ -32,12 +33,13 @@ public class PauseUI : MonoBehaviour
 
     private void Start()
     {
-        Hide();
+        gameObject.SetActive(false);
     }
 
     public void Show()
     {
         gameObject.SetActive(true);
+        //stagger.OpenMenu();
     }
 
     public void Hide()

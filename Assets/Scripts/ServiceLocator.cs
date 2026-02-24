@@ -37,5 +37,7 @@ public class ServiceLocator : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
     }
 }

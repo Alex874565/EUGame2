@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
         ServiceLocator.Instance.InputManager.OnEscapeAction += InputManager_OnEscapeAction;
     }
 
+    private void OnDestroy()
+    {
+        ServiceLocator.Instance.InputManager.OnEscapeAction -= InputManager_OnEscapeAction;
+    }
+
     private void InputManager_OnEscapeAction(object sender, EventArgs e)
     {
         var uiManager = ServiceLocator.Instance.UIManager;
@@ -27,15 +32,17 @@ public class GameManager : MonoBehaviour
         if (uiManager.PauseUI.gameObject.activeSelf)
         {
             Debug.Log("resuming game");
-            ResumeGame();
+            
             uiManager.PauseUI.Hide();
+            ResumeGame();
             return;
         }
 
         // 3. Otherwise → pause
         Debug.Log("pausing game");
-        PauseGame();
+        
         uiManager.PauseUI.Show();
+        PauseGame();
     }
 
     public void PauseGame()
