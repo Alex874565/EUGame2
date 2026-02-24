@@ -9,6 +9,7 @@ public class MinigamesManager : MonoBehaviour
     [SerializeField] private LocationName spawnLocation;
     
     public List<GameObject> ActiveMinigames { get; private set; }
+    public Dictionary<MinigameType, MinigameData> MinigamesData { get; private set; }
     
     private float _currentSpawnTime;
     private float _spawnTimer;
@@ -22,7 +23,7 @@ public class MinigamesManager : MonoBehaviour
     
     private void Start()
     {
-        InitializeMinigamesStats();
+        InitializeMinigamesData();
         SpawnRandomMinigamePopup();
         _currentSpawnTime = UnityEngine.Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
     }
@@ -52,13 +53,26 @@ public class MinigamesManager : MonoBehaviour
         Instantiate(minigame, position, Quaternion.identity, emergenciesLayer.transform);
     }
 
-    public void InitializeMinigamesStats()
+    public void InitializeMinigamesData()
     {
         foreach (GameObject minigame in minigames)
         {
             MinigameType minigameType = minigame.GetComponent<MinigameController>().Type;
             MinigameData minigameData = ServiceLocator.Instance.MinigamesDatabase.Minigames.Find(mg => mg.Type == minigameType);
             minigame.GetComponent<MinigameController>().Data = minigameData;
+            MinigamesData.Add(minigameType, minigameData);
+        }
+    }
+
+    public void ModifyMinigamesStat(MinigameUpgradeModifier minigameUpgradeModifier)
+    {
+        foreach (MinigameType minigameType in minigameUpgradeModifier.AffectedTypes)
+        {
+            if (MinigamesData.ContainsKey(minigameType))
+            {
+                MinigameData data = MinigamesData[minigameType];
+                data.ModifyStat(minigameUpgradeModifier.ModifiedStat, minigameUpgradeModifier.Value);
+            }
         }
     }
     

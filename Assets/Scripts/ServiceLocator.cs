@@ -15,6 +15,8 @@ public class ServiceLocator : MonoBehaviour
     [field: SerializeField] public CameraManager CameraManager { get; private set; }
     [field: SerializeField] public UIManager UIManager { get; private set; }
     [field: SerializeField] public GameManager GameManager { get; private set; }
+    [field: SerializeField] public UpgradesManager UpgradesManager { get; private set; }
+    [field: SerializeField] public PlayerManager PlayerManager { get; private set; }
     
     [field: Header("Databases")]
     [field: SerializeField] public LocationsDatabase LocationsDatabase { get; private set; }
@@ -22,6 +24,7 @@ public class ServiceLocator : MonoBehaviour
     [field: SerializeField] public MinigamesDatabase MinigamesDatabase { get; private set; }
     [field: SerializeField] public WavesDatabase WavesDatabase { get; private set; }
     [field: SerializeField] public UnitsDatabase UnitsDatabase { get; private set; }
+    [field: SerializeField] public UpgradesDatabase UpgradesDatabase { get; private set; }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

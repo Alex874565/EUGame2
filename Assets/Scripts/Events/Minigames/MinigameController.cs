@@ -5,6 +5,11 @@ public class MinigameController : MonoBehaviour
     [field: SerializeField] public MinigameType Type { get; set; }
     
     public MinigameData Data { get; set; }
+
+    private void Start()
+    {
+        Data = ServiceLocator.Instance.MinigamesManager.MinigamesData[Type];
+    }
     
     public virtual void StartMinigame()
     {

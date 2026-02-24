@@ -5,39 +5,51 @@ using System.Linq;
 [RequireComponent(typeof(EmergencyFactory))]
 public class EmergenciesManager : MonoBehaviour
 {
-    public Dictionary<EmergencyType, EmergencyData> EmergenciesStats { get; private set; }
+    public Dictionary<EmergencyType, EmergencyData> EmergenciesData { get; private set; }
     public List<GameObject> ActiveEmergencies { get; private set; }
     public EmergencyFactory EmergencyFactory { get; private set; }
 
     private void Awake()
     {
-        EmergenciesStats = new Dictionary<EmergencyType, EmergencyData>();
+        EmergenciesData = new Dictionary<EmergencyType, EmergencyData>();
         ActiveEmergencies = new List<GameObject>();
         EmergencyFactory = GetComponent<EmergencyFactory>();
     }
     
     private void Start()
     {
-        InitializeEmergenciesStats(ServiceLocator.Instance.EmergenciesDatabase.Emergencies.Select(emergency => emergency.EmergencyData).ToList());
+        InitializeEmergenciesData(ServiceLocator.Instance.EmergenciesDatabase.Emergencies.Select(emergency => emergency.EmergencyData).ToList());
     }
 
-    public void SetEmergencyStats(EmergencyType emergencyType, EmergencyData emergencyData)
+    public void SetEmergencyData(EmergencyType emergencyType, EmergencyData emergencyData)
     {
-        if (!EmergenciesStats.ContainsKey(emergencyType))
+        if (!EmergenciesData.ContainsKey(emergencyType))
         {
-            EmergenciesStats.Add(emergencyType, emergencyData);
+            EmergenciesData.Add(emergencyType, emergencyData);
         }
         else
         {
-            EmergenciesStats[emergencyType] = emergencyData;
+            EmergenciesData[emergencyType] = emergencyData;
         }
     }
 
-    public void InitializeEmergenciesStats(List<EmergencyData> emergencies)
+    public void InitializeEmergenciesData(List<EmergencyData> emergencies)
     {
         foreach (EmergencyData emergencyData in emergencies)
         {
-            SetEmergencyStats(emergencyData.EmergencyType, emergencyData);
+            SetEmergencyData(emergencyData.EmergencyType, emergencyData);
+        }
+    }
+    
+    public void ModifyEmergenciesStat(EmergencyUpgradeModifier modifier)
+    {
+        foreach (EmergencyType emergencyType in modifier.AffectedType)
+        {
+            if (EmergenciesData.ContainsKey(emergencyType))
+            {
+                EmergencyData data = EmergenciesData[emergencyType];
+                data.ModifyStat(modifier.ModifiedStat, modifier.Value);
+            }
         }
     }
     

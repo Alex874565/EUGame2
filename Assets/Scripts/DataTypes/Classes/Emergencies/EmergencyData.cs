@@ -11,4 +11,17 @@ public class EmergencyData
     [field: SerializeField] public int Severity { get; private set; }
     [field: SerializeField] public int TimeUntilExpiry { get; private set; }
     [field: SerializeField] public int TimeToSolve { get; private set; }
+
+    public void ModifyStat(EmergencyStat stat, int value)
+    {
+        switch (stat)
+        {
+            case EmergencyStat.TimeToSolve:
+                TimeToSolve += value;
+                break;
+            case EmergencyStat.TimeUntilExpiry:
+                TimeUntilExpiry += value;
+                break;
+        }
+    }
 }

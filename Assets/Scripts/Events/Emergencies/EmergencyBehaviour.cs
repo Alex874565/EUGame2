@@ -69,7 +69,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         _originalScale = image.transform.localScale;
         _activeUnits = new  Dictionary<UnitType, int>();
         _incomingUnits = new Dictionary<UnitType, int>();
-        EmergencyData = ServiceLocator.Instance.EmergenciesManager.EmergenciesStats[emergencyType];
+        EmergencyData = ServiceLocator.Instance.EmergenciesManager.EmergenciesData[emergencyType];
         ServiceLocator.Instance.EmergenciesManager.ActiveEmergencies.Add(gameObject);
         foreach (RequiredUnitData resourceData in EmergencyData.RequiredResources)
         {

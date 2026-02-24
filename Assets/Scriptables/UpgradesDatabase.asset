@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89187a040aad4638a99b8b3aafcec04f, type: 3}
+  m_Name: UpgradesDatabase
+  m_EditorClassIdentifier: 
+  <CivicUpgrades>k__BackingField:
+  - <Type>k__BackingField: 0
+    <Level>k__BackingField: 1
+    <Name>k__BackingField: Active Encouragement
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Value>k__BackingField: 5
+      <ModifiedStat>k__BackingField: 0
+      <AffectedType>k__BackingField: 00000000
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 100
+      <ModifiedStat>k__BackingField: 01000000
+      <AffectedType>k__BackingField: 00000000
+  - <Type>k__BackingField: 0
+    <Level>k__BackingField: 2
+    <Name>k__BackingField: Funding Initiatives
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Value>k__BackingField: 5
+      <ModifiedStat>k__BackingField: 0
+      <AffectedType>k__BackingField: 00000000
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 100
+      <ModifiedStat>k__BackingField: 01000000
+      <AffectedType>k__BackingField: 00000000
+  - <Type>k__BackingField: 0
+    <Level>k__BackingField: 3
+    <Name>k__BackingField: Better Reward System
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Value>k__BackingField: 5
+      <ModifiedStat>k__BackingField: 0
+      <AffectedType>k__BackingField: 00000000
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 100
+      <ModifiedStat>k__BackingField: 01000000
+      <AffectedType>k__BackingField: 00000000
+  <DemocracyUpgrades>k__BackingField:
+  - <Type>k__BackingField: 1
+    <Level>k__BackingField: 1
+    <Name>k__BackingField: Easier Voting
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField: []
+  - <Type>k__BackingField: 1
+    <Level>k__BackingField: 2
+    <Name>k__BackingField: Political Education
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField: []
+  - <Type>k__BackingField: 1
+    <Level>k__BackingField: 3
+    <Name>k__BackingField: Information Access
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField: []
+  <DisinformationUpgrades>k__BackingField:
+  - <Type>k__BackingField: 2
+    <Level>k__BackingField: 1
+    <Name>k__BackingField: More Transparency
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField: []
+  - <Type>k__BackingField: 2
+    <Level>k__BackingField: 2
+    <Name>k__BackingField: Trusted Source
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField: []
+  - <Type>k__BackingField: 2
+    <Level>k__BackingField: 3
+    <Name>k__BackingField: Better Media Surveillance
+    <Description>k__BackingField: 
+    <ModifiersDescription>k__BackingField: 
+    <Cost>k__BackingField: 0
+    <EmergencyModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField: []

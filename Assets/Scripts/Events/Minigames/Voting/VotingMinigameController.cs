@@ -6,7 +6,6 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Collider2D))]
 public class VotingMinigameController : MinigameController
 {
-    [SerializeField] private Vector2 votesToWinRange = new Vector2(10, 20);
     [SerializeField] private UrnBehaviour urn;
     
     [Header("UI Settings")]
@@ -61,7 +60,8 @@ public class VotingMinigameController : MinigameController
         _spawnAreaBounds = _spawnArea.bounds;
         
         _currentSpawnInterval = Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
-        _votesToWin = Random.Range((int)votesToWinRange.x, (int)votesToWinRange.y + 1);
+        
+        _votesToWin = Data.ScoreToWin;
         
         counter.text = $"0/{_votesToWin}";
         
