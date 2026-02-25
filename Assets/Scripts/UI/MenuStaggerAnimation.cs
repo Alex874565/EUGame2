@@ -25,18 +25,19 @@ public class MenuStaggerAnimation : MonoBehaviour
     {
         currentSequence?.Kill();
 
-        currentSequence = DOTween.Sequence();
+        // Create the sequence and EXPLICITLY set it to be unscaled
+        currentSequence = DOTween.Sequence().SetUpdate(true); 
 
         for (int i = 0; i < buttons.Length; i++)
         {
             RectTransform button = buttons[i];
-
-            // Ensure starting scale is 0
             button.localScale = Vector3.zero;
 
-            // Only animate scale (no position)
+            // You can keep SetUpdate(true) here, but the Sequence.SetUpdate(true) 
+            // is the most important part for the stagger timing to work.
             currentSequence.Insert(i * staggerDelay,
-                button.DOScale(1f, duration).SetEase(Ease.OutBack));
+                button.DOScale(1f, duration)
+                    .SetEase(Ease.OutBack));
         }
     }
 
@@ -44,7 +45,7 @@ public class MenuStaggerAnimation : MonoBehaviour
     {
         currentSequence?.Kill();
 
-        currentSequence = DOTween.Sequence();
+        currentSequence = DOTween.Sequence().SetUpdate(true);
 
         for (int i = buttons.Length - 1; i >= 0; i--)
         {
@@ -52,7 +53,9 @@ public class MenuStaggerAnimation : MonoBehaviour
             float delay = (buttons.Length - 1 - i) * staggerDelay;
 
             currentSequence.Insert(delay,
-                button.DOScale(0f, duration * 0.6f).SetEase(Ease.InBack));
+                button.DOScale(0f, duration * 0.6f)
+                    .SetEase(Ease.InBack)
+                    .SetUpdate(true)); // <-- unscaled
         }
 
         if (onComplete != null)

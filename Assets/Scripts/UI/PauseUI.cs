@@ -8,7 +8,7 @@ public class PauseUI : MonoBehaviour
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button hubButton;
     [SerializeField] private Button quitButton;
-    //[SerializeField] private MenuStaggerAnimation stagger;
+    [SerializeField] private MenuStaggerAnimation stagger;
 
     private void Awake()
     {
@@ -18,16 +18,25 @@ public class PauseUI : MonoBehaviour
         });
         mainMenuButton.onClick.AddListener( () =>
         {
+            stagger.CloseMenu(() =>
+            {
             SceneManager.LoadScene("MainMenuScene");
+            });
         });
         hubButton.onClick.AddListener( () =>
         {
+            stagger.CloseMenu(() =>
+            {
             SceneManager.LoadScene("HubScene");
+            });
         });
         quitButton.onClick.AddListener( () =>
         {
+            stagger.CloseMenu(() =>
+            {
             Debug.Log("quit clicked");
             Application.Quit();
+            });
         });
     }
 
@@ -39,11 +48,14 @@ public class PauseUI : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
-        //stagger.OpenMenu();
+        stagger.OpenMenu();
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        stagger.CloseMenu(() =>
+        {
+            gameObject.SetActive(false);
+        });
     }
 }

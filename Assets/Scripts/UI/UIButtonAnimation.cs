@@ -11,7 +11,7 @@ public class UIButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerEx
         currentTween?.Kill();
 
         currentTween = transform.DOScale(1.08f, 0.2f)
-                                .SetEase(Ease.OutBack);
+                                .SetEase(Ease.OutBack).SetUpdate(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -19,6 +19,6 @@ public class UIButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerEx
         currentTween?.Kill();
 
         currentTween = transform.DOScale(1f, 0.2f)
-                                .SetEase(Ease.OutCubic);
+                                .SetEase(Ease.OutCubic).SetUpdate(true);
     }
 }
