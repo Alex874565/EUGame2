@@ -3,6 +3,7 @@ using DG.Tweening;
 
 public class MenuStaggerAnimation : MonoBehaviour
 {
+    [SerializeField] private RectTransform moneyElement;
     [Header("Buttons To Animate")]
     [SerializeField] private RectTransform[] buttons;
 
@@ -21,23 +22,31 @@ public class MenuStaggerAnimation : MonoBehaviour
         }
     }
 
-    public void OpenMenu()
+    public void OpenMenu(System.Action onMoneyShown = null)
     {
         currentSequence?.Kill();
-
-        // Create the sequence and EXPLICITLY set it to be unscaled
-        currentSequence = DOTween.Sequence().SetUpdate(true); 
+        currentSequence = DOTween.Sequence().SetUpdate(true);
 
         for (int i = 0; i < buttons.Length; i++)
         {
             RectTransform button = buttons[i];
             button.localScale = Vector3.zero;
 
-            // You can keep SetUpdate(true) here, but the Sequence.SetUpdate(true) 
-            // is the most important part for the stagger timing to work.
-            currentSequence.Insert(i * staggerDelay,
-                button.DOScale(1f, duration)
-                    .SetEase(Ease.OutBack));
+            Tween scaleTween = button
+                .DOScale(1f, duration)
+                .SetEase(Ease.OutBack)
+                .SetUpdate(true);
+
+            currentSequence.Insert(i * staggerDelay, scaleTween);
+
+            // 👇 If this is the money element, trigger callback
+            if (button == moneyElement && onMoneyShown != null)
+            {
+                scaleTween.OnComplete(() =>
+                {
+                    onMoneyShown.Invoke();
+                });
+            }
         }
     }
 

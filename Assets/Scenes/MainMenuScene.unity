@@ -2174,11 +2174,14 @@ MonoBehaviour:
   <CameraManager>k__BackingField: {fileID: 0}
   <UIManager>k__BackingField: {fileID: 971982312}
   <GameManager>k__BackingField: {fileID: 0}
+  <UpgradesManager>k__BackingField: {fileID: 0}
+  <PlayerManager>k__BackingField: {fileID: 0}
   <LocationsDatabase>k__BackingField: {fileID: 0}
   <EmergenciesDatabase>k__BackingField: {fileID: 0}
   <MinigamesDatabase>k__BackingField: {fileID: 0}
   <WavesDatabase>k__BackingField: {fileID: 0}
   <UnitsDatabase>k__BackingField: {fileID: 0}
+  <UpgradesDatabase>k__BackingField: {fileID: 0}
 --- !u!1 &2074407771
 GameObject:
   m_ObjectHideFlags: 0
