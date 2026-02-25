@@ -15,7 +15,6 @@ public class WinUI : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip countingClip;
-    [SerializeField] private AudioClip finalDingClip;
 
     private void Awake()
     {
@@ -28,6 +27,7 @@ public class WinUI : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
+        //Show(100);
     }
 
     public void Hide()
@@ -51,9 +51,12 @@ public class WinUI : MonoBehaviour
     {
         moneyText.text = "0";
 
-        audioSource.clip = countingClip;
-        audioSource.loop = true;
-        audioSource.Play();
+        // Create a temporary AudioSource for this counting
+        AudioSource tempSource = moneyText.gameObject.AddComponent<AudioSource>();
+        tempSource.clip = countingClip;
+        tempSource.loop = true;
+        tempSource.playOnAwake = false;
+        tempSource.Play();
 
         DOVirtual.Float(0, moneyEarned, 1.2f, value =>
         {
@@ -63,15 +66,12 @@ public class WinUI : MonoBehaviour
         .SetUpdate(true)
         .OnComplete(() =>
         {
-            audioSource.Stop();
-            audioSource.PlayOneShot(finalDingClip);
+            tempSource.Stop();
+            Destroy(tempSource); // clean up
 
             moneyText.transform
-                .DOScale(1.2f, 0.15f)
-                .OnComplete(() =>
-                {
-                    moneyText.transform.DOScale(1f, 0.15f);
-                });
+                .DOPunchScale(Vector3.one * 0.2f, 0.3f, 10, 1)
+                .SetUpdate(true);
         });
     }
 }

@@ -4,12 +4,21 @@ using DG.Tweening;
 public class MenuStaggerAnimation : MonoBehaviour
 {
     [SerializeField] private RectTransform moneyElement;
+    [SerializeField] private RectTransform timeElement;
     [Header("Buttons To Animate")]
     [SerializeField] private RectTransform[] buttons;
 
+    public RectTransform[] Buttons => buttons;
+
     [Header("Animation Settings")]
     [SerializeField] private float duration = 0.4f;
+    public float Duration => duration;
     [SerializeField] private float staggerDelay = 0.08f;
+
+    [Header("Audio (Optional)")]
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip popSound;
+    [Range(0f, 1f)] [SerializeField] private float volume = 1f;
 
     private Sequence currentSequence;
 
@@ -22,7 +31,7 @@ public class MenuStaggerAnimation : MonoBehaviour
         }
     }
 
-    public void OpenMenu(System.Action onMoneyShown = null)
+    public void OpenMenu(System.Action onMoneyShown = null, System.Action onTimeShown = null)
     {
         currentSequence?.Kill();
         currentSequence = DOTween.Sequence().SetUpdate(true);
@@ -31,22 +40,29 @@ public class MenuStaggerAnimation : MonoBehaviour
         {
             RectTransform button = buttons[i];
             button.localScale = Vector3.zero;
+            
+            float appearanceTime = i * staggerDelay;
 
-            Tween scaleTween = button
-                .DOScale(1f, duration)
-                .SetEase(Ease.OutBack)
-                .SetUpdate(true);
-
-            currentSequence.Insert(i * staggerDelay, scaleTween);
-
-            // 👇 If this is the money element, trigger callback
-            if (button == moneyElement && onMoneyShown != null)
+            // ONLY play sound if a clip is actually assigned in the Inspector
+            if (popSound != null && sfxSource != null)
             {
-                scaleTween.OnComplete(() =>
+                currentSequence.InsertCallback(appearanceTime, () => 
                 {
-                    onMoneyShown.Invoke();
+                    sfxSource.PlayOneShot(popSound, volume);
                 });
             }
+
+            Tween scaleTween = button.DOScale(1f, duration)
+                .SetEase(Ease.OutBack);
+
+            currentSequence.Insert(appearanceTime, scaleTween);
+
+            // Callbacks for Money/Time
+            if (button == moneyElement && onMoneyShown != null)
+                scaleTween.OnComplete(() => onMoneyShown.Invoke());
+
+            if (button == timeElement && onTimeShown != null)
+                scaleTween.OnComplete(() => onTimeShown.Invoke());
         }
     }
 
