@@ -22,8 +22,9 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
     private Vector3 _originalScale;
     private void Start()
     {
-        Data = ServiceLocator.Instance.MinigamesDatabase.Minigames.Find(mg => mg.Type == Type);
+        Data = ServiceLocator.Instance.MinigamesManager.MinigamesDatabase.Minigames.Find(mg => mg.Type == Type);
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Add(gameObject);
+        Debug.Log(ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Count);
         IsSelected = false;
         _originalScale = image.transform.localScale;
     }
@@ -33,7 +34,7 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
         return;
     }
 
-    private void DestroySelf()
+    public void DestroySelf()
     {
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Remove(gameObject);
         Destroy(gameObject);

@@ -28,5 +28,6 @@ public class MinigameDetailsUI : MonoBehaviour
     {
         ServiceLocator.Instance.CursorManager.SelectObject(null);
         ServiceLocator.Instance.MinigamesManager.StartMinigame(_owner);
+        _owner.DestroySelf();
     }
 }

@@ -18,11 +18,6 @@ public class VotingMinigameController : MinigameController
     [SerializeField] private Vector2 spawnIntervalRange = new Vector2(1f, 3f);
     [SerializeField] private GameObject votePrefab;
     
-    private float _minigameTimer;
-    private float _votesCollected;
-    private int _votesToWin;
-    private bool _gamePlaying;
-    
     private float _spawnTimer;
     private float _currentSpawnInterval;
     
@@ -31,22 +26,19 @@ public class VotingMinigameController : MinigameController
     
     private List<GameObject> _activeVotes;
 
-    private void Awake()
+    private void Start()
     {
         _spawnArea = GetComponent<Collider2D>();
         _activeVotes = new List<GameObject>();
+        
+        base.Start();
     }
     
     private void Update()
     {
-        if (!_gamePlaying) return;
+        base.Update();
         
-        _minigameTimer += Time.deltaTime;
-        timer.text = $"{Mathf.CeilToInt(Data.TimeLimit - _minigameTimer)}s";
-        if (_minigameTimer >= Data.TimeLimit)
-        {
-            StartCoroutine(End(false));
-        }
+        if (!GamePlaying) return;
         
         _spawnTimer += Time.deltaTime;
         if (_spawnTimer >= _currentSpawnInterval)
@@ -61,13 +53,9 @@ public class VotingMinigameController : MinigameController
         
         _currentSpawnInterval = Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
         
-        _votesToWin = Data.ScoreToWin;
-        
-        counter.text = $"0/{_votesToWin}";
-        
         urn.Minigame = this;
         
-        _gamePlaying = true;
+        base.StartMinigame();
     }
 
     private void SpawnVote()
@@ -85,40 +73,21 @@ public class VotingMinigameController : MinigameController
     
     public void RegisterVote(GameObject vote)
     {
-        _votesCollected += 1;
-        counter.text = $"{_votesCollected}/{_votesToWin}";
-        if(_votesCollected >= _votesToWin)
-        {
-            StartCoroutine(End(true));
-        }
+        AddScore(1);
         
         _activeVotes.Remove(vote);
         Destroy(vote);
     }
     
-    private IEnumerator End(bool won)
+    protected  override void Cleanup()
     {
-        _gamePlaying = false;
-        
-        foreach (var vote in _activeVotes)
+        foreach (GameObject vote in _activeVotes)
         {
-            Destroy(vote);
+            if (vote != null)
+            {
+                Destroy(vote);
+            }
         }
         _activeVotes.Clear();
-        
-        ServiceLocator.Instance.MinigamesManager.CloseMinigame();
-        
-        if (won)
-        {
-            winUI.SetActive(true);
-        }
-        else
-        {
-            loseUI.SetActive(true);
-        }
-        
-        GiveReward(won);
-        
-        yield return new WaitForSecondsRealtime(1f);
     }
 }

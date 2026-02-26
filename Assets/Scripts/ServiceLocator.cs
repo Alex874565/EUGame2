@@ -21,10 +21,10 @@ public class ServiceLocator : MonoBehaviour
     [field: Header("Databases")]
     [field: SerializeField] public LocationsDatabase LocationsDatabase { get; private set; }
     [field: SerializeField] public EmergenciesDatabase EmergenciesDatabase { get; private set; }
-    [field: SerializeField] public MinigamesDatabase MinigamesDatabase { get; private set; }
     [field: SerializeField] public WavesDatabase WavesDatabase { get; private set; }
     [field: SerializeField] public UnitsDatabase UnitsDatabase { get; private set; }
     [field: SerializeField] public UpgradesDatabase UpgradesDatabase { get; private set; }
+    [field: SerializeField] public QuizzesDatabase QuizzesDatabase { get; private set; }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

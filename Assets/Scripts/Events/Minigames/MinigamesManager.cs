@@ -7,6 +7,8 @@ public class MinigamesManager : MonoBehaviour
     [SerializeField] private Vector2 spawnIntervalRange;
     [SerializeField] private List<GameObject> minigames;
     [SerializeField] private LocationName spawnLocation;
+    [field: Header("Minigames Data")]
+    [field: SerializeField] public MinigamesDatabase MinigamesDatabase { get; set; }
     
     public List<GameObject> ActiveMinigames { get; private set; }
     public Dictionary<MinigameType, MinigameData> MinigamesData { get; private set; }
@@ -19,12 +21,9 @@ public class MinigamesManager : MonoBehaviour
     private void Awake()
     {
         ActiveMinigames = new List<GameObject>();
-    }
-    
-    private void Start()
-    {
+        
+        MinigamesData = new Dictionary<MinigameType, MinigameData>();
         InitializeMinigamesData();
-        SpawnRandomMinigamePopup();
         _currentSpawnTime = UnityEngine.Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
     }
 
@@ -45,7 +44,7 @@ public class MinigamesManager : MonoBehaviour
     public void SpawnRandomMinigamePopup()
     {
         GameObject emergenciesLayer = ServiceLocator.Instance.UIManager.EmergenciesLayer;
-        List<MinigameData> availableMinigamesData = ServiceLocator.Instance.MinigamesDatabase.Minigames;
+        List<MinigameData> availableMinigamesData = MinigamesDatabase.Minigames;
         if (availableMinigamesData.Count == 0) return;
         MinigameType randomType = availableMinigamesData[UnityEngine.Random.Range(0, availableMinigamesData.Count)].Type;
         GameObject minigame = availableMinigamesData.Find(mg => mg.Type == randomType).Prefab;
@@ -58,8 +57,7 @@ public class MinigamesManager : MonoBehaviour
         foreach (GameObject minigame in minigames)
         {
             MinigameType minigameType = minigame.GetComponent<MinigameController>().Type;
-            MinigameData minigameData = ServiceLocator.Instance.MinigamesDatabase.Minigames.Find(mg => mg.Type == minigameType);
-            minigame.GetComponent<MinigameController>().Data = minigameData;
+            MinigameData minigameData = MinigamesDatabase.Minigames.Find(mg => mg.Type == minigameType);
             MinigamesData.Add(minigameType, minigameData);
         }
     }
@@ -91,7 +89,6 @@ public class MinigamesManager : MonoBehaviour
     {
         GameObject minigame = minigames.Find(mg => mg.GetComponent<MinigameController>().Type == MinigameInPlay.Type);
         minigame.SetActive(false);
-        Destroy(MinigameInPlay.gameObject);
         MinigameInPlay = null;
     }
     
