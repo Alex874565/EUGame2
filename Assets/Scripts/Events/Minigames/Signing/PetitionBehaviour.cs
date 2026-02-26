@@ -1,20 +1,25 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PetitionBehaviour : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private GameObject stamp;
+    [SerializeField] private GameObject sign;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float stampedMoveSpeedMultiplier = 2f;
-    
+
+    public StampBehaviour Stamp { get; set; }
     
     public UnityAction OnPetitionSigned;
     
+    private Canvas _canvas;
     private Rigidbody2D _rb;
     private Image _image;
+    private Collider2D _collider;
     
     private bool _isStamped;
     private float _timeSinceStamped;
@@ -23,6 +28,8 @@ public class PetitionBehaviour : MonoBehaviour, IPointerClickHandler
     {
         _image = GetComponent<Image>();
         _rb = GetComponent<Rigidbody2D>();
+        _canvas = GetComponentInParent<Canvas>();
+        _collider = GetComponent<Collider2D>();
         _isStamped = false;
     }
     
@@ -47,18 +54,44 @@ public class PetitionBehaviour : MonoBehaviour, IPointerClickHandler
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        Instantiate(stamp, eventData.position, Quaternion.identity, transform);
+        if (_isStamped || !Stamp.CanStamp()) return;
+
+        Stamp.Stamp();
+        
+        RectTransform parentRT = (RectTransform)transform;   // the UI object you clicked on
+
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                parentRT,
+                eventData.position,
+                _canvas.worldCamera, // null if overlay canvas
+                out var localPoint))
+        {
+            var go = Instantiate(sign, parentRT);
+            var rt = (RectTransform)go.transform;
+
+            rt.anchoredPosition = localPoint;
+            rt.localRotation = Quaternion.identity;
+            rt.localScale = Vector3.one;
+            rt.SetAsLastSibling();
+            Physics2D.SyncTransforms();
+            if (_collider.OverlapPoint(go.transform.position))
+            {
+                if (!_isStamped)
+                {
+                    StartCoroutine(StampCoroutine());
+                }
+            }
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator StampCoroutine()
     {
-        Debug.Log(collision.gameObject.name);
-        if (collision.CompareTag("Stamp") && !_isStamped)
-        {
-            _isStamped = true;
-            _rb.linearVelocity *= stampedMoveSpeedMultiplier;
-            OnPetitionSigned?.Invoke();
-        }
+        _isStamped = true;
+        Time.timeScale = .5f;
+        yield return new WaitForSecondsRealtime(.1f);
+        Time.timeScale = 1f;
+        _rb.linearVelocity *= stampedMoveSpeedMultiplier;
+        OnPetitionSigned?.Invoke();
     }
 
     private void OnDestroy()

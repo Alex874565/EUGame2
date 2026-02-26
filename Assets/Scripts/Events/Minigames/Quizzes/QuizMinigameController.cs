@@ -15,8 +15,6 @@ public class QuizMinigameController : MinigameController
 
     private void Start()
     {
-        gameObject.SetActive(false);
-        
         base.Start();
     }
     
@@ -27,6 +25,7 @@ public class QuizMinigameController : MinigameController
 
     public override void StartMinigame()
     {
+        base.StartMinigame();
         _questions = new List<QuizData>(ServiceLocator.Instance.QuizzesDatabase.Quizzes);
         InitializeQuestion();
     }

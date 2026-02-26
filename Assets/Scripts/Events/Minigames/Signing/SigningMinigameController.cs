@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Collider2D))]
 public class SigningMinigameController : MinigameController
 {
-    [SerializeField] private List<GameObject> PetitionsPrefabs;
+    [SerializeField] private StampBehaviour stamp;
+    [FormerlySerializedAs("PetitionsPrefabs")] [SerializeField] private List<GameObject> petitionsPrefabs;
     [SerializeField] private Vector2 petitionSpawnInterval;
     
     private Collider2D _spawnArea;
@@ -19,7 +21,6 @@ public class SigningMinigameController : MinigameController
         _spawnArea = GetComponent<Collider2D>();
         _activePetitions = new List<GameObject>();
         base.Start();
-        StartMinigame();
     }
 
     private void Update()
@@ -48,11 +49,13 @@ public class SigningMinigameController : MinigameController
         float spawnX = spawnLeft ? _spawnArea.bounds.min.x : _spawnArea.bounds.max.x;
         float spawnY = Random.Range(_spawnArea.bounds.min.y, _spawnArea.bounds.max.y);
         Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f);
-        Vector3 spawnRotation = new Vector3(0f, 0f, Random.Range(-60f, 60f));
-        GameObject petition = PetitionsPrefabs[Random.Range(0, PetitionsPrefabs.Count)];
+        Vector3 spawnRotation = new Vector3(0f, 0f, Random.Range(0f, 360f));
+        GameObject petition = petitionsPrefabs[Random.Range(0, petitionsPrefabs.Count)];
         GameObject spawnedPetition = Instantiate(petition, spawnPosition, Quaternion.Euler(spawnRotation), transform);
         spawnedPetition.GetComponent<PetitionBehaviour>().StartMoving(spawnLeft ? Vector2.right : Vector2.left);
-        spawnedPetition.GetComponent<PetitionBehaviour>().OnPetitionSigned = OnPetitionSigned;
+        spawnedPetition.GetComponent<PetitionBehaviour>().OnPetitionSigned += OnPetitionSigned;
+        spawnedPetition.GetComponent<PetitionBehaviour>().Stamp = stamp;
+        spawnedPetition.transform.SetAsFirstSibling();
         _activePetitions.Add(spawnedPetition);
         _currentSpawnInterval = Random.Range(petitionSpawnInterval.x, petitionSpawnInterval.y);
     }
