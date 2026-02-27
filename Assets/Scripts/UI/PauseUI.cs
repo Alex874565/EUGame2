@@ -27,15 +27,27 @@ public class PauseUI : MonoBehaviour
         {
             stagger.CloseMenu(() =>
             {
-            SceneManager.LoadScene("HubScene");
+                ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+                    ServiceLocator.Instance.GameManager.WaveIndex,
+                    ServiceLocator.Instance.GameManager.WonLastWave,
+                    ServiceLocator.Instance.PlayerManager.Money,
+                    ServiceLocator.Instance.PlayerManager.OwnedUpgrades
+                ));
+                SceneManager.LoadScene("HubScene");
             });
         });
         quitButton.onClick.AddListener( () =>
         {
             stagger.CloseMenu(() =>
             {
-            Debug.Log("quit clicked");
-            Application.Quit();
+                ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+                    ServiceLocator.Instance.GameManager.WaveIndex,
+                    ServiceLocator.Instance.GameManager.WonLastWave,
+                    ServiceLocator.Instance.PlayerManager.Money,
+                    ServiceLocator.Instance.PlayerManager.OwnedUpgrades
+                ));
+                Debug.Log("quit clicked");
+                Application.Quit();
             });
         });
     }

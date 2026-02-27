@@ -1,20 +1,45 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager _instance;
+    
     public bool IsPaused { get; private set; }
     
+    public bool WonLastWave { get; set; }
+    
+    public int WaveIndex { get; set; }
+    
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
         IsPaused = false;
 
-        ServiceLocator.Instance.InputManager.OnEscapeAction += InputManager_OnEscapeAction;
+        if (ServiceLocator.Instance.InputManager)
+        {
+            ServiceLocator.Instance.InputManager.OnEscapeAction += InputManager_OnEscapeAction;
+        }
     }
 
     private void OnDestroy()
     {
-        ServiceLocator.Instance.InputManager.OnEscapeAction -= InputManager_OnEscapeAction;
+        if (ServiceLocator.Instance.InputManager)
+        {
+            ServiceLocator.Instance.InputManager.OnEscapeAction -= InputManager_OnEscapeAction;
+        }
     }
 
     private void InputManager_OnEscapeAction(object sender, EventArgs e)
@@ -43,6 +68,12 @@ public class GameManager : MonoBehaviour
         
         uiManager.PauseUI.Show();
         PauseGame();
+    }
+    
+    public void StartWave()
+    {
+        WonLastWave = false;
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void PauseGame()
