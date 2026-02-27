@@ -6,6 +6,8 @@ using DG.Tweening;
 
 public class LoseUI : MonoBehaviour
 {
+    [SerializeField] private float moneyModifier = .5f;
+    
     [SerializeField] private MenuStaggerAnimation stagger;
 
     [Header("UI")]
@@ -32,8 +34,21 @@ public class LoseUI : MonoBehaviour
 
     private void Start()
     {
+        int moneyEarned = 0;
+        int secondsSurvived = 0;
+        if (ServiceLocator.Instance != null && ServiceLocator.Instance.WavesManager != null)
+        {
+            moneyEarned = ServiceLocator.Instance.WavesManager.CurrentMoney * (int)moneyModifier;
+            secondsSurvived = Mathf.FloorToInt(ServiceLocator.Instance.WavesManager.TimeSinceStart);
+        }
+
+        if (ServiceLocator.Instance != null && ServiceLocator.Instance.GameManager != null)
+        {
+            ServiceLocator.Instance.GameManager.WonLastWave = false;
+        }
+
         //gameObject.SetActive(false);
-        Show(100, 125f);
+        Show(moneyEarned, secondsSurvived);
     }
 
     public void Hide()

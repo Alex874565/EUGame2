@@ -14,7 +14,6 @@ public class WavesManager : MonoBehaviour
     [field: SerializeField] private TMP_Text emergenciesFailedText;
     
     public WavesDatabase WavesDatabase { get; private set; }
-    public int CurrentWaveIndex { get; private set; }
     public WaveData CurrentWaveData { get; set; }
     
     public int CurrentMoney { get; private set; }
@@ -22,35 +21,34 @@ public class WavesManager : MonoBehaviour
     
     private PlayableDirector _playableDirector;
 
-    private float _time;
+    public float TimeSinceStart { get; private set; }
     
     private void Start()
     {
         WavesDatabase = ServiceLocator.Instance.WavesDatabase;
-        CurrentWaveIndex = 0;
         _playableDirector = GetComponent<PlayableDirector>();
-        StartWave();
+        StartWave(ServiceLocator.Instance.GameManager.WaveIndex);
     }
 
     public void Update()
     {
         if (!ServiceLocator.Instance.GameManager.IsPaused)
         {
-            _time += Time.deltaTime;
-            UpdateTime(CurrentWaveData.WaveDuration - _time);
+            TimeSinceStart += Time.deltaTime;
+            UpdateTime(CurrentWaveData.WaveDuration - TimeSinceStart);
         }
     }
     
-    public void StartWave()
+    public void StartWave(int index)
     {
-        if (CurrentWaveIndex >= WavesDatabase.Waves.Count)
+        if (index >= WavesDatabase.Waves.Count)
         {
             return;
         }
         
-        CurrentWaveData = WavesDatabase.Waves[CurrentWaveIndex];
+        CurrentWaveData = WavesDatabase.Waves[index];
 
-        ServiceLocator.Instance.UnitsManager.InitializeUnits(CurrentWaveIndex);
+        ServiceLocator.Instance.UnitsManager.InitializeUnits(index);
         
         _playableDirector.playableAsset = CurrentWaveData.TimelineAsset;
         _playableDirector.Play();
@@ -58,12 +56,7 @@ public class WavesManager : MonoBehaviour
         UpdateMoney(CurrentWaveData.StartingMoney);
         UpdateEmergenciesFailed(0);
         
-        _time = 0;
-    }
-    
-    public void IncrementWaveIndex()
-    {
-        CurrentWaveIndex++;
+        TimeSinceStart = 0;
     }
     
     public void UpdateTime(float time)

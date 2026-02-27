@@ -14,10 +14,12 @@ public class ServiceLocator : MonoBehaviour
     [field: SerializeField] public PlacementManager PlacementManager { get; private set; }
     [field: SerializeField] public CameraManager CameraManager { get; private set; }
     [field: SerializeField] public UIManager UIManager { get; private set; }
-    [field: SerializeField] public GameManager GameManager { get; private set; }
     [field: SerializeField] public UpgradesManager UpgradesManager { get; private set; }
-    [field: SerializeField] public PlayerManager PlayerManager { get; private set; }
-    
+    [field: SerializeField] public DialogueManager DialogueManager { get; private set; }
+    public SaveManager SaveManager { get; private set; }
+    public GameManager GameManager { get; private set; }
+    public PlayerManager PlayerManager { get; private set; }
+
     [field: Header("Databases")]
     [field: SerializeField] public LocationsDatabase LocationsDatabase { get; private set; }
     [field: SerializeField] public EmergenciesDatabase EmergenciesDatabase { get; private set; }
@@ -36,8 +38,28 @@ public class ServiceLocator : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
 
+        PlayerManager playerManager = FindObjectOfType<PlayerManager>();
+
+        if (playerManager)
+        {
+            PlayerManager = playerManager;
+        }
         
+        GameManager gameManager = FindFirstObjectByType<GameManager>();
+        
+        if (gameManager)
+        {
+            GameManager = gameManager;
+        }
+        
+        SaveManager saveManager = FindObjectOfType<SaveManager>();
+        
+        if (saveManager)
+        {
+            SaveManager = saveManager;
+        }
     }
 }

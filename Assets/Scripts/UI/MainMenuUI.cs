@@ -16,16 +16,16 @@ public class MainMenuUI : MonoBehaviour
         {
             stagger.CloseMenu(() =>
             {
-            SceneManager.LoadScene("HubScene");
-            // todo load save
+                ServiceLocator.Instance.SaveManager.DeleteSaveFile();
+                SceneManager.LoadScene("HubScene");
             });
         });
         continueButton.onClick.AddListener(() =>
         {
             stagger.CloseMenu(() =>
             {
-            SceneManager.LoadScene("HubScene");
-            // todo load save
+                ServiceLocator.Instance.SaveManager.LoadGame();
+                SceneManager.LoadScene("HubScene");
             });
         });
         settingsButton.onClick.AddListener(() =>
@@ -44,6 +44,10 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
+        if(!ServiceLocator.Instance.SaveManager.HasSaveFile())
+        {
+            continueButton.gameObject.SetActive(false);
+        }
         stagger.OpenMenu();
     }
 

@@ -61,7 +61,7 @@ public class UpgradeBehaviour : MonoBehaviour
 
     public void UpdateUI()
     {
-        if(ServiceLocator.Instance.UpgradesManager.IsUpgradeOwned(Type, Level))
+        if(ServiceLocator.Instance.PlayerManager.IsUpgradeOwned(Type, Level))
         {
             nameText.text = _data.Name;
             descriptionText.text = _data.Description;
@@ -72,7 +72,7 @@ public class UpgradeBehaviour : MonoBehaviour
         }
         else
         {
-            if(ServiceLocator.Instance.UpgradesManager.IsUpgradeAvailable(Type, Level)){
+            if(ServiceLocator.Instance.PlayerManager.IsUpgradeAvailable(Type, Level)){
                 nameText.text = _data.Name;
                 descriptionText.text = _data.Description;
                 modifiersDescriptionText.text = _data.ModifiersDescription;
