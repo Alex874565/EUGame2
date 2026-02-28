@@ -37,7 +37,8 @@ public class HubUI : MonoBehaviour
                     ServiceLocator.Instance.GameManager.WaveIndex,
                     ServiceLocator.Instance.GameManager.WonLastWave,
                     ServiceLocator.Instance.PlayerManager.Money,
-                    ServiceLocator.Instance.PlayerManager.OwnedUpgrades
+                    ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+                    ServiceLocator.Instance.PlayerManager.StartingUnits
                 ));      
                 SceneManager.LoadScene("MainMenuScene");
             });
@@ -53,7 +54,12 @@ public class HubUI : MonoBehaviour
 
     private void Start()
     {
-        if (ServiceLocator.Instance.GameManager.WonLastWave)
+        if(ServiceLocator.Instance.GameManager.WaveIndex == 0 && ServiceLocator.Instance.GameManager.WonLastWave)
+        {
+            passedText.text = "-";
+            passedText.color = Color.black;
+        }
+        else if (ServiceLocator.Instance.GameManager.WonLastWave)
         {
             gameButton.GetComponentInChildren<TextMeshProUGUI>().text = "Next Wave";
             passedText.text = "PASSED";
@@ -68,6 +74,14 @@ public class HubUI : MonoBehaviour
 
         stagger.OpenMenu();
         ServiceLocator.Instance.DialogueManager.TryShowDialogue();
+        if (ServiceLocator.Instance.GameManager.WaveIndex >= 15)
+        {
+            shopButton.enabled = true;
+        }
+        else
+        {
+            //shopButton.enabled = false;
+        }
     }
 
 }

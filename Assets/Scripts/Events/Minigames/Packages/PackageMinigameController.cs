@@ -13,11 +13,11 @@ public class PackageMinigameController : MinigameController
 
     private List<PackageBehaviour> _selectedPackages;
     
-    private void Start()
+    private void Awake()
     {
         _sendButton.onClick.AddListener(OnSendButtonClicked);
         
-        base.Start();
+        base.Awake();
     }
     
     private void Update()

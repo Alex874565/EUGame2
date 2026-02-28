@@ -16,11 +16,11 @@ public class SigningMinigameController : MinigameController
     
     private List<GameObject> _activePetitions;
     
-    private void Start()
+    private void Awake()
     {
         _spawnArea = GetComponent<Collider2D>();
         _activePetitions = new List<GameObject>();
-        base.Start();
+        base.Awake();
     }
 
     private void Update()

@@ -68,7 +68,7 @@ public class UpgradeBehaviour : MonoBehaviour
             modifiersDescriptionText.text = _data.ModifiersDescription;
             costText.text = $"Already Owned";
             lockIcon.SetActive(false);
-            GetComponent<UnityEngine.UI.Image>().color = unlockedColor;
+            GetComponent<Image>().color = unlockedColor;
         }
         else
         {

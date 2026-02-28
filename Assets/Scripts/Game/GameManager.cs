@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         {
             ServiceLocator.Instance.InputManager.OnEscapeAction += InputManager_OnEscapeAction;
         }
+
+        WonLastWave = true;
     }
 
     private void OnDestroy()

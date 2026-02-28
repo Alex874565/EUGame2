@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     
     public int Money { get; private set; }
     public Dictionary<UpgradeType, int> OwnedUpgrades { get; set; }
+    public Dictionary<UnitType, int> StartingUnits { get; set; }
     
     private void Awake()
     {
@@ -26,6 +27,16 @@ public class PlayerManager : MonoBehaviour
             { UpgradeType.Civic, 0 },
             { UpgradeType.Disinformation, 0 },
             { UpgradeType.Democracy, 0 }
+        };
+        StartingUnits = new Dictionary<UnitType, int>
+        {
+            { UnitType.Airplane, 0 },
+            { UnitType.DecontaminationUnit, 0 },
+            { UnitType.FireUnit, 0 },
+            { UnitType.Helicopter, 0 },
+            { UnitType.MedicalUnit, 0 },
+            { UnitType.MilitaryUnit, 0 },
+            { UnitType.RescueUnit, 0 }
         };
         
         DontDestroyOnLoad(gameObject);
@@ -58,5 +69,13 @@ public class PlayerManager : MonoBehaviour
     public bool IsUpgradeAvailable(UpgradeType upgradeType, int level)
     {
         return level == OwnedUpgrades[upgradeType] + 1;
+    }
+    
+    public void AddStartingUnit(UnitType unitType, int count)
+    {
+        if (StartingUnits.ContainsKey(unitType))
+        {
+            StartingUnits[unitType] += count;
+        }
     }
 }
