@@ -8,9 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1056386395039528311, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: emergencyType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436796399043782731, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 40bcaa0824f50b744b30b57e0e1f4f0a, type: 3}
     - target: {fileID: 7141184093873084707, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
       propertyPath: m_Name
-      value: Emergency
+      value: Health Crisis
+      objectReference: {fileID: 0}
+    - target: {fileID: 7168866982231842276, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 40bcaa0824f50b744b30b57e0e1f4f0a, type: 3}
+    - target: {fileID: 7168866982231842276, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7606365028712409988, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
       propertyPath: m_LocalPosition.x

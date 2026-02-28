@@ -19,7 +19,9 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [Header("Interaction")]
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
     [SerializeField] private float clickScaleMultiplier = .8f;
-    
+
+    private PlacementController _placementController;
+    private MovementController _movementController;
     public EmergencyBehaviour OwningEmergency { get; set; } = null;
     public bool IsIncoming { get; set; } =  false;
     
@@ -36,6 +38,8 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         _originalScale = gameObject.transform.localScale;
         
         IsInteractable = true;
+        _placementController = GetComponent<PlacementController>();
+        _movementController = GetComponent<MovementController>();
     }
 
     public void Start()
@@ -62,14 +66,15 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void UpdateCount(int count)
     {
         Count = count;
-        if (OwningEmergency == null || GetComponent<PlacementController>() != null || GetComponent<MovementController>() != null)
+        if (OwningEmergency == null || _placementController != null || _movementController != null)
+
         {
             counter.text = Count.ToString();
 
             image.color = Count > 0 ? Color.white : Color.black;
             counter.gameObject.SetActive(Count > 1);
             counterBg.SetActive(Count > 1);
-            costObj.SetActive(Count > 0 && GetComponent<PlacementController>() == null && GetComponent<MovementController>() == null);
+            costObj.SetActive(Count > 0 && _placementController == null && _movementController == null);
         }
         else
         {

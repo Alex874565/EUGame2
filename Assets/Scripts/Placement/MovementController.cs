@@ -9,8 +9,9 @@ public class MovementController : MonoBehaviour
     private UnitData _unitData;
 
     private Vector2 _startPosition;
+    private Vector2 _targetObjectPos;
     private GameObject _targetObject;
-    
+
     private UnitBehaviour _unitBehaviour;
     private Image _unitImage;
     private float _moveSpeed;
@@ -61,15 +62,14 @@ public class MovementController : MonoBehaviour
 
         _startPosition = start;
         _targetObject = target;
-        
-        Vector2 targetPos = target.transform.position;
+        _targetObjectPos = target.transform.position;
         
         // Use world positions for the path
-        _bezierPoints = BuildBezierPoints(_startPosition, targetPos);
+        _bezierPoints = BuildBezierPoints(_startPosition, _targetObjectPos);
 
         // Draw the final/main line if you want (or ghost line)
-        DrawBezier(_ghostLine, _startPosition, targetPos);
-        DrawBezier(_mainLine, _startPosition, targetPos);
+        DrawBezier(_ghostLine, _startPosition, _targetObjectPos);
+        DrawBezier(_mainLine, _startPosition, _targetObjectPos);
 
         // Start at beginning of path
         _moveIndex = 0;
@@ -96,7 +96,7 @@ public class MovementController : MonoBehaviour
             return;
         }
         
-        _unitBehaviour.UpdateReachTimeText(Vector2.Distance(transform.position, _targetObject.transform.position) / _moveSpeed);
+        _unitBehaviour.UpdateReachTimeText(Vector2.Distance(transform.position, _targetObjectPos) / _moveSpeed);
 
         Vector3 a = _bezierPoints[_moveIndex];
         Vector3 b = _bezierPoints[_moveIndex + 1];

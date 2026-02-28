@@ -19,8 +19,94 @@ MonoBehaviour:
       <Name>k__BackingField: Fire
       <Description>k__BackingField: Fire in {LOCATION}
       <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
       - <Type>k__BackingField: 0
         <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
       <Severity>k__BackingField: 5
       <TimeUntilExpiry>k__BackingField: 30
       <TimeToSolve>k__BackingField: 15
