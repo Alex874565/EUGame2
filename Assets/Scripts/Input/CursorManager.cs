@@ -7,24 +7,6 @@ public class CursorManager : MonoBehaviour
     public GameObject HoveredObject { get; set; }
     public GameObject SelectedObject { get; set; }
     
-    private void Update()
-    {
-        if(ServiceLocator.Instance.InputManager.LeftClickPressed)
-        {
-            if(!IsHoveringMenu())
-            {
-                if (HoveredObject == null)
-                {
-                    SelectObject(null);
-                }
-                else if (!ServiceLocator.Instance.PlacementManager.UnitInPlacing)
-                {
-                    SelectObject(HoveredObject);
-                }
-            }
-        }
-    }
-    
     public bool IsHoveringMenu()
     {
         if (EventSystem.current == null) return false;
@@ -55,5 +37,33 @@ public class CursorManager : MonoBehaviour
         }
         SelectedObject = obj;
         SelectedObject?.GetComponent<IInteractable>()?.Select();
+    }
+
+    private void OnClick(System.Object sender, System.EventArgs e)
+    {
+        if(!IsHoveringMenu())
+        {
+            if (!ServiceLocator.Instance.PlacementManager.UnitInPlacing)
+            {
+                if (HoveredObject == null)
+                {
+                    SelectObject(null);
+                }
+                else
+                {
+                    SelectObject(HoveredObject);
+                }
+            }
+        }
+    }
+    
+    private void Start()
+    {
+        ServiceLocator.Instance.InputManager.OnLeftClickActionFirst += OnClick;
+    }
+    
+    private void OnDestroy()
+    {
+        ServiceLocator.Instance.InputManager.OnLeftClickActionFirst -= OnClick;
     }
 }

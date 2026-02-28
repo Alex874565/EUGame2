@@ -32,6 +32,11 @@ public class PlacementManager : MonoBehaviour
             Destroy(UnitInPlacing);
             UnitInPlacing = null;
         }
+        
+        foreach (GameObject activeEmergency in ServiceLocator.Instance.EmergenciesManager.ActiveEmergencies)
+        {
+            activeEmergency.GetComponent<EmergencyBehaviour>().StopWiggle();
+        }
     }
     
     public void StartPlacingUnit(UnitType unitType, LocationName startLocation, EmergencyBehaviour emergency = null)
@@ -41,6 +46,14 @@ public class PlacementManager : MonoBehaviour
         if (emergency != null)
         {
             ghostUnit.GetComponent<UnitBehaviour>().OwningEmergency = emergency;
+        }
+        
+        foreach (GameObject activeEmergency in ServiceLocator.Instance.EmergenciesManager.ActiveEmergencies)
+        {
+            if (activeEmergency.GetComponent<EmergencyBehaviour>().AcceptsUnitsOfType(unitType))
+            {
+                activeEmergency.GetComponent<EmergencyBehaviour>().StartWiggle();
+            }
         }
     }
 }
