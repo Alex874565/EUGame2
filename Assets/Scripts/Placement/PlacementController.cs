@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 
 public class PlacementController : MonoBehaviour
@@ -153,6 +154,9 @@ public class PlacementController : MonoBehaviour
         DeleteLines();
             
         DrawBezier(_ghostLine, StartPosition, mouseWorldPos);
+        
+        _unitBehaviour.ShowReachTimeText();
+        _unitBehaviour.UpdateReachTimeText(Vector2.Distance(StartPosition, mouseWorldPos) / _moveSpeed);
     }
     
     private void LockOnEmergency(GameObject emergency)
@@ -169,7 +173,7 @@ public class PlacementController : MonoBehaviour
         if (CanPlace() && !ServiceLocator.Instance.CursorManager.IsHoveringMenu())
         {
             GameObject targetObject = ServiceLocator.Instance.CursorManager.HoveredObject;
-            ServiceLocator.Instance.CursorManager.SelectObject(targetObject);
+            //ServiceLocator.Instance.CursorManager.SelectObject(targetObject);
             int requiredUnits = targetObject.GetComponentInChildren<EmergencyBehaviour>().RequiredUnitsOfType(_unitData.Type);
             int unitsToSend = Mathf.Min(requiredUnits, _unitBehaviour.Count);
             StartCoroutine(SendUnits(targetObject, unitsToSend));

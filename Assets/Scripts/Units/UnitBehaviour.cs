@@ -12,7 +12,10 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private TMP_Text counter;
     [SerializeField] private GameObject counterBg;
     [SerializeField] private Image image;
+    [SerializeField] private GameObject costObj;
     [SerializeField] private TMP_Text cost;
+    [SerializeField] private GameObject reachTimeBg;
+    [SerializeField] private TMP_Text reachTimeText;
     [Header("Interaction")]
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
     [SerializeField] private float clickScaleMultiplier = .8f;
@@ -38,8 +41,23 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void Start()
     {
         Data = ServiceLocator.Instance.UnitsDatabase.Units.Find(unit => unit.Data.Type == Type).Data;
-        cost.text = $"{Data.MovementCost}€";
+        cost.text = $"{Data.MovementCost}";
+        HideReachTimeText();
     }
+    
+    private void OnDestroy()
+    {
+        if (ServiceLocator.Instance != null)
+        {
+            if (ServiceLocator.Instance.CursorManager.HoveredObject == gameObject)
+            {
+                ServiceLocator.Instance.CursorManager.HoveredObject = null;
+            }
+            ServiceLocator.Instance.UnitsManager.ActiveUnits.Remove(gameObject);
+        }
+    }
+    
+    #region UI
     
     public void UpdateCount(int count)
     {
@@ -51,13 +69,13 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             image.color = Count > 0 ? Color.white : Color.black;
             counter.gameObject.SetActive(Count > 1);
             counterBg.SetActive(Count > 1);
-            cost.gameObject.SetActive(Count > 0 && GetComponent<PlacementController>() == null && GetComponent<MovementController>() == null);
+            costObj.SetActive(Count > 0 && GetComponent<PlacementController>() == null && GetComponent<MovementController>() == null);
         }
         else
         {
             if (IsIncoming)
             {
-                cost.gameObject.SetActive(false);
+                costObj.SetActive(false);
                 if (Count > 0)
                 {
                     image.gameObject.SetActive(true);
@@ -80,18 +98,23 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             }
         }
     }
-
-    private void OnDestroy()
+    
+    public void UpdateReachTimeText(float time)
     {
-        if (ServiceLocator.Instance != null)
-        {
-            if (ServiceLocator.Instance.CursorManager.HoveredObject == gameObject)
-            {
-                ServiceLocator.Instance.CursorManager.HoveredObject = null;
-            }
-            ServiceLocator.Instance.UnitsManager.ActiveUnits.Remove(gameObject);
-        }
+        reachTimeText.text = $"{Mathf.Round(time)}s";
     }
+    
+    public void ShowReachTimeText()
+    {
+        reachTimeBg.SetActive(true);
+    }
+    
+    public void HideReachTimeText()
+    {
+        reachTimeBg.SetActive(false);
+    }
+
+    #endregion
     
     #region Interaction
     

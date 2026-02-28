@@ -74,7 +74,7 @@ public class WavesManager : MonoBehaviour
         StartCoroutine(UpdateMoneyCoroutine(money < CurrentMoney));
     
         CurrentMoney = money;
-        moneyText.text = $"{money}€";
+        moneyText.text = $"{money}";
     }
     
     public void UpdateEmergenciesFailed(int emergenciesFailed)
