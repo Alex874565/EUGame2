@@ -80,6 +80,8 @@ public class MovementController : MonoBehaviour
         transform.position = _bezierPoints[0];
 
         _canMove = true;
+        
+        _unitBehaviour.ShowReachTimeText();
     }
 
     private void Move()
@@ -93,6 +95,8 @@ public class MovementController : MonoBehaviour
             ReachTarget();
             return;
         }
+        
+        _unitBehaviour.UpdateReachTimeText(Vector2.Distance(transform.position, _targetObject.transform.position) / _moveSpeed);
 
         Vector3 a = _bezierPoints[_moveIndex];
         Vector3 b = _bezierPoints[_moveIndex + 1];

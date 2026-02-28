@@ -45,6 +45,7 @@ public class CursorManager : MonoBehaviour
         {
             if (!ServiceLocator.Instance.PlacementManager.UnitInPlacing)
             {
+                Debug.Log(ServiceLocator.Instance.PlacementManager.UnitInPlacing);
                 if (HoveredObject == null)
                 {
                     SelectObject(null);

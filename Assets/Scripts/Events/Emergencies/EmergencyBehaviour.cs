@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private EmergencyType emergencyType;
     [Header("UI")] 
@@ -58,7 +58,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     private Dictionary<UnitType, int> _activeUnits;
     private Dictionary<UnitType, int> _incomingUnits;
     
-    public bool IsSolving { get; set; }
+    public bool IsSolving { get; private set; }
     
     public float ExpirationTimeLeft { get; set; }
     public float SolvingTimeLeft { get; set; }
@@ -68,6 +68,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     private Vector3 _originalScale;
     
     private bool _isWiggling;
+    private bool _isHovered;
     
     private void Start()
     {
@@ -85,6 +86,9 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         SolvingTimeLeft = EmergencyData.TimeToSolve;
 
         _emergencyStateMachine = new EmergencyStateMachine(this);
+        
+        _isWiggling = false;
+        _isHovered = false;
     }
 
     private void Update()
@@ -130,10 +134,13 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         transform.localScale *= wiggleScaleMultiplier;
     }
     
-    public void StopWiggle()
+    public void TryStopWiggle()
     {
-        _isWiggling = false;
-        transform.localScale /= wiggleScaleMultiplier;
+        if (_isWiggling)
+        {
+            _isWiggling = false;
+            transform.localScale /= wiggleScaleMultiplier;
+        }
     }
     
     #region Unit Checks
@@ -160,8 +167,8 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     {
         RequiredUnitData requiredUnitData = EmergencyData.RequiredResources.Find(resource => resource.Type == unitType);
         
-        int incomingAmount = _incomingUnits.ContainsKey(unitType) ? _incomingUnits[unitType] : 0;
-        int activeAmount = _activeUnits.ContainsKey(unitType) ? _activeUnits[unitType] : 0;
+        int incomingAmount = _incomingUnits.GetValueOrDefault(unitType, 0);
+        int activeAmount = _activeUnits.GetValueOrDefault(unitType, 0);
         int requiredAmount = requiredUnitData != null ? requiredUnitData.Amount : 0;
 
         return requiredAmount - activeAmount - incomingAmount;
@@ -259,9 +266,22 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
 
     public void Select()
     {
-        IsSelected = true;
-        ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
-        StartCoroutine(SelectCoroutine());
+        TrySelect();
+    }
+    
+    public void Deselect()
+    {
+        TryDeselect();
+    }
+    
+    public void TrySelect()
+    {
+        if (!IsSelected)
+        {
+            IsSelected = true;
+            ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
+            StartCoroutine(SelectCoroutine());
+        }
     }
 
     public IEnumerator SelectCoroutine()
@@ -271,12 +291,15 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         transform.localScale /= clickScaleMultiplier;
         transform.localScale *= selectedScaleMultiplier;
     }
-    
-    public void Deselect()
+
+    public void TryDeselect()
     {
-        transform.localScale /= selectedScaleMultiplier;
-        IsSelected = false;
-        ServiceLocator.Instance.UIManager.EmergencyDetailsMenu.SetActive(false);
+        if (IsSelected)
+        {
+            transform.localScale /= selectedScaleMultiplier;
+            IsSelected = false;
+            ServiceLocator.Instance.UIManager.EmergencyDetailsMenu.SetActive(false);
+        }
     }
     
     public void ReactToUnitHover(GameObject unit)
@@ -284,11 +307,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         UnitType unitType = unit.GetComponent<UnitBehaviour>().Type;
         if (AcceptsUnitsOfType(unitType) && (Vector2)transform.position != unit.GetComponent<PlacementController>().StartPosition)
         {
-            transform.localScale *= hoverScaleMultiplier;
-        }
-        else
-        {
-            transform.localScale /= hoverScaleMultiplier;
+            Hover();
         }
     }
 
@@ -303,18 +322,25 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         }
         else
         {
-            transform.localScale *= hoverScaleMultiplier;
+            Hover();
         }
     }
 
     public void OnHoverExit()
     {
-        transform.localScale /= hoverScaleMultiplier;
+        if (_isHovered)
+        {
+            transform.localScale /= hoverScaleMultiplier;
+            _isHovered = false;
+        }
+
         ServiceLocator.Instance.CursorManager.HoveredObject = null;
     }
 
-    public void OnClick()
+    private void Hover()
     {
+        _isHovered = true;
+        transform.localScale *= hoverScaleMultiplier;
     }
     
     public void OnPointerEnter(PointerEventData eventData)
@@ -325,14 +351,6 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     public void OnPointerExit(PointerEventData eventData)
     {
         OnHoverExit();
-    }
-    
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            OnClick();
-        }
     }
     
     #endregion

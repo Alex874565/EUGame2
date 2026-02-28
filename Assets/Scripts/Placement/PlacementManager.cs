@@ -35,7 +35,7 @@ public class PlacementManager : MonoBehaviour
         
         foreach (GameObject activeEmergency in ServiceLocator.Instance.EmergenciesManager.ActiveEmergencies)
         {
-            activeEmergency.GetComponent<EmergencyBehaviour>().StopWiggle();
+            activeEmergency.GetComponent<EmergencyBehaviour>().TryStopWiggle();
         }
     }
     
