@@ -26,12 +26,12 @@ public class VotingMinigameController : MinigameController
     
     private List<GameObject> _activeVotes;
 
-    private void Start()
+    private void Awake()
     {
         _spawnArea = GetComponent<Collider2D>();
         _activeVotes = new List<GameObject>();
         
-        base.Start();
+        base.Awake();
     }
     
     private void Update()

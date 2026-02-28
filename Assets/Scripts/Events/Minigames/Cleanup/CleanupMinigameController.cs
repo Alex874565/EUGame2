@@ -12,12 +12,11 @@ public class CleanupMinigameController : MinigameController
     
     private Collider2D _spawnArea;
     
-    private void Start()
+    private void Awake()
     {
         _spawnArea = GetComponent<Collider2D>();
         _spawnedTrashItems = new List<GameObject>();
-        base.Start();
-        StartMinigame();
+        base.Awake();
     }
     
     private void Update()
@@ -30,6 +29,8 @@ public class CleanupMinigameController : MinigameController
         _trashBin.OnTrashEnterCollider = null;
         _trashBin.OnTrashEnterCollider = OnTrashEnterBin;
         SpawnTrashItems(Data.ScoreToWin);
+        
+        base.StartMinigame();
     }
     
     private void SpawnTrashItems(int count)

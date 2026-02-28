@@ -54,7 +54,12 @@ public class HubUI : MonoBehaviour
 
     private void Start()
     {
-        if (ServiceLocator.Instance.GameManager.WonLastWave)
+        if(ServiceLocator.Instance.GameManager.WaveIndex == 0 && ServiceLocator.Instance.GameManager.WonLastWave)
+        {
+            passedText.text = "-";
+            passedText.color = Color.black;
+        }
+        else if (ServiceLocator.Instance.GameManager.WonLastWave)
         {
             gameButton.GetComponentInChildren<TextMeshProUGUI>().text = "Next Wave";
             passedText.text = "PASSED";

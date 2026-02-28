@@ -17,12 +17,11 @@ public class MinigameController : MonoBehaviour
     private float _timeSinceStart;
     
     protected bool GamePlaying;
-
-    protected void Start()
+    
+    protected void Awake()
     {
         Data = ServiceLocator.Instance.MinigamesManager.MinigamesData[Type];
         GamePlaying = false;
-        //gameObject.SetActive(false);
     }
 
     protected void Update()

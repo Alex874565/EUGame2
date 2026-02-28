@@ -13,9 +13,9 @@ public class QuizMinigameController : MinigameController
     private List<QuizData> _questions;
     private QuizData _quizData;
 
-    private void Start()
+    private void Awake()
     {
-        base.Start();
+        base.Awake();
     }
     
     private void Update()
