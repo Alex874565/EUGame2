@@ -49,6 +49,7 @@ public class LoseUI : MonoBehaviour
 
         //gameObject.SetActive(false);
         Show(moneyEarned, secondsSurvived);
+        //Show(100,100); // for testing
     }
 
     public void Hide()

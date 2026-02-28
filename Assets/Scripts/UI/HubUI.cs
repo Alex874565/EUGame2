@@ -61,13 +61,13 @@ public class HubUI : MonoBehaviour
         }
         else if (ServiceLocator.Instance.GameManager.WonLastWave)
         {
-            gameButton.GetComponentInChildren<TextMeshProUGUI>().text = "Next Wave";
+            gameButton.GetComponentInChildren<TextMeshProUGUI>().text = "NEXT WAVE";
             passedText.text = "PASSED";
             passedText.color = new Color(0f, .5882353f, 0f);
         }
         else
         {
-            gameButton.GetComponentInChildren<TextMeshProUGUI>().text = "Retry Wave";
+            gameButton.GetComponentInChildren<TextMeshProUGUI>().text = "RETRY WAVE";
             passedText.text = "FAILED";
             passedText.color = new Color(.5882353f, 0f, 0f);
         }
