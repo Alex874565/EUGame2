@@ -36,7 +36,9 @@ public class WinUI : MonoBehaviour
         {
             moneyEarned = ServiceLocator.Instance.WavesManager.CurrentMoney;
         }
+
         Show(moneyEarned);
+        //Show(100); // for testing
     }
 
     public void Hide()
