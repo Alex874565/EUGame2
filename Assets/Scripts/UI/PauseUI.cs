@@ -31,7 +31,8 @@ public class PauseUI : MonoBehaviour
                     ServiceLocator.Instance.GameManager.WaveIndex,
                     ServiceLocator.Instance.GameManager.WonLastWave,
                     ServiceLocator.Instance.PlayerManager.Money,
-                    ServiceLocator.Instance.PlayerManager.OwnedUpgrades
+                    ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+                    ServiceLocator.Instance.PlayerManager.StartingUnits
                 ));
                 SceneManager.LoadScene("HubScene");
             });
@@ -44,7 +45,8 @@ public class PauseUI : MonoBehaviour
                     ServiceLocator.Instance.GameManager.WaveIndex,
                     ServiceLocator.Instance.GameManager.WonLastWave,
                     ServiceLocator.Instance.PlayerManager.Money,
-                    ServiceLocator.Instance.PlayerManager.OwnedUpgrades
+                    ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+                    ServiceLocator.Instance.PlayerManager.StartingUnits
                 ));
                 Debug.Log("quit clicked");
                 Application.Quit();
