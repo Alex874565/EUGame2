@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ public class PlacementController : MonoBehaviour
     
     private void Start()
     {
+        ServiceLocator.Instance.InputManager.OnLeftClickActionSecond += OnClick;
         InitializeGhostUnit();
     }
     
@@ -31,7 +33,6 @@ public class PlacementController : MonoBehaviour
     {
         HandlePlacement();
     }
-    
     
     private void HandlePlacement()
     {
@@ -41,19 +42,15 @@ public class PlacementController : MonoBehaviour
         {
             GameObject targetObject = ServiceLocator.Instance.CursorManager.HoveredObject;
             LockOnEmergency(targetObject);
-            if (ServiceLocator.Instance.InputManager.LeftClickPressed)
-            {
-                ServiceLocator.Instance.CursorManager.SelectObject(targetObject);
-                int requiredUnits = targetObject.GetComponentInChildren<EmergencyBehaviour>().RequiredUnitsOfType(_unitData.Type);
-                int unitsToSend = Mathf.Min(requiredUnits, _unitBehaviour.Count);
-                StartCoroutine(SendUnits(targetObject, unitsToSend));
-            }
         }
         else
         {
             if (!ServiceLocator.Instance.CursorManager.IsHoveringMenu())
             {
-                PlaceGhost(mousePos);
+                if (!ServiceLocator.Instance.InputManager.LeftClickPressed)
+                {
+                    PlaceGhost(mousePos);
+                }
             }
             else
             {
@@ -166,7 +163,31 @@ public class PlacementController : MonoBehaviour
         transform.position = target;
         SetTransparency(1f);
     }
+
+    private void OnClick(System.Object sender, System.EventArgs e)
+    {
+        if (CanPlace() && !ServiceLocator.Instance.CursorManager.IsHoveringMenu())
+        {
+            GameObject targetObject = ServiceLocator.Instance.CursorManager.HoveredObject;
+            ServiceLocator.Instance.CursorManager.SelectObject(targetObject);
+            int requiredUnits = targetObject.GetComponentInChildren<EmergencyBehaviour>().RequiredUnitsOfType(_unitData.Type);
+            int unitsToSend = Mathf.Min(requiredUnits, _unitBehaviour.Count);
+            StartCoroutine(SendUnits(targetObject, unitsToSend));
+        }
+        else
+        {
+            if (!ServiceLocator.Instance.CursorManager.IsHoveringMenu())
+            {
+                GiveUpUnit();
+            }
+        }
+    }
     
+    private void OnDestroy()
+    {
+        ServiceLocator.Instance.InputManager.OnLeftClickActionSecond -= OnClick;
+    }
+
     #region Bezier Curve
     
     private void DrawBezier(LineRenderer line, Vector3 start, Vector3 end)
@@ -233,7 +254,7 @@ public class PlacementController : MonoBehaviour
     }
     
     
-    public void DeleteLines()
+    private void DeleteLines()
     {
         _ghostLine.positionCount = 0;
         _mainLine.positionCount = 0;

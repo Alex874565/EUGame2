@@ -19,6 +19,9 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
     [SerializeField] private float selectedScaleMultiplier = 1.4f;
     [SerializeField] private float clickScaleMultiplier = .8f;
+    [SerializeField] private float wiggleDegrees = 10f;
+    [SerializeField] private float wiggleDuration = 0.5f;
+    [SerializeField] private float wiggleScaleMultiplier = 1.1f;
     
     public bool IsSelected { get; set; }
     
@@ -64,6 +67,8 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     
     private Vector3 _originalScale;
     
+    private bool _isWiggling;
+    
     private void Start()
     {
         _originalScale = image.transform.localScale;
@@ -85,6 +90,17 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     private void Update()
     {
         _emergencyStateMachine.Update();
+        
+        Quaternion target = Quaternion.identity;
+
+        if (_isWiggling)
+        {
+            float angle = Mathf.Sin(Time.time * (2 * Mathf.PI / wiggleDuration)) * wiggleDegrees;
+            target = Quaternion.Euler(0, 0, angle);
+        }
+
+        image.rectTransform.localRotation =
+            Quaternion.Lerp(image.rectTransform.localRotation, target, Time.deltaTime * 10f);
     }
 
     public void Solve()
@@ -106,6 +122,18 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         ReturnInventoryUnits();
         ServiceLocator.Instance.WavesManager.UpdateEmergenciesFailed(ServiceLocator.Instance.WavesManager.CurrentEmergenciesFailed + 1);
         Destroy(gameObject);
+    }
+    
+    public void StartWiggle()
+    {
+        _isWiggling = true;
+        transform.localScale *= wiggleScaleMultiplier;
+    }
+    
+    public void StopWiggle()
+    {
+        _isWiggling = false;
+        transform.localScale /= wiggleScaleMultiplier;
     }
     
     #region Unit Checks
@@ -238,14 +266,15 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
 
     public IEnumerator SelectCoroutine()
     {
-        image.transform.localScale = _originalScale * clickScaleMultiplier;
+        transform.localScale *= clickScaleMultiplier;
         yield return new WaitForSeconds(0.1f);
-        image.transform.localScale = _originalScale * selectedScaleMultiplier; 
+        transform.localScale /= clickScaleMultiplier;
+        transform.localScale *= selectedScaleMultiplier;
     }
     
     public void Deselect()
     {
-        image.transform.localScale = _originalScale;
+        transform.localScale /= selectedScaleMultiplier;
         IsSelected = false;
         ServiceLocator.Instance.UIManager.EmergencyDetailsMenu.SetActive(false);
     }
@@ -255,11 +284,11 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         UnitType unitType = unit.GetComponent<UnitBehaviour>().Type;
         if (AcceptsUnitsOfType(unitType) && (Vector2)transform.position != unit.GetComponent<PlacementController>().StartPosition)
         {
-            image.transform.localScale *= hoverScaleMultiplier;
+            transform.localScale *= hoverScaleMultiplier;
         }
         else
         {
-            image.transform.localScale = _originalScale;
+            transform.localScale /= hoverScaleMultiplier;
         }
     }
 
@@ -274,25 +303,18 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         }
         else
         {
-            image.transform.localScale = _originalScale * hoverScaleMultiplier;
+            transform.localScale *= hoverScaleMultiplier;
         }
     }
 
     public void OnHoverExit()
     {
-        if (!IsSelected)
-        {
-            image.transform.localScale = _originalScale;
-        }
+        transform.localScale /= hoverScaleMultiplier;
         ServiceLocator.Instance.CursorManager.HoveredObject = null;
     }
 
     public void OnClick()
     {
-        if (!ServiceLocator.Instance.PlacementManager.UnitInPlacing)
-        {
-            ServiceLocator.Instance.CursorManager.SelectObject(gameObject);
-        }
     }
     
     public void OnPointerEnter(PointerEventData eventData)
