@@ -17,7 +17,7 @@ public class LocationsDatabaseBaker : MonoBehaviour
         
         LocationsDatabase.Locations.Clear();
         
-        MapLocation[] mapLocations = FindObjectsByType<MapLocation>(FindObjectsSortMode.None);
+        MapLocation[] mapLocations = GetComponentsInChildren<MapLocation>();
         
         GenerateEnum(mapLocations);
         
@@ -27,7 +27,7 @@ public class LocationsDatabaseBaker : MonoBehaviour
             {
                 Name = (LocationName)System.Enum.Parse(typeof(LocationName), mapLocation.name.Replace(" ", "_")),
                 Type = mapLocation.Type,
-                Coordinates = (Vector2)mapLocation.gameObject.transform.position
+                Coordinates = (Vector2)mapLocation.gameObject.transform.localPosition
             };
             
             LocationsDatabase.Locations.Add(locationData);

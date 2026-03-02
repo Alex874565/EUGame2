@@ -1,6 +1,20 @@
 public enum LocationName
 {
-    Test2,
-    Test3,
-    Test,
+    Bruxelles,
+    Spain,
+    Portugal,
+    Italy,
+    Greece,
+    Hungary,
+    Slovakia,
+    Poland,
+    Czech,
+    Germany,
+    Belgium,
+    Netherlands,
+    Sweden,
+    Ireland,
+    Lithuania,
+    Latvia,
+    Estonia,
 }

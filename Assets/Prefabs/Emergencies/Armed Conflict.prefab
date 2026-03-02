@@ -9,9 +9,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1056386395039528311, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: emergencyType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1056386395039528311, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
       propertyPath: activeUnitsParent
       value: 
-      objectReference: {fileID: 2682103574557404460}
+      objectReference: {fileID: 0}
     - target: {fileID: 1043353185482773258, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
       propertyPath: m_PreferredHeight
       value: 6
@@ -40,10 +44,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4436796399043782731, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8265330926183147864, guid: b7ef45f66a8d77f458d80ef289b9a1f4, type: 3}
     - target: {fileID: 7141184093873084707, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
       propertyPath: m_Name
       value: Armed Conflict
       objectReference: {fileID: 0}
+    - target: {fileID: 7168866982231842276, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8265330926183147864, guid: b7ef45f66a8d77f458d80ef289b9a1f4, type: 3}
     - target: {fileID: 7606365028712409988, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -158,8 +170,3 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
---- !u!224 &2682103574557404460 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8817845321313546372, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
-  m_PrefabInstance: {fileID: 6874737565463174568}
-  m_PrefabAsset: {fileID: 0}

@@ -47,12 +47,15 @@ public class PlacementManager : MonoBehaviour
         {
             ghostUnit.GetComponent<UnitBehaviour>().OwningEmergency = emergency;
         }
-        
+
         foreach (GameObject activeEmergency in ServiceLocator.Instance.EmergenciesManager.ActiveEmergencies)
         {
-            if (activeEmergency.GetComponent<EmergencyBehaviour>().AcceptsUnitsOfType(unitType))
+            if (!activeEmergency.TryGetComponent(out EmergencyBehaviour emergencyBhvr))
+                return;
+
+            if (emergencyBhvr.AcceptsUnitsOfType(unitType))
             {
-                activeEmergency.GetComponent<EmergencyBehaviour>().StartWiggle();
+                emergencyBhvr.StartWiggle();
             }
         }
     }

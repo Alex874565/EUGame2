@@ -61,4 +61,9 @@ public class EmergenciesManager : MonoBehaviour
         }
         ActiveEmergencies.Clear();
     }
+
+    public void EliminateEmergency(GameObject emergency)
+    {
+        ActiveEmergencies.Remove(emergency);
+    }
 }

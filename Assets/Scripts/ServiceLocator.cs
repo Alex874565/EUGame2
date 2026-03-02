@@ -41,7 +41,7 @@ public class ServiceLocator : MonoBehaviour
             return;
         }
 
-        PlayerManager playerManager = FindObjectOfType<PlayerManager>();
+        PlayerManager playerManager = FindFirstObjectByType<PlayerManager>();
 
         if (playerManager)
         {
@@ -55,7 +55,7 @@ public class ServiceLocator : MonoBehaviour
             GameManager = gameManager;
         }
         
-        SaveManager saveManager = FindObjectOfType<SaveManager>();
+        SaveManager saveManager = FindFirstObjectByType<SaveManager>();
         
         if (saveManager)
         {

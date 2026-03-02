@@ -5,6 +5,7 @@ using NUnit.Framework;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using System;
 
 public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler
 {
@@ -22,7 +23,15 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     [SerializeField] private float wiggleDegrees = 10f;
     [SerializeField] private float wiggleDuration = 0.5f;
     [SerializeField] private float wiggleScaleMultiplier = 1.1f;
-    
+
+    private Action onCompletedEmergency;
+
+    public Action OnCompletedEmergency
+    {
+        get => onCompletedEmergency;
+        set => onCompletedEmergency = value;
+    }
+
     public bool IsSelected { get; set; }
     
     public LocationData LocationData { get; set; }
@@ -142,9 +151,14 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
             transform.localScale /= wiggleScaleMultiplier;
         }
     }
-    
+
+    private void OnDestroy()
+    {
+        onCompletedEmergency?.Invoke();
+    }
+
     #region Unit Checks
-    
+
     public bool HasAllRequiredUnits()
     {
         foreach (RequiredUnitData requiredUnitData in EmergencyData.RequiredResources)

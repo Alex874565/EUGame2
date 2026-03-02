@@ -8,10 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1056386395039528311, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: emergencyType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436796399043782731, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6935552996105014071, guid: 8f19a1fc81841ca4e9aeea7bef518c50, type: 3}
     - target: {fileID: 7141184093873084707, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
       propertyPath: m_Name
-      value: Emergency
+      value: Extreme Weather
       objectReference: {fileID: 0}
+    - target: {fileID: 7168866982231842276, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6935552996105014071, guid: 8f19a1fc81841ca4e9aeea7bef518c50, type: 3}
     - target: {fileID: 7606365028712409988, guid: 0314b5f0423b53d4194c663dc002e7b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
