@@ -4,14 +4,27 @@ using UnityEngine.UI;
 
 public class PauseUI : MonoBehaviour
 {
+    [SerializeField] private Button resumeButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button hubButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private Button closeButton;
     [SerializeField] private MenuStaggerAnimation stagger;
 
     private void Awake()
     {
+        resumeButton.onClick.AddListener(() =>
+        {
+            ServiceLocator.Instance.GameManager.ResumeGame();
+            Hide();
+            
+        });
+        closeButton.onClick.AddListener(() =>
+        {
+            Hide();
+            ServiceLocator.Instance.GameManager.ResumeGame();
+        });
         settingsButton.onClick.AddListener( () =>
         {
             ServiceLocator.Instance.UIManager.SettingsUI.Show();

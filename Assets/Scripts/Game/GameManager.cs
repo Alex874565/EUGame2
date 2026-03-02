@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
         // 2. If Pause menu is open → resume
         if (uiManager.PauseUI.gameObject.activeSelf)
         {
-            Debug.Log("resuming game");
             
             uiManager.PauseUI.Hide();
             ResumeGame();
@@ -66,7 +65,7 @@ public class GameManager : MonoBehaviour
         }
 
         // 3. Otherwise → pause
-        Debug.Log("pausing game");
+        
         
         uiManager.PauseUI.Show();
         PauseGame();
@@ -80,12 +79,14 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("pausing game");
         IsPaused = true;
         Time.timeScale = 0f;
     }
 
     public void ResumeGame()
     {
+        Debug.Log("resuming game");
         IsPaused = false;
         Time.timeScale = 1f;
     }
