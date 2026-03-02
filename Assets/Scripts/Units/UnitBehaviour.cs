@@ -74,13 +74,11 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             image.color = Count > 0 ? Color.white : Color.black;
             counter.gameObject.SetActive(Count > 1);
             counterBg.SetActive(Count > 1);
-            costObj.SetActive(Count > 0 && _placementController == null && _movementController == null);
         }
         else
         {
             if (IsIncoming)
             {
-                costObj.SetActive(false);
                 if (Count > 0)
                 {
                     image.gameObject.SetActive(true);
