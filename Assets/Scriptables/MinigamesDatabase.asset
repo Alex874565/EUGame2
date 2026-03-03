@@ -15,35 +15,39 @@ MonoBehaviour:
   <Minigames>k__BackingField:
   - <Type>k__BackingField: 0
     <Name>k__BackingField: Voting Minigame
-    <Description>k__BackingField: Vote
+    <Description>k__BackingField: Voting is important! Try to get all the votes into
+      the urn.
     <ScoreToWin>k__BackingField: 10
     <TimeLimit>k__BackingField: 25
     <Reward>k__BackingField: 100
     <Prefab>k__BackingField: {fileID: 7822152282993780064, guid: f40bf66b14844944ea4a995becfadc6a, type: 3}
   - <Type>k__BackingField: 2
-    <Name>k__BackingField: Quiz Minigame
-    <Description>k__BackingField: Vote
-    <ScoreToWin>k__BackingField: 2
-    <TimeLimit>k__BackingField: 15
+    <Name>k__BackingField: Disinformation Quiz
+    <Description>k__BackingField: How much do you know about disinformation? It's
+      important to stay informed!
+    <ScoreToWin>k__BackingField: 3
+    <TimeLimit>k__BackingField: 25
     <Reward>k__BackingField: 100
     <Prefab>k__BackingField: {fileID: 920796328246005121, guid: cd89daf7086958444bc9c425130ceca0, type: 3}
   - <Type>k__BackingField: 4
     <Name>k__BackingField: Packages Minigame
-    <Description>k__BackingField: Send food to people in need.
+    <Description>k__BackingField: Send food to people in need. The EU takes care
+      of everyone.
     <ScoreToWin>k__BackingField: 10
     <TimeLimit>k__BackingField: 20
     <Reward>k__BackingField: 100
     <Prefab>k__BackingField: {fileID: 4572302973856226881, guid: d24bd3cf7011d2e44a35e0ba8c3f9d3a, type: 3}
   - <Type>k__BackingField: 3
     <Name>k__BackingField: Cleanup Minigame
-    <Description>k__BackingField: Clean the park.
+    <Description>k__BackingField: Clean the park. Littering hurts the planet!
     <ScoreToWin>k__BackingField: 20
     <TimeLimit>k__BackingField: 20
     <Reward>k__BackingField: 100
     <Prefab>k__BackingField: {fileID: 2352465972218026197, guid: 49075fc3205fffd43b10fbf6734dbd09, type: 3}
   - <Type>k__BackingField: 1
     <Name>k__BackingField: Signing Minigame
-    <Description>k__BackingField: Sign the petitions
+    <Description>k__BackingField: Perform your civic duty and get involved by signing
+      petitions.
     <ScoreToWin>k__BackingField: 5
     <TimeLimit>k__BackingField: 20
     <Reward>k__BackingField: 100

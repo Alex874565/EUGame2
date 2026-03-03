@@ -446,6 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 42721648}
   - component: {fileID: 42721649}
+  - component: {fileID: 42721650}
   m_Layer: 5
   m_Name: EachUnitContainer (3)
   m_TagString: Untagged
@@ -486,6 +487,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &42721650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42721647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d7b25ae1624b92afccaddf8b498f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  costText: {fileID: 95688747}
+  ownedText: {fileID: 151328614}
+  buyButton: {fileID: 1526141984}
 --- !u!1 &46740025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 165056571}
   - component: {fileID: 165056572}
+  - component: {fileID: 165056573}
   m_Layer: 5
   m_Name: EachUnitContainer
   m_TagString: Untagged
@@ -1411,6 +1429,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &165056573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165056570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d7b25ae1624b92afccaddf8b498f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  costText: {fileID: 1927467684}
+  ownedText: {fileID: 2045238102}
+  buyButton: {fileID: 2003939198}
 --- !u!224 &173768671 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7340434581891379541, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
@@ -1692,6 +1726,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210589680}
   m_CullTransparentMesh: 1
+--- !u!1 &215757057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215757058}
+  - component: {fileID: 215757059}
+  m_Layer: 0
+  m_Name: Map and Year Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &215757058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215757057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1515772565}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215757059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215757057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff65b031b3f4c2ab071f330dabb56b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yearText: {fileID: 1412464023}
+  map: {fileID: 0}
+  mapImages: []
 --- !u!1 &235059230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,6 +2372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 261359412}
   - component: {fileID: 261359413}
+  - component: {fileID: 261359414}
   m_Layer: 5
   m_Name: EachUnitContainer (2)
   m_TagString: Untagged
@@ -2331,6 +2413,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &261359414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261359411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d7b25ae1624b92afccaddf8b498f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  costText: {fileID: 1446414221}
+  ownedText: {fileID: 1283824010}
+  buyButton: {fileID: 1331770692}
 --- !u!1 &264059514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,6 +2719,7 @@ MonoBehaviour:
   <PauseUI>k__BackingField: {fileID: 0}
   <UpgradeTreeUI>k__BackingField: {fileID: 519224511}
   <UnitShopUI>k__BackingField: {fileID: 1238783508}
+  Inventory: {fileID: 0}
   EmergencyDetailsMenu: {fileID: 0}
   MinigameDetailsMenu: {fileID: 0}
   <PlacementLayer>k__BackingField: {fileID: 0}
@@ -2865,6 +2964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339793843}
   - component: {fileID: 339793844}
+  - component: {fileID: 339793845}
   m_Layer: 5
   m_Name: EachUnitContainer (4)
   m_TagString: Untagged
@@ -2905,6 +3005,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &339793845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339793842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d7b25ae1624b92afccaddf8b498f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  costText: {fileID: 561652292}
+  ownedText: {fileID: 721336121}
+  buyButton: {fileID: 268899704}
 --- !u!1 &343614874
 GameObject:
   m_ObjectHideFlags: 0
@@ -4310,6 +4426,51 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &487356379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487356380}
+  - component: {fileID: 487356381}
+  m_Layer: 0
+  m_Name: Player Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &487356380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487356379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 796.57184, y: 545.29315, z: 3.7714353}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487356381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487356379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734d3e03422c41009ca67b9c63abc29f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingMoney: 100
 --- !u!1 &488280799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4490,6 +4651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb00ca5d215a1645b8b5f3ff316ab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyText: {fileID: 2072201801}
   closeButton: {fileID: 1551796445}
   stagger: {fileID: 519224512}
 --- !u!114 &519224512
@@ -8242,6 +8404,7 @@ GameObject:
   - component: {fileID: 871956804}
   - component: {fileID: 871956803}
   - component: {fileID: 871956802}
+  - component: {fileID: 871956805}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8323,6 +8486,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871956805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871956801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &876114491
 GameObject:
   m_ObjectHideFlags: 0
@@ -8712,7 +8919,7 @@ GameObject:
   - component: {fileID: 977571589}
   - component: {fileID: 977571588}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: BuyButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10137,8 +10344,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc72fef83d5e6440b2b0d82fe586c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyText: {fileID: 3665709472225674965}
   closeButton: {fileID: 1661476033}
   stagger: {fileID: 1238783509}
+  shopUnits:
+  - {fileID: 165056573}
+  - {fileID: 1293532692}
+  - {fileID: 261359414}
+  - {fileID: 42721650}
+  - {fileID: 339793845}
+  - {fileID: 1775719536}
+  - {fileID: 1645748781}
 --- !u!114 &1238783509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10379,6 +10595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1293532690}
   - component: {fileID: 1293532691}
+  - component: {fileID: 1293532692}
   m_Layer: 5
   m_Name: EachUnitContainer (1)
   m_TagString: Untagged
@@ -10419,6 +10636,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1293532692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293532689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d7b25ae1624b92afccaddf8b498f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  costText: {fileID: 210589682}
+  ownedText: {fileID: 1905659859}
+  buyButton: {fileID: 977571588}
 --- !u!1 &1297412343
 GameObject:
   m_ObjectHideFlags: 0
@@ -10576,7 +10809,7 @@ GameObject:
   - component: {fileID: 1331770693}
   - component: {fileID: 1331770692}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: BuyButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12116,7 +12349,7 @@ MonoBehaviour:
   <LocationsDatabase>k__BackingField: {fileID: 0}
   <EmergenciesDatabase>k__BackingField: {fileID: 0}
   <WavesDatabase>k__BackingField: {fileID: 0}
-  <UnitsDatabase>k__BackingField: {fileID: 0}
+  <UnitsDatabase>k__BackingField: {fileID: 11400000, guid: 845b7e642dd6d0e4cae6575b8db69d2c, type: 2}
   <UpgradesDatabase>k__BackingField: {fileID: 0}
   <QuizzesDatabase>k__BackingField: {fileID: 0}
 --- !u!4 &1515772565
@@ -12134,6 +12367,7 @@ Transform:
   m_Children:
   - {fileID: 280655288}
   - {fileID: 913293553}
+  - {fileID: 215757058}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1516774266
@@ -12526,7 +12760,7 @@ GameObject:
   - component: {fileID: 1526141985}
   - component: {fileID: 1526141984}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: BuyButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13817,6 +14051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1645748779}
   - component: {fileID: 1645748780}
+  - component: {fileID: 1645748781}
   m_Layer: 5
   m_Name: EachUnitContainer (6)
   m_TagString: Untagged
@@ -13857,6 +14092,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1645748781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645748778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d7b25ae1624b92afccaddf8b498f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 6
+  costText: {fileID: 352467123}
+  ownedText: {fileID: 404018279}
+  buyButton: {fileID: 675178417}
 --- !u!1 &1659135113
 GameObject:
   m_ObjectHideFlags: 0
@@ -15219,6 +15470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1775719534}
   - component: {fileID: 1775719535}
+  - component: {fileID: 1775719536}
   m_Layer: 5
   m_Name: EachUnitContainer (5)
   m_TagString: Untagged
@@ -15259,6 +15511,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1775719536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775719533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d7b25ae1624b92afccaddf8b498f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 5
+  costText: {fileID: 1619872943}
+  ownedText: {fileID: 574298405}
+  buyButton: {fileID: 1961560062}
 --- !u!1 &1789488861
 GameObject:
   m_ObjectHideFlags: 0
@@ -18036,7 +18304,7 @@ GameObject:
   - component: {fileID: 2003939199}
   - component: {fileID: 2003939198}
   m_Layer: 5
-  m_Name: BuyButton
+  m_Name: BuyButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19125,6 +19393,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7340434581891379541, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
   m_PrefabInstance: {fileID: 2072201799}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2072201801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+  m_PrefabInstance: {fileID: 2072201799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2078835248
 GameObject:
   m_ObjectHideFlags: 0
@@ -20322,6 +20601,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+--- !u!114 &3665709472225674965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+  m_PrefabInstance: {fileID: 3665709472225674964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -20332,3 +20622,4 @@ SceneRoots:
   - {fileID: 1515772565}
   - {fileID: 1518604359}
   - {fileID: 1727936841}
+  - {fileID: 487356380}

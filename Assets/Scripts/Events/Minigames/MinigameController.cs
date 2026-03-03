@@ -32,7 +32,7 @@ public class MinigameController : MonoBehaviour
         UpdateTimer();
         if (_timeSinceStart > Data.TimeLimit)
         {
-            EndMinigame(false);
+            StartCoroutine(EndMinigame(false));
         }
     }
     
@@ -66,7 +66,7 @@ public class MinigameController : MonoBehaviour
     
     private void UpdateScore()
     {
-        _scoreText.text = $"Score: {_score}/{Data.ScoreToWin}";
+        _scoreText.text = $"{_score}/{Data.ScoreToWin}";
     }
 
     private void UpdateTimer()

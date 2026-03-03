@@ -18,8 +18,8 @@ public class MinigameDetailsUI : MonoBehaviour
         _owner = owner;
         nameText.text = owner.Data.Name;
         descriptionText.text = owner.Data.Description;
-        rewardText.text = $"Reward: {owner.Data.Reward}€";
-        timeLimitText.text = $"Time Limit: {owner.Data.TimeLimit} seconds";
+        rewardText.text = $"{owner.Data.Reward}";
+        timeLimitText.text = $"{owner.Data.TimeLimit}s";
         startButton.onClick.RemoveAllListeners();
         startButton.onClick.AddListener(OnStartButtonClicked);
     }

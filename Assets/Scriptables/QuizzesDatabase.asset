@@ -13,15 +13,200 @@ MonoBehaviour:
   m_Name: QuizzesDatabase
   m_EditorClassIdentifier: 
   <Quizzes>k__BackingField:
-  - <Question>k__BackingField: Gay?
+  - <Question>k__BackingField: What is disinformation?
     <Answers>k__BackingField:
-    - <Text>k__BackingField: yes
+    - <Text>k__BackingField: Incorrect information shared by mistake
       <IsCorrect>k__BackingField: 0
-    - <Text>k__BackingField: no
+    - <Text>k__BackingField: False information shared on purpose
       <IsCorrect>k__BackingField: 1
-  - <Question>k__BackingField: Nigger?
+    - <Text>k__BackingField: Any opinion you disagree with
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: What is misinformation?
     <Answers>k__BackingField:
-    - <Text>k__BackingField: i hate
+    - <Text>k__BackingField: False information shared without intent to deceive
       <IsCorrect>k__BackingField: 1
-    - <Text>k__BackingField: mmmm
+    - <Text>k__BackingField: Government propaganda
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Satire
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Fact-checked journalism
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Why do bad actors spread disinformation?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: To entertain
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: To confuse or manipulate
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: To improve public debate
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: To educate citizens
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Which is a common goal of disinformation during elections?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Increase voter confidence
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Encourage critical thinking
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Reduce trust in democratic processes
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Improve political literacy
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: What is a "deepfake"?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: A strong opinion
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: AI-generated fake audio or video
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: A political slogan
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: A political slogan
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Which headline is most likely disinformation?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: "\u201CStudy Shows Mixed Results on Climate Policy\u201D"
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: "\u201CExperts Say More Research Is Needed\u201D"
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: "\"Secret EU Plan Revealed! Share Before It\u2019s Deleted!\u201D"
+      <IsCorrect>k__BackingField: 1
+  - <Question>k__BackingField: "What is \u201Cclickbait\u201D?"
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Neutral reporting
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Sensational content designed to attract clicks
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Scientific research
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Public service announcements
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Which emotion is most often used to spread disinformation?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Calm reflection
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Fear or anger
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Boredom
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Gratitude
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: What is confirmation bias?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Believing only official sources
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Trusting information that confirms your existing beliefs
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Checking multiple sources
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Changing your opinion frequently
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: 'A fake social media account pretending to be a real
+      person is called:'
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: A bot or troll account
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: A verified profile
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: A journalist
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: A whistleblower
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: What should you do before sharing shocking news?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Share quickly before others
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Check the source and verify
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Add emotional comments
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Ignore the headline
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Which of the following increases credibility?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Anonymous claims without evidence
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Clear sources and evidence
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: All caps headlines
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Emotional language
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: What is propaganda?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Information designed to influence opinions
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Any advertisement
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: All political debate
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Independent journalism
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Why are bots used in disinformation campaigns?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: To automate and amplify messages
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: To correct false information
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: To reduce online activity
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: To promote media literacy
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Which is a red flag of unreliable content?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Multiple credible sources
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Transparent authorship
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: No author or unclear source
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Published research data
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: What does media literacy help you do?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Create fake news
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Analyze and evaluate information critically
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Avoid all media
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Trust everything you read
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: "What is a \u201Cfalse dilemma\u201D?"
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Presenting only two extreme choices
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Providing balanced options
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Using verified statistics
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Asking open questions
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Why is speed important in disinformation?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Fast sharing reduces verification
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: It improves accuracy
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: It increases fact-checking
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: It slows down rumors
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: What is fact-checking?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Removing opinions
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Verifying claims using reliable evidence
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Reporting rumors
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Blocking social media users
+      <IsCorrect>k__BackingField: 0
+  - <Question>k__BackingField: Which action helps reduce disinformation?
+    <Answers>k__BackingField:
+    - <Text>k__BackingField: Sharing unverified claims
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Reporting suspicious content
+      <IsCorrect>k__BackingField: 1
+    - <Text>k__BackingField: Ignoring credible sources
+      <IsCorrect>k__BackingField: 0
+    - <Text>k__BackingField: Amplifying emotional posts
       <IsCorrect>k__BackingField: 0
