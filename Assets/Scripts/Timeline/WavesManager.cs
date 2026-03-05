@@ -7,8 +7,8 @@ using System.Collections;
 public class WavesManager : MonoBehaviour
 {
     [Header("UI Elements")]
-    [field: SerializeField] private GameObject winPanel;
-    [field: SerializeField] private GameObject losePanel;
+    [field: SerializeField] private WinUI winPanel;
+    [field: SerializeField] private LoseUI losePanel;
     [field: SerializeField] private TMP_Text timeText;
     [field: SerializeField] private TMP_Text moneyText;
     [field: SerializeField] private TMP_Text emergenciesFailedText;
@@ -95,6 +95,15 @@ public class WavesManager : MonoBehaviour
         ServiceLocator.Instance.UnitsManager.DestroyUnits();
         ServiceLocator.Instance.EmergenciesManager.DestroyEmergencies();
         ServiceLocator.Instance.MinigamesManager.DestroyMinigames();
+        ServiceLocator.Instance.UIManager.Inventory.SetActive(false);
+        if(won)
+        {
+            winPanel.Show(CurrentMoney);
+        }
+        else
+        {
+            losePanel.Show(100, TimeSinceStart);
+        }
     }
 
     #region Coroutines

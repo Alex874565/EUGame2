@@ -27,18 +27,6 @@ public class WinUI : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
-        int moneyEarned = 0;
-        if(ServiceLocator.Instance != null && ServiceLocator.Instance.GameManager != null)
-        {
-            ServiceLocator.Instance.GameManager.WonLastWave = true;
-        }
-        if(ServiceLocator.Instance != null && ServiceLocator.Instance.WavesManager != null)
-        {
-            moneyEarned = ServiceLocator.Instance.WavesManager.CurrentMoney;
-        }
-
-        Show(moneyEarned);
-        //Show(100); // for testing
     }
 
     public void Hide()

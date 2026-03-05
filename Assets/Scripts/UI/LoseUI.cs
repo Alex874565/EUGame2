@@ -34,22 +34,6 @@ public class LoseUI : MonoBehaviour
 
     private void Start()
     {
-        int moneyEarned = 0;
-        int secondsSurvived = 0;
-        if (ServiceLocator.Instance != null && ServiceLocator.Instance.WavesManager != null)
-        {
-            moneyEarned = ServiceLocator.Instance.WavesManager.CurrentMoney * (int)moneyModifier;
-            secondsSurvived = Mathf.FloorToInt(ServiceLocator.Instance.WavesManager.TimeSinceStart);
-        }
-
-        if (ServiceLocator.Instance != null && ServiceLocator.Instance.GameManager != null)
-        {
-            ServiceLocator.Instance.GameManager.WonLastWave = false;
-        }
-
-        //gameObject.SetActive(false);
-        Show(moneyEarned, secondsSurvived);
-        //Show(100,100); // for testing
     }
 
     public void Hide()

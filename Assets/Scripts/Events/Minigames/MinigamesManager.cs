@@ -137,7 +137,7 @@ public class MinigamesManager : MonoBehaviour
     {
         foreach (GameObject minigame in ActiveMinigames)
         {
-            Destroy(minigame);
+            minigame.SetActive(false);
         }
         ActiveMinigames.Clear();
     }
