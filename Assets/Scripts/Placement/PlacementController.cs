@@ -93,7 +93,7 @@ public class PlacementController : MonoBehaviour
         return unitInMovement;
     }
     
-    private void GiveUpUnit()
+    public void GiveUpUnit()
     {
         if(_unitBehaviour.OwningEmergency != null)
         {

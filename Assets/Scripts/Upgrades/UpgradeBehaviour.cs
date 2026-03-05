@@ -6,23 +6,29 @@ public class UpgradeBehaviour : MonoBehaviour
 {
     [field: SerializeField] public UpgradeType Type { get; set; }
     [field: SerializeField] public int Level { get; set; }
-    
-    [Header("UI Elements")]
-    [SerializeField] private TextMeshProUGUI nameText;
-    [SerializeField] private TextMeshProUGUI descriptionText;
-    [SerializeField] private TextMeshProUGUI modifiersDescriptionText;
+
+    [Header("UI Elements")] 
+    [SerializeField] private Image image;
     [SerializeField] private TextMeshProUGUI costText;
-    [SerializeField] private GameObject lockIcon;
-    [SerializeField] private Color unlockedColor;
-    [SerializeField] private Color lockedColor;
+    [SerializeField] private GameObject costImage;
+    [SerializeField] private Button buyButton;
+    [Header("Colors")]
+    [SerializeField] private Color unlockedColor = Color.white;
+    [SerializeField] private Color unlockableColor = Color.gray;
+    [SerializeField] private Color lockedColor = Color.black;
     
     private UpgradeData _data;
     
-    private void Start()
+    public void InitializeUpgrade()
     {
         _data = ServiceLocator.Instance.UpgradesManager.UpgradesData[Type][Level - 1];
         
-        InitializeUI();
+        buyButton.onClick.AddListener(() =>
+        {
+            ServiceLocator.Instance.UpgradesManager.ApplyUpgrade(Type, Level, false);
+        });
+
+        UpdateUI();
     }
 
     public bool TryApplyUpgrade(bool isFree)
@@ -33,61 +39,33 @@ public class UpgradeBehaviour : MonoBehaviour
             {
                 ServiceLocator.Instance.PlayerManager.SpendMoney(_data.Cost);
             }
-            
-            ApplyUpgrade();
             return true;
         }
 
         return false;
     }
 
-    public void ApplyUpgrade()
-    {
-            foreach (var modifier in _data.EmergencyModifiers)
-            {
-                ServiceLocator.Instance.EmergenciesManager.ModifyEmergenciesStat(modifier);
-            }
-            
-            foreach (var modifier in _data.MinigameModifiers)
-            {
-                ServiceLocator.Instance.MinigamesManager.ModifyMinigamesStat(modifier);
-            }
-    }
-
-    private void InitializeUI()
-    {
-        UpdateUI();
-    }
-
     public void UpdateUI()
     {
+        Debug.Log('s');
         if(ServiceLocator.Instance.PlayerManager.IsUpgradeOwned(Type, Level))
         {
-            nameText.text = _data.Name;
-            descriptionText.text = _data.Description;
-            modifiersDescriptionText.text = _data.ModifiersDescription;
-            costText.text = $"Already Owned";
-            lockIcon.SetActive(false);
-            GetComponent<Image>().color = unlockedColor;
+            costText.text = $"Owned";
+            costImage.SetActive(false);
+            image.color = unlockedColor;
         }
         else
         {
             if(ServiceLocator.Instance.PlayerManager.IsUpgradeAvailable(Type, Level)){
-                nameText.text = _data.Name;
-                descriptionText.text = _data.Description;
-                modifiersDescriptionText.text = _data.ModifiersDescription;
-                costText.text = $"Cost: {_data.Cost}€";
-                lockIcon.SetActive(false);
-                GetComponent<Image>().color = unlockedColor;
+                costText.text = $"{_data.Cost}";
+                costImage.SetActive(true);
+                image.color = unlockableColor;
             }
             else
             {
-                nameText.text = "Locked Upgrade";
-                descriptionText.text = "Purchase the previous upgrade to unlock this one.";
-                modifiersDescriptionText.text = "";
-                costText.text = $"Cost: ???";
-                lockIcon.SetActive(true);
-                GetComponent<Image>().color = lockedColor;
+                costText.text = $"???";
+                costImage.SetActive(false);
+                image.color = lockedColor;
             }
         }
     }

@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
 public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -22,11 +23,15 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
     private Vector3 _originalScale;
     private void Start()
     {
-        Data = ServiceLocator.Instance.MinigamesManager.MinigamesDatabase.Minigames.Find(mg => mg.Type == Type);
+        Data = ServiceLocator.Instance.MinigamesManager.MinigamesData[Type];
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Add(gameObject);
-        Debug.Log(ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Count);
         IsSelected = false;
         _originalScale = image.transform.localScale;
+        ServiceLocator.Instance.MinigamesManager.MinigameInPlay = this;
+        
+        DOTween.Sequence()
+            .Append(transform.DOScale(_originalScale * 1.5f, .25f).SetEase(Ease.OutCubic))
+            .Append(transform.DOScale(_originalScale, .1f).SetEase(Ease.InOutQuad));
     }
 
     public void Update()
@@ -37,6 +42,7 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
     public void DestroySelf()
     {
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Remove(gameObject);
+        ServiceLocator.Instance.MinigamesManager.MinigameInPlay = null;
         Destroy(gameObject);
     }
 
