@@ -5,6 +5,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class UIButtonSFX : MonoBehaviour
 {
+    [SerializeField] private AudioClip clickSound;
+
     private Button button;
 
     private void Awake()
@@ -15,6 +17,6 @@ public class UIButtonSFX : MonoBehaviour
 
     private void PlayClick()
     {
-        ServiceLocator.Instance.AudioManager.PlayClick();
+        ServiceLocator.Instance.AudioManager.PlayUI(clickSound);
     }
 }

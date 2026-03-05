@@ -2,93 +2,85 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    private static AudioManager _instance;
+
     [Header("Sources")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
 
-    [Header("UI Clips")]
-    [SerializeField] private AudioClip clickClip;
+    [Header("Music")]
+    [SerializeField] private AudioClip backgroundMusic;
 
-    float masterVolume = 1f;
-    float musicVolume = 1f;
-    float sfxVolume = 1f;
+    [Header("Volumes")]
+    [Range(0f,1f)] [SerializeField] private float masterVolume = 1f;
+    [Range(0f,1f)] [SerializeField] private float musicVolume = 1f;
+    [Range(0f,1f)] [SerializeField] private float sfxVolume = 1f;
 
-    private void Start()
+    private void Awake()
     {
-        LoadVolumes();
-        UpdateVolumes();
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        if (backgroundMusic != null)
+        {
+            musicSource.clip = backgroundMusic;
+            musicSource.loop = true;
+            musicSource.Play();
+        }
+
+        ApplyVolumes();
     }
 
-    void UpdateVolumes()
+    void ApplyVolumes()
     {
         musicSource.volume = musicVolume * masterVolume;
         sfxSource.volume = sfxVolume * masterVolume;
     }
 
-    // ----------- SFX -----------
-
-    public void PlayClick()
-    {
-        if (clickClip != null)
-            sfxSource.PlayOneShot(clickClip);
-    }
-
-    public void PlaySFX(AudioClip clip)
-    {
-        sfxSource.PlayOneShot(clip);
-    }
-
-    // ----------- MUSIC -----------
-
-    public void PlayMusic(AudioClip clip)
-    {
-        if (musicSource.clip == clip) return;
-
-        musicSource.clip = clip;
-        musicSource.loop = true;
-        musicSource.Play();
-    }
-
-    // ----------- VOLUME -----------
-
-    public void SetMasterVolume(float value)
-    {
-        masterVolume = value;
-        UpdateVolumes();
-        SaveVolumes();
-    }
-
+    // MUSIC
     public void SetMusicVolume(float value)
     {
         musicVolume = value;
-        UpdateVolumes();
-        SaveVolumes();
+        ApplyVolumes();
     }
 
+    public float GetMusicVolume() => musicVolume;
+
+    // SFX
     public void SetSFXVolume(float value)
     {
         sfxVolume = value;
-        UpdateVolumes();
-        SaveVolumes();
+        ApplyVolumes();
+    }
+
+    public float GetSFXVolume() => sfxVolume;
+
+    // MASTER
+    public void SetMasterVolume(float value)
+    {
+        masterVolume = value;
+        ApplyVolumes();
     }
 
     public float GetMasterVolume() => masterVolume;
-    public float GetMusicVolume() => musicVolume;
-    public float GetSFXVolume() => sfxVolume;
 
-    // ----------- SAVE -----------
-
-    void SaveVolumes()
+    // SFX playback
+    public void PlaySFX(AudioClip clip)
     {
-        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
-        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
-        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        if (clip == null) return;
+        sfxSource.PlayOneShot(clip);
     }
 
-    void LoadVolumes()
+    public void PlayUI(AudioClip clip)
     {
-        masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        if (clip == null) return;
+
+        sfxSource.PlayOneShot(clip);
     }
 }

@@ -16,7 +16,7 @@ public class ServiceLocator : MonoBehaviour
     [field: SerializeField] public UIManager UIManager { get; private set; }
     [field: SerializeField] public UpgradesManager UpgradesManager { get; private set; }
     [field: SerializeField] public DialogueManager DialogueManager { get; private set; }
-    [field: SerializeField] public AudioManager AudioManager { get; private set; }
+    public AudioManager AudioManager { get; private set; }
     public SaveManager SaveManager { get; private set; }
     public GameManager GameManager { get; private set; }
     public PlayerManager PlayerManager { get; private set; }
@@ -61,6 +61,13 @@ public class ServiceLocator : MonoBehaviour
         if (saveManager)
         {
             SaveManager = saveManager;
+        }
+
+        AudioManager audioManager = FindFirstObjectByType<AudioManager>();
+
+        if (audioManager)
+        {
+            AudioManager = audioManager;
         }
     }
 }
