@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
       value: MoneyContainer
@@ -1898,6 +1902,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -10155,6 +10163,50 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1130869568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130869570}
+  - component: {fileID: 1130869569}
+  m_Layer: 0
+  m_Name: Save Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1130869569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130869568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b10cc5041e9473bb95b093ded0eff08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1130869570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130869568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150770533
 GameObject:
   m_ObjectHideFlags: 0
@@ -12628,6 +12680,7 @@ MonoBehaviour:
   <UIManager>k__BackingField: {fileID: 280655287}
   <UpgradesManager>k__BackingField: {fileID: 348724135}
   <DialogueManager>k__BackingField: {fileID: 913293554}
+  <AudioManager>k__BackingField: {fileID: 1990364130}
   <LocationsDatabase>k__BackingField: {fileID: 0}
   <EmergenciesDatabase>k__BackingField: {fileID: 0}
   <WavesDatabase>k__BackingField: {fileID: 0}
@@ -12651,6 +12704,7 @@ Transform:
   - {fileID: 913293553}
   - {fileID: 215757058}
   - {fileID: 348724134}
+  - {fileID: 1990364129}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1516774266
@@ -13618,6 +13672,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -16251,6 +16309,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
       value: MoneyContainer
@@ -16669,6 +16731,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -17641,6 +17707,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
       value: MoneyContainer
@@ -18116,6 +18186,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
       value: MoneyContainer
@@ -18304,6 +18378,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -18595,6 +18673,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975720341}
   m_CullTransparentMesh: 1
+--- !u!1001 &1990364128
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1515772565}
+    m_Modifications:
+    - target: {fileID: 288510709304336017, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+--- !u!4 &1990364129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+  m_PrefabInstance: {fileID: 1990364128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1990364130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+  m_PrefabInstance: {fileID: 1990364128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6304146cfbd1c4ea63ab70de2dd98c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1990651232
 GameObject:
   m_ObjectHideFlags: 0
@@ -19341,6 +19492,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
       value: MoneyContainer
@@ -19658,6 +19813,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -20877,6 +21036,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1238783507}
     m_Modifications:
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
       value: MoneyContainer
@@ -21020,3 +21183,4 @@ SceneRoots:
   - {fileID: 1518604359}
   - {fileID: 1727936841}
   - {fileID: 487356380}
+  - {fileID: 1130869570}
