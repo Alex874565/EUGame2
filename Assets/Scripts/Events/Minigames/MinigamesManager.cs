@@ -21,9 +21,13 @@ public class MinigamesManager : MonoBehaviour
     private void Awake()
     {
         ActiveMinigames = new List<GameObject>();
-        
         MinigamesData = new Dictionary<MinigameType, MinigameData>();
+    }
+
+    private void Start()
+    {
         InitializeMinigamesData();
+        ApplyUpgrades();
         _currentSpawnTime = UnityEngine.Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
     }
 
@@ -41,7 +45,7 @@ public class MinigamesManager : MonoBehaviour
         }
     }
 
-    public void SpawnRandomMinigamePopup()
+    private void SpawnRandomMinigamePopup()
     {
         GameObject emergenciesLayer = ServiceLocator.Instance.UIManager.EmergenciesLayer;
         List<MinigameData> availableMinigamesData = MinigamesDatabase.Minigames;
@@ -52,17 +56,52 @@ public class MinigamesManager : MonoBehaviour
         Instantiate(minigame, position, Quaternion.identity, emergenciesLayer.transform);
     }
 
-    public void InitializeMinigamesData()
+    private void InitializeMinigamesData()
     {
         foreach (GameObject minigame in minigames)
         {
             MinigameType minigameType = minigame.GetComponent<MinigameController>().Type;
-            MinigameData minigameData = MinigamesDatabase.Minigames.Find(mg => mg.Type == minigameType);
+            MinigameData minigameData = new MinigameData(MinigamesDatabase.Minigames.Find(mg => mg.Type == minigameType));
             MinigamesData.Add(minigameType, minigameData);
         }
     }
 
-    public void ModifyMinigamesStat(MinigameUpgradeModifier minigameUpgradeModifier)
+    private void ApplyUpgrades()
+    {
+        foreach (KeyValuePair<UpgradeType, int> ownedUpgrade in ServiceLocator.Instance.PlayerManager.OwnedUpgrades)
+        {
+            List<UpgradeData> upgradesData;
+            switch (ownedUpgrade.Key)
+            {
+                case UpgradeType.Civic:
+                    upgradesData = new List<UpgradeData>(ServiceLocator.Instance.UpgradesDatabase.CivicUpgrades);
+                    break;
+                case UpgradeType.Democracy:
+                    upgradesData = new List<UpgradeData>(ServiceLocator.Instance.UpgradesDatabase.DemocracyUpgrades);
+                    break;
+                case UpgradeType.Disinformation:
+                    upgradesData = new List<UpgradeData>(ServiceLocator.Instance.UpgradesDatabase.DisinformationUpgrades);
+                    break;
+                default:
+                    upgradesData = new List<UpgradeData>();
+                    break;
+            }
+
+            for (int i = 0; i < ownedUpgrade.Value; i++)
+            {
+                UpgradeData upgradeData = upgradesData.Find(upgrade => upgrade.Level == i + 1);
+                if (upgradeData != null)
+                {
+                    foreach (MinigameUpgradeModifier modifier in upgradeData.MinigameModifiers)
+                    {
+                        ModifyMinigamesStat(modifier);
+                    }
+                }
+            }
+        }
+    }
+    
+    private void ModifyMinigamesStat(MinigameUpgradeModifier minigameUpgradeModifier)
     {
         foreach (MinigameType minigameType in minigameUpgradeModifier.AffectedTypes)
         {
@@ -90,7 +129,7 @@ public class MinigamesManager : MonoBehaviour
     {
         GameObject minigame = minigames.Find(mg => mg.GetComponent<MinigameController>().Type == MinigameInPlay.Type);
         minigame.SetActive(false);
-        MinigameInPlay = null;
+        MinigameInPlay.DestroySelf();
         ServiceLocator.Instance.UIManager.Inventory.SetActive(true);
     }
     

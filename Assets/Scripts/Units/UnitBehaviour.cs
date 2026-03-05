@@ -199,6 +199,7 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                     LocationName startLocation = OwningEmergency != null
                         ? OwningEmergency.LocationData.Name
                         : ServiceLocator.Instance.PlacementManager.DefaultStartLocation;
+                    unitInPlacing.GetComponent<PlacementController>().GiveUpUnit();
                     ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type, startLocation, OwningEmergency);
                     
                     UpdateCount(Count - 1);

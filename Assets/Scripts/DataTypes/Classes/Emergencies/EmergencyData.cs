@@ -24,4 +24,15 @@ public class EmergencyData
                 break;
         }
     }
+    
+    public EmergencyData(EmergencyData emergencyData)
+    {
+        EmergencyType = emergencyData.EmergencyType;
+        Name = emergencyData.Name;
+        Description = emergencyData.Description;
+        RequiredResources = new List<RequiredUnitData>(emergencyData.RequiredResources);
+        Severity = emergencyData.Severity;
+        TimeUntilExpiry = emergencyData.TimeUntilExpiry;
+        TimeToSolve = emergencyData.TimeToSolve;
+    }
 }

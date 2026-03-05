@@ -26,4 +26,15 @@ public class MinigameData
                  break;
          }
      }
+
+     public MinigameData(MinigameData minigameData)
+     {
+        Type = minigameData.Type;
+        Name = minigameData.Name;
+        Description = minigameData.Description;
+        ScoreToWin = minigameData.ScoreToWin;
+        TimeLimit = minigameData.TimeLimit;
+        Reward = minigameData.Reward;
+        Prefab = minigameData.Prefab;
+     }
 }

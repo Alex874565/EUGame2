@@ -14,12 +14,17 @@ public class UpgradesManager : MonoBehaviour
     
     public void InitializeUpgrades()
     {
-        UpgradesData = new Dictionary<UpgradeType, List<UpgradeData>>();
-        UpgradesData.Add(UpgradeType.Civic, ServiceLocator.Instance.UpgradesDatabase.CivicUpgrades);
-        UpgradesData.Add(UpgradeType.Disinformation, ServiceLocator.Instance.UpgradesDatabase.DisinformationUpgrades);
-        UpgradesData.Add(UpgradeType.Democracy, ServiceLocator.Instance.UpgradesDatabase.DemocracyUpgrades);
+        UpgradesData = new Dictionary<UpgradeType, List<UpgradeData>>
+        {
+            { UpgradeType.Civic, ServiceLocator.Instance.UpgradesDatabase.CivicUpgrades },
+            { UpgradeType.Disinformation, ServiceLocator.Instance.UpgradesDatabase.DisinformationUpgrades },
+            { UpgradeType.Democracy, ServiceLocator.Instance.UpgradesDatabase.DemocracyUpgrades }
+        };
 
-        UpdateUIs();
+        foreach (UpgradeBehaviour upgrade in UpgradeScripts)
+        {
+            upgrade.InitializeUpgrade();
+        }
     }
     
     public void ApplyUpgrade(UpgradeType upgradeType, int level, bool isFree)
@@ -27,7 +32,14 @@ public class UpgradesManager : MonoBehaviour
         bool upgradeApplied = UpgradeScripts.Find(upgrade => upgrade.Type == upgradeType && upgrade.Level == level).TryApplyUpgrade(isFree);
         if (upgradeApplied)
         {
-            ServiceLocator.Instance.PlayerManager.OwnedUpgrades[upgradeType] += 1;
+            ServiceLocator.Instance.PlayerManager.AddOwnedUpgrade(upgradeType, level);
+            ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+                ServiceLocator.Instance.GameManager.WaveIndex,
+                ServiceLocator.Instance.GameManager.WonLastWave,
+                ServiceLocator.Instance.PlayerManager.Money,
+                ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+                ServiceLocator.Instance.PlayerManager.StartingUnits
+            ));
             UpdateUIs();
         }
     }

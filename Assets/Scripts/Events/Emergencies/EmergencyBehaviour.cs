@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 using System;
+using DG.Tweening;
 
 public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler
 {
@@ -98,6 +99,11 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         
         _isWiggling = false;
         _isHovered = false;
+        
+        transform.localScale = _originalScale * 0f;
+        DOTween.Sequence()
+            .Append(transform.DOScale(_originalScale * 1.5f, .25f).SetEase(Ease.OutCubic))
+            .Append(transform.DOScale(_originalScale, .1f).SetEase(Ease.InOutQuad));
     }
 
     private void Update()

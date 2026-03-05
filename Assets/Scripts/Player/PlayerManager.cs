@@ -68,7 +68,6 @@ public class PlayerManager : MonoBehaviour
         return Money >= amount;
     }
     
-    
     public bool IsUpgradeOwned(UpgradeType upgradeType, int level)
     {
         return OwnedUpgrades.ContainsKey(upgradeType) && OwnedUpgrades[upgradeType] >= level;
@@ -77,6 +76,14 @@ public class PlayerManager : MonoBehaviour
     public bool IsUpgradeAvailable(UpgradeType upgradeType, int level)
     {
         return level == OwnedUpgrades[upgradeType] + 1;
+    }
+    
+    public void AddOwnedUpgrade(UpgradeType upgradeType, int level)
+    {
+        if (OwnedUpgrades.ContainsKey(upgradeType))
+        {
+            OwnedUpgrades[upgradeType] = level;
+        }
     }
     
     public void AddStartingUnit(UnitType unitType, int count)

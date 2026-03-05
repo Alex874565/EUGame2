@@ -22,7 +22,7 @@ public class UnitsManager : MonoBehaviour
     public void InitializeUnits(int waveNumber)
     {
         List<StartingUnitData> unitsToInitialize =
-            ServiceLocator.Instance.WavesDatabase.Waves[waveNumber].StartingUnits;
+            new List<StartingUnitData>(ServiceLocator.Instance.WavesDatabase.Waves[waveNumber].StartingUnits);
         foreach (StartingUnitData startingUnitData in unitsToInitialize)
         {
             startingUnitData.Count += ServiceLocator.Instance.PlayerManager.StartingUnits[startingUnitData.Type];

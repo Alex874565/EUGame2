@@ -19,29 +19,65 @@ public class EmergenciesManager : MonoBehaviour
     private void Start()
     {
         InitializeEmergenciesData(ServiceLocator.Instance.EmergenciesDatabase.Emergencies.Select(emergency => emergency.EmergencyData).ToList());
+        ApplyUpgrades();
     }
 
-    public void SetEmergencyData(EmergencyType emergencyType, EmergencyData emergencyData)
+    private void SetEmergencyData(EmergencyType emergencyType, EmergencyData emergencyData)
     {
         if (!EmergenciesData.ContainsKey(emergencyType))
         {
-            EmergenciesData.Add(emergencyType, emergencyData);
+            EmergenciesData.Add(emergencyType, new EmergencyData(emergencyData));
         }
         else
         {
-            EmergenciesData[emergencyType] = emergencyData;
+            EmergenciesData[emergencyType] = new EmergencyData(emergencyData);
         }
     }
 
-    public void InitializeEmergenciesData(List<EmergencyData> emergencies)
+    private void InitializeEmergenciesData(List<EmergencyData> emergencies)
     {
         foreach (EmergencyData emergencyData in emergencies)
         {
             SetEmergencyData(emergencyData.EmergencyType, emergencyData);
         }
     }
+
+    private void ApplyUpgrades()
+    {
+        foreach (KeyValuePair<UpgradeType, int> ownedUpgrade in ServiceLocator.Instance.PlayerManager.OwnedUpgrades)
+        {
+            List<UpgradeData> upgradeDatas;
+            switch (ownedUpgrade.Key)
+            {
+                case UpgradeType.Civic:
+                    upgradeDatas = new  List<UpgradeData>(ServiceLocator.Instance.UpgradesDatabase.CivicUpgrades);
+                    break;
+                case UpgradeType.Disinformation:
+                    upgradeDatas = new List<UpgradeData>(ServiceLocator.Instance.UpgradesDatabase.DisinformationUpgrades);
+                    break;
+                case UpgradeType.Democracy:
+                    upgradeDatas = new List<UpgradeData>(ServiceLocator.Instance.UpgradesDatabase.DemocracyUpgrades);
+                    break;
+                default:
+                    upgradeDatas = new List<UpgradeData>();
+                    break;
+            }
+
+            for (int i = 0; i < ownedUpgrade.Value; i++)
+            {
+                UpgradeData upgradeData = upgradeDatas.Find(upgrade => upgrade.Level == i + 1);
+                if (upgradeData != null)
+                {
+                    foreach (EmergencyUpgradeModifier modifier in upgradeData.EmergencyModifiers)
+                    {
+                        ModifyEmergenciesStat(modifier);
+                    }
+                }
+            }
+        }
+    } 
     
-    public void ModifyEmergenciesStat(EmergencyUpgradeModifier modifier)
+    private void ModifyEmergenciesStat(EmergencyUpgradeModifier modifier)
     {
         foreach (EmergencyType emergencyType in modifier.AffectedType)
         {
