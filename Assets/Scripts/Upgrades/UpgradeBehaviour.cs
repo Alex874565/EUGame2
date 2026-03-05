@@ -88,7 +88,11 @@ public class UpgradeBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExi
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        tooltip.Show(_data);
+        if (ServiceLocator.Instance.PlayerManager.IsUpgradeAvailable(Type, Level) ||
+            ServiceLocator.Instance.PlayerManager.IsUpgradeOwned(Type, Level))
+        {
+            tooltip.Show(_data, transform.position, image.rectTransform.sizeDelta.y);
+        }
     }
     
     public void OnPointerExit(PointerEventData eventData)

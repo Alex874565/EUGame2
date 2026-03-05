@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class UpgradesTooltipUI : MonoBehaviour
 {
@@ -7,18 +9,19 @@ public class UpgradesTooltipUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private TextMeshProUGUI modifiersText;
-    [Header("Settings")]
-    [SerializeField] private int xOffset;
-    [SerializeField] private int yOffset;
+
+    private RectTransform _rectTransform;
+    private Image _background;
+    
+    private void Awake()
+    {
+        _rectTransform = GetComponent<RectTransform>();
+        _background = GetComponentInChildren<Image>();
+    }
     
     private void Start()
     {
         Hide();
-    }
-    
-    private void Update()
-    {
-        transform.position = Input.mousePosition + new Vector3(xOffset, yOffset, 0);
     }
     
     public void Initialize(UpgradeData upgradeData)
@@ -28,10 +31,26 @@ public class UpgradesTooltipUI : MonoBehaviour
         modifiersText.text = upgradeData.ModifiersDescription;
     }
     
-    public void Show(UpgradeData upgradeData)
+    public void Show(UpgradeData upgradeData, Vector2 position, float upgradeHeight)
     {
+        if (Input.mousePosition.y > Screen.height / 2)
+        {
+            _rectTransform.pivot = new Vector2(0.5f, 1f);
+            _background.rectTransform.localScale = new  Vector3(1f, -1f, 1f);
+            upgradeHeight *= -1;
+        }
+        else
+        {
+            _rectTransform.pivot = new Vector2(0.5f, 0f);
+            _background.rectTransform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        transform.position = position + new Vector2(0, upgradeHeight/2);
         Initialize(upgradeData);
         gameObject.SetActive(true);
+        transform.localScale = new Vector3(1, 0, 1); // Start squished vertically
+        DOTween.Sequence()
+            .Append(transform.DOScaleY(1.25f, .2f).SetEase(Ease.OutCubic))
+            .Append(transform.DOScaleY(1, .1f).SetEase(Ease.InOutQuad));
     }
     
     public void Hide()
