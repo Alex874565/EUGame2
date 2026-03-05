@@ -80,6 +80,7 @@ public class MinigamesManager : MonoBehaviour
         if (minigame != null)
         {
             MinigameInPlay = minigamePopup;
+            ServiceLocator.Instance.UIManager.Inventory.SetActive(false);
             minigame.SetActive(true);
             minigame.GetComponent<MinigameController>().StartMinigame();
         }
@@ -90,6 +91,7 @@ public class MinigamesManager : MonoBehaviour
         GameObject minigame = minigames.Find(mg => mg.GetComponent<MinigameController>().Type == MinigameInPlay.Type);
         minigame.SetActive(false);
         MinigameInPlay = null;
+        ServiceLocator.Instance.UIManager.Inventory.SetActive(true);
     }
     
     public void DestroyMinigames()

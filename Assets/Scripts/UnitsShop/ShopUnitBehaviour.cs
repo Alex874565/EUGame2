@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class ShopUnitBehaviour : MonoBehaviour
 {
@@ -13,10 +14,7 @@ public class ShopUnitBehaviour : MonoBehaviour
     
     private UnitData _data;
     
-    private void Start()
-    {
-        InitializeUnit();
-    }
+    public EventHandler OnUnitPurchased;
     
     public void TryBuyUnit()
     {
@@ -24,27 +22,26 @@ public class ShopUnitBehaviour : MonoBehaviour
         {
             ServiceLocator.Instance.PlayerManager.SpendMoney(_data.ShopCost);
             ServiceLocator.Instance.PlayerManager.AddStartingUnit(type, 1);
-            ServiceLocator.Instance.UnitsManager.SetInventoryUnitCount(type, ServiceLocator.Instance.PlayerManager.StartingUnits[type]);
-            UpdateUI();
+            ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+                ServiceLocator.Instance.GameManager.WaveIndex,
+                ServiceLocator.Instance.GameManager.WonLastWave,
+                ServiceLocator.Instance.PlayerManager.Money,
+                ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+                ServiceLocator.Instance.PlayerManager.StartingUnits
+            ));
+            OnUnitPurchased?.Invoke(this, EventArgs.Empty);
         }
     }
     
-    private void UpdateUI()
+    public void UpdateUI()
     {
-        costText.text = $"Cost: {_data.ShopCost}";
-        ownedText.text = $"Owned: {ServiceLocator.Instance.PlayerManager.StartingUnits[type]}";
-    }
-    
-    private void InitializeUnit()
-    {
-        _data = ServiceLocator.Instance.UnitsDatabase.Units.Find(unit => unit.Data.Type == type).Data;
-        buyButton.onClick.RemoveAllListeners();
-        buyButton.onClick.AddListener(TryBuyUnit);
-        UpdateUI();
-    }
-    
-    private void OnEnable()
-    {
+        if (_data == null)
+        {
+            InitializeUnit();
+        }
+        costText.text = $"{_data.ShopCost}";
+        ownedText.text = $"{ServiceLocator.Instance.PlayerManager.StartingUnits[type]}";
+        
         if (ServiceLocator.Instance.PlayerManager.CanAfford(_data.ShopCost))
         {
             buyButton.enabled = true;
@@ -53,5 +50,12 @@ public class ShopUnitBehaviour : MonoBehaviour
         {
             buyButton.enabled = false;
         }
+    }
+    
+    private void InitializeUnit()
+    {
+        _data = ServiceLocator.Instance.UnitsDatabase.Units.Find(unit => unit.Data.Type == type).Data;
+        buyButton.onClick.RemoveAllListeners();
+        buyButton.onClick.AddListener(TryBuyUnit);
     }
 }

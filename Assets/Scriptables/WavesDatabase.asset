@@ -17,7 +17,7 @@ MonoBehaviour:
     <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 465ec7c71e261aa4da2c309722c4167a, type: 2}
     <StartingUnits>k__BackingField:
     - <Type>k__BackingField: 1
-      <Count>k__BackingField: 2
+      <Count>k__BackingField: 1
     - <Type>k__BackingField: 3
       <Count>k__BackingField: 2
     <StartingMoney>k__BackingField: 200

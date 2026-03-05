@@ -45,6 +45,7 @@ public class SaveManager : MonoBehaviour
         ServiceLocator.Instance.GameManager.WonLastWave = saveData.WonLastWave;
         ServiceLocator.Instance.PlayerManager.OwnedUpgrades = saveData.GetOwnedUpgradesDictionary();
         ServiceLocator.Instance.PlayerManager.AddMoney(saveData.PlayerMoney - ServiceLocator.Instance.PlayerManager.Money);
+        ServiceLocator.Instance.PlayerManager.StartingUnits = saveData.GetStartingUnitsDictionary();
     }
     
     public void DeleteSaveFile()

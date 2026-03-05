@@ -45,6 +45,13 @@ public class PlayerManager : MonoBehaviour
     public void AddMoney(int amount)
     {
         Money += amount;
+        ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+            ServiceLocator.Instance.GameManager.WaveIndex,
+            ServiceLocator.Instance.GameManager.WonLastWave,
+            Money,
+            OwnedUpgrades,
+            StartingUnits
+        ));
     }
     
     public void SpendMoney(int amount)
@@ -57,6 +64,7 @@ public class PlayerManager : MonoBehaviour
     
     public bool CanAfford(int amount)
     {
+        Debug.Log(Money >= amount);
         return Money >= amount;
     }
     
@@ -76,6 +84,10 @@ public class PlayerManager : MonoBehaviour
         if (StartingUnits.ContainsKey(unitType))
         {
             StartingUnits[unitType] += count;
+        }
+        foreach(var unit in StartingUnits)
+        {
+            Debug.Log($"{unit.Key}: {unit.Value}");
         }
     }
 }
