@@ -23,6 +23,7 @@ public class UpgradeTreeUI : MonoBehaviour
     {
         gameObject.SetActive(true);
         stagger.OpenMenu(); 
+        UpdateMoneyText();
     }
 
     public void Hide()

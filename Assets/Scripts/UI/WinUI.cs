@@ -40,6 +40,18 @@ public class WinUI : MonoBehaviour
     public void Show(int moneyEarned)
     {
         gameObject.SetActive(true);
+        ServiceLocator.Instance.GameManager.WonLastWave = true;
+        ServiceLocator.Instance.GameManager.WaveIndex += 1;
+        ServiceLocator.Instance.PlayerManager.AddMoney(moneyEarned);
+        ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+            ServiceLocator.Instance.GameManager.WaveIndex,
+            ServiceLocator.Instance.GameManager.WonLastWave,
+            ServiceLocator.Instance.PlayerManager.Money,
+            ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+            ServiceLocator.Instance.PlayerManager.StartingUnits
+        ));
+            
+            
         stagger.OpenMenu(() =>
         {
             AnimateMoney(moneyEarned);

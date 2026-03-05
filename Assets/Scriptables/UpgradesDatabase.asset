@@ -18,7 +18,7 @@ MonoBehaviour:
     <Name>k__BackingField: Active Encouragement
     <Description>k__BackingField: 
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 100
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
       <Value>k__BackingField: 5
@@ -34,7 +34,7 @@ MonoBehaviour:
     <Name>k__BackingField: Funding Initiatives
     <Description>k__BackingField: 
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 50
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
       <Value>k__BackingField: 5

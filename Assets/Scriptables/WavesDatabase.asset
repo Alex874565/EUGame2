@@ -21,7 +21,7 @@ MonoBehaviour:
     - <Type>k__BackingField: 3
       <Count>k__BackingField: 2
     <StartingMoney>k__BackingField: 200
-    <EmergencyFailLimit>k__BackingField: 3
+    <EmergencyFailLimit>k__BackingField: 0
     <WaveDuration>k__BackingField: 65
   - <WaveNumber>k__BackingField: 2
     <TimelineAsset>k__BackingField: {fileID: 11400000, guid: c701e00faa79ab541b4982b0277e8c5e, type: 2}

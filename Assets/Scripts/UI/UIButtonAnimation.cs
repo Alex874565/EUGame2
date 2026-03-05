@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class UIButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -8,6 +9,9 @@ public class UIButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if(GetComponent<Button>() != null && !GetComponent<Button>().interactable)
+            return;
+        
         currentTween?.Kill();
 
         currentTween = transform.DOScale(1.08f, 0.2f)

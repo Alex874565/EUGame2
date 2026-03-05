@@ -40,6 +40,7 @@ public class UpgradesManager : MonoBehaviour
                 ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
                 ServiceLocator.Instance.PlayerManager.StartingUnits
             ));
+            ServiceLocator.Instance.UIManager.UpgradeTreeUI.UpdateMoneyText();
             UpdateUIs();
         }
     }

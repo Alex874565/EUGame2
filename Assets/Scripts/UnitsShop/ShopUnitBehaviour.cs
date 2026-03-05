@@ -44,11 +44,11 @@ public class ShopUnitBehaviour : MonoBehaviour
         
         if (ServiceLocator.Instance.PlayerManager.CanAfford(_data.ShopCost))
         {
-            buyButton.enabled = true;
+            buyButton.interactable = true;
         }
         else
         {
-            buyButton.enabled = false;
+            buyButton.interactable = false;
         }
     }
     

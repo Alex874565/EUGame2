@@ -41,6 +41,8 @@ public class WavesManager : MonoBehaviour
     
     public void StartWave(int index)
     {
+        ServiceLocator.Instance.GameManager.ResumeGame();
+        
         if (index >= WavesDatabase.Waves.Count)
         {
             return;
@@ -102,8 +104,11 @@ public class WavesManager : MonoBehaviour
         }
         else
         {
-            losePanel.Show(100, TimeSinceStart);
+            int moneyEarned = Mathf.RoundToInt(CurrentMoney * (TimeSinceStart / CurrentWaveData.WaveDuration));
+            losePanel.Show(moneyEarned, TimeSinceStart);
         }
+        
+        ServiceLocator.Instance.GameManager.PauseGame();
     }
 
     #region Coroutines

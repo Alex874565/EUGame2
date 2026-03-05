@@ -47,7 +47,6 @@ public class UpgradeBehaviour : MonoBehaviour
 
     public void UpdateUI()
     {
-        Debug.Log('s');
         if(ServiceLocator.Instance.PlayerManager.IsUpgradeOwned(Type, Level))
         {
             costText.text = $"Owned";
@@ -67,6 +66,15 @@ public class UpgradeBehaviour : MonoBehaviour
                 costImage.SetActive(false);
                 image.color = lockedColor;
             }
+        }
+        
+        if(ServiceLocator.Instance.PlayerManager.CanAfford(_data.Cost) && ServiceLocator.Instance.PlayerManager.IsUpgradeAvailable(Type, Level))
+        {
+            buyButton.interactable = true;
+        }
+        else
+        {
+            buyButton.interactable = false;
         }
     }
 }

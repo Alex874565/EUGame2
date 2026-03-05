@@ -34,6 +34,7 @@ public class LoseUI : MonoBehaviour
 
     private void Start()
     {
+        gameObject.SetActive(false);
     }
 
     public void Hide()
@@ -48,6 +49,17 @@ public class LoseUI : MonoBehaviour
     public void Show(int moneyEarned, float secondsSurvived)
     {
         gameObject.SetActive(true);
+        
+        ServiceLocator.Instance.GameManager.PauseGame();
+        ServiceLocator.Instance.PlayerManager.AddMoney(moneyEarned/2);
+        ServiceLocator.Instance.GameManager.WonLastWave = false;
+        ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+            ServiceLocator.Instance.GameManager.WaveIndex,
+            ServiceLocator.Instance.GameManager.WonLastWave,
+            ServiceLocator.Instance.PlayerManager.Money,
+            ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+            ServiceLocator.Instance.PlayerManager.StartingUnits
+        ));
         
         // Pass two actions: one for money, one for time
         stagger.OpenMenu(
