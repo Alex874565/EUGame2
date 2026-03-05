@@ -52,10 +52,17 @@ public class ShopUnitBehaviour : MonoBehaviour
         }
     }
     
+    private bool initialized = false;
+
     private void InitializeUnit()
     {
-        _data = ServiceLocator.Instance.UnitsDatabase.Units.Find(unit => unit.Data.Type == type).Data;
-        buyButton.onClick.RemoveAllListeners();
+        if (initialized) return;
+
+        _data = ServiceLocator.Instance.UnitsDatabase.Units
+            .Find(unit => unit.Data.Type == type).Data;
+
         buyButton.onClick.AddListener(TryBuyUnit);
+
+        initialized = true;
     }
 }
