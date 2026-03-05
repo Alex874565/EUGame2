@@ -16,7 +16,8 @@ MonoBehaviour:
   - <Type>k__BackingField: 0
     <Level>k__BackingField: 1
     <Name>k__BackingField: Active Encouragement
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Campaigns and community programs motivate citizens
+      to participate in democratic life and local initiatives.
     <ModifiersDescription>k__BackingField: 
     <Cost>k__BackingField: 100
     <EmergencyModifiers>k__BackingField:
@@ -32,7 +33,8 @@ MonoBehaviour:
   - <Type>k__BackingField: 0
     <Level>k__BackingField: 2
     <Name>k__BackingField: Funding Initiatives
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Public funding supports civic projects, NGOs, and
+      grassroots movements that strengthen community participation.
     <ModifiersDescription>k__BackingField: 
     <Cost>k__BackingField: 50
     <EmergencyModifiers>k__BackingField:
@@ -48,7 +50,8 @@ MonoBehaviour:
   - <Type>k__BackingField: 0
     <Level>k__BackingField: 3
     <Name>k__BackingField: Better Reward System
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Recognition and incentives encourage volunteering,
+      civic engagement, and participation in public decision-making.
     <ModifiersDescription>k__BackingField: 
     <Cost>k__BackingField: 0
     <EmergencyModifiers>k__BackingField:
@@ -65,15 +68,23 @@ MonoBehaviour:
   - <Type>k__BackingField: 1
     <Level>k__BackingField: 1
     <Name>k__BackingField: Easier Voting
-    <Description>k__BackingField: 
-    <ModifiersDescription>k__BackingField: 
+    <Description>k__BackingField: Measures such as early voting, accessible polling
+      stations, and digital services make voting easier for citizens.
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>+10</color> <color=#C62828>Emergencies
+      Expiration Time</color>\n<color=#2E7D32>+10</color> <color=#1976D2>Minigames
+      Reward</color>
     <Cost>k__BackingField: 0
-    <EmergencyModifiers>k__BackingField: []
+    <EmergencyModifiers>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Value>k__BackingField: 0
+      <ModifiedStat>k__BackingField: 0
+      <AffectedType>k__BackingField: 
     <MinigameModifiers>k__BackingField: []
   - <Type>k__BackingField: 1
     <Level>k__BackingField: 2
     <Name>k__BackingField: Political Education
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Students learn how democratic institutions work
+      and why participation and critical thinking matter.
     <ModifiersDescription>k__BackingField: 
     <Cost>k__BackingField: 0
     <EmergencyModifiers>k__BackingField: []
@@ -81,7 +92,8 @@ MonoBehaviour:
   - <Type>k__BackingField: 1
     <Level>k__BackingField: 3
     <Name>k__BackingField: Information Access
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Open data and transparency laws allow citizens
+      to access government information and hold institutions accountable.
     <ModifiersDescription>k__BackingField: 
     <Cost>k__BackingField: 0
     <EmergencyModifiers>k__BackingField: []
@@ -90,7 +102,8 @@ MonoBehaviour:
   - <Type>k__BackingField: 2
     <Level>k__BackingField: 1
     <Name>k__BackingField: More Transparency
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Platforms and institutions must clearly show sources,
+      funding, and how information is promoted online.
     <ModifiersDescription>k__BackingField: 
     <Cost>k__BackingField: 0
     <EmergencyModifiers>k__BackingField: []
@@ -98,7 +111,8 @@ MonoBehaviour:
   - <Type>k__BackingField: 2
     <Level>k__BackingField: 2
     <Name>k__BackingField: Trusted Source
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Support for independent journalism and fact-checking
+      helps citizens find reliable information.
     <ModifiersDescription>k__BackingField: 
     <Cost>k__BackingField: 0
     <EmergencyModifiers>k__BackingField: []
@@ -106,7 +120,8 @@ MonoBehaviour:
   - <Type>k__BackingField: 2
     <Level>k__BackingField: 3
     <Name>k__BackingField: Better Media Surveillance
-    <Description>k__BackingField: 
+    <Description>k__BackingField: Authorities and researchers monitor coordinated
+      disinformation campaigns and respond quickly to harmful content.
     <ModifiersDescription>k__BackingField: 
     <Cost>k__BackingField: 0
     <EmergencyModifiers>k__BackingField: []
