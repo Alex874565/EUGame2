@@ -6,6 +6,7 @@ public class UpgradeBehaviour : MonoBehaviour
 {
     [field: SerializeField] public UpgradeType Type { get; set; }
     [field: SerializeField] public int Level { get; set; }
+    [field: SerializeField] private Image background;
 
     [Header("UI Elements")] 
     [SerializeField] private Image image;
@@ -16,6 +17,8 @@ public class UpgradeBehaviour : MonoBehaviour
     [SerializeField] private Color unlockedColor = Color.white;
     [SerializeField] private Color unlockableColor = Color.gray;
     [SerializeField] private Color lockedColor = Color.black;
+    [SerializeField] private Color bgUnlockedColor = Color.green;
+    [SerializeField] private Color bgUnlockableColor = Color.gray;
     
     private UpgradeData _data;
     
@@ -52,19 +55,22 @@ public class UpgradeBehaviour : MonoBehaviour
             costText.text = $"Owned";
             costImage.SetActive(false);
             image.color = unlockedColor;
+            background.color = bgUnlockedColor;
         }
         else
         {
             if(ServiceLocator.Instance.PlayerManager.IsUpgradeAvailable(Type, Level)){
                 costText.text = $"{_data.Cost}";
                 costImage.SetActive(true);
-                image.color = unlockableColor;
+                image.color = unlockedColor;
+                background.color = bgUnlockableColor;
             }
             else
             {
                 costText.text = $"???";
                 costImage.SetActive(false);
                 image.color = lockedColor;
+                background.color = unlockableColor;
             }
         }
         

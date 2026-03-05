@@ -211,6 +211,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
       value: MoneyContainer
@@ -604,7 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &46740029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,13 +635,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 0
   <Level>k__BackingField: 1
+  background: {fileID: 584373097}
   image: {fileID: 1940587834}
   costText: {fileID: 515616982}
   costImage: {fileID: 2101101380}
   buyButton: {fileID: 46740027}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
 --- !u!1 &56489367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3765499, g: 0.5924529, b: 0.16432182, a: 1}
+  m_Color: {r: 0.23529413, g: 0.61960787, b: 0.9960785, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1908,6 +1915,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
       value: MoneyContainer
@@ -2391,7 +2402,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2690956359654352671, guid: d2f2bef60d51af24b8d39e91fcc58569, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2573,7 +2584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &264059518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,13 +2611,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 2
   <Level>k__BackingField: 1
+  background: {fileID: 1042703599}
   image: {fileID: 2055240795}
   costText: {fileID: 139584778}
   costImage: {fileID: 1770586235}
   buyButton: {fileID: 264059516}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
 --- !u!1 &268899702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &268899708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2930,7 +2944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3765499, g: 0.5924529, b: 0.16432182, a: 1}
+  m_Color: {r: 0.5647059, g: 0.3647059, b: 0.79215693, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3012,7 +3026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3756407291685641900, guid: 2b94d384abf26cd41a01f7dc01c34586, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3556,7 +3570,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 665439150}
+  - {fileID: 1029293208}
   - {fileID: 56489368}
   m_Father: {fileID: 1334323844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3621,7 +3635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &363891581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3648,13 +3662,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 0
   <Level>k__BackingField: 3
+  background: {fileID: 1029293209}
   image: {fileID: 254458143}
   costText: {fileID: 1965090035}
   costImage: {fileID: 229624692}
   buyButton: {fileID: 363891579}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
 --- !u!1 &372715248
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,7 +4142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &410237617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4295,7 +4312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 5013919423951066099, guid: deec914797804c14f875948e4530a081, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4979,7 +4996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &528342806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5006,13 +5023,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 2
   <Level>k__BackingField: 3
+  background: {fileID: 325655359}
   image: {fileID: 1642936008}
   costText: {fileID: 1625791494}
   costImage: {fileID: 1323249236}
   buyButton: {fileID: 528342804}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
 --- !u!1 &551597980
 GameObject:
   m_ObjectHideFlags: 0
@@ -6152,7 +6172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3765499, g: 0.5924529, b: 0.16432182, a: 1}
+  m_Color: {r: 0.5647059, g: 0.3647059, b: 0.79215693, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6623,7 +6643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &651155842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6650,13 +6670,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 0
   <Level>k__BackingField: 2
+  background: {fileID: 1834776088}
   image: {fileID: 694183327}
   costText: {fileID: 1533077884}
   costImage: {fileID: 1155118278}
   buyButton: {fileID: 651155840}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
 --- !u!114 &652255595 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
@@ -6946,81 +6969,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665183850}
   m_CullTransparentMesh: 1
---- !u!1 &665439149
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 665439150}
-  - component: {fileID: 665439152}
-  - component: {fileID: 665439151}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &665439150
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665439149}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 363891578}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &665439151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665439149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.3765499, g: 0.5924529, b: 0.16432182, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &665439152
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665439149}
-  m_CullTransparentMesh: 1
 --- !u!1 &675178415
 GameObject:
   m_ObjectHideFlags: 0
@@ -7156,7 +7104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &675178421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7257,6 +7205,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1516774267}
     m_Modifications:
+    - target: {fileID: 4832544376936892596, guid: 75e5bef43f0a19b4fb63353bd69c5bed, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
     - target: {fileID: 5306260760272607956, guid: 75e5bef43f0a19b4fb63353bd69c5bed, type: 3}
       propertyPath: m_Name
       value: CloseButton (1)
@@ -7408,7 +7360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -8094495670009775861, guid: 8b97f9a82ee0bc0429cb28a1e55e3e92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7815,7 +7767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3765499, g: 0.5924529, b: 0.16432182, a: 1}
+  m_Color: {r: 0.23529413, g: 0.61960787, b: 0.9960785, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8900,8 +8852,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Head of Czech Republic
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+  m_sharedMaterial: {fileID: -5620491056423219097, guid: b4a030524e148e34da5d700fb121130c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9278,7 +9230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &977571592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9655,7 +9607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1020960020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9682,13 +9634,91 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 1
   <Level>k__BackingField: 2
+  background: {fileID: 1948882284}
   image: {fileID: 440464058}
   costText: {fileID: 1832934191}
   costImage: {fileID: 687554766}
   buyButton: {fileID: 1020960018}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+--- !u!1 &1029293207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029293208}
+  - component: {fileID: 1029293210}
+  - component: {fileID: 1029293209}
+  m_Layer: 5
+  m_Name: Background (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1029293208
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029293207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 363891578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1029293209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029293207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3765499, g: 0.5924529, b: 0.16432182, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1029293210
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029293207}
+  m_CullTransparentMesh: 1
 --- !u!1 &1034548694
 GameObject:
   m_ObjectHideFlags: 0
@@ -9814,7 +9844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3765499, g: 0.5924529, b: 0.16432182, a: 1}
+  m_Color: {r: 0.5647059, g: 0.3647059, b: 0.79215693, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10076,7 +10106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1111093489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10103,13 +10133,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 2
   <Level>k__BackingField: 2
+  background: {fileID: 615608557}
   image: {fileID: 1990651234}
   costText: {fileID: 2010400092}
   costImage: {fileID: 1451167030}
   buyButton: {fileID: 1111093487}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
 --- !u!1 &1112578067
 GameObject:
   m_ObjectHideFlags: 0
@@ -11269,7 +11302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1331770696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11627,6 +11660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1238783507}
     m_Modifications:
+    - target: {fileID: 4832544376936892596, guid: 75e5bef43f0a19b4fb63353bd69c5bed, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
     - target: {fileID: 5306260760272607956, guid: 75e5bef43f0a19b4fb63353bd69c5bed, type: 3}
       propertyPath: m_Name
       value: CloseButton
@@ -12692,7 +12729,6 @@ MonoBehaviour:
   <UIManager>k__BackingField: {fileID: 280655287}
   <UpgradesManager>k__BackingField: {fileID: 348724135}
   <DialogueManager>k__BackingField: {fileID: 913293554}
-  <AudioManager>k__BackingField: {fileID: 0}
   <LocationsDatabase>k__BackingField: {fileID: 0}
   <EmergenciesDatabase>k__BackingField: {fileID: 0}
   <WavesDatabase>k__BackingField: {fileID: 0}
@@ -12945,7 +12981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1520821050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13229,7 +13265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1526141988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13479,7 +13515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1549836560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13506,13 +13542,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 1
   <Level>k__BackingField: 3
+  background: {fileID: 133783644}
   image: {fileID: 325920760}
   costText: {fileID: 510537951}
   costImage: {fileID: 1818353839}
   buyButton: {fileID: 1549836558}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
 --- !u!114 &1551796445 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1526281115397205069, guid: 75e5bef43f0a19b4fb63353bd69c5bed, type: 3}
@@ -13690,6 +13729,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -13972,8 +14015,8 @@ MonoBehaviour:
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+  m_sharedMaterial: {fileID: -5620491056423219097, guid: b4a030524e148e34da5d700fb121130c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14422,7 +14465,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b044b762eba62e14687f096f34d99e2e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14641,7 +14684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1659135119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14874,7 +14917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1694669714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14984,7 +15027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1708506582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15011,13 +15054,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 1
   <Level>k__BackingField: 1
+  background: {fileID: 730886389}
   image: {fileID: 1960927611}
   costText: {fileID: 652255595}
   costImage: {fileID: 293240988}
   buyButton: {fileID: 1708506580}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
-  unlockableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  unlockableColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
+  bgUnlockedColor: {r: 0.37647063, g: 0.5921569, b: 0.16470589, a: 1}
+  bgUnlockableColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
 --- !u!1 &1719792229
 GameObject:
   m_ObjectHideFlags: 0
@@ -16090,7 +16136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1789488867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16330,6 +16376,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -16753,6 +16803,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -17683,7 +17737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1162642704207133085, guid: 10a8e30b7d8b77943ae72d49ed6c1f9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17728,6 +17782,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -17933,7 +17991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3765499, g: 0.5924529, b: 0.16432182, a: 1}
+  m_Color: {r: 0.23529413, g: 0.61960787, b: 0.9960785, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18015,7 +18073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1221805934072419932, guid: 128c96d55adde0f49955e966932a1b2d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18168,7 +18226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1961560066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18208,6 +18266,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -18401,6 +18463,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -18749,7 +18815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6132516712734970349, guid: 818486cdde42bd34191c320ae8bb5add, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18902,7 +18968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &2003939202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19186,7 +19252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -9190413629273969392, guid: 39549dd3d2bd08644a0f5fdfd9ace0ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19442,6 +19508,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -19764,6 +19834,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
@@ -20314,6 +20388,34 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 696680297128439169, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+    - target: {fileID: 696680297128439169, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5620491056423219097, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+    - target: {fileID: 696680297128439169, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 938681842023341773, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+    - target: {fileID: 938681842023341773, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5620491056423219097, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+    - target: {fileID: 938681842023341773, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879852506389433423, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
     - target: {fileID: 2606135019769148608, guid: e009f2909579f564facac4be20c14fef, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -20514,6 +20616,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5632509037041950366, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+    - target: {fileID: 5632509037041950366, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5620491056423219097, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+    - target: {fileID: 5632509037041950366, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6119634926665533400, guid: e009f2909579f564facac4be20c14fef, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -20528,6 +20642,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6119634926665533400, guid: e009f2909579f564facac4be20c14fef, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242118302714539195, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+    - target: {fileID: 6242118302714539195, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5620491056423219097, guid: b4a030524e148e34da5d700fb121130c, type: 2}
+    - target: {fileID: 6242118302714539195, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7210767384386106737, guid: e009f2909579f564facac4be20c14fef, type: 3}
@@ -20986,6 +21112,10 @@ PrefabInstance:
     - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968883038701114550, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3825383608041900378, guid: 27a7c880f2713ad44b35cb7395a3c959, type: 3}
       propertyPath: m_Name
