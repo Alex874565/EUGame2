@@ -15,6 +15,6 @@ public class UIButtonSFX : MonoBehaviour
 
     private void PlayClick()
     {
-        UIAudioManager.Instance?.PlayClick();
+        ServiceLocator.Instance.AudioManager.PlayClick();
     }
 }

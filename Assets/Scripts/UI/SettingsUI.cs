@@ -6,6 +6,9 @@ public class SettingsUI : MonoBehaviour
 {
     [SerializeField] private Button closeButton;
     [SerializeField] private MenuStaggerAnimation stagger; // assign in inspector
+    [SerializeField] private Slider masterSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
 
     private void Awake()
     {
@@ -19,6 +22,16 @@ public class SettingsUI : MonoBehaviour
     {
         // Start hidden
         gameObject.SetActive(false);
+
+        var audio = ServiceLocator.Instance.AudioManager;
+
+        masterSlider.value = audio.GetMasterVolume();
+        musicSlider.value = audio.GetMusicVolume();
+        sfxSlider.value = audio.GetSFXVolume();
+
+        masterSlider.onValueChanged.AddListener(audio.SetMasterVolume);
+        musicSlider.onValueChanged.AddListener(audio.SetMusicVolume);
+        sfxSlider.onValueChanged.AddListener(audio.SetSFXVolume);
     }
 
     public void Show()

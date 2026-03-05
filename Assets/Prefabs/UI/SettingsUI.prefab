@@ -1585,6 +1585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeButton: {fileID: 5487714154158090422}
   stagger: {fileID: 4890830652098670579}
+  masterSlider: {fileID: 7541416260567664171}
+  musicSlider: {fileID: 842577209987204762}
+  sfxSlider: {fileID: 5353607475623703930}
 --- !u!114 &4890830652098670579
 MonoBehaviour:
   m_ObjectHideFlags: 0
