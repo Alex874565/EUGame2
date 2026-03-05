@@ -935,6 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &330263068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,6 +1195,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1879852506389433423, guid: e009f2909579f564facac4be20c14fef, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
     - target: {fileID: 2606135019769148608, guid: e009f2909579f564facac4be20c14fef, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1682,6 +1687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1093380525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2140,6 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1454812902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2287,6 +2294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
 --- !u!114 &1598475507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2365,22 +2373,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!4 &1864496713 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-  m_PrefabInstance: {fileID: 2909182673538038446}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1864496714 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-  m_PrefabInstance: {fileID: 2909182673538038446}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6304146cfbd1c4ea63ab70de2dd98c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2055145506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,7 +2404,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 971982311}
-  - {fileID: 1864496713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2055145508
@@ -2438,7 +2429,6 @@ MonoBehaviour:
   <UIManager>k__BackingField: {fileID: 971982312}
   <UpgradesManager>k__BackingField: {fileID: 0}
   <DialogueManager>k__BackingField: {fileID: 0}
-  <AudioManager>k__BackingField: {fileID: 1864496714}
   <LocationsDatabase>k__BackingField: {fileID: 0}
   <EmergenciesDatabase>k__BackingField: {fileID: 0}
   <WavesDatabase>k__BackingField: {fileID: 0}
@@ -2487,12 +2477,16 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2055145507}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 288510709304336017, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: f09014868f607bf44baf9997e5b5da80, type: 3}
     - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2549,3 +2543,4 @@ SceneRoots:
   - {fileID: 1405727455}
   - {fileID: 1207668379}
   - {fileID: 1393311859}
+  - {fileID: 2909182673538038446}
