@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UpgradeBehaviour : MonoBehaviour
+public class UpgradeBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [field: SerializeField] public UpgradeType Type { get; set; }
     [field: SerializeField] public int Level { get; set; }
@@ -13,6 +14,7 @@ public class UpgradeBehaviour : MonoBehaviour
     [SerializeField] private TextMeshProUGUI costText;
     [SerializeField] private GameObject costImage;
     [SerializeField] private Button buyButton;
+    [SerializeField] private UpgradesTooltipUI tooltip;
     [Header("Colors")]
     [SerializeField] private Color unlockedColor = Color.white;
     [SerializeField] private Color unlockableColor = Color.gray;
@@ -30,7 +32,7 @@ public class UpgradeBehaviour : MonoBehaviour
         {
             ServiceLocator.Instance.UpgradesManager.ApplyUpgrade(Type, Level, false);
         });
-
+            
         UpdateUI();
     }
 
@@ -82,5 +84,15 @@ public class UpgradeBehaviour : MonoBehaviour
         {
             buyButton.interactable = false;
         }
+    }
+    
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        tooltip.Show(_data);
+    }
+    
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        tooltip.Hide();
     }
 }
