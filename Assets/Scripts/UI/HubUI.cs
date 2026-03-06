@@ -57,6 +57,7 @@ public class HubUI : MonoBehaviour
         ServiceLocator.Instance.GameManager.ResumeGame();
         if(ServiceLocator.Instance.GameManager.WaveIndex == 0 && ServiceLocator.Instance.GameManager.WonLastWave)
         {
+            gameButton.GetComponentInChildren<TextMeshProUGUI>().text = "START WAVE";
             passedText.text = "-";
             passedText.color = Color.black;
         }
@@ -83,6 +84,8 @@ public class HubUI : MonoBehaviour
         {
             //shopButton.enabled = false;
         }
+
+        ServiceLocator.Instance.AudioManager.PlayMenuMusic();
     }
 
 }

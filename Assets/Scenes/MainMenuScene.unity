@@ -1594,6 +1594,7 @@ MonoBehaviour:
   <PauseUI>k__BackingField: {fileID: 0}
   <UpgradeTreeUI>k__BackingField: {fileID: 0}
   <UnitShopUI>k__BackingField: {fileID: 0}
+  <MinigameEndUI>k__BackingField: {fileID: 0}
   Inventory: {fileID: 0}
   EmergencyDetailsMenu: {fileID: 0}
   MinigameDetailsMenu: {fileID: 0}
@@ -2531,6 +2532,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: menuMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e8be5e210237fc4692f630c779912f1, type: 3}
+    - target: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: gameplayMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: f09014868f607bf44baf9997e5b5da80, type: 3}
     - target: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: backgroundMusic
       value: 

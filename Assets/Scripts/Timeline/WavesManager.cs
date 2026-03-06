@@ -28,6 +28,8 @@ public class WavesManager : MonoBehaviour
         WavesDatabase = ServiceLocator.Instance.WavesDatabase;
         _playableDirector = GetComponent<PlayableDirector>();
         StartWave(ServiceLocator.Instance.GameManager.WaveIndex);
+
+        ServiceLocator.Instance.AudioManager.PlayGameplayMusic();
     }
 
     public void Update()
@@ -94,6 +96,9 @@ public class WavesManager : MonoBehaviour
 
     public void EndWave(bool won)
     {
+        Debug.Log("should stop music");
+        ServiceLocator.Instance.AudioManager.StopMusic();
+
         ServiceLocator.Instance.UnitsManager.DestroyUnits();
         ServiceLocator.Instance.EmergenciesManager.DestroyEmergencies();
         ServiceLocator.Instance.MinigamesManager.DestroyMinigames();
