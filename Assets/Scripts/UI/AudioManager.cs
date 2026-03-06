@@ -34,14 +34,14 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(AudioClip clip)
     {
         if (clip == null || currentMusic == clip) return;
-
         currentMusic = clip;
 
-        musicSource.DOFade(0f, 0.5f).OnComplete(() =>
+        musicSource.DOKill();
+        musicSource.DOFade(0f, 0.5f).SetUpdate(true).OnComplete(() =>
         {
             musicSource.clip = clip;
             musicSource.Play();
-            musicSource.DOFade(musicVolume * masterVolume, 0.5f);
+            musicSource.DOFade(musicVolume * masterVolume, 0.5f).SetUpdate(true);
         });
     }
 
@@ -52,6 +52,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGameplayMusic()
     {
+        Debug.Log("PLAY GAMEPLAY MUSIC CALLED");
         PlayMusic(gameplayMusic);
     }
 
@@ -89,13 +90,19 @@ public class AudioManager : MonoBehaviour
 
     public void StopMusic(float fadeDuration = 0.5f)
     {
-        Debug.Log("Stopping music source: " + musicSource.name);
-        Debug.Log("Is playing: " + musicSource.isPlaying);
-
-        musicSource.DOFade(0f, fadeDuration).OnComplete(() =>
+        musicSource.DOKill();
+        // SetUpdate(true) is critical for pausing!
+        musicSource.DOFade(0f, fadeDuration).SetUpdate(true).OnComplete(() =>
         {
             musicSource.Stop();
+            musicSource.clip = null;
+            currentMusic = null;
             musicSource.volume = musicVolume * masterVolume;
         });
+    }
+
+    public AudioSource GetMusicSource()
+    {
+        return musicSource;
     }
 }
