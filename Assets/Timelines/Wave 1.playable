@@ -22,7 +22,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 5
     m_ClipIn: 0
     m_Asset: {fileID: -2647452364755675757}
     m_Duration: 30
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnData:
   - <EmergencyType>k__BackingField: 0
-    <LocationName>k__BackingField: 6
+    <LocationName>k__BackingField: 4
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnData:
   - <EmergencyType>k__BackingField: 0
-    <LocationName>k__BackingField: 15
+    <LocationName>k__BackingField: 3
 --- !u!114 &5574370804074013743
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 23
+    m_Start: 35
     m_ClipIn: 0
     m_Asset: {fileID: 4971094660314332685}
     m_Duration: 30
