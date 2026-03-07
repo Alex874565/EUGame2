@@ -144,6 +144,14 @@ public class PlacementController : MonoBehaviour
             DeleteLines();
             ServiceLocator.Instance.PlacementManager.ClearPlacement();
         }
+        if (_unitBehaviour.OwningEmergency)
+        {
+            emergency.gameObject.GetComponent<TutorialTarget>()?.NotifyAction("UnitsSentFromEmergency");
+        }
+        else
+        {
+            emergency.gameObject.GetComponent<TutorialTarget>()?.NotifyAction("UnitsSentFromInventory");
+        }
     }
 
     private void PlaceGhost(Vector2 mouseWorldPos)

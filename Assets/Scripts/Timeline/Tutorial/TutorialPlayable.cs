@@ -2,10 +2,10 @@
 
 public class TutorialPlayable : PlayableBehaviour
 {
-    public DialogueData Dialogue { get; set; }
+    public TutorialStepData TutorialStepData { get; set; }
     
     public override void OnBehaviourPlay(Playable playable, FrameData info)
     {
-        ServiceLocator.Instance.DialogueManager.ShowDialogue(Dialogue);
+        ServiceLocator.Instance.TutorialManager.StartStep(TutorialStepData);
     }
 }

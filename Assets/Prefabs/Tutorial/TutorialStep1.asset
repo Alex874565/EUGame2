@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bdb26950dd64118a975d6860d5282d8, type: 3}
+  m_Name: TutorialStep1
+  m_EditorClassIdentifier: 
+  <StepIndex>k__BackingField: 0
+  <DialogueData>k__BackingField:
+    <CharacterName>k__BackingField: Bruxelles
+    <CharacterPortrait>k__BackingField: {fileID: -1162642704207133085, guid: 10a8e30b7d8b77943ae72d49ed6c1f9b, type: 3}
+    <DialogueLines>k__BackingField:
+    - Let me present you your control interface.
+    - On the upper right you can see how much time you have to resist, how much money
+      you have and how many emergencies you have left unsolved.
+    - Leave too many emergencies unsloved or run out of money and you lose.
+    - Under those three, you can see your units. You receive a certain amount at
+      each round start and will be able to buy more later.
+  <RequiredActionId>k__BackingField: 
+  <HighlightTargetIds>k__BackingField: []
+  <PauseGame>k__BackingField: 1

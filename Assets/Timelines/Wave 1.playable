@@ -92,6 +92,19 @@ MonoBehaviour:
     m_DisplayName: EmergencyClip
   m_Markers:
     m_Objects: []
+--- !u!114 &-4686915238168364772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39eecc2d761417a9c45973c10d8e899, type: 3}
+  m_Name: TutorialClip(Clone)
+  m_EditorClassIdentifier: 
+  tutorialStepData: {fileID: 11400000, guid: 87058004c8baa18409d6010f08cd870e, type: 2}
 --- !u!114 &-2647452364755675757
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnData:
   - <EmergencyType>k__BackingField: 0
-    <LocationName>k__BackingField: 4
+    <LocationName>k__BackingField: 12
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +168,76 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 6411131893721191328}
-    m_Duration: 5
+    m_Duration: 2.4666666666666663
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 2285062893148875050}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TutorialClip
+  - m_Version: 1
+    m_Start: 6.066666666666666
+    m_ClipIn: 0
+    m_Asset: {fileID: -4686915238168364772}
+    m_Duration: 2.4666666666666663
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2285062893148875050}
     m_EaseInDuration: 0
@@ -236,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnData:
   - <EmergencyType>k__BackingField: 0
-    <LocationName>k__BackingField: 3
+    <LocationName>k__BackingField: 9
 --- !u!114 &5574370804074013743
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -341,9 +423,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39eecc2d761417a9c45973c10d8e899, type: 3}
   m_Name: TutorialClip
   m_EditorClassIdentifier: 
-  dialogue:
-    <CharacterName>k__BackingField: Bacteria
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 40bcaa0824f50b744b30b57e0e1f4f0a, type: 3}
-    <DialogueLines>k__BackingField:
-    - On the right you can see your units.
-    - These will help you solve emergencies.
+  tutorialStepData: {fileID: 11400000, guid: c1136d79d0b3ba04a8e4cfefdf95562f, type: 2}

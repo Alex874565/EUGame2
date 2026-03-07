@@ -2,12 +2,8 @@
 
 public class TutorialTarget : MonoBehaviour
 {
-    [field: SerializeField] public string TargetId { get; private set; }
-    
-    
-    
-    public void NotifyAction()
+    public void NotifyAction(string actionId)
     {
-        ServiceLocator.Instance.TutorialManager.NotifyAction(TargetId, gameObject);
+        ServiceLocator.Instance.TutorialManager.NotifyAction(actionId, gameObject);
     }
 }

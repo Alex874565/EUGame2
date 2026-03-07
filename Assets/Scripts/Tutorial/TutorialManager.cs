@@ -15,13 +15,15 @@ public class TutorialManager : MonoBehaviour
         waiting = true;
         activeStep = new TutorialStepData(step);
 
-        PauseGameplay();
         ServiceLocator.Instance.DialogueManager.ShowDialogue(activeStep.DialogueData);
         
         RegisterStepListeners(activeStep);
 
+        if (activeStep.RequiredActionId == string.Empty)
+            ServiceLocator.Instance.DialogueManager.DialogueUI.OnDialogueEnd += CompleteStep;
+
         if (step.PauseGame)
-            ServiceLocator.Instance.GameManager.PauseArtificially();
+            ServiceLocator.Instance.GameManager.PauseGame();
     }
 
     public void NotifyAction(string actionId, GameObject target = null)
@@ -35,27 +37,18 @@ public class TutorialManager : MonoBehaviour
 
     private void CompleteStep()
     {
+        Debug.Log("CompleteStep");
         UnregisterStepListeners(activeStep);
-
-        ResumeGameplay();
-
+        
         waiting = false;
         activeStep = null;
 
         if (ServiceLocator.Instance.GameManager.IsPaused)
         {
-            ServiceLocator.Instance.GameManager.ResumeArtificially();
+            ServiceLocator.Instance.GameManager.ResumeGame();
         }
-    }
-
-    private void PauseGameplay()
-    {
-        Time.timeScale = 0f;
-    }
-
-    private void ResumeGameplay()
-    {
-        Time.timeScale = 1f;
+        
+        ServiceLocator.Instance.DialogueManager.DialogueUI.OnDialogueEnd -= CompleteStep;
     }
 
     private void RegisterStepListeners(TutorialStepData step)

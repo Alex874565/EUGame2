@@ -363,6 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7606365028712409988}
   - component: {fileID: -1056386395039528311}
+  - component: {fileID: 5311002629014338312}
   m_Layer: 5
   m_Name: Emergency
   m_TagString: Untagged
@@ -409,6 +410,18 @@ MonoBehaviour:
   wiggleDegrees: 10
   wiggleDuration: 0.5
   wiggleScaleMultiplier: 1.1
+--- !u!114 &5311002629014338312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141184093873084707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80da8f3cb5446298e41ad3d1049afd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7835112385173401980
 GameObject:
   m_ObjectHideFlags: 0

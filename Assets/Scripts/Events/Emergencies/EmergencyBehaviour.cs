@@ -301,6 +301,9 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
             IsSelected = true;
             ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
             StartCoroutine(SelectCoroutine());
+            Debug.Log("Selecting");
+            Debug.Log(GetComponent<TutorialTarget>());
+            GetComponent<TutorialTarget>()?.NotifyAction("EmergencySelected");
         }
     }
 

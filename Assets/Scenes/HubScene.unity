@@ -2902,6 +2902,7 @@ MonoBehaviour:
   <PauseUI>k__BackingField: {fileID: 0}
   <UpgradeTreeUI>k__BackingField: {fileID: 519224511}
   <UnitShopUI>k__BackingField: {fileID: 1238783508}
+  <MinigameEndUI>k__BackingField: {fileID: 0}
   Inventory: {fileID: 0}
   EmergencyDetailsMenu: {fileID: 0}
   MinigameDetailsMenu: {fileID: 0}
@@ -9224,7 +9225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2feef64a3874f4b83b0998642049106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueUI: {fileID: 605530852}
+  <DialogueUI>k__BackingField: {fileID: 605530852}
   dialoguesDatabase: {fileID: 11400000, guid: 86d02c08e8834a24cbe4d72bdacbf745, type: 2}
 --- !u!1 &917885083
 GameObject:
@@ -13238,6 +13239,7 @@ MonoBehaviour:
   <UIManager>k__BackingField: {fileID: 280655287}
   <UpgradesManager>k__BackingField: {fileID: 348724135}
   <DialogueManager>k__BackingField: {fileID: 913293554}
+  <TutorialManager>k__BackingField: {fileID: 0}
   <LocationsDatabase>k__BackingField: {fileID: 0}
   <EmergenciesDatabase>k__BackingField: {fileID: 0}
   <WavesDatabase>k__BackingField: {fileID: 0}

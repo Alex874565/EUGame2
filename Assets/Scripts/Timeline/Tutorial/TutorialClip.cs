@@ -5,7 +5,7 @@ using UnityEngine.Timeline;
 
 public class TutorialClip : PlayableAsset, ITimelineClipAsset
 {
-    [SerializeField] private DialogueData dialogue;
+    [SerializeField] private TutorialStepData tutorialStepData;
 
     public ClipCaps clipCaps => ClipCaps.None;
 
@@ -13,7 +13,7 @@ public class TutorialClip : PlayableAsset, ITimelineClipAsset
     {
         var playable = ScriptPlayable<TutorialPlayable>.Create(graph);
         var tutorialPlayable = playable.GetBehaviour();
-        tutorialPlayable.Dialogue = dialogue;
+        tutorialPlayable.TutorialStepData = tutorialStepData;
         return playable;
     }
 }
