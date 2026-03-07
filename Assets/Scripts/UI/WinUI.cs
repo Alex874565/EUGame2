@@ -39,22 +39,37 @@ public class WinUI : MonoBehaviour
 
     public void Show(int moneyEarned)
     {
+        // Setup initial state for animation
+        CanvasGroup cg = GetComponent<CanvasGroup>();
+        if (cg == null) cg = gameObject.AddComponent<CanvasGroup>();
+        
+        cg.alpha = 0;
+        transform.localScale = Vector3.one * 0.85f;
         gameObject.SetActive(true);
-        ServiceLocator.Instance.GameManager.WonLastWave = true;
-        ServiceLocator.Instance.GameManager.WaveIndex += 1;
-        ServiceLocator.Instance.PlayerManager.AddMoney(moneyEarned);
-        ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
-            ServiceLocator.Instance.GameManager.WaveIndex,
-            ServiceLocator.Instance.GameManager.WonLastWave,
-            ServiceLocator.Instance.PlayerManager.Money,
-            ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
-            ServiceLocator.Instance.PlayerManager.StartingUnits
-        ));
-            
-            
-        stagger.OpenMenu(() =>
+
+        // Sequence for smooth entry
+        Sequence entrySequence = DOTween.Sequence().SetUpdate(true);
+        entrySequence.Join(cg.DOFade(1f, 0.5f));
+        entrySequence.Join(transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack));
+        
+        entrySequence.OnComplete(() => 
         {
-            AnimateMoney(moneyEarned);
+            ServiceLocator.Instance.GameManager.WonLastWave = true;
+            ServiceLocator.Instance.GameManager.WaveIndex += 1;
+            ServiceLocator.Instance.PlayerManager.AddMoney(moneyEarned);
+            ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+                ServiceLocator.Instance.GameManager.WaveIndex,
+                ServiceLocator.Instance.GameManager.WonLastWave,
+                ServiceLocator.Instance.PlayerManager.Money,
+                ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+                ServiceLocator.Instance.PlayerManager.StartingUnits
+            ));
+                
+                
+            stagger.OpenMenu(() =>
+            {
+                AnimateMoney(moneyEarned);
+            });
         });
     }
 

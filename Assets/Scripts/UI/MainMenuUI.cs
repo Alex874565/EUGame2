@@ -49,6 +49,8 @@ public class MainMenuUI : MonoBehaviour
             continueButton.gameObject.SetActive(false);
         }
         stagger.OpenMenu();
+
+        ServiceLocator.Instance.AudioManager.PlayMenuMusic();
     }
 
     public void HideMenu()

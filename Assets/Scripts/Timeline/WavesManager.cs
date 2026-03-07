@@ -22,12 +22,16 @@ public class WavesManager : MonoBehaviour
     private PlayableDirector _playableDirector;
 
     public float TimeSinceStart { get; private set; }
+
+    private bool waveEnded = false;
     
     private void Start()
     {
         WavesDatabase = ServiceLocator.Instance.WavesDatabase;
         _playableDirector = GetComponent<PlayableDirector>();
         StartWave(ServiceLocator.Instance.GameManager.WaveIndex);
+
+        ServiceLocator.Instance.AudioManager.PlayGameplayMusic();
     }
 
     public void Update()
@@ -41,6 +45,8 @@ public class WavesManager : MonoBehaviour
     
     public void StartWave(int index)
     {
+        waveEnded = false;
+
         ServiceLocator.Instance.GameManager.ResumeGame();
         
         if (index >= WavesDatabase.Waves.Count)
@@ -94,10 +100,37 @@ public class WavesManager : MonoBehaviour
 
     public void EndWave(bool won)
     {
+        if (waveEnded) return;
+        waveEnded = true;
+        StartCoroutine(EndWaveRoutine(won));
+    }
+
+    private IEnumerator EndWaveRoutine(bool won)
+    {
+        // 1. Visual/Audio feedback of the end
+        _playableDirector.Stop();
+        ServiceLocator.Instance.AudioManager.StopMusic(1.0f);
+        
+        // Stop all SFX
+        var sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (var source in sources)
+        {
+            if (source != ServiceLocator.Instance.AudioManager.GetMusicSource())
+                source.Stop();
+        }
+
+        // 2. Wait for a second so the user processes the loss/win
+        // We use WaitForSecondsRealtime because we are about to pause
+        yield return new WaitForSecondsRealtime(1.0f);
+
+        // 3. Pause and Cleanup
+        ServiceLocator.Instance.GameManager.PauseGame();
         ServiceLocator.Instance.UnitsManager.DestroyUnits();
         ServiceLocator.Instance.EmergenciesManager.DestroyEmergencies();
         ServiceLocator.Instance.MinigamesManager.DestroyMinigames();
         ServiceLocator.Instance.UIManager.Inventory.SetActive(false);
+
+        // 4. Show UI
         if(won)
         {
             winPanel.Show(CurrentMoney);
@@ -107,8 +140,6 @@ public class WavesManager : MonoBehaviour
             int moneyEarned = Mathf.RoundToInt(CurrentMoney * (TimeSinceStart / CurrentWaveData.WaveDuration));
             losePanel.Show(moneyEarned, TimeSinceStart);
         }
-        
-        ServiceLocator.Instance.GameManager.PauseGame();
     }
 
     public void PauseTimeline()
