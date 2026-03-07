@@ -17,7 +17,7 @@ MonoBehaviour:
     <Name>k__BackingField: Voting Minigame
     <Description>k__BackingField: Voting is important! Try to get all the votes into
       the urn.
-    <ScoreToWin>k__BackingField: 10
+    <ScoreToWin>k__BackingField: 6
     <TimeLimit>k__BackingField: 25
     <Reward>k__BackingField: 100
     <Prefab>k__BackingField: {fileID: 7822152282993780064, guid: f40bf66b14844944ea4a995becfadc6a, type: 3}
@@ -40,7 +40,7 @@ MonoBehaviour:
   - <Type>k__BackingField: 3
     <Name>k__BackingField: Cleanup Minigame
     <Description>k__BackingField: Clean the park. Littering hurts the planet!
-    <ScoreToWin>k__BackingField: 20
+    <ScoreToWin>k__BackingField: 10
     <TimeLimit>k__BackingField: 20
     <Reward>k__BackingField: 100
     <Prefab>k__BackingField: {fileID: 2352465972218026197, guid: 49075fc3205fffd43b10fbf6734dbd09, type: 3}
