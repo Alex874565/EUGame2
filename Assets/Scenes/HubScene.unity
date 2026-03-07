@@ -14457,6 +14457,7 @@ MonoBehaviour:
   passedText: {fileID: 563311727}
   upgradesButton: {fileID: 1694669712}
   shopButton: {fileID: 1659135117}
+  shopText: {fileID: 1741110330}
   settingsButton: {fileID: 410237615}
   mainMenuButton: {fileID: 1789488865}
   gameButton: {fileID: 1520821048}

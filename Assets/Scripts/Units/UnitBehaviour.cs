@@ -20,8 +20,6 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
     [SerializeField] private float clickScaleMultiplier = .8f;
 
-    private PlacementController _placementController;
-    private MovementController _movementController;
     public EmergencyBehaviour OwningEmergency { get; set; } = null;
     public bool IsIncoming { get; set; } =  false;
     
@@ -38,8 +36,6 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         _originalScale = gameObject.transform.localScale;
         
         IsInteractable = true;
-        _placementController = GetComponent<PlacementController>();
-        _movementController = GetComponent<MovementController>();
     }
 
     public void Start()
@@ -66,7 +62,7 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void UpdateCount(int count)
     {
         Count = count;
-        if (OwningEmergency == null || _placementController != null || _movementController != null)
+        if (OwningEmergency == null || GetComponent<PlacementController>() != null || GetComponent<MovementController>() != null)
 
         {
             counter.text = Count.ToString();

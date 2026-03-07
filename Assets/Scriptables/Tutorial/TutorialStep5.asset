@@ -17,8 +17,8 @@ MonoBehaviour:
     <CharacterName>k__BackingField: Bruxelles
     <CharacterPortrait>k__BackingField: {fileID: -1162642704207133085, guid: 10a8e30b7d8b77943ae72d49ed6c1f9b, type: 3}
     <DialogueLines>k__BackingField:
-    - You've probably also seen a minigame appearing on the map.
-    - It is a short task that once completed, gives you some money.
+    - Now a minigame has appeared too!
+    - It is a short task which, once completed, gives you some money.
     - The downside is that you can't attend to the emergencies while playing it,
       so use it with care.
     - You can use the reward money to keep moving units around.

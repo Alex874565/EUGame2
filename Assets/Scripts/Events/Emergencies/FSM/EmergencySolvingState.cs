@@ -20,7 +20,7 @@ public class EmergencySolvingState : EmergencyState
             return;
         }
         Emergency.SolvingTimeLeft -= Time.deltaTime;
-        Emergency.ExpirationTimeLeft += Mathf.Min(Time.deltaTime, Emergency.EmergencyData.TimeUntilExpiry - Emergency.ExpirationTimeLeft);
+        Emergency.ExpirationTimeLeft = Mathf.Clamp(Emergency.ExpirationTimeLeft + 2 * Time.deltaTime, 0, Emergency.EmergencyData.TimeToSolve);
         UpdateUI();
     }
     

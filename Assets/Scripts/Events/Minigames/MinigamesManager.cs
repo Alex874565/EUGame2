@@ -17,6 +17,8 @@ public class MinigamesManager : MonoBehaviour
     private float _spawnTimer;
     
     public MinigamePopupBehaviour MinigameInPlay { get; set; }
+    
+    public bool GamePlaying { get; set; }
 
     private void Awake()
     {
@@ -28,7 +30,14 @@ public class MinigamesManager : MonoBehaviour
     {
         InitializeMinigamesData();
         ApplyUpgrades();
-        _currentSpawnTime = UnityEngine.Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
+        if (ServiceLocator.Instance.GameManager.WaveIndex == 0)
+        {
+            _currentSpawnTime = 25f;
+        }
+        else
+        {
+            _currentSpawnTime = UnityEngine.Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
+        }
     }
 
     private void Update()

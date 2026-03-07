@@ -83,6 +83,11 @@ public class WavesManager : MonoBehaviour
     
         CurrentMoney = money;
         moneyText.text = $"{money}";
+        
+        if(CurrentMoney < 0)
+        {
+            EndWave(false);
+        }
     }
     
     public void UpdateEmergenciesFailed(int emergenciesFailed)
