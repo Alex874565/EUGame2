@@ -13,11 +13,16 @@ MonoBehaviour:
   m_Name: DialoguesDatabase
   m_EditorClassIdentifier: 
   <Dialogues>k__BackingField:
-  - <CharacterName>k__BackingField: Bacteria
+  - <CharacterName>k__BackingField: Pax
     <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 40bcaa0824f50b744b30b57e0e1f4f0a, type: 3}
     <DialogueLines>k__BackingField:
-    - Bacteria
-    - De la una am pornit
+    - Welcome to the European Civil Protecion Mechanism! You will have a lot on your
+      plate, being our Operations Lead! My name is Pax. My job is to manage the politics
+      and the treaties so you can manage the lives on the ground.
+    - "It is October 23rd, 2021. People didn't believe nations would share their
+      best fire trucks or doctors with their neighbors. We\u2019re going to prove
+      them wrong."
+    - "The first alarm is coming in! Put your headset on, Lead. Let\u2019s make history."
   - <CharacterName>k__BackingField: SillyGuy
     <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
     <DialogueLines>k__BackingField:
