@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class TutorialManager : MonoBehaviour
 {
     private TutorialStepData activeStep;
     private bool waiting;
     
-    
+    private List<GameObject> highlightTargets;
 
     public void StartStep(TutorialStepData step)
     {

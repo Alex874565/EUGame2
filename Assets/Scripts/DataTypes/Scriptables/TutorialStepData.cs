@@ -6,7 +6,7 @@ public class TutorialStepData : ScriptableObject
     [field: SerializeField] public int StepIndex { get; private set; }
     [field: SerializeField] public DialogueData DialogueData { get; private set; }
     [field: SerializeField] public string RequiredActionId { get; private set; }
-    [field: SerializeField] public GameObject[] HighlightTargets { get; private set; }
+    [field: SerializeField] public string[] HighlightTargetIds { get; private set; }
     [field: SerializeField] public bool PauseGame { get; private set; } = true;
 
     private bool _completed = false;
@@ -16,7 +16,7 @@ public class TutorialStepData : ScriptableObject
         StepIndex = step.StepIndex;
         DialogueData = step.DialogueData;
         RequiredActionId = step.RequiredActionId;
-        HighlightTargets = step.HighlightTargets;
+        HighlightTargetIds = step.HighlightTargetIds;
         PauseGame = step.PauseGame;
     }
     

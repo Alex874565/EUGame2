@@ -406,6 +406,9 @@ MonoBehaviour:
   hoverScaleMultiplier: 1.2
   selectedScaleMultiplier: 1.4
   clickScaleMultiplier: 0.8
+  wiggleDegrees: 10
+  wiggleDuration: 0.5
+  wiggleScaleMultiplier: 1.1
 --- !u!1 &7835112385173401980
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,7 +54,7 @@ public class WavesManager : MonoBehaviour
             return;
         }
         
-        CurrentWaveData = WavesDatabase.Waves[index];
+        CurrentWaveData = new WaveData(WavesDatabase.Waves[index]);
 
         ServiceLocator.Instance.UnitsManager.InitializeUnits(index);
         
