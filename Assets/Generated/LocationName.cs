@@ -1,6 +1,6 @@
 public enum LocationName
 {
-    Bruxelles,
+    Brussels,
     Spain,
     Portugal,
     Italy,
@@ -9,6 +9,7 @@ public enum LocationName
     Slovakia,
     Poland,
     Czech,
+    Austria,
     Germany,
     Belgium,
     Netherlands,

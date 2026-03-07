@@ -19,9 +19,6 @@ MonoBehaviour:
     <DialogueLines>k__BackingField:
     - An emergency has appeard on the map!
     - You can click on it in order to see what resources are needed to solve it.
-    - Then, select the units you need (you can select more of the same type at once)
-      and put them to work.
-    - Careful though, moving them around has some costs!
   <RequiredActionId>k__BackingField: EmergencySelected
   <HighlightTargetIds>k__BackingField: []
   <PauseGame>k__BackingField: 1
