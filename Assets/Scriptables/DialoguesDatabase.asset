@@ -23,7 +23,17 @@ MonoBehaviour:
       best fire trucks or doctors with their neighbors. We\u2019re going to prove
       them wrong."
     - "The first alarm is coming in! Put your headset on, Lead. Let\u2019s make history."
-  - <CharacterName>k__BackingField: SillyGuy
+  - <CharacterName>k__BackingField: Pax
     <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
     <DialogueLines>k__BackingField:
-    - Bleh
+    - 2002
+  - <CharacterName>k__BackingField: Pax
+    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <DialogueLines>k__BackingField:
+    - 2003
+  - <CharacterName>k__BackingField: Pax
+    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <DialogueLines>k__BackingField:
+    - Histry is made! Ten new nations, from the Baltic to the Mediterranean, have
+      joined the Union. We are now a familyo of 25. Democracy is expanding, and so
+      is our responsibility to protect every citizen within these new borders.
