@@ -12,7 +12,8 @@ public class EmergencySolvingState : EmergencyState
     
     public override void Update()
     {
-        base.Update();
+        if(ServiceLocator.Instance.GameManager.IsPaused) return;
+        
         if(Emergency.SolvingTimeLeft <= 0)
         {
             Emergency.Solve();

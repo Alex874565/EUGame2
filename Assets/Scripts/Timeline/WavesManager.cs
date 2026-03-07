@@ -111,6 +111,16 @@ public class WavesManager : MonoBehaviour
         ServiceLocator.Instance.GameManager.PauseGame();
     }
 
+    public void PauseTimeline()
+    {
+        _playableDirector.Pause();
+    }
+    
+    public void ResumeTimeline()
+    {
+        _playableDirector.Resume();
+    }
+
     #region Coroutines
 
     public IEnumerator UpdateMoneyCoroutine(bool lost)

@@ -90,4 +90,16 @@ public class GameManager : MonoBehaviour
         IsPaused = false;
         Time.timeScale = 1f;
     }
+    
+    public void PauseArtificially()
+    {
+        IsPaused = true;
+        ServiceLocator.Instance.WavesManager.PauseTimeline();
+    }
+    
+    public void ResumeArtificially()
+    {
+        IsPaused = false;
+        ServiceLocator.Instance.WavesManager.ResumeTimeline();
+    }
 }

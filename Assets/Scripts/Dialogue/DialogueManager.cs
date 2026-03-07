@@ -18,4 +18,9 @@ public class DialogueManager : MonoBehaviour
         
         dialogueUI.StartDialogue(dialogue);
     }
+    
+    public void ShowDialogue(DialogueData dialogue)
+    {
+        dialogueUI.StartDialogue(dialogue);
+    }
 }
