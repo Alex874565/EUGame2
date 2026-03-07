@@ -21,7 +21,9 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        ApplyVolumes();
+        SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume", .5f));
+        SetSFXVolume(PlayerPrefs.GetFloat("SFXVolume", .5f));
+        SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume", .5f));
     }
 
     void ApplyVolumes()
@@ -60,6 +62,7 @@ public class AudioManager : MonoBehaviour
     public void SetMusicVolume(float value)
     {
         musicVolume = value;
+        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
         ApplyVolumes();
     }
 
@@ -68,6 +71,7 @@ public class AudioManager : MonoBehaviour
     public void SetSFXVolume(float value)
     {
         sfxVolume = value;
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
         ApplyVolumes();
     }
 
@@ -76,6 +80,7 @@ public class AudioManager : MonoBehaviour
     public void SetMasterVolume(float value)
     {
         masterVolume = value;
+        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
         ApplyVolumes();
     }
 

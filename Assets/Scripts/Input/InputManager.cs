@@ -34,7 +34,12 @@ public class InputManager : MonoBehaviour
         _rightClickAction = _playerInput.actions["RightClick"];
         _scrollAction = _playerInput.actions["Scroll"];
     }
-
+    
+    private void Start()
+    {
+        OnEscapeAction += ServiceLocator.Instance.GameManager.InputManager_OnEscapeAction;
+    }
+    
     private void OnEnable()
     {
         _escapeAction.performed += Escape_performed;
@@ -45,6 +50,11 @@ public class InputManager : MonoBehaviour
     {
         _escapeAction.performed -= Escape_performed;
         _leftClickAction.performed -= LeftClick_performed;
+    }
+
+    private void OnDestroy()
+    {
+        OnEscapeAction -= ServiceLocator.Instance.GameManager.InputManager_OnEscapeAction;
     }
 
     private void Escape_performed(InputAction.CallbackContext context)

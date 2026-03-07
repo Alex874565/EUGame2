@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bdb26950dd64118a975d6860d5282d8, type: 3}
-  m_Name: TutorialStep2
+  m_Name: TutorialStep3
   m_EditorClassIdentifier: 
   <StepIndex>k__BackingField: 0
   <DialogueData>k__BackingField:
-    <CharacterName>k__BackingField: Bruxelles
+    <CharacterName>k__BackingField: Pax
     <CharacterPortrait>k__BackingField: {fileID: -1162642704207133085, guid: 10a8e30b7d8b77943ae72d49ed6c1f9b, type: 3}
     <DialogueLines>k__BackingField:
-    - An emergency has appeard on the map!
-    - You can click on it in order to see what resources are needed to solve it.
-  <RequiredActionId>k__BackingField: EmergencySelected
+    - Now, select the units you need (you can select one or more of the same type
+      at once) and send them to the emergency.
+    - Careful though, moving them around has some costs!
+  <RequiredActionId>k__BackingField: UnitsSentFromInventory
   <HighlightTargetIds>k__BackingField: []
   <PauseGame>k__BackingField: 1

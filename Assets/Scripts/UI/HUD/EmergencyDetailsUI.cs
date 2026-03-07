@@ -64,7 +64,7 @@ public class EmergencyDetailsUI : MonoBehaviour
         }
         
         LayoutRebuilder.ForceRebuildLayoutImmediate(
-            activeUnits.GetComponent<RectTransform>()
+            incomingUnits.GetComponent<RectTransform>()
         );
     }
 }

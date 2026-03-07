@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 
     public void TryShowDialogue()
     {
-        bool shouldShowDialogue = ServiceLocator.Instance.GameManager.WonLastWave;
+        bool shouldShowDialogue = ServiceLocator.Instance.GameManager.WonLastWave || ServiceLocator.Instance.GameManager.WaveIndex == 27;
         if (!shouldShowDialogue)
             return;
      

@@ -42,7 +42,6 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
     public void DestroySelf()
     {
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Remove(gameObject);
-        ServiceLocator.Instance.MinigamesManager.MinigameInPlay = null;
         Destroy(gameObject);
     }
 

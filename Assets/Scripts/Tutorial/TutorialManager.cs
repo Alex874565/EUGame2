@@ -4,15 +4,15 @@ using System.Collections.Generic;
 public class TutorialManager : MonoBehaviour
 {
     private TutorialStepData activeStep;
-    private bool waiting;
+    public bool Waiting { get; private set; }
     
     private List<GameObject> highlightTargets;
 
     public void StartStep(TutorialStepData step)
     {
-        if (waiting) return;
+        if (Waiting) return;
 
-        waiting = true;
+        Waiting = true;
         activeStep = new TutorialStepData(step);
 
         ServiceLocator.Instance.DialogueManager.ShowDialogue(activeStep.DialogueData);
@@ -28,7 +28,7 @@ public class TutorialManager : MonoBehaviour
 
     public void NotifyAction(string actionId, GameObject target = null)
     {
-        if (!waiting || activeStep == null) return;
+        if (!Waiting || activeStep == null) return;
 
         if (!activeStep.Accepts(actionId)) return;
 
@@ -40,7 +40,7 @@ public class TutorialManager : MonoBehaviour
         Debug.Log("CompleteStep");
         UnregisterStepListeners(activeStep);
         
-        waiting = false;
+        Waiting = false;
         activeStep = null;
 
         if (ServiceLocator.Instance.GameManager.IsPaused)

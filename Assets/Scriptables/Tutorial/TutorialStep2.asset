@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bdb26950dd64118a975d6860d5282d8, type: 3}
-  m_Name: TutorialStep4
+  m_Name: TutorialStep2
   m_EditorClassIdentifier: 
   <StepIndex>k__BackingField: 0
   <DialogueData>k__BackingField:
-    <CharacterName>k__BackingField: Bruxelles
+    <CharacterName>k__BackingField: Pax
     <CharacterPortrait>k__BackingField: {fileID: -1162642704207133085, guid: 10a8e30b7d8b77943ae72d49ed6c1f9b, type: 3}
     <DialogueLines>k__BackingField:
-    - You can also select the active units from an emergency and send them to another
-      one (same costs apply). Try it!
-  <RequiredActionId>k__BackingField: UnitsSentFromEmergency
+    - An emergency has appeard on the map!
+    - You can click on it in order to see what resources are needed to solve it.
+  <RequiredActionId>k__BackingField: EmergencySelected
   <HighlightTargetIds>k__BackingField: []
   <PauseGame>k__BackingField: 1

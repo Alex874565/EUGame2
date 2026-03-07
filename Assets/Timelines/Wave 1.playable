@@ -273,10 +273,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TutorialClip
   - m_Version: 1
-    m_Start: 6.066666666666666
+    m_Start: 5.5
     m_ClipIn: 0
     m_Asset: {fileID: -4686915238168364772}
-    m_Duration: 2.4666666666666663
+    m_Duration: 1
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2285062893148875050}
     m_EaseInDuration: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TutorialClip
   - m_Version: 1
-    m_Start: 8.533333333333333
+    m_Start: 6.5
     m_ClipIn: 0
     m_Asset: {fileID: 2055512010766581906}
     m_Duration: 2.5999999999999996
@@ -411,7 +411,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TutorialClip
   - m_Version: 1
-    m_Start: 37.46666666666667
+    m_Start: 13.95
     m_ClipIn: 0
     m_Asset: {fileID: -8882915357285976331}
     m_Duration: 3.166666666666666
@@ -480,7 +480,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TutorialClip
   - m_Version: 1
-    m_Start: 45
+    m_Start: 25.133333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -2983819047092868770}
     m_Duration: 3.6000000000000014
@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 35
+    m_Start: 10.633333333333336
     m_ClipIn: 0
     m_Asset: {fileID: 4971094660314332685}
     m_Duration: 30
