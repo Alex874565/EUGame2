@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StepIndex>k__BackingField: 0
   <DialogueData>k__BackingField:
-    <CharacterName>k__BackingField: Bruxelles
+    <CharacterName>k__BackingField: Pax
     <CharacterPortrait>k__BackingField: {fileID: -1162642704207133085, guid: 10a8e30b7d8b77943ae72d49ed6c1f9b, type: 3}
     <DialogueLines>k__BackingField:
     - Now a minigame has appeared too!

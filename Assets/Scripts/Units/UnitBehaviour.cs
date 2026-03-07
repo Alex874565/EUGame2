@@ -96,6 +96,11 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 counter.color = Count >= requiredUnits ? new Color(0.2f, .6f, 0.2f) : new Color(.6f, 0.2f, 0.2f);
             }
         }
+        
+        if(GetComponent<InventoryUnit>() != null)
+        {
+            costObj.SetActive(Count > 0);
+        }
     }
     
     public void UpdateReachTimeText(float time)

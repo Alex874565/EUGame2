@@ -28,23 +28,15 @@ public class GameManager : MonoBehaviour
     {
         IsPaused = false;
 
-        if (ServiceLocator.Instance.InputManager)
-        {
-            ServiceLocator.Instance.InputManager.OnEscapeAction += InputManager_OnEscapeAction;
-        }
-
         WonLastWave = true;
     }
 
     private void OnDestroy()
     {
-        if (ServiceLocator.Instance.InputManager)
-        {
-            ServiceLocator.Instance.InputManager.OnEscapeAction -= InputManager_OnEscapeAction;
-        }
+        if (_instance != this) return;
     }
 
-    private void InputManager_OnEscapeAction(object sender, EventArgs e)
+    public void InputManager_OnEscapeAction(object sender, EventArgs e)
     {
         var uiManager = ServiceLocator.Instance.UIManager;
 
@@ -65,7 +57,6 @@ public class GameManager : MonoBehaviour
         }
 
         // 3. Otherwise → pause
-        
         
         uiManager.PauseUI.Show();
         PauseGame();

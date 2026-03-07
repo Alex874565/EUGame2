@@ -56,7 +56,7 @@ public class HubUI : MonoBehaviour
     private void Start()
     {
         ServiceLocator.Instance.GameManager.ResumeGame();
-        if(ServiceLocator.Instance.GameManager.WaveIndex == 0)
+        if(ServiceLocator.Instance.GameManager.WaveIndex == 27)
         {
             ServiceLocator.Instance.GameManager.WonLastWave = false;
         }
