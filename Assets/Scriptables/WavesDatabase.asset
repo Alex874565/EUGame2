@@ -14,16 +14,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - <WaveNumber>k__BackingField: 1
-    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 465ec7c71e261aa4da2c309722c4167a, type: 2}
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 75c4956ae9bd9b1469711f23daaa5278, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 2
+      <Count>k__BackingField: 1
+    - <Type>k__BackingField: 3
+      <Count>k__BackingField: 3
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 5
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 6
+      <Count>k__BackingField: 2
+    <StartingMoney>k__BackingField: 850
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 145
+  - <WaveNumber>k__BackingField: 2
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 6afd1a2c882a7454a8c79dfdee6bfec1, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 2
+      <Count>k__BackingField: 1
+    - <Type>k__BackingField: 3
+      <Count>k__BackingField: 3
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 2
+    <StartingMoney>k__BackingField: 450
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 100
+  - <WaveNumber>k__BackingField: 3
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 33e7cc46021e9114e86b562e61825971, type: 2}
     <StartingUnits>k__BackingField:
     - <Type>k__BackingField: 1
       <Count>k__BackingField: 1
+    - <Type>k__BackingField: 2
+      <Count>k__BackingField: 2
     - <Type>k__BackingField: 3
       <Count>k__BackingField: 2
-    <StartingMoney>k__BackingField: 200
-    <EmergencyFailLimit>k__BackingField: 0
-    <WaveDuration>k__BackingField: 65
-  - <WaveNumber>k__BackingField: 2
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 5
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 6
+      <Count>k__BackingField: 1
+    <StartingMoney>k__BackingField: 500
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 105
+  - <WaveNumber>k__BackingField: 4
     <TimelineAsset>k__BackingField: {fileID: 11400000, guid: c701e00faa79ab541b4982b0277e8c5e, type: 2}
     <StartingUnits>k__BackingField:
     - <Type>k__BackingField: 1
@@ -34,6 +74,16 @@ MonoBehaviour:
       <Count>k__BackingField: 2
     - <Type>k__BackingField: 0
       <Count>k__BackingField: 2
-    <StartingMoney>k__BackingField: 500
+    <StartingMoney>k__BackingField: 450
     <EmergencyFailLimit>k__BackingField: 3
     <WaveDuration>k__BackingField: 95
+  - <WaveNumber>k__BackingField: 5
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 465ec7c71e261aa4da2c309722c4167a, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Count>k__BackingField: 1
+    - <Type>k__BackingField: 3
+      <Count>k__BackingField: 2
+    <StartingMoney>k__BackingField: 200
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 85
