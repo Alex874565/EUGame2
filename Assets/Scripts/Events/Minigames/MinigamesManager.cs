@@ -9,9 +9,9 @@ public class MinigamesManager : MonoBehaviour
     [SerializeField] private LocationName spawnLocation;
     [field: Header("Minigames Data")]
     [field: SerializeField] public MinigamesDatabase MinigamesDatabase { get; set; }
-    
-    public List<GameObject> ActiveMinigames { get; private set; }
-    public Dictionary<MinigameType, MinigameData> MinigamesData { get; private set; }
+
+    public List<GameObject> ActiveMinigames { get; private set; } = new();
+    public Dictionary<MinigameType, MinigameData> MinigamesData { get; private set; } = new();
     
     private float _currentSpawnTime;
     private float _spawnTimer;
@@ -19,12 +19,6 @@ public class MinigamesManager : MonoBehaviour
     public MinigamePopupBehaviour MinigameInPlay { get; set; }
     
     public bool GamePlaying { get; set; }
-
-    private void Awake()
-    {
-        ActiveMinigames = new List<GameObject>();
-        MinigamesData = new Dictionary<MinigameType, MinigameData>();
-    }
 
     private void Start()
     {

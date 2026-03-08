@@ -13,12 +13,12 @@ public class QuizMinigameController : MinigameController
     private List<QuizData> _questions;
     private QuizData _quizData;
 
-    private void Awake()
+    private new void Awake()
     {
         base.Awake();
     }
     
-    private void Update()
+    private new void Update()
     {
         base.Update();
     }
@@ -68,14 +68,7 @@ public class QuizMinigameController : MinigameController
 
     private void AnswerQuestion(bool isCorrect)
     {
-        if(isCorrect)
-        {
-            AddScore(1);
-        }
-        else
-        {
-            AddScore(-1);
-        }
+        AddScore(isCorrect ? 1 : 0);
         InitializeQuestion();
     }
 }

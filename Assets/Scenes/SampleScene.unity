@@ -837,7 +837,7 @@ MonoBehaviour:
   - {fileID: 2364800915172764829, guid: a580b97f262e4264188a4bcdfa2ed6d8, type: 3}
   - {fileID: 2364800915172764829, guid: 8b00ad564564ac5448522dd9797a0584, type: 3}
   - {fileID: 2364800915172764829, guid: 28f9b80f04db6404589e5f077d318bc1, type: 3}
-  petitionSpawnInterval: {x: 2, y: 4}
+  petitionSpawnInterval: {x: 1, y: 3}
 --- !u!1 &123686833
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,7 +3315,7 @@ MonoBehaviour:
   timer: {fileID: 699320955}
   winUI: {fileID: 1211974166}
   loseUI: {fileID: 1216138494}
-  spawnIntervalRange: {x: 0.5, y: 2}
+  spawnIntervalRange: {x: 1, y: 1.75}
   votePrefab: {fileID: 2260932558362363788, guid: a3c48d9b3fb51fe40992245bf7725d4a, type: 3}
 --- !u!1 &315780006
 GameObject:
@@ -13070,7 +13070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318119b1299b4a3dbcbef4fd8a54ac64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnIntervalRange: {x: 2, y: 10}
+  spawnIntervalRange: {x: 2, y: 6}
   minigames:
   - {fileID: 307038117}
   - {fileID: 1342750359}

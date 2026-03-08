@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine.UI;
 
 public class PackageMinigameController : MinigameController
@@ -11,23 +10,22 @@ public class PackageMinigameController : MinigameController
     [SerializeField] private Transform _packagesContainer;
     [SerializeField] private Button _sendButton;
 
-    private List<PackageBehaviour> _selectedPackages;
+    private List<PackageBehaviour> _selectedPackages = new();
     
-    private void Awake()
+    private new void Awake()
     {
         _sendButton.onClick.AddListener(OnSendButtonClicked);
         
         base.Awake();
     }
     
-    private void Update()
+    private new void Update()
     {
         base.Update();
     }
 
     public override void StartMinigame()
     {
-        _selectedPackages = new List<PackageBehaviour>();
         SpawnNewPackages();
         
         base.StartMinigame();

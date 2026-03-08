@@ -24,21 +24,26 @@ public class VotingMinigameController : MinigameController
     private Collider2D _spawnArea;
     private Bounds _spawnAreaBounds;
     
-    private List<GameObject> _activeVotes;
+    private List<GameObject> _activeVotes = new();
 
-    private void Awake()
+    private new void Awake()
     {
         _spawnArea = GetComponent<Collider2D>();
-        _activeVotes = new List<GameObject>();
         
         base.Awake();
     }
-    
-    private void Update()
+
+    private void OnEnable()
     {
-        base.Update();
-        
+        // Reset the spawn timer for each use so we don't encounter funny bugs.
+        _spawnTimer = 0f;
+    }
+
+    private new void Update()
+    {
         if (!GamePlaying) return;
+        
+        base.Update();
         
         _spawnTimer += Time.deltaTime;
         if (_spawnTimer >= _currentSpawnInterval)
