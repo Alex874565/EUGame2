@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
+[RequireComponent(typeof(SelectableObjectSFX))]
 public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [field: SerializeField] public MinigameType Type { get; private set; }
@@ -21,8 +22,12 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
     public MinigameData Data { get; private set; }
 
     private Vector3 _originalScale;
+    
+    private SelectableObjectSFX _objectSfx;
+    
     private void Start()
     {
+        _objectSfx = GetComponent<SelectableObjectSFX>();
         Data = ServiceLocator.Instance.MinigamesManager.MinigamesData[Type];
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Add(gameObject);
         IsSelected = false;
@@ -32,6 +37,8 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
         DOTween.Sequence()
             .Append(transform.DOScale(_originalScale * 1.5f, .25f).SetEase(Ease.OutCubic))
             .Append(transform.DOScale(_originalScale, .1f).SetEase(Ease.InOutQuad));
+        
+        _objectSfx.PlayAppearSFX();
     }
 
     public void Update()
@@ -49,9 +56,12 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
 
     public void Select()
     {
-        IsSelected = true;
-        ServiceLocator.Instance.UIManager.OpenMinigameDetails(this);
-        StartCoroutine(SelectCoroutine());
+        if(!IsSelected){
+            IsSelected = true;
+            ServiceLocator.Instance.UIManager.OpenMinigameDetails(this);
+            StartCoroutine(SelectCoroutine());
+            _objectSfx.PlaySelectSFX();
+        }
     }
 
     private IEnumerator SelectCoroutine()
@@ -63,9 +73,13 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
     
     public void Deselect()
     {
-        image.transform.localScale = _originalScale;
-        IsSelected = false;
-        ServiceLocator.Instance.UIManager.MinigameDetailsMenu.SetActive(false);
+        if (IsSelected)
+        {
+            image.transform.localScale = _originalScale;
+            IsSelected = false;
+            ServiceLocator.Instance.UIManager.MinigameDetailsMenu.SetActive(false);
+            _objectSfx.PlayDeselectSFX();
+        }
     }
 
     public void OnHoverEnter()
@@ -97,7 +111,6 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("OnPointerEnter");
         OnHoverEnter();
     }
     

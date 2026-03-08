@@ -142,7 +142,7 @@ public class WavesManager : MonoBehaviour
         }
         else
         {
-            int moneyEarned = Mathf.RoundToInt(CurrentMoney * (TimeSinceStart / CurrentWaveData.WaveDuration));
+            int moneyEarned = Mathf.RoundToInt(CurrentWaveData.StartingMoney * (TimeSinceStart / CurrentWaveData.WaveDuration));
             losePanel.Show(moneyEarned, TimeSinceStart);
         }
     }
@@ -165,7 +165,7 @@ public class WavesManager : MonoBehaviour
         Vector3 originalScale = moneyText.gameObject.transform.localScale;
         moneyText.color = new Color(lost ? 0.6f : 0.2f, lost ? 0.2f : 0.6f, 0.2f);
         moneyText.gameObject.transform.localScale = lost ? originalScale * 0.8f : originalScale * 1.2f;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         moneyText.color = originalColor;
         moneyText.gameObject.transform.localScale = originalScale;
     }
@@ -176,7 +176,7 @@ public class WavesManager : MonoBehaviour
         Vector3 originalScale = emergenciesFailedText.gameObject.transform.localScale;
         emergenciesFailedText.color = new Color(added ? 0.6f : 0.2f, added ? 0.2f : 0.6f, 0.2f);
         emergenciesFailedText.gameObject.transform.localScale = added ? originalScale * 1.2f : originalScale * 0.8f;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         emergenciesFailedText.color = originalColor;
         emergenciesFailedText.gameObject.transform.localScale = originalScale;
     }

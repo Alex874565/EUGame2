@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(SelectableObjectSFX))]
 public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [field: SerializeField] public UnitType Type { get; private set; }
@@ -20,6 +21,8 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private float hoverScaleMultiplier = 1.2f;
     [SerializeField] private float clickScaleMultiplier = .8f;
 
+    private PlaceableObjectSFX _objectSfx;
+    
     public EmergencyBehaviour OwningEmergency { get; set; } = null;
     public bool IsIncoming { get; set; } =  false;
     
@@ -33,6 +36,8 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     
     private void Awake()
     {
+        _objectSfx = GetComponent<PlaceableObjectSFX>();
+        
         _originalScale = gameObject.transform.localScale;
         
         IsInteractable = true;
@@ -125,7 +130,7 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private IEnumerator ClickCoroutine()
     {
         gameObject.transform.localScale = _originalScale * clickScaleMultiplier;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         if (ServiceLocator.Instance.CursorManager.HoveredObject == gameObject)
         {
             gameObject.transform.localScale = _originalScale * hoverScaleMultiplier;
@@ -206,6 +211,8 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                     UpdateCount(Count - 1);
                 }
             }
+            _objectSfx.PlaySelectSFX();
+            
         }
     }
     

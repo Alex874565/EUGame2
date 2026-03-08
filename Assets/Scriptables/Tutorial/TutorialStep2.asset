@@ -17,7 +17,7 @@ MonoBehaviour:
     <CharacterName>k__BackingField: Pax
     <CharacterPortrait>k__BackingField: {fileID: -1162642704207133085, guid: 10a8e30b7d8b77943ae72d49ed6c1f9b, type: 3}
     <DialogueLines>k__BackingField:
-    - An emergency has appeard on the map!
+    - An emergency has appeared on the map!
     - You can click on it in order to see what resources are needed to solve it.
   <RequiredActionId>k__BackingField: EmergencySelected
   <HighlightTargetIds>k__BackingField: []

@@ -37,7 +37,6 @@ public class TutorialManager : MonoBehaviour
 
     private void CompleteStep()
     {
-        Debug.Log("CompleteStep");
         UnregisterStepListeners(activeStep);
         
         Waiting = false;
