@@ -7359,6 +7359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 288510709304336017, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -19603,7 +19607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2feef64a3874f4b83b0998642049106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DialogueUI>k__BackingField: {fileID: 1640210200}
+  <DialogueUI>k__BackingField: {fileID: 0}
   dialoguesDatabase: {fileID: 11400000, guid: 86d02c08e8834a24cbe4d72bdacbf745, type: 2}
 --- !u!4 &2131746732
 Transform:

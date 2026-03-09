@@ -146,6 +146,7 @@ MonoBehaviour:
   spawnData:
   - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 10
+  database: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,10 +205,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 0.25
     m_ClipIn: 0
     m_Asset: {fileID: 6411131893721191328}
-    m_Duration: 2.4666666666666663
+    m_Duration: 2.2166666666666663
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2285062893148875050}
     m_EaseInDuration: 0
@@ -565,6 +566,7 @@ MonoBehaviour:
   spawnData:
   - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 9
+  database: []
 --- !u!114 &5574370804074013743
 MonoBehaviour:
   m_ObjectHideFlags: 1

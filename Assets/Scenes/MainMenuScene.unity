@@ -2478,6 +2478,7 @@ MonoBehaviour:
   <UIManager>k__BackingField: {fileID: 971982312}
   <UpgradesManager>k__BackingField: {fileID: 0}
   <DialogueManager>k__BackingField: {fileID: 0}
+  <TutorialManager>k__BackingField: {fileID: 0}
   <LocationsDatabase>k__BackingField: {fileID: 0}
   <EmergenciesDatabase>k__BackingField: {fileID: 0}
   <WavesDatabase>k__BackingField: {fileID: 0}
@@ -2544,6 +2545,10 @@ PrefabInstance:
       propertyPath: backgroundMusic
       value: 
       objectReference: {fileID: 8300000, guid: f09014868f607bf44baf9997e5b5da80, type: 3}
+    - target: {fileID: 5018751944511259564, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

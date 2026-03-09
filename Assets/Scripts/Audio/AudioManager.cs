@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    private static AudioManager _instance;
+    
     [Header("Sources")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
@@ -20,6 +22,12 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        if(_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
         DontDestroyOnLoad(gameObject);
         SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume", .5f));
         SetSFXVolume(PlayerPrefs.GetFloat("SFXVolume", .5f));
@@ -35,6 +43,9 @@ public class AudioManager : MonoBehaviour
     // MUSIC SWITCH
     public void PlayMusic(AudioClip clip)
     {
+        Debug.Log("PLAY MUSIC CALLED");
+        Debug.Log(clip);
+        Debug.Log(currentMusic);
         if (clip == null || currentMusic == clip) return;
         currentMusic = clip;
 

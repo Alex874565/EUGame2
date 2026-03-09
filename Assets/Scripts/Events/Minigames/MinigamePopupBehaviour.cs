@@ -103,10 +103,6 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
 
     public void OnClick()
     {
-        if (!ServiceLocator.Instance.PlacementManager.UnitInPlacing)
-        {
-            ServiceLocator.Instance.CursorManager.SelectObject(gameObject);
-        }
     }
     
     public void OnPointerEnter(PointerEventData eventData)
