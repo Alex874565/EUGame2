@@ -7,6 +7,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 
+[RequireComponent(typeof(PlaceableObjectSFX))]
 public class PlacementController : MonoBehaviour
 {
     private UnitData _unitData;
@@ -24,8 +25,11 @@ public class PlacementController : MonoBehaviour
     private float _moveSegmentT;
     private float _currentSegmentLength;
     
+    private PlaceableObjectSFX _placeableObjectSfx;
+    
     private void Start()
     {
+        _placeableObjectSfx = GetComponent<PlaceableObjectSFX>();
         ServiceLocator.Instance.InputManager.OnLeftClickActionSecond += OnClick;
         InitializeGhostUnit();
     }
@@ -118,6 +122,7 @@ public class PlacementController : MonoBehaviour
             DeleteLines();
             ServiceLocator.Instance.PlacementManager.ClearPlacement();
         }
+        _placeableObjectSfx.PlayDeselectSFX();
     }
 
     private IEnumerator SendUnits(GameObject target, int unitsToSend)
@@ -144,6 +149,15 @@ public class PlacementController : MonoBehaviour
             DeleteLines();
             ServiceLocator.Instance.PlacementManager.ClearPlacement();
         }
+        if (_unitBehaviour.OwningEmergency)
+        {
+            emergency.gameObject.GetComponent<TutorialTarget>()?.NotifyAction("UnitsSentFromEmergency");
+        }
+        else
+        {
+            emergency.gameObject.GetComponent<TutorialTarget>()?.NotifyAction("UnitsSentFromInventory");
+        }
+        _placeableObjectSfx.PlayPlaceSFX();
     }
 
     private void PlaceGhost(Vector2 mouseWorldPos)

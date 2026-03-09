@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 1184540371964645935}
   - component: {fileID: 4596410925536462216}
   - component: {fileID: 6855402935585822116}
+  - component: {fileID: 5798067456286623895}
   m_Layer: 5
   m_Name: Unit
   m_TagString: Untagged
@@ -391,6 +392,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &5798067456286623895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082197186816124465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e721b6099431a91f509dcc00bd85d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectClip: {fileID: 8300000, guid: 9b6945e39f41a284d924a1104c63a4e5, type: 3}
+  deselectClip: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
+  placeClip: {fileID: 8300000, guid: 964633e315f05c04ca1a664701c8eda0, type: 3}
+  removeClip: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
+  reachClip: {fileID: 8300000, guid: bc53d7ad69232e441b4e707d725a9e26, type: 3}
 --- !u!1 &5136687578802361173
 GameObject:
   m_ObjectHideFlags: 0

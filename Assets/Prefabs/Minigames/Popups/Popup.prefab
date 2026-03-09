@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 974006097066169859}
   - component: {fileID: 7298096399026273547}
+  - component: {fileID: 5922546498823972044}
   m_Layer: 5
   m_Name: Popup
   m_TagString: Untagged
@@ -125,6 +126,21 @@ MonoBehaviour:
   hoverScaleMultiplier: 1.2
   selectedScaleMultiplier: 1.4
   clickScaleMultiplier: 0.8
+--- !u!114 &5922546498823972044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004335355765425403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eb64e15d6c4e1199c1395ddb883157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectClip: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
+  deselectClip: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
+  appearClip: {fileID: 8300000, guid: 6859dfa0b741cdb4e9842ace11853e34, type: 3}
 --- !u!1 &6903161198948633753
 GameObject:
   m_ObjectHideFlags: 0

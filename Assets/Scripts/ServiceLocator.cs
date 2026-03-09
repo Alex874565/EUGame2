@@ -16,6 +16,7 @@ public class ServiceLocator : MonoBehaviour
     [field: SerializeField] public UIManager UIManager { get; private set; }
     [field: SerializeField] public UpgradesManager UpgradesManager { get; private set; }
     [field: SerializeField] public DialogueManager DialogueManager { get; private set; }
+    [field: SerializeField] public TutorialManager TutorialManager { get; private set; }
     public AudioManager AudioManager { get; private set; }
     public SaveManager SaveManager { get; private set; }
     public GameManager GameManager { get; private set; }

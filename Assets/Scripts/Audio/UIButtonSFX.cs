@@ -17,6 +17,7 @@ public class UIButtonSFX : MonoBehaviour
 
     private void PlayClick()
     {
+        Debug.Log("button clicked");
         ServiceLocator.Instance.AudioManager.PlayUI(clickSound);
     }
 }

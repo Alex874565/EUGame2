@@ -12,14 +12,15 @@ public class EmergencySolvingState : EmergencyState
     
     public override void Update()
     {
-        base.Update();
+        if(ServiceLocator.Instance.GameManager.IsPaused) return;
+        
         if(Emergency.SolvingTimeLeft <= 0)
         {
             Emergency.Solve();
             return;
         }
         Emergency.SolvingTimeLeft -= Time.deltaTime;
-        Emergency.ExpirationTimeLeft += Mathf.Min(Time.deltaTime, Emergency.EmergencyData.TimeUntilExpiry - Emergency.ExpirationTimeLeft);
+        Emergency.ExpirationTimeLeft = Mathf.Clamp(Emergency.ExpirationTimeLeft + 2 * Time.deltaTime, 0, Emergency.EmergencyData.TimeToSolve);
         UpdateUI();
     }
     

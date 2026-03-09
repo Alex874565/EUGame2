@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [field: SerializeField] public PauseUI PauseUI {get; private set;}
     [field: SerializeField] public UpgradeTreeUI UpgradeTreeUI {get; private set;}
     [field: SerializeField] public UnitShopUI UnitShopUI {get; private set;}
+    [field: SerializeField] public MinigameEndUI MinigameEndUI {get; private set;}
 
     [field: Header("HUD")] 
     [field: SerializeField] public GameObject Inventory;

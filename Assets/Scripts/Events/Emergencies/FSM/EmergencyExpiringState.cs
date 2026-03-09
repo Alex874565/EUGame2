@@ -11,6 +11,8 @@ public class EmergencyExpiringState : EmergencyState
     
     public override void Update()
     {
+        if(ServiceLocator.Instance.GameManager.IsPaused) return;
+        
         StateMachine.Emergency.SolvingTimeLeft = Mathf.Min(StateMachine.Emergency.EmergencyData.TimeToSolve, StateMachine.Emergency.SolvingTimeLeft + Time.deltaTime);
         StateMachine.Emergency.ExpirationTimeLeft = Mathf.Max(0, StateMachine.Emergency.ExpirationTimeLeft - Time.deltaTime);
         UpdateUI();

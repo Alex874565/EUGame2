@@ -29,6 +29,7 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
+        if(ServiceLocator.Instance.GameManager.IsPaused || ServiceLocator.Instance.MinigamesManager.MinigameInPlay != null) return;
         // Start pan
         if (ServiceLocator.Instance.InputManager.RightClickPressed)
         {

@@ -22,7 +22,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 5
     m_ClipIn: 0
     m_Asset: {fileID: -2647452364755675757}
     m_Duration: 30
@@ -91,7 +91,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 30
+    m_Start: 45
     m_ClipIn: 0
     m_Asset: {fileID: 7955511450779309169}
     m_Duration: 30
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 19
+    m_Start: 25
     m_ClipIn: 0
     m_Asset: {fileID: -6853839910447667388}
     m_Duration: 30

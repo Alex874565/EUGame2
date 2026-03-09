@@ -26,8 +26,6 @@ public class MinigameController : MonoBehaviour
 
     protected void Update()
     {
-        if (!GamePlaying) return;
-        
         _timeSinceStart += Time.deltaTime;
         UpdateTimer();
         if (_timeSinceStart > Data.TimeLimit)
@@ -53,14 +51,13 @@ public class MinigameController : MonoBehaviour
 
     protected void AddScore(int value)
     {
-        _score += value;
-        if(_score >= Data.ScoreToWin)
+        // Make sure the score doesn't exceed the score to win
+        // so something like 15/10 is not displayed.
+        _score = Mathf.Min(_score + value, Data.ScoreToWin);
+        UpdateScore();
+        if (_score >= Data.ScoreToWin)
         {
             StartCoroutine(EndMinigame(true));
-        }
-        else
-        {
-            UpdateScore();
         }
     }
     
@@ -88,7 +85,7 @@ public class MinigameController : MonoBehaviour
         {
             _loseUI.SetActive(true);
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         _winUI.SetActive(false);
         _loseUI.SetActive(false);
         ServiceLocator.Instance.MinigamesManager.CloseMinigame();

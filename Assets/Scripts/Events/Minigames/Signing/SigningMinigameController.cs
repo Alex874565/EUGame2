@@ -14,20 +14,19 @@ public class SigningMinigameController : MinigameController
     private float _timeSinceLastSpawn;
     private float _currentSpawnInterval;
     
-    private List<GameObject> _activePetitions;
+    private List<GameObject> _activePetitions = new();
     
-    private void Awake()
+    private new void Awake()
     {
         _spawnArea = GetComponent<Collider2D>();
-        _activePetitions = new List<GameObject>();
         base.Awake();
     }
 
-    private void Update()
+    private new void Update()
     {
-        base.Update();
-        
         if (!GamePlaying) return;
+        
+        base.Update();
         
         _timeSinceLastSpawn += Time.deltaTime;
         if (_timeSinceLastSpawn >= _currentSpawnInterval)
@@ -36,7 +35,12 @@ public class SigningMinigameController : MinigameController
             _timeSinceLastSpawn = 0f;
         }
     }
-    
+
+    private void OnEnable()
+    {
+        _timeSinceLastSpawn = 0f;
+    }
+
     public override void StartMinigame()
     {
         base.StartMinigame();

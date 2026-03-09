@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro; // If you're using TextMeshPro
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class DialogueUI : MonoBehaviour
 
     [Header("Typing Settings")]
     [SerializeField] private float typingSpeed = 0.03f;
+    
+    public Action OnDialogueEnd;
 
     private DialogueData currentDialogue;
     private int currentLineIndex = 0;
@@ -66,7 +69,7 @@ public class DialogueUI : MonoBehaviour
         foreach (char letter in line)
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            yield return new WaitForSecondsRealtime(typingSpeed);
         }
 
         isTyping = false;
@@ -101,6 +104,7 @@ public class DialogueUI : MonoBehaviour
     {
         isDialogueActive = false;
         Hide();
+        OnDialogueEnd?.Invoke();
     }
 
     public void Show()

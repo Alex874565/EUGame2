@@ -48,24 +48,39 @@ public class LoseUI : MonoBehaviour
     // Change your Show method to handle both callbacks
     public void Show(int moneyEarned, float secondsSurvived)
     {
+        moneyEarned = moneyEarned / 2;
+        // Setup initial state for animation
+        CanvasGroup cg = GetComponent<CanvasGroup>();
+        if (cg == null) cg = gameObject.AddComponent<CanvasGroup>();
+        
+        cg.alpha = 0;
+        transform.localScale = Vector3.one * 0.85f;
         gameObject.SetActive(true);
+
+        // Sequence for smooth entry
+        Sequence entrySequence = DOTween.Sequence().SetUpdate(true);
+        entrySequence.Join(cg.DOFade(1f, 0.5f));
+        entrySequence.Join(transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack));
         
-        ServiceLocator.Instance.GameManager.PauseGame();
-        ServiceLocator.Instance.PlayerManager.AddMoney(moneyEarned/2);
-        ServiceLocator.Instance.GameManager.WonLastWave = false;
-        ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
-            ServiceLocator.Instance.GameManager.WaveIndex,
-            ServiceLocator.Instance.GameManager.WonLastWave,
-            ServiceLocator.Instance.PlayerManager.Money,
-            ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
-            ServiceLocator.Instance.PlayerManager.StartingUnits
-        ));
-        
-        // Pass two actions: one for money, one for time
-        stagger.OpenMenu(
-            onMoneyShown: () => AnimateMoney(moneyEarned),
-            onTimeShown: () => AnimateTime(secondsSurvived)
-        );
+        entrySequence.OnComplete(() => 
+        {
+            // Logic and Save
+            ServiceLocator.Instance.PlayerManager.AddMoney(moneyEarned);
+            ServiceLocator.Instance.GameManager.WonLastWave = false;
+            ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
+                ServiceLocator.Instance.GameManager.WaveIndex,
+                ServiceLocator.Instance.GameManager.WonLastWave,
+                ServiceLocator.Instance.PlayerManager.Money,
+                ServiceLocator.Instance.PlayerManager.OwnedUpgrades,
+                ServiceLocator.Instance.PlayerManager.StartingUnits
+            ));
+
+            // Start counting animations
+            stagger.OpenMenu(
+                onMoneyShown: () => AnimateMoney(moneyEarned),
+                onTimeShown: () => AnimateTime(secondsSurvived)
+            );
+        });
     }
 
     private void AnimateMoney(int moneyEarned)

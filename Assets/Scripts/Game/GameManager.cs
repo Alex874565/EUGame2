@@ -28,23 +28,15 @@ public class GameManager : MonoBehaviour
     {
         IsPaused = false;
 
-        if (ServiceLocator.Instance.InputManager)
-        {
-            ServiceLocator.Instance.InputManager.OnEscapeAction += InputManager_OnEscapeAction;
-        }
-
         WonLastWave = true;
     }
 
     private void OnDestroy()
     {
-        if (ServiceLocator.Instance.InputManager)
-        {
-            ServiceLocator.Instance.InputManager.OnEscapeAction -= InputManager_OnEscapeAction;
-        }
+        if (_instance != this) return;
     }
 
-    private void InputManager_OnEscapeAction(object sender, EventArgs e)
+    public void InputManager_OnEscapeAction(object sender, EventArgs e)
     {
         var uiManager = ServiceLocator.Instance.UIManager;
 
@@ -66,7 +58,6 @@ public class GameManager : MonoBehaviour
 
         // 3. Otherwise → pause
         
-        
         uiManager.PauseUI.Show();
         PauseGame();
     }
@@ -79,15 +70,25 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Debug.Log("pausing game");
         IsPaused = true;
         Time.timeScale = 0f;
     }
 
     public void ResumeGame()
     {
-        Debug.Log("resuming game");
         IsPaused = false;
         Time.timeScale = 1f;
+    }
+    
+    public void PauseArtificially()
+    {
+        IsPaused = true;
+        ServiceLocator.Instance.WavesManager.PauseTimeline();
+    }
+    
+    public void ResumeArtificially()
+    {
+        IsPaused = false;
+        ServiceLocator.Instance.WavesManager.ResumeTimeline();
     }
 }

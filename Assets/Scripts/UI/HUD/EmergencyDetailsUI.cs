@@ -13,6 +13,14 @@ public class EmergencyDetailsUI : MonoBehaviour
     
     public EmergencyBehaviour Emergency { get; private set; }
 
+    private void ClearContainer(Transform container)
+    {
+        for (int i = container.childCount - 1; i >= 0; i--)
+        {
+            Destroy(container.GetChild(i).gameObject);
+        }
+    }
+
     public void Initialize(EmergencyBehaviour emergency)
     {
         Emergency = emergency;
@@ -20,16 +28,9 @@ public class EmergencyDetailsUI : MonoBehaviour
         emergencyLocationText.text = Emergency.LocationData.Name.ToString();
         emergencyNameText.text = Emergency.EmergencyData.Name;
 
-        foreach (var child in activeUnits.transform)
-        {
-            Destroy(((Transform)child).gameObject);
-        }
+        ClearContainer(activeUnits.transform);
+        ClearContainer(incomingUnits.transform);
 
-        foreach (var child in incomingUnits.transform)
-        {
-            Destroy(((Transform)child).gameObject);
-        }
-        
         UpdateAvailableUnits(Emergency.AvailableUnits);
         UpdateIncomingUnits(Emergency.IncomingUnits);
     }
@@ -64,7 +65,7 @@ public class EmergencyDetailsUI : MonoBehaviour
         }
         
         LayoutRebuilder.ForceRebuildLayoutImmediate(
-            activeUnits.GetComponent<RectTransform>()
+            incomingUnits.GetComponent<RectTransform>()
         );
     }
 }

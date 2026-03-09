@@ -2902,6 +2902,7 @@ MonoBehaviour:
   <PauseUI>k__BackingField: {fileID: 0}
   <UpgradeTreeUI>k__BackingField: {fileID: 519224511}
   <UnitShopUI>k__BackingField: {fileID: 1238783508}
+  <MinigameEndUI>k__BackingField: {fileID: 0}
   Inventory: {fileID: 0}
   EmergencyDetailsMenu: {fileID: 0}
   MinigameDetailsMenu: {fileID: 0}
@@ -7375,63 +7376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &683444643
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 288510709304336017, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
 --- !u!1 &686199059
 GameObject:
   m_ObjectHideFlags: 0
@@ -9136,7 +9080,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &892192861
 CanvasRenderer:
@@ -9166,7 +9110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Head of Czech Republic
+  m_text: Pax
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b4a030524e148e34da5d700fb121130c, type: 2}
   m_sharedMaterial: {fileID: -5620491056423219097, guid: b4a030524e148e34da5d700fb121130c, type: 2}
@@ -9193,8 +9137,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9281,7 +9225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2feef64a3874f4b83b0998642049106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueUI: {fileID: 605530852}
+  <DialogueUI>k__BackingField: {fileID: 605530852}
   dialoguesDatabase: {fileID: 11400000, guid: 86d02c08e8834a24cbe4d72bdacbf745, type: 2}
 --- !u!1 &917885083
 GameObject:
@@ -13295,6 +13239,7 @@ MonoBehaviour:
   <UIManager>k__BackingField: {fileID: 280655287}
   <UpgradesManager>k__BackingField: {fileID: 348724135}
   <DialogueManager>k__BackingField: {fileID: 913293554}
+  <TutorialManager>k__BackingField: {fileID: 0}
   <LocationsDatabase>k__BackingField: {fileID: 0}
   <EmergenciesDatabase>k__BackingField: {fileID: 0}
   <WavesDatabase>k__BackingField: {fileID: 0}
@@ -14512,6 +14457,7 @@ MonoBehaviour:
   passedText: {fileID: 563311727}
   upgradesButton: {fileID: 1694669712}
   shopButton: {fileID: 1659135117}
+  shopText: {fileID: 1741110330}
   settingsButton: {fileID: 410237615}
   mainMenuButton: {fileID: 1789488865}
   gameButton: {fileID: 1520821048}
@@ -14613,7 +14559,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -21986,4 +21932,3 @@ SceneRoots:
   - {fileID: 1727936841}
   - {fileID: 487356380}
   - {fileID: 1130869570}
-  - {fileID: 683444643}

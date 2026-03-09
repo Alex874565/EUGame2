@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private DialogueUI dialogueUI;
+    [field: SerializeField] public DialogueUI DialogueUI { get; private set; }
     [SerializeField] private DialoguesDatabase dialoguesDatabase;
 
     public void TryShowDialogue()
     {
-        bool shouldShowDialogue = ServiceLocator.Instance.GameManager.WonLastWave;
+        bool shouldShowDialogue = ServiceLocator.Instance.GameManager.WonLastWave || ServiceLocator.Instance.GameManager.WaveIndex == 27;
         if (!shouldShowDialogue)
             return;
      
@@ -16,6 +16,11 @@ public class DialogueManager : MonoBehaviour
         
         var dialogue = dialoguesDatabase.Dialogues[index];
         
-        dialogueUI.StartDialogue(dialogue);
+        DialogueUI.StartDialogue(dialogue);
+    }
+    
+    public void ShowDialogue(DialogueData dialogue)
+    {
+        DialogueUI.StartDialogue(dialogue);
     }
 }

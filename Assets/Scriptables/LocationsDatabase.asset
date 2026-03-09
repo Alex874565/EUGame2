@@ -15,7 +15,7 @@ MonoBehaviour:
   <Locations>k__BackingField:
   - <Name>k__BackingField: 0
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: 12.28, y: -8.64, z: 0}
+    <Coordinates>k__BackingField: {x: 12.7, y: -8.7, z: 0}
   - <Name>k__BackingField: 1
     <Type>k__BackingField: 0
     <Coordinates>k__BackingField: {x: -11.1, y: -27.1, z: 0}
@@ -42,25 +42,28 @@ MonoBehaviour:
     <Coordinates>k__BackingField: {x: 34.8, y: -11.6, z: 0}
   - <Name>k__BackingField: 9
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: 21, y: -3.9, z: 0}
+    <Coordinates>k__BackingField: {x: 34.8, y: -17.4, z: 0}
   - <Name>k__BackingField: 10
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: 11.8, y: -8.9, z: 0}
+    <Coordinates>k__BackingField: {x: 21, y: -3.9, z: 0}
   - <Name>k__BackingField: 11
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: 15.2, y: -4.9, z: 0}
+    <Coordinates>k__BackingField: {x: 11.8, y: -8.9, z: 0}
   - <Name>k__BackingField: 12
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: 34.1, y: 14.9, z: 0}
+    <Coordinates>k__BackingField: {x: 15.2, y: -4.9, z: 0}
   - <Name>k__BackingField: 13
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: -14.1, y: 1, z: 0}
+    <Coordinates>k__BackingField: {x: 34.1, y: 14.9, z: 0}
   - <Name>k__BackingField: 14
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: 52.2, y: 4.6, z: 0}
+    <Coordinates>k__BackingField: {x: -14.1, y: 1, z: 0}
   - <Name>k__BackingField: 15
     <Type>k__BackingField: 0
-    <Coordinates>k__BackingField: {x: 55.4, y: 10.3, z: 0}
+    <Coordinates>k__BackingField: {x: 52.2, y: 4.6, z: 0}
   - <Name>k__BackingField: 16
+    <Type>k__BackingField: 0
+    <Coordinates>k__BackingField: {x: 55.4, y: 10.3, z: 0}
+  - <Name>k__BackingField: 17
     <Type>k__BackingField: 0
     <Coordinates>k__BackingField: {x: 49.8, y: 16.4, z: 0}

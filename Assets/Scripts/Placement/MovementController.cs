@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(PlaceableObjectSFX))]
 public class MovementController : MonoBehaviour
 {
     
@@ -26,8 +27,11 @@ public class MovementController : MonoBehaviour
 
     private bool _canMove;
     
+    private PlaceableObjectSFX _placeableObjectSfx;
+    
     private void Start()
     {
+        _placeableObjectSfx = GetComponent<PlaceableObjectSFX>();
         _canMove = false;
     }
     
@@ -162,11 +166,13 @@ public class MovementController : MonoBehaviour
             EmergencyBehaviour emergency = _targetObject.GetComponent<EmergencyBehaviour>();
             emergency.SetActiveUnits(_unitData.Type, emergency.GetActiveUnitsOfType(_unitData.Type) + unitsCount);
             emergency.SetIncomingUnits(_unitData.Type, emergency.GetIncomingUnitsOfType(_unitData.Type) - unitsCount);
+            _placeableObjectSfx.PlayReachSFX();
         }
         else
         {
             int currentCount = ServiceLocator.Instance.UnitsManager.InventoryUnits.Find(unit => unit.GetComponent<UnitBehaviour>().Type == _unitData.Type).GetComponent<UnitBehaviour>().Count;
             ServiceLocator.Instance.UnitsManager.SetInventoryUnitCount(_unitData.Type, currentCount + unitsCount);
+            _placeableObjectSfx.PlayDeselectSFX();
         }
 
         DeleteLines();

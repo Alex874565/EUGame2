@@ -9,6 +9,7 @@ public class HubUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI passedText;
     [SerializeField] private Button upgradesButton;
     [SerializeField] private Button shopButton;
+    [SerializeField] private TextMeshProUGUI shopText;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button gameButton;
@@ -55,8 +56,13 @@ public class HubUI : MonoBehaviour
     private void Start()
     {
         ServiceLocator.Instance.GameManager.ResumeGame();
+        if(ServiceLocator.Instance.GameManager.WaveIndex == 27)
+        {
+            ServiceLocator.Instance.GameManager.WonLastWave = false;
+        }
         if(ServiceLocator.Instance.GameManager.WaveIndex == 0 && ServiceLocator.Instance.GameManager.WonLastWave)
         {
+            gameButton.GetComponentInChildren<TextMeshProUGUI>().text = "START WAVE";
             passedText.text = "-";
             passedText.color = Color.black;
         }
@@ -75,14 +81,18 @@ public class HubUI : MonoBehaviour
 
         stagger.OpenMenu();
         ServiceLocator.Instance.DialogueManager.TryShowDialogue();
-        if (ServiceLocator.Instance.GameManager.WaveIndex >= 15)
+        if (ServiceLocator.Instance.GameManager.WaveIndex >= 19)
         {
             shopButton.enabled = true;
+            shopText.text = "Unit Shop";
         }
         else
         {
-            //shopButton.enabled = false;
+            shopButton.enabled = false;
+            shopText.text = "Unlocks in 2019";
         }
+
+        ServiceLocator.Instance.AudioManager.PlayMenuMusic();
     }
 
 }

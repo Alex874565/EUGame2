@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,29 +7,29 @@ using UnityEngine.UI;
 public class UnitsManager : MonoBehaviour
 {
     [field: SerializeField] public List<GameObject> InventoryUnits { get; private set; }
-    
-    private List<StartingUnitData> InventoryUnitsTracker { get; set; }
-    public List<GameObject> ActiveUnits { get; private set; }
+
+    private List<StartingUnitData> InventoryUnitsTracker { get; set; } = new();
+    public List<GameObject> ActiveUnits { get; private set; } = new();
     
     public UnitFactory UnitFactory { get; private set; }
     
     private void Awake()
     {
-        InventoryUnitsTracker = new List<StartingUnitData>();
         UnitFactory = GetComponent<UnitFactory>();
-        ActiveUnits = new List<GameObject>();
     }
     
     public void InitializeUnits(int waveNumber)
     {
-        List<StartingUnitData> unitsToInitialize =
-            new List<StartingUnitData>(ServiceLocator.Instance.WavesDatabase.Waves[waveNumber].StartingUnits);
-        foreach (StartingUnitData startingUnitData in unitsToInitialize)
+        List<StartingUnitData> unitsToInitialize = new List<StartingUnitData>();
+
+        foreach (StartingUnitData originalData in ServiceLocator.Instance.WavesDatabase.Waves[waveNumber].StartingUnits)
         {
-            startingUnitData.Count += ServiceLocator.Instance.PlayerManager.StartingUnits[startingUnitData.Type];
-            InventoryUnitsTracker.Add(startingUnitData);
+            StartingUnitData clonedData = originalData.Clone();
+            clonedData.Count += ServiceLocator.Instance.PlayerManager.StartingUnits[clonedData.Type];
+            unitsToInitialize.Add(clonedData);
+            InventoryUnitsTracker.Add(clonedData);
         }
-        
+
         InitializeInventoryUnits();
     }
     

@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using System;
 using DG.Tweening;
 
+[RequireComponent(typeof(SolvableObjectSFX))]
 public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private EmergencyType emergencyType;
@@ -79,10 +80,13 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     
     private bool _isWiggling;
     private bool _isHovered;
+
+    private SolvableObjectSFX _solvableObjectSfx;
     
     private void Start()
     {
-        _originalScale = image.transform.localScale;
+        _solvableObjectSfx = GetComponent<SolvableObjectSFX>();
+        _originalScale = transform.localScale;
         _activeUnits = new  Dictionary<UnitType, int>();
         _incomingUnits = new Dictionary<UnitType, int>();
         EmergencyData = ServiceLocator.Instance.EmergenciesManager.EmergenciesData[emergencyType];
@@ -103,7 +107,9 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         transform.localScale = _originalScale * 0f;
         DOTween.Sequence()
             .Append(transform.DOScale(_originalScale * 1.5f, .25f).SetEase(Ease.OutCubic))
-            .Append(transform.DOScale(_originalScale, .1f).SetEase(Ease.InOutQuad));
+            .Append(transform.DOScale(_originalScale, .1f).SetEase(Ease.InOutQuad)).SetUpdate(true);
+        
+        _solvableObjectSfx.PlayAppearSFX();
     }
 
     private void Update()
@@ -129,6 +135,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
             ServiceLocator.Instance.CursorManager.SelectObject(null);
         }
         ReturnInventoryUnits();
+        _solvableObjectSfx.PlaySolveSFX();
         Destroy(gameObject);
     }
 
@@ -140,6 +147,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         }
         ReturnInventoryUnits();
         ServiceLocator.Instance.WavesManager.UpdateEmergenciesFailed(ServiceLocator.Instance.WavesManager.CurrentEmergenciesFailed + 1);
+        _solvableObjectSfx.PlayUnsolveSFX();
         Destroy(gameObject);
     }
     
@@ -147,6 +155,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
     {
         _isWiggling = true;
         transform.localScale *= wiggleScaleMultiplier;
+        Debug.Log("StartWiggle:"+transform.localScale);
     }
     
     public void TryStopWiggle()
@@ -155,6 +164,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         {
             _isWiggling = false;
             transform.localScale /= wiggleScaleMultiplier;
+            Debug.Log("StopWiggle:"+transform.localScale);
         }
     }
 
@@ -236,21 +246,36 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
             ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
         }
 
-        foreach (var child in _activeUnitsContainer.transform)
+        foreach (Transform child in _activeUnitsContainer.transform)
         {
-            Destroy(((Transform)child).gameObject);
+            Destroy(child.gameObject);
         }
-        foreach(var kvp in _activeUnits)
+
+        Canvas.ForceUpdateCanvases();
+
+        foreach (var kvp in _activeUnits)
         {
-            if (kvp.Value > 0)
-            {
-                GameObject unit = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnUnit(kvp.Key);
-                unit.transform.SetParent(_activeUnitsContainer.transform, false);
-                unit.GetComponent<UnitBehaviour>().UpdateCount(kvp.Value);
-                unit.GetComponent<UnitBehaviour>().IsInteractable = false;
-                unit.GetComponentInChildren<Image>().raycastTarget = false;
-            }
+            if (kvp.Value <= 0) continue;
+
+            GameObject unit = ServiceLocator.Instance.UnitsManager.UnitFactory.SpawnUnit(kvp.Key);
+            unit.transform.SetParent(_activeUnitsContainer.transform, false);
+
+            RectTransform rt = unit.GetComponent<RectTransform>();
+            rt.localScale = Vector3.one;
+            rt.localRotation = Quaternion.identity;
+            rt.anchoredPosition = Vector2.zero;
+
+            var unitBehaviour = unit.GetComponent<UnitBehaviour>();
+            unitBehaviour.UpdateCount(kvp.Value);
+            unitBehaviour.IsInteractable = false;
+
+            unit.GetComponentInChildren<Image>().raycastTarget = false;
         }
+
+        Canvas.ForceUpdateCanvases();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(
+            _activeUnitsContainer.GetComponent<RectTransform>()
+        );
     }
     
     public void SetIncomingUnits(UnitType unitType, int amount)
@@ -301,13 +326,15 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
             IsSelected = true;
             ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
             StartCoroutine(SelectCoroutine());
+            GetComponent<TutorialTarget>()?.NotifyAction("EmergencySelected");
+            _solvableObjectSfx.PlaySelectSFX();
         }
     }
 
     public IEnumerator SelectCoroutine()
     {
         transform.localScale *= clickScaleMultiplier;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         transform.localScale /= clickScaleMultiplier;
         transform.localScale *= selectedScaleMultiplier;
     }
@@ -319,6 +346,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
             transform.localScale /= selectedScaleMultiplier;
             IsSelected = false;
             ServiceLocator.Instance.UIManager.EmergencyDetailsMenu.SetActive(false);
+            _solvableObjectSfx.PlayDeselectSFX();
         }
     }
     
@@ -352,6 +380,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
         {
             transform.localScale /= hoverScaleMultiplier;
             _isHovered = false;
+            Debug.Log("Hover exit:" + transform.localScale);
         }
 
         ServiceLocator.Instance.CursorManager.HoveredObject = null;
@@ -359,8 +388,12 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
 
     private void Hover()
     {
-        _isHovered = true;
-        transform.localScale *= hoverScaleMultiplier;
+        if (!_isHovered)
+        {
+            _isHovered = true;
+            transform.localScale *= hoverScaleMultiplier;
+            Debug.Log("Hover enter:" + transform.localScale);
+        }
     }
     
     public void OnPointerEnter(PointerEventData eventData)
