@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(SelectableObjectSFX))]
 public class PackageBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [field: SerializeField] public bool IsFood { get; private set; }
@@ -18,9 +19,12 @@ public class PackageBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private Vector3 _originalScale;
     
     private bool _isHovered;
+    
+    private SelectableObjectSFX _objectSfx;
 
     private void Start()
     {
+        _objectSfx = GetComponent<SelectableObjectSFX>();
         _originalScale = transform.localScale;
         IsSelected = false;
     }
@@ -57,10 +61,12 @@ public class PackageBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExi
         yield return new WaitForSeconds(0.1f);
         if(!IsSelected)
         {
+            _objectSfx.PlaySelectSFX();
             transform.localScale = _originalScale * (_isHovered ? _hoverScaleMultiplier : 1f);
         }
         else
         {
+            _objectSfx.PlayDeselectSFX();
             transform.localScale = _originalScale * _selectedScaleMultiplier * (_isHovered ? _hoverScaleMultiplier : 1f);
         }
     }

@@ -10,20 +10,20 @@ public class SelectableObjectSFX : MonoBehaviour
     {
         if(selectClip == null) return;
         
-        ServiceLocator.Instance.AudioManager.PlayUI(selectClip);
+        ServiceLocator.Instance.AudioManager.PlayUIRandomPitch(selectClip);
     }
     
     public void PlayDeselectSFX()
     {
         if(deselectClip == null) return;
         
-        ServiceLocator.Instance.AudioManager.PlayUI(deselectClip);
+        ServiceLocator.Instance.AudioManager.PlayUIRandomPitch(deselectClip);
     }
     
     public void PlayAppearSFX()
     {
         if(appearClip == null) return;
         
-        ServiceLocator.Instance.AudioManager.PlayUI(appearClip);
+        ServiceLocator.Instance.AudioManager.PlayUIRandomPitch(appearClip);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using Unity.VisualScripting;
 
+[RequireComponent(typeof(SelectableObjectSFX))]
 public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [field: SerializeField] public Rigidbody2D Rb { get; private set; }
@@ -24,9 +25,12 @@ public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     private float _fallSpeed;
 
     private Vector3 _originalScale;
+    
+    private SelectableObjectSFX _objectSfx;
 
     private void Awake()
     {
+        _objectSfx = GetComponent<SelectableObjectSFX>();
         _originalScale = image.transform.localScale;
         _isFalling = false;
         Rb.linearVelocity = Vector2.zero;
@@ -50,6 +54,7 @@ public class VoteBehaviour : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     {
         if(!_isFalling)
         {
+            _objectSfx.PlaySelectSFX();
             StartFalling();
             image.transform.localScale = _originalScale * clickScaleMultiplier;
             Time.timeScale = 0.2f;

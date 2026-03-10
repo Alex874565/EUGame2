@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(SelectableObjectSFX))]
 public class PetitionBehaviour : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject sign;
@@ -24,8 +24,11 @@ public class PetitionBehaviour : MonoBehaviour, IPointerClickHandler
     private bool _isStamped;
     private float _timeSinceStamped;
     
+    private SelectableObjectSFX _objectSfx;
+    
     private void Awake()
     {
+        _objectSfx = GetComponent<SelectableObjectSFX>();
         _image = GetComponent<Image>();
         _rb = GetComponent<Rigidbody2D>();
         _canvas = GetComponentInParent<Canvas>();
@@ -78,8 +81,13 @@ public class PetitionBehaviour : MonoBehaviour, IPointerClickHandler
             {
                 if (!_isStamped)
                 {
+                    _objectSfx.PlaySelectSFX();
                     StartCoroutine(StampCoroutine());
                 }
+            }
+            else
+            {
+                _objectSfx.PlayAppearSFX();
             }
         }
     }

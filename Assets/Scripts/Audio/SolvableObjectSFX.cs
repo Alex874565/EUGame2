@@ -9,13 +9,13 @@ public class SolvableObjectSFX : SelectableObjectSFX
     {
         if(solveClip == null) return;
         
-        ServiceLocator.Instance.AudioManager.PlayUI(solveClip);
+        ServiceLocator.Instance.AudioManager.PlayUIRandomPitch(solveClip);
     }
     
     public void PlayUnsolveSFX()
     {
         if(unsolveClip == null) return;
         
-        ServiceLocator.Instance.AudioManager.PlayUI(unsolveClip);
+        ServiceLocator.Instance.AudioManager.PlayUIRandomPitch(unsolveClip);
     }
 }

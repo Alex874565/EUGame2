@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-[RequireComponent(typeof(Collider2D), typeof(Image))]
+[RequireComponent(typeof(Collider2D), typeof(Image), typeof(SelectableObjectSFX))]
 public class UrnBehaviour : MonoBehaviour
 {
     public VotingMinigameController Minigame { get; set; }
@@ -13,15 +13,22 @@ public class UrnBehaviour : MonoBehaviour
     private Image _urnImage;
     private Vector3 _originalScale;
     
+    private SelectableObjectSFX _objectSfx;
+    
     private void Start()
     {
+        _objectSfx = GetComponent<SelectableObjectSFX>();
         _urnImage = GetComponent<Image>();
         _originalScale = _urnImage.transform.localScale;
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(RegisterVote(other.gameObject));
+        if (other.GetComponent<VoteBehaviour>() != null)
+        {
+            _objectSfx.PlaySelectSFX();
+            StartCoroutine(RegisterVote(other.gameObject));
+        }
     }
     
     private IEnumerator RegisterVote(GameObject vote)

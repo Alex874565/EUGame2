@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2731756873753479511}
   - component: {fileID: 296338733309177407}
   - component: {fileID: 3177970507730307861}
+  - component: {fileID: 164012703086197367}
   m_Layer: 5
   m_Name: Package
   m_TagString: Untagged
@@ -92,3 +93,18 @@ MonoBehaviour:
   _hoverScaleMultiplier: 1.1
   _clickScaleMultiplier: 0.9
   _selectedScaleMultiplier: 1.2
+--- !u!114 &164012703086197367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015855251367145820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eb64e15d6c4e1199c1395ddb883157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectClip: {fileID: 8300000, guid: 9b6945e39f41a284d924a1104c63a4e5, type: 3}
+  deselectClip: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
+  appearClip: {fileID: 0}

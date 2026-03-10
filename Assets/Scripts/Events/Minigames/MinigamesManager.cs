@@ -52,7 +52,7 @@ public class MinigamesManager : MonoBehaviour
     {
         GameObject emergenciesLayer = ServiceLocator.Instance.UIManager.EmergenciesLayer;
         List<MinigameData> availableMinigamesData = MinigamesDatabase.Minigames;
-        if (availableMinigamesData.Count == 0) return;
+        if (availableMinigamesData.Count == 0) return;  
         MinigameType randomType = availableMinigamesData[UnityEngine.Random.Range(0, availableMinigamesData.Count)].Type;
         GameObject minigame = availableMinigamesData.Find(mg => mg.Type == randomType).Prefab;
         Vector3 position = ServiceLocator.Instance.LocationsDatabase.Locations.Find(loc => loc.Name == spawnLocation).Coordinates;

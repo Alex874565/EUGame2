@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 
+[RequireComponent(typeof(SolvableObjectSFX))]
 public class MinigameEndUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI taskStatusText;
@@ -15,21 +16,30 @@ public class MinigameEndUI : MonoBehaviour
     private Vector2 centerPos = Vector2.zero;
     private Vector2 startPos;
     private Vector2 endPos;
+    
+    private SolvableObjectSFX _objectSfx;
 
     private void Awake()
     {
+        _objectSfx = GetComponent<SolvableObjectSFX>();
         startPos = new Vector2(0, -Screen.height); // below screen
         endPos = new Vector2(0, Screen.height);    // above screen
     }
 
     private void Start()
     {
-        //Hide();
-        ServiceLocator.Instance.UIManager.MinigameEndUI.Show("Task Failed!");
+        Hide();
     }
 
-    public void Show(string message)
+    public void Show(bool completed)
     {
+        string message = completed ? "Task Completed!" : "Task Failed!";
+        
+        if(completed)
+            _objectSfx.PlaySolveSFX();
+        else
+            _objectSfx.PlayUnsolveSFX();
+        
         taskStatusText.text = message;
         gameObject.SetActive(true);
 

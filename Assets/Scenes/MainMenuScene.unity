@@ -1749,6 +1749,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713f4c60e10138146802807e76e11e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1156927930 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3599624253945774121, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+  m_PrefabInstance: {fileID: 2909182673538038446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1207668378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2545,6 +2550,10 @@ PrefabInstance:
       propertyPath: backgroundMusic
       value: 
       objectReference: {fileID: 8300000, guid: f09014868f607bf44baf9997e5b5da80, type: 3}
+    - target: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
+      propertyPath: <SfxSource>k__BackingField
+      value: 
+      objectReference: {fileID: 1156927930}
     - target: {fileID: 5018751944511259564, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1

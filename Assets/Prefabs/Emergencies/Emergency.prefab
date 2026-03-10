@@ -454,8 +454,8 @@ MonoBehaviour:
   selectClip: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
   deselectClip: {fileID: 8300000, guid: f6930d2e69d1c5a438fd9c7f364de791, type: 3}
   appearClip: {fileID: 8300000, guid: bc9aff643805b1d4e8fe631be502a737, type: 3}
-  solveClip: {fileID: 8300000, guid: dc982253d3c566f4e93f6230acdc566c, type: 3}
-  unsolveClip: {fileID: 8300000, guid: 6859dfa0b741cdb4e9842ace11853e34, type: 3}
+  solveClip: {fileID: 8300000, guid: 900af0a7066413b45bbd82c6f5d99ace, type: 3}
+  unsolveClip: {fileID: 8300000, guid: e8aabb2565bd9f64e8af4336be4a1723, type: 3}
 --- !u!1 &7835112385173401980
 GameObject:
   m_ObjectHideFlags: 0

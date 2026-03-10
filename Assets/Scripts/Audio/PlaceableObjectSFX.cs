@@ -10,13 +10,13 @@ public class PlaceableObjectSFX : SelectableObjectSFX
     {
         if(placeClip == null) return;
         
-        ServiceLocator.Instance.AudioManager.PlayUI(placeClip);
+        ServiceLocator.Instance.AudioManager.PlayUIRandomPitch(placeClip);
     }
     
     public void PlayReachSFX()
     {
         if(reachClip == null) return;
         
-        ServiceLocator.Instance.AudioManager.PlayUI(reachClip);
+        ServiceLocator.Instance.AudioManager.PlayUIRandomPitch(reachClip);
     }
 }

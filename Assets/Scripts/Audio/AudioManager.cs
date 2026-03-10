@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     
     [Header("Sources")]
     [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioSource sfxSource;
+    [field: SerializeField] public AudioSource SfxSource { get; private set; }
 
     [Header("Music Clips")]
     [SerializeField] private AudioClip menuMusic;
@@ -17,6 +17,9 @@ public class AudioManager : MonoBehaviour
     [Range(0f,1f)] [SerializeField] private float masterVolume = 1f;
     [Range(0f,1f)] [SerializeField] private float musicVolume = 1f;
     [Range(0f,1f)] [SerializeField] private float sfxVolume = 1f;
+    
+    [Header("Pitch Settings")]
+    [Range(0.5f, 2f)] [SerializeField] private float pitchVariationRange = 0.1f;
 
     private AudioClip currentMusic;
 
@@ -37,7 +40,7 @@ public class AudioManager : MonoBehaviour
     void ApplyVolumes()
     {
         musicSource.volume = musicVolume * masterVolume;
-        sfxSource.volume = sfxVolume * masterVolume;
+        SfxSource.volume = sfxVolume * masterVolume;
     }
 
     // MUSIC SWITCH
@@ -101,7 +104,15 @@ public class AudioManager : MonoBehaviour
     public void PlayUI(AudioClip clip)
     {
         if (clip == null) return;
-        sfxSource.PlayOneShot(clip);
+        SfxSource.PlayOneShot(clip);
+    }
+    
+    public void PlayUIRandomPitch(AudioClip clip)
+    {
+        if (clip == null) return;
+        SfxSource.pitch = 1f + Random.Range(-pitchVariationRange, pitchVariationRange);
+        SfxSource.PlayOneShot(clip);
+        SfxSource.pitch = 1f; // Reset pitch after playing
     }
 
     public void StopMusic(float fadeDuration = 0.5f)

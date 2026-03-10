@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(SolvableObjectSFX))]
 public class QuizMinigameController : MinigameController
 {
     [Header("UI Elements")]
@@ -13,9 +14,12 @@ public class QuizMinigameController : MinigameController
     private List<QuizData> _questions;
     private QuizData _quizData;
 
+    private SolvableObjectSFX _objectSfx;
+    
     private new void Awake()
     {
         base.Awake();
+        _objectSfx = GetComponent<SolvableObjectSFX>();
     }
     
     private new void Update()
@@ -68,6 +72,14 @@ public class QuizMinigameController : MinigameController
 
     private void AnswerQuestion(bool isCorrect)
     {
+        if (isCorrect)
+        {
+            _objectSfx.PlaySolveSFX();
+        }
+        else
+        {
+            _objectSfx.PlayUnsolveSFX();
+        }
         AddScore(isCorrect ? 1 : 0);
         InitializeQuestion();
     }

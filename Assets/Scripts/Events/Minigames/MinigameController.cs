@@ -8,8 +8,7 @@ public class MinigameController : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI _timerText;
     [SerializeField] private TextMeshProUGUI _scoreText;
-    [SerializeField] private GameObject _winUI;
-    [SerializeField] private GameObject _loseUI;
+    [SerializeField] private MinigameEndUI _endUI;
     
     protected MinigameData Data { get; set; }
     
@@ -26,6 +25,7 @@ public class MinigameController : MonoBehaviour
 
     protected void Update()
     {
+        if(!GamePlaying) return;
         _timeSinceStart += Time.deltaTime;
         UpdateTimer();
         if (_timeSinceStart > Data.TimeLimit)
@@ -78,16 +78,13 @@ public class MinigameController : MonoBehaviour
         Cleanup();
         if (won)
         {
-            _winUI.SetActive(true);
             GiveReward();
         }
         else
         {
-            _loseUI.SetActive(true);
         }
-        yield return new WaitForSeconds(1f);
-        _winUI.SetActive(false);
-        _loseUI.SetActive(false);
+        _endUI.Show(won);
+        yield return new WaitForSeconds(1.5f);
         ServiceLocator.Instance.MinigamesManager.CloseMinigame();
     }
 

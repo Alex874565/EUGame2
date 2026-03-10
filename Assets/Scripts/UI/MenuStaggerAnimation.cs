@@ -31,6 +31,14 @@ public class MenuStaggerAnimation : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (sfxSource == null)
+        {
+            sfxSource = ServiceLocator.Instance.AudioManager.SfxSource;
+        }
+    }
+
     public void OpenMenu(System.Action onMoneyShown = null, System.Action onTimeShown = null)
     {
         currentSequence?.Kill();

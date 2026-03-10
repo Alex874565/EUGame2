@@ -32,7 +32,6 @@ public class MinigamePopupBehaviour : MonoBehaviour, IInteractable, IPointerEnte
         ServiceLocator.Instance.MinigamesManager.ActiveMinigames.Add(gameObject);
         IsSelected = false;
         _originalScale = image.transform.localScale;
-        ServiceLocator.Instance.MinigamesManager.MinigameInPlay = this;
         
         DOTween.Sequence()
             .Append(transform.DOScale(_originalScale * 1.5f, .25f).SetEase(Ease.OutCubic))

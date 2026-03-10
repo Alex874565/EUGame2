@@ -11,8 +11,6 @@ public class VotingMinigameController : MinigameController
     [Header("UI Settings")]
     [SerializeField] private TMP_Text counter;
     [SerializeField] private TMP_Text timer;
-    [SerializeField] private GameObject winUI;
-    [SerializeField] private GameObject loseUI;
         
     [field: Header("Votes Spawning Settings")]
     [SerializeField] private Vector2 spawnIntervalRange = new Vector2(1f, 3f);
@@ -26,7 +24,7 @@ public class VotingMinigameController : MinigameController
     
     private List<GameObject> _activeVotes = new();
 
-    private new void Awake()
+    private void Awake()
     {
         _spawnArea = GetComponent<Collider2D>();
         
@@ -37,6 +35,7 @@ public class VotingMinigameController : MinigameController
     {
         // Reset the spawn timer for each use so we don't encounter funny bugs.
         _spawnTimer = 0f;
+        StartMinigame();
     }
 
     private new void Update()

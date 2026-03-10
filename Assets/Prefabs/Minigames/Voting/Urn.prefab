@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7425520600591228264}
   - component: {fileID: 7895425808777561241}
   - component: {fileID: 4029697760583930463}
+  - component: {fileID: 2480677319440023615}
   m_Layer: 5
   m_Name: Urn
   m_TagString: Untagged
@@ -81,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4d3d9a4a074b4fb71bcb65b47c0907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScaleMultiplier: 1.2
+  voteRegisterMultiplier: 1.2
 --- !u!61 &7895425808777561241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +137,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8449209982986010577}
   m_CullTransparentMesh: 1
+--- !u!114 &2480677319440023615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449209982986010577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eb64e15d6c4e1199c1395ddb883157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectClip: {fileID: 8300000, guid: 9b6945e39f41a284d924a1104c63a4e5, type: 3}
+  deselectClip: {fileID: 0}
+  appearClip: {fileID: 0}
