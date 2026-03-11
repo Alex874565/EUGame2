@@ -26,10 +26,10 @@ public class PackageMinigameController : MinigameController
         base.Awake();
     }
 
-    private void Start()
+    /*private void Start()
     {
         StartMinigame();
-    }
+    }*/
 
     private new void Update()
     {
