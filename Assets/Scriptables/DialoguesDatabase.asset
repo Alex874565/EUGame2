@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Dialogues>k__BackingField:
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 40bcaa0824f50b744b30b57e0e1f4f0a, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - Welcome to the European Civil Protection Mechanism! You will have a lot on
       your plate, being our Operations Lead! My name is Pax. My job is to manage
@@ -24,153 +24,153 @@ MonoBehaviour:
       them wrong."
     - "The first alarm is coming in! Put your headset on, Lead. Let\u2019s make history."
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "The first year was a success, but the climate is shifting. We\u2019re seeing
       more extreme events across the board. As each year will get more difficult
       due to this, you must adapt."
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - A record-breaking heatwave is scorching Europe. Our forests are burning, and
       people are realizing that climate change is a collective threat.
     - "I\u2019m helping neighbors check on the elderly today - solidarity starts
       in our own hallways."
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - Histry is made! Ten new nations, from the Baltic to the Mediterranean, have
       joined the European Union. We are now a family of 25. Democracy is expanding,
       and so is our responsibility to protect every citizen within these new borders.
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - Our reputation is growing, thanks to your coordination. Keep up the good work!
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "Civic duty isn't just for emergencies. I\u2019m spending the weekend volunteering
       to clean the park near my house. By taking care of our shared environment,
       we make our communities more resilient for the next storm. "
     - Every small action counts.
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - This year we welcome Romania and Bulgaria to the European Union! Our Mechanism
       now stretches to the Black Sea. As our borders grow, our resources grow as
       well. Let's continue helping!
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - The financial crisis is hitting Europe hard. Budgets are shrinking. We must
       get through this and help as much as we can.
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - The Lisbon Treaty is signed. Civil Protection finally has a legal heart. We
       aren't just an 'agreement' anymore; we are a fundamental European Right. Let's
       make everyone proud!
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "A volcano in Iceland has paralyzed the sky. The silence in the air is eerie.
       It\u2019s a good time for our citizens to reflect on how much we need each
       other. "
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "Fukushima. A global tragedy. It\u2019s a reminder that we are all living in
       one giant, fragile ecosystem. It is our duty to help as much as we can. Off
       you go!"
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - Would you look at that! We're in 2012 and the world didn't end! You know what
       else didn't end? The need for your help. Let's get back to work!
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - This year we welcome Croatia as the newest member in the European Union. No
       time to sleep, the countries need your help!
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - 'You know what I like most about the European Civil Protection Mechanism? No?
       I''ll tell you anyway. '
     - It's that we don't take sides - we save lives. That's the european way.
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - 'The migration crisis is testing our values this year. Thousands are seeking
       safety in Europe. It is our duty to treat every human with dignity. '
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "The Brexit vote has shaken the European Union. It\u2019s a difficult moment
       for unity. Now more than ever, we must fight disinformation. Don't believe
       everything you read - solidarity is still our greatest strength."
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "Our current resources are being pushed to the limit. We need a Plan B \u2014
       a reserve of equipment that belongs to the European Union itself, not just
       the countries. I wonder how we could do that..."
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "We found a solution to our resource problem! Countries are now pre-committing
       their best units to be ready at a moment's notice. It\u2019s a beautiful example
       of trust between sovereign nations."
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "rescEU is officially live! The EU now has its own fleet of units, which can
       be found in the <b> Unit Shop </b>. We no longer just coordinate; we act as
       Europe\u2019s own emergency reserve."
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - COVID-19 has changed everything. The streets are empty, but the Mechanism is
       working overtime. We are flying masks, ventilators, and vaccines to where they
       are needed most.
     - This is the ultimate test of our unity and solidarity.
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "Twenty years of the Mechanism! We\u2019ve come so far since 2001! Even during
       a pandemic, we are helping countries fight all kinds of emergencies. Our unity
       is our immunity!"
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - War has returned to our borders. The invasion of Ukraine has triggered the
       largest and most complex operation in our history. Every member state is contributing.
       We must help!
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - Everyone coming together in times of need makes me so proud. When democracy
       acts fast, it saves lives that autocracy forgets.
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - Starting this year, 10 more countries are candidates for the EU membership,
       seeing the Union as a beacon of stability. As they adhere to our rules, we
       must prepare to welcome them with open arms and shared resources.
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - The digital world is as dangerous as the physical one. Cyber-attacks are the
       new reality. We need to be experts at identifying disinformation to protect
       ourselves.
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "Here we are - 2026. The world is hotter, and the challenges are greater, but
       the Mechanism is stronger than ever. We have the fleet, the tech, and the people.
       Let\u2019s protect the future of Europe one last time."
   - <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: 21300000, guid: 41236502a4e2461438e29a5a795ff9c7, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
     - "You\u2019ve led us through 25 years of history. You\u2019ve seen that the
       European Union is not just a map - it is a choice to stand together."
