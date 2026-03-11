@@ -19,51 +19,39 @@ MonoBehaviour:
     <Description>k__BackingField: Campaigns and community programs motivate citizens
       to participate in democratic life and local initiatives.
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 100
+    <Cost>k__BackingField: 150
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
       <Value>k__BackingField: 5
       <ModifiedStat>k__BackingField: 0
       <AffectedType>k__BackingField: 00000000
-    <MinigameModifiers>k__BackingField:
-    - <Type>k__BackingField: 0
-      <Value>k__BackingField: 100
-      <ModifiedStat>k__BackingField: 2
-      <AffectedTypes>k__BackingField: 0000000001000000020000000300000004000000
+    <MinigameModifiers>k__BackingField: []
   - <Type>k__BackingField: 0
     <Level>k__BackingField: 2
     <Name>k__BackingField: Funding Initiatives
     <Description>k__BackingField: Public funding supports civic projects, NGOs, and
       grassroots movements that strengthen community participation.
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 50
+    <Cost>k__BackingField: 350
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
       <Value>k__BackingField: 5
       <ModifiedStat>k__BackingField: 0
-      <AffectedType>k__BackingField: 00000000
-    <MinigameModifiers>k__BackingField:
-    - <Type>k__BackingField: 0
-      <Value>k__BackingField: 100
-      <ModifiedStat>k__BackingField: 1000000
-      <AffectedTypes>k__BackingField: 00000000
+      <AffectedType>k__BackingField: 0100000002000000
+    <MinigameModifiers>k__BackingField: []
   - <Type>k__BackingField: 0
     <Level>k__BackingField: 3
     <Name>k__BackingField: Better Reward System
     <Description>k__BackingField: Recognition and incentives encourage volunteering,
       civic engagement, and participation in public decision-making.
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 600
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
-      <Value>k__BackingField: 5
-      <ModifiedStat>k__BackingField: 0
-      <AffectedType>k__BackingField: 00000000
-    <MinigameModifiers>k__BackingField:
-    - <Type>k__BackingField: 0
-      <Value>k__BackingField: 100
-      <ModifiedStat>k__BackingField: 1000000
-      <AffectedTypes>k__BackingField: 
+      <Value>k__BackingField: -3
+      <ModifiedStat>k__BackingField: 1
+      <AffectedType>k__BackingField: 020000000300000005000000
+    <MinigameModifiers>k__BackingField: []
   <DemocracyUpgrades>k__BackingField:
   - <Type>k__BackingField: 1
     <Level>k__BackingField: 1
@@ -73,31 +61,55 @@ MonoBehaviour:
     <ModifiersDescription>k__BackingField: <color=#2E7D32>+10</color> <color=#C62828>Emergencies
       Expiration Time</color>\n<color=#2E7D32>+10</color> <color=#1976D2>Minigames
       Reward</color>
-    <Cost>k__BackingField: 0
-    <EmergencyModifiers>k__BackingField:
-    - <Type>k__BackingField: 1
-      <Value>k__BackingField: 0
-      <ModifiedStat>k__BackingField: 0
-      <AffectedType>k__BackingField: 
-    <MinigameModifiers>k__BackingField: []
+    <Cost>k__BackingField: 100
+    <EmergencyModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 3
+      <ModifiedStat>k__BackingField: 1
+      <AffectedTypes>k__BackingField: 040000000300000001000000
   - <Type>k__BackingField: 1
     <Level>k__BackingField: 2
     <Name>k__BackingField: Political Education
     <Description>k__BackingField: Students learn how democratic institutions work
       and why participation and critical thinking matter.
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 300
     <EmergencyModifiers>k__BackingField: []
-    <MinigameModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 5
+      <ModifiedStat>k__BackingField: 1
+      <AffectedTypes>k__BackingField: 0200000000000000
   - <Type>k__BackingField: 1
     <Level>k__BackingField: 3
     <Name>k__BackingField: Information Access
     <Description>k__BackingField: Open data and transparency laws allow citizens
       to access government information and hold institutions accountable.
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 600
     <EmergencyModifiers>k__BackingField: []
-    <MinigameModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 4
+      <ModifiedStat>k__BackingField: 0
+      <AffectedTypes>k__BackingField: 00000000
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 4
+      <ModifiedStat>k__BackingField: 0
+      <AffectedTypes>k__BackingField: 01000000
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 2
+      <ModifiedStat>k__BackingField: 0
+      <AffectedTypes>k__BackingField: 02000000
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 8
+      <ModifiedStat>k__BackingField: 0
+      <AffectedTypes>k__BackingField: 03000000
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 8
+      <ModifiedStat>k__BackingField: 0
+      <AffectedTypes>k__BackingField: 04000000
   <DisinformationUpgrades>k__BackingField:
   - <Type>k__BackingField: 2
     <Level>k__BackingField: 1
@@ -105,24 +117,36 @@ MonoBehaviour:
     <Description>k__BackingField: Platforms and institutions must clearly show sources,
       funding, and how information is promoted online.
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 150
     <EmergencyModifiers>k__BackingField: []
-    <MinigameModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 20
+      <ModifiedStat>k__BackingField: 2
+      <AffectedTypes>k__BackingField: 0000000001000000020000000300000004000000
   - <Type>k__BackingField: 2
     <Level>k__BackingField: 2
     <Name>k__BackingField: Trusted Source
     <Description>k__BackingField: Support for independent journalism and fact-checking
       helps citizens find reliable information.
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 300
     <EmergencyModifiers>k__BackingField: []
-    <MinigameModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 25
+      <ModifiedStat>k__BackingField: 2
+      <AffectedTypes>k__BackingField: 0000000001000000020000000300000004000000
   - <Type>k__BackingField: 2
     <Level>k__BackingField: 3
     <Name>k__BackingField: Better Media Surveillance
     <Description>k__BackingField: Authorities and researchers monitor coordinated
       disinformation campaigns and respond quickly to harmful content.
     <ModifiersDescription>k__BackingField: 
-    <Cost>k__BackingField: 0
+    <Cost>k__BackingField: 450
     <EmergencyModifiers>k__BackingField: []
-    <MinigameModifiers>k__BackingField: []
+    <MinigameModifiers>k__BackingField:
+    - <Type>k__BackingField: 0
+      <Value>k__BackingField: 35
+      <ModifiedStat>k__BackingField: 2
+      <AffectedTypes>k__BackingField: 0000000001000000020000000300000004000000
