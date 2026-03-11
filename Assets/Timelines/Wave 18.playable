@@ -1,0 +1,2254 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9216599528853773649
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa6e9bb77a947ceb6398dee0ff9937f, type: 3}
+  m_Name: Emergency Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 3
+    m_ClipIn: 0
+    m_Asset: {fileID: 6915752029050511812}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -9216599528853773649}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 48
+    m_ClipIn: 0
+    m_Asset: {fileID: -2411426328641812359}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -9216599528853773649}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 90
+    m_ClipIn: 0
+    m_Asset: {fileID: -8197426676223569840}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -9216599528853773649}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  m_Markers:
+    m_Objects: []
+--- !u!114 &-8211870750701916183
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 2
+    <LocationName>k__BackingField: 8
+  database: []
+--- !u!114 &-8197426676223569840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 0
+    <LocationName>k__BackingField: 2
+  database:
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 0
+      <Name>k__BackingField: Fire
+      <Description>k__BackingField: Fire in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+--- !u!114 &-5556231830340607906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 0
+    <LocationName>k__BackingField: 14
+  database: []
+--- !u!114 &-3543257439806913669
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa6e9bb77a947ceb6398dee0ff9937f, type: 3}
+  m_Name: Emergency Track (3)
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 7
+    m_ClipIn: 0
+    m_Asset: {fileID: 8365525667001012109}
+    m_Duration: 24
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3543257439806913669}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 33
+    m_ClipIn: 0
+    m_Asset: {fileID: 5963744263670344807}
+    m_Duration: 15.266666666666666
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3543257439806913669}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 55
+    m_ClipIn: 0
+    m_Asset: {fileID: -5556231830340607906}
+    m_Duration: 24
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3543257439806913669}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 88
+    m_ClipIn: 0
+    m_Asset: {fileID: -700948202180638798}
+    m_Duration: 24
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3543257439806913669}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 121
+    m_ClipIn: 0
+    m_Asset: {fileID: -8211870750701916183}
+    m_Duration: 16
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3543257439806913669}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  m_Markers:
+    m_Objects: []
+--- !u!114 &-3330783883375521832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 3
+    <LocationName>k__BackingField: 1
+  database:
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 0
+      <Name>k__BackingField: Fire
+      <Description>k__BackingField: Fire in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+--- !u!114 &-2411426328641812359
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 0
+    <LocationName>k__BackingField: 13
+  database:
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 0
+      <Name>k__BackingField: Fire
+      <Description>k__BackingField: Fire in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+--- !u!114 &-700948202180638798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 0
+    <LocationName>k__BackingField: 8
+  database: []
+--- !u!114 &-179322807084601966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 3
+    <LocationName>k__BackingField: 16
+  database:
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 0
+      <Name>k__BackingField: Fire
+      <Description>k__BackingField: Fire in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
+  m_Name: Wave 18
+  m_EditorClassIdentifier: 
+  m_Version: 0
+  m_Tracks:
+  - {fileID: -9216599528853773649}
+  - {fileID: 4683510107213038983}
+  - {fileID: 851086925619551517}
+  - {fileID: -3543257439806913669}
+  m_FixedDuration: 0
+  m_EditorSettings:
+    m_Framerate: 60
+    m_ScenePreview: 1
+  m_DurationMode: 0
+  m_MarkerTrack: {fileID: 0}
+--- !u!114 &851086925619551517
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa6e9bb77a947ceb6398dee0ff9937f, type: 3}
+  m_Name: Emergency Track (2)
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 6
+    m_ClipIn: 0
+    m_Asset: {fileID: 5799386953518778027}
+    m_Duration: 17
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 31
+    m_ClipIn: 0
+    m_Asset: {fileID: -3330783883375521832}
+    m_Duration: 19.999999999999993
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 85
+    m_ClipIn: 0
+    m_Asset: {fileID: 3038189663680921426}
+    m_Duration: 24
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 57
+    m_ClipIn: 0
+    m_Asset: {fileID: -179322807084601966}
+    m_Duration: 19.999999999999993
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 124
+    m_ClipIn: 0
+    m_Asset: {fileID: 9077712407405456626}
+    m_Duration: 19.999999999999993
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  m_Markers:
+    m_Objects: []
+--- !u!114 &1703628266659899881
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 6
+    <LocationName>k__BackingField: 15
+  database: []
+--- !u!114 &2028122083043148716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 1
+    <LocationName>k__BackingField: 4
+  database:
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 0
+      <Name>k__BackingField: Fire
+      <Description>k__BackingField: Fire in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+--- !u!114 &3038189663680921426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 0
+    <LocationName>k__BackingField: 14
+  database: []
+--- !u!114 &4683510107213038983
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa6e9bb77a947ceb6398dee0ff9937f, type: 3}
+  m_Name: Emergency Track (1)
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 5
+    m_ClipIn: 0
+    m_Asset: {fileID: 7276458597630106801}
+    m_Duration: 19.999999999999993
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 4683510107213038983}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 51
+    m_ClipIn: 0
+    m_Asset: {fileID: 1703628266659899881}
+    m_Duration: 24
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 4683510107213038983}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 106
+    m_ClipIn: 0
+    m_Asset: {fileID: 2028122083043148716}
+    m_Duration: 30
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 4683510107213038983}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  m_Markers:
+    m_Objects: []
+--- !u!114 &5799386953518778027
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 0
+    <LocationName>k__BackingField: 12
+  database: []
+--- !u!114 &5963744263670344807
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 0
+    <LocationName>k__BackingField: 4
+  database: []
+--- !u!114 &6915752029050511812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 2
+    <LocationName>k__BackingField: 9
+  database:
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 0
+      <Name>k__BackingField: Fire
+      <Description>k__BackingField: Fire in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+--- !u!114 &7276458597630106801
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 1
+    <LocationName>k__BackingField: 3
+  database:
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 0
+      <Name>k__BackingField: Fire
+      <Description>k__BackingField: Fire in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+--- !u!114 &8365525667001012109
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 1
+    <LocationName>k__BackingField: 17
+  database: []
+--- !u!114 &9077712407405456626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 1
+    <LocationName>k__BackingField: 16
+  database:
+  - <EmergencyPrefab>k__BackingField: {fileID: 2464525852365211073, guid: dc5aad47ac9e89049a7e730d64785565, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 0
+      <Name>k__BackingField: Fire
+      <Description>k__BackingField: Fire in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 748079791639123642, guid: bb277768dd0b9ae48bcc32d5fcd7fa7c, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 1
+      <Name>k__BackingField: Earthquake
+      <Description>k__BackingField: Earthquake in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 2
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 2884740613363242229, guid: cf1fa44d4a6faeb4a965e84c7488455f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 2
+      <Name>k__BackingField: Flood
+      <Description>k__BackingField: Flood in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 1488756564359302272, guid: 6915c0b29f8b17444bdaba9c8c381a48, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 3
+      <Name>k__BackingField: Health Crisis
+      <Description>k__BackingField: Health crisis in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 7485330896415579492, guid: dff622c0f0041794582bde12765eaf47, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 4
+      <Name>k__BackingField: Extreme Weather
+      <Description>k__BackingField: Extreme weather in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 0
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4358759299960194187, guid: f8ffcface5b7684409d7a840a0668bbf, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 5
+      <Name>k__BackingField: Armed Conflict
+      <Description>k__BackingField: Armed Conflict in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 1
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 2
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15
+  - <EmergencyPrefab>k__BackingField: {fileID: 4751095035971451370, guid: 67e52c4c430c5424d9874f5a00e1110f, type: 3}
+    <EmergencyData>k__BackingField:
+      <EmergencyType>k__BackingField: 6
+      <Name>k__BackingField: CBRN Incident
+      <Description>k__BackingField: CBRN incident in {LOCATION}
+      <RequiredResources>k__BackingField:
+      - <Type>k__BackingField: 5
+        <Amount>k__BackingField: 2
+      - <Type>k__BackingField: 3
+        <Amount>k__BackingField: 1
+      - <Type>k__BackingField: 6
+        <Amount>k__BackingField: 1
+      <Severity>k__BackingField: 5
+      <TimeUntilExpiry>k__BackingField: 30
+      <TimeToSolve>k__BackingField: 15

@@ -227,3 +227,89 @@ MonoBehaviour:
     <StartingMoney>k__BackingField: 600
     <EmergencyFailLimit>k__BackingField: 3
     <WaveDuration>k__BackingField: 145
+  - <WaveNumber>k__BackingField: 15
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: bf7df9592b448eb45ad959f756eab0a6, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 3
+      <Count>k__BackingField: 4
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 1
+      <Count>k__BackingField: 3
+    - <Type>k__BackingField: 2
+      <Count>k__BackingField: 1
+    - <Type>k__BackingField: 6
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 5
+      <Count>k__BackingField: 2
+    <StartingMoney>k__BackingField: 1650
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 160
+  - <WaveNumber>k__BackingField: 16
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 1bdf041282f08774c85efdc7a3cd1cc4, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Count>k__BackingField: 3
+    - <Type>k__BackingField: 2
+      <Count>k__BackingField: 1
+    - <Type>k__BackingField: 3
+      <Count>k__BackingField: 6
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 1
+    - <Type>k__BackingField: 5
+      <Count>k__BackingField: 1
+    - <Type>k__BackingField: 6
+      <Count>k__BackingField: 2
+    <StartingMoney>k__BackingField: 2000
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 120
+  - <WaveNumber>k__BackingField: 17
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: 02ce9e6ddf89198448286191e7805081, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Count>k__BackingField: 2
+    - <Type>k__BackingField: 3
+      <Count>k__BackingField: 4
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 1
+    - <Type>k__BackingField: 2
+      <Count>k__BackingField: 2
+    <StartingMoney>k__BackingField: 1400
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 135
+  - <WaveNumber>k__BackingField: 18
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: d3a065a8e7075454281b3d28bf34fbfa, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Count>k__BackingField: 4
+    - <Type>k__BackingField: 3
+      <Count>k__BackingField: 5
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 3
+    - <Type>k__BackingField: 5
+      <Count>k__BackingField: 3
+    - <Type>k__BackingField: 6
+      <Count>k__BackingField: 4
+    - <Type>k__BackingField: 2
+      <Count>k__BackingField: 3
+    <StartingMoney>k__BackingField: 2000
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 170
+  - <WaveNumber>k__BackingField: 19
+    <TimelineAsset>k__BackingField: {fileID: 11400000, guid: f8c69dae69341d948a633f0ec2fae577, type: 2}
+    <StartingUnits>k__BackingField:
+    - <Type>k__BackingField: 1
+      <Count>k__BackingField: 4
+    - <Type>k__BackingField: 3
+      <Count>k__BackingField: 5
+    - <Type>k__BackingField: 0
+      <Count>k__BackingField: 3
+    - <Type>k__BackingField: 5
+      <Count>k__BackingField: 3
+    - <Type>k__BackingField: 6
+      <Count>k__BackingField: 4
+    - <Type>k__BackingField: 2
+      <Count>k__BackingField: 3
+    <StartingMoney>k__BackingField: 1500
+    <EmergencyFailLimit>k__BackingField: 3
+    <WaveDuration>k__BackingField: 170
