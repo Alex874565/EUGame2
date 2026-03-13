@@ -27,6 +27,7 @@ public class WavesManager : MonoBehaviour
     
     private void Start()
     {
+        Application.targetFrameRate = 60;
         WavesDatabase = ServiceLocator.Instance.WavesDatabase;
         _playableDirector = GetComponent<PlayableDirector>();
         StartWave(ServiceLocator.Instance.GameManager.WaveIndex);

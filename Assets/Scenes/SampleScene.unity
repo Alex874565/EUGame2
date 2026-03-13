@@ -18145,9 +18145,10 @@ MonoBehaviour:
   - {fileID: 169184409818409018, guid: af5d82dcdeaba5647890bcefb1cfd6f7, type: 3}
   _packagesContainer: {fileID: 292143114}
   _sendButton: {fileID: 715541291}
-  spawnDuration: 0.4
-  spawnStagger: 0.05
-  disappearDuration: 0.3
+  _staggerDelay: 0.05
+  _animDuration: 0.3
+  _audioSource: {fileID: 0}
+  _popSound: {fileID: 0}
 --- !u!1 &1825923784
 GameObject:
   m_ObjectHideFlags: 0
