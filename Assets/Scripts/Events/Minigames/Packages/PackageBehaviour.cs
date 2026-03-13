@@ -22,7 +22,7 @@ public class PackageBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExi
     
     private SelectableObjectSFX _objectSfx;
 
-    private void Start()
+    private void Awake()
     {
         _objectSfx = GetComponent<SelectableObjectSFX>();
         _originalScale = transform.localScale;
