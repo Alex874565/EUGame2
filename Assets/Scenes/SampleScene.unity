@@ -1641,7 +1641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &167459356
 Transform:
   m_ObjectHideFlags: 0
@@ -3329,6 +3329,7 @@ MonoBehaviour:
   timer: {fileID: 699320955}
   spawnIntervalRange: {x: 1, y: 1.75}
   votePrefab: {fileID: 2260932558362363788, guid: a3c48d9b3fb51fe40992245bf7725d4a, type: 3}
+  referenceOrthographicSize: 50
 --- !u!1 &315780006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4677,7 +4678,7 @@ MonoBehaviour:
   duration: 0.4
   staggerDelay: 1
   sfxSource: {fileID: 0}
-  popSound: {fileID: 8300000, guid: 6a5adc9bffc34894eadc7cd9d42a8570, type: 3}
+  popSound: {fileID: 8300000, guid: 2c85932b83b6e8b4a9002f049ce8679c, type: 3}
   volume: 1
 --- !u!1 &413467511
 GameObject:
@@ -5611,7 +5612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &485803601
 Transform:
   m_ObjectHideFlags: 0
@@ -7374,14 +7375,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: pitchVariationRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
-      propertyPath: <SfxSource>k__BackingField
-      value: 
-      objectReference: {fileID: 1404053932}
     - target: {fileID: 8540543130349399822, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8817,7 +8810,7 @@ Transform:
   m_GameObject: {fileID: 786428987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.8, y: -8.9, z: 0}
+  m_LocalPosition: {x: 8.7, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8926,7 +8919,7 @@ MonoBehaviour:
   duration: 0.4
   staggerDelay: 1
   sfxSource: {fileID: 0}
-  popSound: {fileID: 8300000, guid: 6a5adc9bffc34894eadc7cd9d42a8570, type: 3}
+  popSound: {fileID: 8300000, guid: 2c85932b83b6e8b4a9002f049ce8679c, type: 3}
   volume: 1
 --- !u!1 &800757575
 GameObject:
@@ -14415,7 +14408,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1300, y: 175}
+  m_SizeDelta: {x: 1225, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404789104
 MonoBehaviour:
@@ -16452,7 +16445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1565325130
 Transform:
   m_ObjectHideFlags: 0
@@ -18149,6 +18142,7 @@ MonoBehaviour:
   _animDuration: 0.3
   _audioSource: {fileID: 0}
   _popSound: {fileID: 0}
+  _sendSound: {fileID: 8300000, guid: 9b6945e39f41a284d924a1104c63a4e5, type: 3}
 --- !u!1 &1825923784
 GameObject:
   m_ObjectHideFlags: 0

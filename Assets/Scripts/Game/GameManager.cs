@@ -26,8 +26,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        IsPaused = false;
+        Initialize();
+    }
 
+    public void Initialize()
+    {
+        
+        WaveIndex = 0;
+        IsPaused = false;
         WonLastWave = true;
     }
 

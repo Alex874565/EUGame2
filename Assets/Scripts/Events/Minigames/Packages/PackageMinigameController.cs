@@ -16,6 +16,7 @@ public class PackageMinigameController : MinigameController
     [SerializeField] private float _animDuration = 0.3f;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _popSound;
+    [SerializeField] private AudioClip _sendSound;
 
     private List<PackageBehaviour> _selectedPackages = new();
     
@@ -119,6 +120,7 @@ public class PackageMinigameController : MinigameController
     private void OnSendButtonClicked()
     {
         int scoreToAdd = 0;
+        ServiceLocator.Instance.AudioManager.PlayUIRandomPitch(_sendSound);
         foreach (PackageBehaviour package in _selectedPackages)
         {
             if(package.IsFood)

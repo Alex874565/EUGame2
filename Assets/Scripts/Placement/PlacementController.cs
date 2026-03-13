@@ -101,8 +101,7 @@ public class PlacementController : MonoBehaviour
     {
         if(_unitBehaviour.OwningEmergency != null)
         {
-            _unitBehaviour.OwningEmergency.SetActiveUnits(_unitData.Type,
-                _unitBehaviour.OwningEmergency.GetActiveUnitsOfType(_unitData.Type));
+            GiveUpAllUnits();
         }
         else
         {
@@ -122,6 +121,28 @@ public class PlacementController : MonoBehaviour
             DeleteLines();
             ServiceLocator.Instance.PlacementManager.ClearPlacement();
         }
+        _placeableObjectSfx.PlayDeselectSFX();
+    }
+
+    public void GiveUpAllUnits()
+    {
+        if(_unitBehaviour.OwningEmergency != null)
+        {
+            _unitBehaviour.OwningEmergency.SetActiveUnits(_unitData.Type,
+                _unitBehaviour.OwningEmergency.GetActiveUnitsOfType(_unitData.Type));
+        }
+        else
+        {
+            GameObject inventoryUnit =
+                ServiceLocator.Instance.UnitsManager.InventoryUnits.First(unit =>
+                    unit.GetComponent<UnitBehaviour>().Type == _unitData.Type);
+            inventoryUnit.GetComponent<UnitBehaviour>()
+                .UpdateCount(inventoryUnit.GetComponent<UnitBehaviour>().Count + _unitBehaviour.Count);
+        }
+
+        DeleteLines();
+        ServiceLocator.Instance.PlacementManager.ClearPlacement();
+        
         _placeableObjectSfx.PlayDeselectSFX();
     }
 

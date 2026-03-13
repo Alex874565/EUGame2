@@ -55,5 +55,7 @@ public class SaveManager : MonoBehaviour
         {
             System.IO.File.Delete(path);
         }
+        ServiceLocator.Instance.GameManager.Initialize();
+        ServiceLocator.Instance.PlayerManager.Initialize();
     }
 }

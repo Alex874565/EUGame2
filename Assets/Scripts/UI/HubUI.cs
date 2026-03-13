@@ -82,7 +82,7 @@ public class HubUI : MonoBehaviour
         stagger.OpenMenu();
         ServiceLocator.Instance.DialogueManager.TryShowDialogue();
         if (ServiceLocator.Instance.GameManager.WaveIndex >= 18)
-        {
+        {       
             shopButton.enabled = true;
             shopButton.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
             shopText.text = "Unit Shop";
