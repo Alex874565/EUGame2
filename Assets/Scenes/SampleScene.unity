@@ -155,7 +155,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1400, y: 225}
+  m_SizeDelta: {x: 1225, y: 225}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &6926208
 MonoBehaviour:
@@ -1972,7 +1972,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 230}
+  m_SizeDelta: {x: 225, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188612181
 MonoBehaviour:
@@ -7372,7 +7372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 288510709304336017, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3608597825126326239, guid: f7da988d6700cec4896942c78e03ab80, type: 3}
       propertyPath: pitchVariationRange

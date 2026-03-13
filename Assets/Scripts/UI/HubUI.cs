@@ -56,7 +56,7 @@ public class HubUI : MonoBehaviour
     private void Start()
     {
         ServiceLocator.Instance.GameManager.ResumeGame();
-        if(ServiceLocator.Instance.GameManager.WaveIndex == 27)
+        if(ServiceLocator.Instance.GameManager.WaveIndex == 26)
         {
             ServiceLocator.Instance.GameManager.WonLastWave = false;
         }
@@ -81,14 +81,16 @@ public class HubUI : MonoBehaviour
 
         stagger.OpenMenu();
         ServiceLocator.Instance.DialogueManager.TryShowDialogue();
-        if (ServiceLocator.Instance.GameManager.WaveIndex >= 19)
+        if (ServiceLocator.Instance.GameManager.WaveIndex >= 18)
         {
             shopButton.enabled = true;
+            shopButton.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
             shopText.text = "Unit Shop";
         }
         else
         {
-            shopButton.enabled = false;
+            shopButton.interactable = false;
+            shopButton.GetComponent<Image>().color = new Color(.5f, .5f, .5f, .5f);
             shopText.text = "Unlocks in 2019";
         }
 

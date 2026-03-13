@@ -18,7 +18,8 @@ MonoBehaviour:
     <Name>k__BackingField: Active Encouragement
     <Description>k__BackingField: Campaigns and community programs motivate citizens
       to participate in democratic life and local initiatives.
-    <ModifiersDescription>k__BackingField: 
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>+10</color> <color=#C62828>Fire
+      Emergency</color> <color=#7B1FA2>Expiration Time</color>
     <Cost>k__BackingField: 150
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
@@ -31,7 +32,8 @@ MonoBehaviour:
     <Name>k__BackingField: Funding Initiatives
     <Description>k__BackingField: Public funding supports civic projects, NGOs, and
       grassroots movements that strengthen community participation.
-    <ModifiersDescription>k__BackingField: 
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>+10</color> <color=#C62828>Earthquake,
+      Flood Emergencies</color> <color=#7B1FA2>Expiration Time</color>
     <Cost>k__BackingField: 350
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
@@ -44,7 +46,8 @@ MonoBehaviour:
     <Name>k__BackingField: Better Reward System
     <Description>k__BackingField: Recognition and incentives encourage volunteering,
       civic engagement, and participation in public decision-making.
-    <ModifiersDescription>k__BackingField: 
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>-3</color> <color=#C62828>Flood,
+      Health Crisis, Armed Conflict Emergencies</color> <color=#7B1FA2>Time to Solve</color>
     <Cost>k__BackingField: 600
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
@@ -58,9 +61,8 @@ MonoBehaviour:
     <Name>k__BackingField: Easier Voting
     <Description>k__BackingField: Measures such as early voting, accessible polling
       stations, and digital services make voting easier for citizens.
-    <ModifiersDescription>k__BackingField: <color=#2E7D32>+10</color> <color=#C62828>Emergencies
-      Expiration Time</color>\n<color=#2E7D32>+10</color> <color=#1976D2>Minigames
-      Reward</color>
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>+3</color> <color=#1976D2>Packages,
+      Cleanup, Signing Minigames</color> <color=#7B1FA2>Time Limit</color>
     <Cost>k__BackingField: 100
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
@@ -73,7 +75,8 @@ MonoBehaviour:
     <Name>k__BackingField: Political Education
     <Description>k__BackingField: Students learn how democratic institutions work
       and why participation and critical thinking matter.
-    <ModifiersDescription>k__BackingField: 
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>+5</color> <color=#1976D2>Quiz,
+      Voting Minigames</color> <color=#7B1FA2>Time Limit</color>
     <Cost>k__BackingField: 300
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
@@ -86,37 +89,31 @@ MonoBehaviour:
     <Name>k__BackingField: Information Access
     <Description>k__BackingField: Open data and transparency laws allow citizens
       to access government information and hold institutions accountable.
-    <ModifiersDescription>k__BackingField: 
+    <ModifiersDescription>k__BackingField: '<color=#2E7D32>-2</color> <color=#1976D2>Vote,
+      Signing Minigames</color> <color=#7B1FA2>Score to Win</color>
+
+      <color=#2E7D32>-4</color>
+      <color=#1976D2>Cleanup, Packages Minigames</color> <color=#7B1FA2>Score to
+      Win</color>'
     <Cost>k__BackingField: 600
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
     - <Type>k__BackingField: 0
-      <Value>k__BackingField: 4
+      <Value>k__BackingField: -2
       <ModifiedStat>k__BackingField: 0
-      <AffectedTypes>k__BackingField: 00000000
+      <AffectedTypes>k__BackingField: 0000000001000000
     - <Type>k__BackingField: 0
-      <Value>k__BackingField: 4
+      <Value>k__BackingField: -4
       <ModifiedStat>k__BackingField: 0
-      <AffectedTypes>k__BackingField: 01000000
-    - <Type>k__BackingField: 0
-      <Value>k__BackingField: 2
-      <ModifiedStat>k__BackingField: 0
-      <AffectedTypes>k__BackingField: 02000000
-    - <Type>k__BackingField: 0
-      <Value>k__BackingField: 8
-      <ModifiedStat>k__BackingField: 0
-      <AffectedTypes>k__BackingField: 03000000
-    - <Type>k__BackingField: 0
-      <Value>k__BackingField: 8
-      <ModifiedStat>k__BackingField: 0
-      <AffectedTypes>k__BackingField: 04000000
+      <AffectedTypes>k__BackingField: 0300000004000000
   <DisinformationUpgrades>k__BackingField:
   - <Type>k__BackingField: 2
     <Level>k__BackingField: 1
     <Name>k__BackingField: More Transparency
     <Description>k__BackingField: Platforms and institutions must clearly show sources,
       funding, and how information is promoted online.
-    <ModifiersDescription>k__BackingField: 
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>+20</color> <color=#1976D2>All
+      Minigames</color> <color=#7B1FA2>Reward</color>
     <Cost>k__BackingField: 150
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
@@ -129,7 +126,8 @@ MonoBehaviour:
     <Name>k__BackingField: Trusted Source
     <Description>k__BackingField: Support for independent journalism and fact-checking
       helps citizens find reliable information.
-    <ModifiersDescription>k__BackingField: 
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>+25</color> <color=#1976D2>All
+      Minigames</color> <color=#7B1FA2>Reward</color>
     <Cost>k__BackingField: 300
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
@@ -142,7 +140,8 @@ MonoBehaviour:
     <Name>k__BackingField: Better Media Surveillance
     <Description>k__BackingField: Authorities and researchers monitor coordinated
       disinformation campaigns and respond quickly to harmful content.
-    <ModifiersDescription>k__BackingField: 
+    <ModifiersDescription>k__BackingField: <color=#2E7D32>+35</color> <color=#1976D2>All
+      Minigames</color> <color=#7B1FA2>Reward</color>
     <Cost>k__BackingField: 450
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
