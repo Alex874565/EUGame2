@@ -4647,7 +4647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eaf0f3146b556b4f93f2f5607d8aa29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyModifier: 0.5
+  moneyModifier: 0.2
   stagger: {fileID: 405855344}
   hubButton: {fileID: 1825923786}
   moneyText: {fileID: 1784453564}
