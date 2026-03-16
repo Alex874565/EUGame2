@@ -201,13 +201,16 @@ public class UnitBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 if (OwningEmergency == unitInPlacingEmergency)
                 {
                     StartCoroutine(ClickCoroutine());
-                    ServiceLocator.Instance.PlacementManager.ClearPlacement();
+
+                    var placingController = unitInPlacing.GetComponent<PlacementController>();
+
                     LocationName startLocation = OwningEmergency != null
                         ? OwningEmergency.LocationData.Name
                         : ServiceLocator.Instance.PlacementManager.DefaultStartLocation;
-                    unitInPlacing.GetComponent<PlacementController>().GiveUpUnit();
+
+                    placingController.GiveUpAllUnits();
                     ServiceLocator.Instance.PlacementManager.StartPlacingUnit(Type, startLocation, OwningEmergency);
-                    
+
                     UpdateCount(Count - 1);
                 }
             }

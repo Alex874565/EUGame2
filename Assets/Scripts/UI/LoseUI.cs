@@ -48,7 +48,7 @@ public class LoseUI : MonoBehaviour
     // Change your Show method to handle both callbacks
     public void Show(int moneyEarned, float secondsSurvived)
     {
-        moneyEarned = moneyEarned / 2;
+        int moneyReward = Mathf.RoundToInt(moneyEarned * moneyModifier);
         // Setup initial state for animation
         CanvasGroup cg = GetComponent<CanvasGroup>();
         if (cg == null) cg = gameObject.AddComponent<CanvasGroup>();
@@ -65,7 +65,7 @@ public class LoseUI : MonoBehaviour
         entrySequence.OnComplete(() => 
         {
             // Logic and Save
-            ServiceLocator.Instance.PlayerManager.AddMoney(moneyEarned);
+            ServiceLocator.Instance.PlayerManager.AddMoney(moneyReward);
             ServiceLocator.Instance.GameManager.WonLastWave = false;
             ServiceLocator.Instance.SaveManager.SaveGame(new SaveData(
                 ServiceLocator.Instance.GameManager.WaveIndex,
@@ -77,7 +77,7 @@ public class LoseUI : MonoBehaviour
 
             // Start counting animations
             stagger.OpenMenu(
-                onMoneyShown: () => AnimateMoney(moneyEarned),
+                onMoneyShown: () => AnimateMoney(moneyReward),
                 onTimeShown: () => AnimateTime(secondsSurvived)
             );
         });

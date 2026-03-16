@@ -59,6 +59,7 @@ MonoBehaviour:
   clickScaleMultiplier: 0.8
   moveSpeedRange: {x: 28, y: 35}
   fallSpeedRange: {x: 50, y: 60}
+  referenceOrthographicSize: 50
 --- !u!114 &1162226296929976201
 MonoBehaviour:
   m_ObjectHideFlags: 0

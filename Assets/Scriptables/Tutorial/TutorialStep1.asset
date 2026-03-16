@@ -15,9 +15,9 @@ MonoBehaviour:
   <StepIndex>k__BackingField: 0
   <DialogueData>k__BackingField:
     <CharacterName>k__BackingField: Pax
-    <CharacterPortrait>k__BackingField: {fileID: -1162642704207133085, guid: 10a8e30b7d8b77943ae72d49ed6c1f9b, type: 3}
+    <CharacterPortrait>k__BackingField: {fileID: 2639642924703224851, guid: 5688040a6d1a9b44fba246ca412f3ffd, type: 3}
     <DialogueLines>k__BackingField:
-    - This is your control interface.
+    - Welcome to your control interface.
     - On the upper right you can see how much time is left until the year ends...
     - ...how many emergencies you can fail to solve without losing...
     - ...and how much money you were allocated for the year. If you run out, you

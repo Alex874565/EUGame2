@@ -7,7 +7,7 @@ using static EmergenciesDatabase;
 public class EmergencyClip : PlayableAsset, ITimelineClipAsset
 {
     [SerializeField] private List<EmergencySpawnData> spawnData;
-    [SerializeField] private List<EmergencyDatabaseObject> database;
+
     public ClipCaps clipCaps => ClipCaps.None;
     
     public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)

@@ -20,7 +20,14 @@ public class PlayerManager : MonoBehaviour
         }
         
         _instance = this;
+        
+        Initialize();
+        
+        DontDestroyOnLoad(gameObject);
+    }
 
+    public void Initialize()
+    {
         Money = startingMoney;
         OwnedUpgrades = new Dictionary<UpgradeType, int>
         {
@@ -38,8 +45,6 @@ public class PlayerManager : MonoBehaviour
             { UnitType.MilitaryUnit, 0 },
             { UnitType.RescueUnit, 0 }
         };
-        
-        DontDestroyOnLoad(gameObject);
     }
     
     public void AddMoney(int amount)

@@ -327,6 +327,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
             ServiceLocator.Instance.UIManager.OpenEmergencyDetails(this);
             StartCoroutine(SelectCoroutine());
             GetComponent<TutorialTarget>()?.NotifyAction("EmergencySelected");
+            Debug.Log("Select");
             _solvableObjectSfx.PlaySelectSFX();
         }
     }
@@ -346,6 +347,7 @@ public class EmergencyBehaviour : MonoBehaviour, IInteractable, IPointerEnterHan
             transform.localScale /= selectedScaleMultiplier;
             IsSelected = false;
             ServiceLocator.Instance.UIManager.EmergencyDetailsMenu.SetActive(false);
+            Debug.Log("Deselect");
             _solvableObjectSfx.PlayDeselectSFX();
         }
     }
