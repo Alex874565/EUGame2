@@ -25,7 +25,7 @@ MonoBehaviour:
     m_Start: 3
     m_ClipIn: 0
     m_Asset: {fileID: 6915752029050511812}
-    m_Duration: 30
+    m_Duration: 8
     m_TimeScale: 1
     m_ParentTrack: {fileID: -9216599528853773649}
     m_EaseInDuration: 0
@@ -91,10 +91,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 66
+    m_Start: 65
     m_ClipIn: 0
     m_Asset: {fileID: -2411426328641812359}
-    m_Duration: 15
+    m_Duration: 10
     m_TimeScale: 1
     m_ParentTrack: {fileID: -9216599528853773649}
     m_EaseInDuration: 0
@@ -160,79 +160,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 109
-    m_ClipIn: 0
-    m_Asset: {fileID: -8197426676223569840}
-    m_Duration: 27
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -9216599528853773649}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 37
+    m_Start: 12
     m_ClipIn: 0
     m_Asset: {fileID: -3330783883375521832}
-    m_Duration: 19.999999999999993
+    m_Duration: 19
     m_TimeScale: 1
     m_ParentTrack: {fileID: -9216599528853773649}
     m_EaseInDuration: 0
@@ -298,10 +229,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 164
+    m_Start: 149
     m_ClipIn: 0
     m_Asset: {fileID: -874543741918866255}
-    m_Duration: 15
+    m_Duration: 18
     m_TimeScale: 1
     m_ParentTrack: {fileID: -9216599528853773649}
     m_EaseInDuration: 0
@@ -367,79 +298,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 136
-    m_ClipIn: 0
-    m_Asset: {fileID: 5064975060472651117}
-    m_Duration: 22
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -9216599528853773649}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 188
+    m_Start: 189
     m_ClipIn: 0
     m_Asset: {fileID: 8313786849051135369}
-    m_Duration: 15
+    m_Duration: 14
     m_TimeScale: 1
     m_ParentTrack: {fileID: -9216599528853773649}
     m_EaseInDuration: 0
@@ -505,79 +367,217 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 86
-    m_ClipIn: 0
-    m_Asset: {fileID: -6251590277259426582}
-    m_Duration: 15
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -9216599528853773649}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 214
+    m_Start: 209
     m_ClipIn: 0
     m_Asset: {fileID: 6755184942737722846}
-    m_Duration: 20
+    m_Duration: 15
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -9216599528853773649}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 40
+    m_ClipIn: 0
+    m_Asset: {fileID: -4670076230488899970}
+    m_Duration: 15
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -9216599528853773649}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 99
+    m_ClipIn: 0
+    m_Asset: {fileID: 3038189663680921426}
+    m_Duration: 19
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -9216599528853773649}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 118
+    m_ClipIn: 0
+    m_Asset: {fileID: -700948202180638798}
+    m_Duration: 10
     m_TimeScale: 1
     m_ParentTrack: {fileID: -9216599528853773649}
     m_EaseInDuration: 0
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 3
+  - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 7
 --- !u!114 &-8043190803099280809
 MonoBehaviour:
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 5
+  - <EmergencyType>k__BackingField: 4
     <LocationName>k__BackingField: 6
 --- !u!114 &-6988064512258540005
 MonoBehaviour:
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 6
+  - <EmergencyType>k__BackingField: 2
     <LocationName>k__BackingField: 5
 --- !u!114 &-6912598649024787800
 MonoBehaviour:
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 1
+  - <EmergencyType>k__BackingField: 6
     <LocationName>k__BackingField: 7
 --- !u!114 &-6251590277259426582
 MonoBehaviour:
@@ -762,8 +762,23 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 1
+  - <EmergencyType>k__BackingField: 2
     <LocationName>k__BackingField: 15
+--- !u!114 &-4670076230488899970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a36397edf124ec581db774692d00c65, type: 3}
+  m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  spawnData:
+  - <EmergencyType>k__BackingField: 1
+    <LocationName>k__BackingField: 12
 --- !u!114 &-4441365480232596329
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -777,7 +792,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 2
+  - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 12
 --- !u!114 &-3543257439806913669
 MonoBehaviour:
@@ -801,78 +816,9 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 29
+    m_Start: 31
     m_ClipIn: 0
     m_Asset: {fileID: -5556231830340607906}
-    m_Duration: 24
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -3543257439806913669}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 121
-    m_ClipIn: 0
-    m_Asset: {fileID: -700948202180638798}
     m_Duration: 15
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3543257439806913669}
@@ -939,10 +885,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 61
+    m_Start: 46
     m_ClipIn: 0
     m_Asset: {fileID: -8043190803099280809}
-    m_Duration: 24
+    m_Duration: 19
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3543257439806913669}
     m_EaseInDuration: 0
@@ -1008,148 +954,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 140
-    m_ClipIn: 0
-    m_Asset: {fileID: -8080499691013370061}
-    m_Duration: 24
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -3543257439806913669}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 101
-    m_ClipIn: 0
-    m_Asset: {fileID: -8456359283921607047}
-    m_Duration: 10
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: -3543257439806913669}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 170
+    m_Start: 156
     m_ClipIn: 0
     m_Asset: {fileID: -898834025084840259}
-    m_Duration: 15
+    m_Duration: 19
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3543257439806913669}
     m_EaseInDuration: 0
@@ -1218,7 +1026,7 @@ MonoBehaviour:
     m_Start: 9
     m_ClipIn: 0
     m_Asset: {fileID: -6912598649024787800}
-    m_Duration: 17
+    m_Duration: 15
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3543257439806913669}
     m_EaseInDuration: 0
@@ -1353,10 +1161,217 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 222
+    m_Start: 220
     m_ClipIn: 0
     m_Asset: {fileID: 7835325907793119821}
-    m_Duration: 20
+    m_Duration: 15
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3543257439806913669}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 71
+    m_ClipIn: 0
+    m_Asset: {fileID: -6251590277259426582}
+    m_Duration: 19
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3543257439806913669}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 90
+    m_ClipIn: 0
+    m_Asset: {fileID: -8197426676223569840}
+    m_Duration: 10
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -3543257439806913669}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 127
+    m_ClipIn: 0
+    m_Asset: {fileID: 5064975060472651117}
+    m_Duration: 19
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3543257439806913669}
     m_EaseInDuration: 0
@@ -1436,7 +1451,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 3
+  - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 9
 --- !u!114 &-3051694178561094668
 MonoBehaviour:
@@ -1481,7 +1496,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 0
+  - <EmergencyType>k__BackingField: 5
     <LocationName>k__BackingField: 17
 --- !u!114 &-1982598907836808915
 MonoBehaviour:
@@ -1496,7 +1511,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 2
+  - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 11
 --- !u!114 &-1303933256863144147
 MonoBehaviour:
@@ -1511,7 +1526,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 6
+  - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 3
 --- !u!114 &-898834025084840259
 MonoBehaviour:
@@ -1556,7 +1571,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 0
+  - <EmergencyType>k__BackingField: 1
     <LocationName>k__BackingField: 1
 --- !u!114 &-179322807084601966
 MonoBehaviour:
@@ -1571,7 +1586,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 2
+  - <EmergencyType>k__BackingField: 1
     <LocationName>k__BackingField: 13
 --- !u!114 &11400000
 MonoBehaviour:
@@ -1583,7 +1598,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: Wave 24
+  m_Name: Wave 25
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
@@ -1625,7 +1640,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 6
+  - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 9
 --- !u!114 &851086925619551517
 MonoBehaviour:
@@ -1649,423 +1664,9 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 112
-    m_ClipIn: 0
-    m_Asset: {fileID: 3038189663680921426}
-    m_Duration: 10
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 851086925619551517}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 33
+    m_Start: 34
     m_ClipIn: 0
     m_Asset: {fileID: -179322807084601966}
-    m_Duration: 19.999999999999993
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 851086925619551517}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 136
-    m_ClipIn: 0
-    m_Asset: {fileID: 9077712407405456626}
-    m_Duration: 17
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 851086925619551517}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 8.999999999999993
-    m_ClipIn: 0
-    m_Asset: {fileID: 5963744263670344807}
-    m_Duration: 15.999999999999998
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 851086925619551517}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 66
-    m_ClipIn: 0
-    m_Asset: {fileID: 2201799207671294710}
-    m_Duration: 19.999999999999993
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 851086925619551517}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 155
-    m_ClipIn: 0
-    m_Asset: {fileID: 265504012819097149}
-    m_Duration: 19.999999999999993
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 851086925619551517}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EmergencyClip
-  - m_Version: 1
-    m_Start: 184
-    m_ClipIn: 0
-    m_Asset: {fileID: 5611163468411416497}
     m_Duration: 15
     m_TimeScale: 1
     m_ParentTrack: {fileID: 851086925619551517}
@@ -2132,10 +1733,424 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 219
+    m_Start: 7
+    m_ClipIn: 0
+    m_Asset: {fileID: 5963744263670344807}
+    m_Duration: 10
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 69
+    m_ClipIn: 0
+    m_Asset: {fileID: 2201799207671294710}
+    m_Duration: 10
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 146
+    m_ClipIn: 0
+    m_Asset: {fileID: 265504012819097149}
+    m_Duration: 15
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 182
+    m_ClipIn: 0
+    m_Asset: {fileID: 5611163468411416497}
+    m_Duration: 7
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 214
     m_ClipIn: 0
     m_Asset: {fileID: -6988064512258540005}
-    m_Duration: 20
+    m_Duration: 15
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 93
+    m_ClipIn: 0
+    m_Asset: {fileID: -8456359283921607047}
+    m_Duration: 10
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 851086925619551517}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 124
+    m_ClipIn: 0
+    m_Asset: {fileID: -8080499691013370061}
+    m_Duration: 10
     m_TimeScale: 1
     m_ParentTrack: {fileID: 851086925619551517}
     m_EaseInDuration: 0
@@ -2215,7 +2230,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 2
+  - <EmergencyType>k__BackingField: 1
     <LocationName>k__BackingField: 2
 --- !u!114 &2201799207671294710
 MonoBehaviour:
@@ -2230,7 +2245,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 6
+  - <EmergencyType>k__BackingField: 2
     <LocationName>k__BackingField: 4
 --- !u!114 &3038189663680921426
 MonoBehaviour:
@@ -2245,7 +2260,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 3
+  - <EmergencyType>k__BackingField: 6
     <LocationName>k__BackingField: 14
 --- !u!114 &4024030893533386154
 MonoBehaviour:
@@ -2260,7 +2275,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 2
+  - <EmergencyType>k__BackingField: 1
     <LocationName>k__BackingField: 11
 --- !u!114 &4683510107213038983
 MonoBehaviour:
@@ -2287,7 +2302,7 @@ MonoBehaviour:
     m_Start: 5
     m_ClipIn: 0
     m_Asset: {fileID: 7276458597630106801}
-    m_Duration: 19.999999999999993
+    m_Duration: 10
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4683510107213038983}
     m_EaseInDuration: 0
@@ -2353,10 +2368,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 68
+    m_Start: 67
     m_ClipIn: 0
     m_Asset: {fileID: 1703628266659899881}
-    m_Duration: 24
+    m_Duration: 10
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4683510107213038983}
     m_EaseInDuration: 0
@@ -2422,10 +2437,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 104
+    m_Start: 96
     m_ClipIn: 0
     m_Asset: {fileID: -4441365480232596329}
-    m_Duration: 24
+    m_Duration: 10
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4683510107213038983}
     m_EaseInDuration: 0
@@ -2491,7 +2506,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 39
+    m_Start: 37
     m_ClipIn: 0
     m_Asset: {fileID: -1982598907836808915}
     m_Duration: 15
@@ -2560,10 +2575,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 179
+    m_Start: 164
     m_ClipIn: 0
     m_Asset: {fileID: -3051694178561094668}
-    m_Duration: 15
+    m_Duration: 18
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4683510107213038983}
     m_EaseInDuration: 0
@@ -2629,7 +2644,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 158
+    m_Start: 149
     m_ClipIn: 0
     m_Asset: {fileID: 4024030893533386154}
     m_Duration: 15
@@ -2698,10 +2713,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 196
+    m_Start: 203
     m_ClipIn: 0
     m_Asset: {fileID: -2593490944319388631}
-    m_Duration: 10
+    m_Duration: 6
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4683510107213038983}
     m_EaseInDuration: 0
@@ -2767,10 +2782,79 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: EmergencyClip
   - m_Version: 1
-    m_Start: 216
+    m_Start: 211
     m_ClipIn: 0
     m_Asset: {fileID: -1303933256863144147}
-    m_Duration: 20
+    m_Duration: 15
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 4683510107213038983}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: EmergencyClip
+  - m_Version: 1
+    m_Start: 121
+    m_ClipIn: 0
+    m_Asset: {fileID: 9077712407405456626}
+    m_Duration: 10
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4683510107213038983}
     m_EaseInDuration: 0
@@ -2850,7 +2934,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 0
+  - <EmergencyType>k__BackingField: 5
     <LocationName>k__BackingField: 3
 --- !u!114 &5611163468411416497
 MonoBehaviour:
@@ -2880,7 +2964,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 1
+  - <EmergencyType>k__BackingField: 0
     <LocationName>k__BackingField: 5
 --- !u!114 &6755184942737722846
 MonoBehaviour:
@@ -2895,7 +2979,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 6
+  - <EmergencyType>k__BackingField: 1
     <LocationName>k__BackingField: 16
 --- !u!114 &6915752029050511812
 MonoBehaviour:
@@ -2910,7 +2994,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 1
+  - <EmergencyType>k__BackingField: 2
     <LocationName>k__BackingField: 1
 --- !u!114 &7276458597630106801
 MonoBehaviour:
@@ -2925,7 +3009,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 1
+  - <EmergencyType>k__BackingField: 4
     <LocationName>k__BackingField: 3
 --- !u!114 &7835325907793119821
 MonoBehaviour:
@@ -2940,7 +3024,7 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 6
+  - <EmergencyType>k__BackingField: 3
     <LocationName>k__BackingField: 7
 --- !u!114 &8313786849051135369
 MonoBehaviour:
@@ -2970,5 +3054,5 @@ MonoBehaviour:
   m_Name: EmergencyClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   spawnData:
-  - <EmergencyType>k__BackingField: 1
+  - <EmergencyType>k__BackingField: 2
     <LocationName>k__BackingField: 5
