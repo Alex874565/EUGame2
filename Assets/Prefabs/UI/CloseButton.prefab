@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071a470c47f6cc4fa122a14ada52b7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 0}
 --- !u!222 &1038023473932180899
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
@@ -131,9 +132,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -4658684389144980754, guid: 43399f123009a1040af524550556a426, type: 3}
+    m_PressedSprite: {fileID: 3980394354627684241, guid: 0180c3d490afd3c43a300dac5c03fd3d, type: 3}
+    m_SelectedSprite: {fileID: 3980394354627684241, guid: 0180c3d490afd3c43a300dac5c03fd3d, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
