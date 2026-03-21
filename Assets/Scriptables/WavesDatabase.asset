@@ -34,7 +34,7 @@ MonoBehaviour:
       <Count>k__BackingField: 2
     - <Type>k__BackingField: 0
       <Count>k__BackingField: 2
-    <StartingMoney>k__BackingField: 450
+    <StartingMoney>k__BackingField: 500
     <EmergencyFailLimit>k__BackingField: 3
     <WaveDuration>k__BackingField: 95
   - <WaveNumber>k__BackingField: 3
@@ -52,7 +52,7 @@ MonoBehaviour:
       <Count>k__BackingField: 2
     - <Type>k__BackingField: 6
       <Count>k__BackingField: 1
-    <StartingMoney>k__BackingField: 500
+    <StartingMoney>k__BackingField: 550
     <EmergencyFailLimit>k__BackingField: 3
     <WaveDuration>k__BackingField: 105
   - <WaveNumber>k__BackingField: 4
@@ -66,7 +66,7 @@ MonoBehaviour:
       <Count>k__BackingField: 3
     - <Type>k__BackingField: 0
       <Count>k__BackingField: 2
-    <StartingMoney>k__BackingField: 450
+    <StartingMoney>k__BackingField: 500
     <EmergencyFailLimit>k__BackingField: 3
     <WaveDuration>k__BackingField: 100
   - <WaveNumber>k__BackingField: 5
@@ -84,7 +84,7 @@ MonoBehaviour:
       <Count>k__BackingField: 2
     - <Type>k__BackingField: 6
       <Count>k__BackingField: 2
-    <StartingMoney>k__BackingField: 900
+    <StartingMoney>k__BackingField: 950
     <EmergencyFailLimit>k__BackingField: 3
     <WaveDuration>k__BackingField: 145
   - <WaveNumber>k__BackingField: 6
@@ -100,7 +100,7 @@ MonoBehaviour:
       <Count>k__BackingField: 1
     - <Type>k__BackingField: 6
       <Count>k__BackingField: 2
-    <StartingMoney>k__BackingField: 1000
+    <StartingMoney>k__BackingField: 1050
     <EmergencyFailLimit>k__BackingField: 3
     <WaveDuration>k__BackingField: 165
   - <WaveNumber>k__BackingField: 7
@@ -120,7 +120,7 @@ MonoBehaviour:
       <Count>k__BackingField: 2
     - <Type>k__BackingField: 4
       <Count>k__BackingField: 1
-    <StartingMoney>k__BackingField: 1000
+    <StartingMoney>k__BackingField: 1050
     <EmergencyFailLimit>k__BackingField: 3
     <WaveDuration>k__BackingField: 140
   - <WaveNumber>k__BackingField: 8

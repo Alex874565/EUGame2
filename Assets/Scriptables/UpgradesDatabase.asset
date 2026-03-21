@@ -20,7 +20,7 @@ MonoBehaviour:
       to participate in democratic life and local initiatives.
     <ModifiersDescription>k__BackingField: <color=#2E7D32>+10</color> <color=#C62828>Fire
       Emergency</color> <color=#7B1FA2>Expiration Time</color>
-    <Cost>k__BackingField: 600
+    <Cost>k__BackingField: 200
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
       <Value>k__BackingField: 5
@@ -34,7 +34,7 @@ MonoBehaviour:
       grassroots movements that strengthen community participation.
     <ModifiersDescription>k__BackingField: <color=#2E7D32>+10</color> <color=#C62828>Earthquake,
       Flood Emergencies</color> <color=#7B1FA2>Expiration Time</color>
-    <Cost>k__BackingField: 1200
+    <Cost>k__BackingField: 600
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
       <Value>k__BackingField: 5
@@ -48,7 +48,7 @@ MonoBehaviour:
       civic engagement, and participation in public decision-making.
     <ModifiersDescription>k__BackingField: <color=#2E7D32>-3</color> <color=#C62828>Flood,
       Health Crisis, Armed Conflict Emergencies</color> <color=#7B1FA2>Time to Solve</color>
-    <Cost>k__BackingField: 2400
+    <Cost>k__BackingField: 1200
     <EmergencyModifiers>k__BackingField:
     - <Type>k__BackingField: 1
       <Value>k__BackingField: -3
@@ -114,7 +114,7 @@ MonoBehaviour:
       funding, and how information is promoted online.
     <ModifiersDescription>k__BackingField: <color=#2E7D32>+20</color> <color=#1976D2>All
       Minigames</color> <color=#7B1FA2>Reward</color>
-    <Cost>k__BackingField: 500
+    <Cost>k__BackingField: 250
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
     - <Type>k__BackingField: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
       helps citizens find reliable information.
     <ModifiersDescription>k__BackingField: <color=#2E7D32>+25</color> <color=#1976D2>All
       Minigames</color> <color=#7B1FA2>Reward</color>
-    <Cost>k__BackingField: 900
+    <Cost>k__BackingField: 400
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
     - <Type>k__BackingField: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
       disinformation campaigns and respond quickly to harmful content.
     <ModifiersDescription>k__BackingField: <color=#2E7D32>+35</color> <color=#1976D2>All
       Minigames</color> <color=#7B1FA2>Reward</color>
-    <Cost>k__BackingField: 1200
+    <Cost>k__BackingField: 700
     <EmergencyModifiers>k__BackingField: []
     <MinigameModifiers>k__BackingField:
     - <Type>k__BackingField: 0
